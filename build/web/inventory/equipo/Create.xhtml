@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{inventoryBundle.CreateEquipoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{equipoController.selected.nombre}" title="#{inventoryBundle.CreateEquipoTitle_nombre}" required="true" requiredMessage="#{inventoryBundle.CreateEquipoRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_serie}" for="serie" />
+                    <h:inputText id="serie" value="#{equipoController.selected.serie}" title="#{inventoryBundle.CreateEquipoTitle_serie}" required="true" requiredMessage="#{inventoryBundle.CreateEquipoRequiredMessage_serie}"/>
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_inventario}" for="inventario" />
+                    <h:inputText id="inventario" value="#{equipoController.selected.inventario}" title="#{inventoryBundle.CreateEquipoTitle_inventario}" />
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_existencia}" for="existencia" />
+                    <h:inputText id="existencia" value="#{equipoController.selected.existencia}" title="#{inventoryBundle.CreateEquipoTitle_existencia}" required="true" requiredMessage="#{inventoryBundle.CreateEquipoRequiredMessage_existencia}"/>
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_ip}" for="ip" />
+                    <h:inputText id="ip" value="#{equipoController.selected.ip}" title="#{inventoryBundle.CreateEquipoTitle_ip}" />
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{equipoController.selected.descripcion}" title="#{inventoryBundle.CreateEquipoTitle_descripcion}" />
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_idArea}" for="idArea" />
+                    <h:selectOneMenu id="idArea" value="#{equipoController.selected.idArea}" title="#{inventoryBundle.CreateEquipoTitle_idArea}" required="true" requiredMessage="#{inventoryBundle.CreateEquipoRequiredMessage_idArea}">
+                        <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_idCategoriaEquipo}" for="idCategoriaEquipo" />
+                    <h:selectOneMenu id="idCategoriaEquipo" value="#{equipoController.selected.idCategoriaEquipo}" title="#{inventoryBundle.CreateEquipoTitle_idCategoriaEquipo}" required="true" requiredMessage="#{inventoryBundle.CreateEquipoRequiredMessage_idCategoriaEquipo}">
+                        <f:selectItems value="#{categoriaEquipoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_idEquipo}" for="idEquipo" />
+                    <h:selectOneMenu id="idEquipo" value="#{equipoController.selected.idEquipo}" title="#{inventoryBundle.CreateEquipoTitle_idEquipo}" >
+                        <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_idEstadoEquipo}" for="idEstadoEquipo" />
+                    <h:selectOneMenu id="idEstadoEquipo" value="#{equipoController.selected.idEstadoEquipo}" title="#{inventoryBundle.CreateEquipoTitle_idEstadoEquipo}" required="true" requiredMessage="#{inventoryBundle.CreateEquipoRequiredMessage_idEstadoEquipo}">
+                        <f:selectItems value="#{estadoEquipoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_idModelo}" for="idModelo" />
+                    <h:selectOneMenu id="idModelo" value="#{equipoController.selected.idModelo}" title="#{inventoryBundle.CreateEquipoTitle_idModelo}" required="true" requiredMessage="#{inventoryBundle.CreateEquipoRequiredMessage_idModelo}">
+                        <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{inventoryBundle.CreateEquipoLabel_idProveedor}" for="idProveedor" />
+                    <h:selectOneMenu id="idProveedor" value="#{equipoController.selected.idProveedor}" title="#{inventoryBundle.CreateEquipoTitle_idProveedor}" required="true" requiredMessage="#{inventoryBundle.CreateEquipoRequiredMessage_idProveedor}">
+                        <f:selectItems value="#{proveedorController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{equipoController.create}" value="#{inventoryBundle.CreateEquipoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{equipoController.prepareList}" value="#{inventoryBundle.CreateEquipoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{inventoryBundle.CreateEquipoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{requestBundle.ViewInsumoUtilizadoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{requestBundle.ViewInsumoUtilizadoLabel_id}"/>
+                    <h:outputText value="#{insumoUtilizadoController.selected.id}" title="#{requestBundle.ViewInsumoUtilizadoTitle_id}"/>
+                    <h:outputText value="#{requestBundle.ViewInsumoUtilizadoLabel_utlilizado}"/>
+                    <h:outputText value="#{insumoUtilizadoController.selected.utlilizado}" title="#{requestBundle.ViewInsumoUtilizadoTitle_utlilizado}"/>
+                    <h:outputText value="#{requestBundle.ViewInsumoUtilizadoLabel_desperdicio}"/>
+                    <h:outputText value="#{insumoUtilizadoController.selected.desperdicio}" title="#{requestBundle.ViewInsumoUtilizadoTitle_desperdicio}"/>
+                    <h:outputText value="#{requestBundle.ViewInsumoUtilizadoLabel_idDetalleSolicitud}"/>
+                    <h:outputText value="#{insumoUtilizadoController.selected.idDetalleSolicitud}" title="#{requestBundle.ViewInsumoUtilizadoTitle_idDetalleSolicitud}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{insumoUtilizadoController.destroyAndView}" value="#{requestBundle.ViewInsumoUtilizadoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{requestBundle.ViewInsumoUtilizadoEditLink}"/>
+                <br />
+                <h:commandLink action="#{insumoUtilizadoController.prepareCreate}" value="#{requestBundle.ViewInsumoUtilizadoCreateLink}" />
+                <br />
+                <h:commandLink action="#{insumoUtilizadoController.prepareList}" value="#{requestBundle.ViewInsumoUtilizadoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{requestBundle.ViewInsumoUtilizadoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

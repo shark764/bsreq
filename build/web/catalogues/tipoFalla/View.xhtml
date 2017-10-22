@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{cataloguesBundle.ViewTipoFallaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{cataloguesBundle.ViewTipoFallaLabel_id}"/>
+                    <h:outputText value="#{tipoFallaController.selected.id}" title="#{cataloguesBundle.ViewTipoFallaTitle_id}"/>
+                    <h:outputText value="#{cataloguesBundle.ViewTipoFallaLabel_nombre}"/>
+                    <h:outputText value="#{tipoFallaController.selected.nombre}" title="#{cataloguesBundle.ViewTipoFallaTitle_nombre}"/>
+                    <h:outputText value="#{cataloguesBundle.ViewTipoFallaLabel_codigo}"/>
+                    <h:outputText value="#{tipoFallaController.selected.codigo}" title="#{cataloguesBundle.ViewTipoFallaTitle_codigo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tipoFallaController.destroyAndView}" value="#{cataloguesBundle.ViewTipoFallaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{cataloguesBundle.ViewTipoFallaEditLink}"/>
+                <br />
+                <h:commandLink action="#{tipoFallaController.prepareCreate}" value="#{cataloguesBundle.ViewTipoFallaCreateLink}" />
+                <br />
+                <h:commandLink action="#{tipoFallaController.prepareList}" value="#{cataloguesBundle.ViewTipoFallaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{cataloguesBundle.ViewTipoFallaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

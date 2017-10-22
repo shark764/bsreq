@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>/org/itca/requerimientos/bundles/CataloguesBundle</base-name>
+            <var>cataloguesBundle</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/org/itca/requerimientos/bundles/SecurityBundle</base-name>
+            <var>securityBundle</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/org/itca/requerimientos/bundles/InventoryBundle</base-name>
+            <var>inventoryBundle</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/org/itca/requerimientos/bundles/AdminBundle</base-name>
+            <var>adminBundle</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/org/itca/requerimientos/bundles/LoanRequestBundle</base-name>
+            <var>loanRequestBundle</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/org/itca/requerimientos/bundles/RequestBundle</base-name>
+            <var>requestBundle</var>
+        </resource-bundle>
+    </application>
+</faces-config>

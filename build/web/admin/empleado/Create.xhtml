@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{adminBundle.CreateEmpleadoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{adminBundle.CreateEmpleadoLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{empleadoController.selected.nombre}" title="#{adminBundle.CreateEmpleadoTitle_nombre}" required="true" requiredMessage="#{adminBundle.CreateEmpleadoRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{adminBundle.CreateEmpleadoLabel_apellido}" for="apellido" />
+                    <h:inputText id="apellido" value="#{empleadoController.selected.apellido}" title="#{adminBundle.CreateEmpleadoTitle_apellido}" required="true" requiredMessage="#{adminBundle.CreateEmpleadoRequiredMessage_apellido}"/>
+                    <h:outputLabel value="#{adminBundle.CreateEmpleadoLabel_genero}" for="genero" />
+                    <h:inputText id="genero" value="#{empleadoController.selected.genero}" title="#{adminBundle.CreateEmpleadoTitle_genero}" required="true" requiredMessage="#{adminBundle.CreateEmpleadoRequiredMessage_genero}"/>
+                    <h:outputLabel value="#{adminBundle.CreateEmpleadoLabel_dui}" for="dui" />
+                    <h:inputText id="dui" value="#{empleadoController.selected.dui}" title="#{adminBundle.CreateEmpleadoTitle_dui}" required="true" requiredMessage="#{adminBundle.CreateEmpleadoRequiredMessage_dui}"/>
+                    <h:outputLabel value="#{adminBundle.CreateEmpleadoLabel_nit}" for="nit" />
+                    <h:inputText id="nit" value="#{empleadoController.selected.nit}" title="#{adminBundle.CreateEmpleadoTitle_nit}" required="true" requiredMessage="#{adminBundle.CreateEmpleadoRequiredMessage_nit}"/>
+                    <h:outputLabel value="#{adminBundle.CreateEmpleadoLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{empleadoController.selected.direccion}" title="#{adminBundle.CreateEmpleadoTitle_direccion}" required="true" requiredMessage="#{adminBundle.CreateEmpleadoRequiredMessage_direccion}"/>
+                    <h:outputLabel value="#{adminBundle.CreateEmpleadoLabel_idArea}" for="idArea" />
+                    <h:selectOneMenu id="idArea" value="#{empleadoController.selected.idArea}" title="#{adminBundle.CreateEmpleadoTitle_idArea}" required="true" requiredMessage="#{adminBundle.CreateEmpleadoRequiredMessage_idArea}">
+                        <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{adminBundle.CreateEmpleadoLabel_idEmpleado}" for="idEmpleado" />
+                    <h:selectOneMenu id="idEmpleado" value="#{empleadoController.selected.idEmpleado}" title="#{adminBundle.CreateEmpleadoTitle_idEmpleado}" >
+                        <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{adminBundle.CreateEmpleadoLabel_idTipoEmpleado}" for="idTipoEmpleado" />
+                    <h:selectOneMenu id="idTipoEmpleado" value="#{empleadoController.selected.idTipoEmpleado}" title="#{adminBundle.CreateEmpleadoTitle_idTipoEmpleado}" required="true" requiredMessage="#{adminBundle.CreateEmpleadoRequiredMessage_idTipoEmpleado}">
+                        <f:selectItems value="#{tipoEmpleadoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{empleadoController.create}" value="#{adminBundle.CreateEmpleadoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{empleadoController.prepareList}" value="#{adminBundle.CreateEmpleadoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{adminBundle.CreateEmpleadoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

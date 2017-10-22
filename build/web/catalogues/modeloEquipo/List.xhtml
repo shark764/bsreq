@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{cataloguesBundle.ListModeloEquipoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{cataloguesBundle.ListModeloEquipoEmpty}" rendered="#{modeloEquipoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{modeloEquipoController.items.rowCount > 0}">
+                    <h:outputText value="#{modeloEquipoController.pagination.pageFirstItem + 1}..#{modeloEquipoController.pagination.pageLastItem + 1}/#{modeloEquipoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{modeloEquipoController.previous}" value="#{cataloguesBundle.Previous} #{modeloEquipoController.pagination.pageSize}" rendered="#{modeloEquipoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{modeloEquipoController.next}" value="#{cataloguesBundle.Next} #{modeloEquipoController.pagination.pageSize}" rendered="#{modeloEquipoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{modeloEquipoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{cataloguesBundle.ListModeloEquipoTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{cataloguesBundle.ListModeloEquipoTitle_nombre}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombre}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{cataloguesBundle.ListModeloEquipoTitle_codigo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codigo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{cataloguesBundle.ListModeloEquipoTitle_idMarca}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idMarca}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{modeloEquipoController.prepareView}" value="#{cataloguesBundle.ListModeloEquipoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{modeloEquipoController.prepareEdit}" value="#{cataloguesBundle.ListModeloEquipoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{modeloEquipoController.destroy}" value="#{cataloguesBundle.ListModeloEquipoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{modeloEquipoController.prepareCreate}" value="#{cataloguesBundle.ListModeloEquipoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{cataloguesBundle.ListModeloEquipoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{inventoryBundle.ViewInventarioDefectuosoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{inventoryBundle.ViewInventarioDefectuosoLabel_id}"/>
+                    <h:outputText value="#{inventarioDefectuosoController.selected.id}" title="#{inventoryBundle.ViewInventarioDefectuosoTitle_id}"/>
+                    <h:outputText value="#{inventoryBundle.ViewInventarioDefectuosoLabel_descripcion}"/>
+                    <h:outputText value="#{inventarioDefectuosoController.selected.descripcion}" title="#{inventoryBundle.ViewInventarioDefectuosoTitle_descripcion}"/>
+                    <h:outputText value="#{inventoryBundle.ViewInventarioDefectuosoLabel_fechaIngreso}"/>
+                    <h:outputText value="#{inventarioDefectuosoController.selected.fechaIngreso}" title="#{inventoryBundle.ViewInventarioDefectuosoTitle_fechaIngreso}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{inventoryBundle.ViewInventarioDefectuosoLabel_idEquipo}"/>
+                    <h:outputText value="#{inventarioDefectuosoController.selected.idEquipo}" title="#{inventoryBundle.ViewInventarioDefectuosoTitle_idEquipo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{inventarioDefectuosoController.destroyAndView}" value="#{inventoryBundle.ViewInventarioDefectuosoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{inventoryBundle.ViewInventarioDefectuosoEditLink}"/>
+                <br />
+                <h:commandLink action="#{inventarioDefectuosoController.prepareCreate}" value="#{inventoryBundle.ViewInventarioDefectuosoCreateLink}" />
+                <br />
+                <h:commandLink action="#{inventarioDefectuosoController.prepareList}" value="#{inventoryBundle.ViewInventarioDefectuosoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{inventoryBundle.ViewInventarioDefectuosoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
