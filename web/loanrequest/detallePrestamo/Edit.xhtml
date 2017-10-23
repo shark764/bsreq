@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <div class="form-group has-feedback form-group-collapsed-fields">
                         <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{loanRequestBundle.EditDetallePrestamoLabel_descripcion}" for="descripcion" />
@@ -58,15 +58,15 @@
                         </div>
                     </div>
                 </h:panelGrid>
-                <h:commandLink action="#{detallePrestamoController.update}" value="#{loanRequestBundle.EditDetallePrestamoSaveLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.update}" value="#{loanRequestBundle.EditDetallePrestamoSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{loanRequestBundle.EditDetallePrestamoViewLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="View" value="#{loanRequestBundle.EditDetallePrestamoViewLink}"/>
                 <br />
-                <h:commandLink action="#{detallePrestamoController.prepareList}" value="#{loanRequestBundle.EditDetallePrestamoShowAllLink}" immediate="true"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.prepareList}" value="#{loanRequestBundle.EditDetallePrestamoShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{loanRequestBundle.EditDetallePrestamoIndexLink}" />
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{loanRequestBundle.EditDetallePrestamoIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{cataloguesBundle.ViewEstadoEquipoLabel_id}"/>
                     <h:outputText value="#{estadoEquipoController.selected.id}" title="#{cataloguesBundle.ViewEstadoEquipoTitle_id}"/>
@@ -23,17 +23,17 @@
                     <h:outputText value="#{estadoEquipoController.selected.codigo}" title="#{cataloguesBundle.ViewEstadoEquipoTitle_codigo}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{estadoEquipoController.destroyAndView}" value="#{cataloguesBundle.ViewEstadoEquipoDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoEquipoController.destroyAndView}" value="#{cataloguesBundle.ViewEstadoEquipoDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{cataloguesBundle.ViewEstadoEquipoEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewEstadoEquipoEditLink}"/>
                 <br />
-                <h:commandLink action="#{estadoEquipoController.prepareCreate}" value="#{cataloguesBundle.ViewEstadoEquipoCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoEquipoController.prepareCreate}" value="#{cataloguesBundle.ViewEstadoEquipoCreateLink}" />
                 <br />
-                <h:commandLink action="#{estadoEquipoController.prepareList}" value="#{cataloguesBundle.ViewEstadoEquipoShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoEquipoController.prepareList}" value="#{cataloguesBundle.ViewEstadoEquipoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ViewEstadoEquipoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ViewEstadoEquipoIndexLink}"/>
 
             </h:form>
         </ui:define>

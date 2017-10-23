@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{cataloguesBundle.ViewTipoSolucionLabel_id}"/>
                     <h:outputText value="#{tipoSolucionController.selected.id}" title="#{cataloguesBundle.ViewTipoSolucionTitle_id}"/>
@@ -23,17 +23,17 @@
                     <h:outputText value="#{tipoSolucionController.selected.codigo}" title="#{cataloguesBundle.ViewTipoSolucionTitle_codigo}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{tipoSolucionController.destroyAndView}" value="#{cataloguesBundle.ViewTipoSolucionDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.destroyAndView}" value="#{cataloguesBundle.ViewTipoSolucionDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{cataloguesBundle.ViewTipoSolucionEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewTipoSolucionEditLink}"/>
                 <br />
-                <h:commandLink action="#{tipoSolucionController.prepareCreate}" value="#{cataloguesBundle.ViewTipoSolucionCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.prepareCreate}" value="#{cataloguesBundle.ViewTipoSolucionCreateLink}" />
                 <br />
-                <h:commandLink action="#{tipoSolucionController.prepareList}" value="#{cataloguesBundle.ViewTipoSolucionShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.prepareList}" value="#{cataloguesBundle.ViewTipoSolucionShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ViewTipoSolucionIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ViewTipoSolucionIndexLink}"/>
 
             </h:form>
         </ui:define>

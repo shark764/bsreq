@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{inventoryBundle.ListCategoriaEquipoEmpty}" rendered="#{categoriaEquipoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{categoriaEquipoController.items.rowCount > 0}">
                     <h:outputText value="#{categoriaEquipoController.pagination.pageFirstItem + 1}..#{categoriaEquipoController.pagination.pageLastItem + 1}/#{categoriaEquipoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{categoriaEquipoController.previous}" value="#{inventoryBundle.Previous} #{categoriaEquipoController.pagination.pageSize}" rendered="#{categoriaEquipoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{categoriaEquipoController.next}" value="#{inventoryBundle.Next} #{categoriaEquipoController.pagination.pageSize}" rendered="#{categoriaEquipoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.previous}" value="#{inventoryBundle.Previous} #{categoriaEquipoController.pagination.pageSize}" rendered="#{categoriaEquipoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.next}" value="#{inventoryBundle.Next} #{categoriaEquipoController.pagination.pageSize}" rendered="#{categoriaEquipoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{categoriaEquipoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -42,19 +42,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{categoriaEquipoController.prepareView}" value="#{inventoryBundle.ListCategoriaEquipoViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareView}" value="#{inventoryBundle.ListCategoriaEquipoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{categoriaEquipoController.prepareEdit}" value="#{inventoryBundle.ListCategoriaEquipoEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareEdit}" value="#{inventoryBundle.ListCategoriaEquipoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{categoriaEquipoController.destroy}" value="#{inventoryBundle.ListCategoriaEquipoDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.destroy}" value="#{inventoryBundle.ListCategoriaEquipoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{categoriaEquipoController.prepareCreate}" value="#{inventoryBundle.ListCategoriaEquipoCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareCreate}" value="#{inventoryBundle.ListCategoriaEquipoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{inventoryBundle.ListCategoriaEquipoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{inventoryBundle.ListCategoriaEquipoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

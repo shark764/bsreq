@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{cataloguesBundle.ListTipoSolucionEmpty}" rendered="#{tipoSolucionController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{tipoSolucionController.items.rowCount > 0}">
                     <h:outputText value="#{tipoSolucionController.pagination.pageFirstItem + 1}..#{tipoSolucionController.pagination.pageLastItem + 1}/#{tipoSolucionController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{tipoSolucionController.previous}" value="#{cataloguesBundle.Previous} #{tipoSolucionController.pagination.pageSize}" rendered="#{tipoSolucionController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{tipoSolucionController.next}" value="#{cataloguesBundle.Next} #{tipoSolucionController.pagination.pageSize}" rendered="#{tipoSolucionController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.previous}" value="#{cataloguesBundle.Previous} #{tipoSolucionController.pagination.pageSize}" rendered="#{tipoSolucionController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.next}" value="#{cataloguesBundle.Next} #{tipoSolucionController.pagination.pageSize}" rendered="#{tipoSolucionController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{tipoSolucionController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -42,19 +42,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{tipoSolucionController.prepareView}" value="#{cataloguesBundle.ListTipoSolucionViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.prepareView}" value="#{cataloguesBundle.ListTipoSolucionViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{tipoSolucionController.prepareEdit}" value="#{cataloguesBundle.ListTipoSolucionEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.prepareEdit}" value="#{cataloguesBundle.ListTipoSolucionEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{tipoSolucionController.destroy}" value="#{cataloguesBundle.ListTipoSolucionDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.destroy}" value="#{cataloguesBundle.ListTipoSolucionDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{tipoSolucionController.prepareCreate}" value="#{cataloguesBundle.ListTipoSolucionCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.prepareCreate}" value="#{cataloguesBundle.ListTipoSolucionCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ListTipoSolucionIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ListTipoSolucionIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

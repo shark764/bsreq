@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{adminBundle.ListAreaEmpty}" rendered="#{areaController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{areaController.items.rowCount > 0}">
                     <h:outputText value="#{areaController.pagination.pageFirstItem + 1}..#{areaController.pagination.pageLastItem + 1}/#{areaController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{areaController.previous}" value="#{adminBundle.Previous} #{areaController.pagination.pageSize}" rendered="#{areaController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{areaController.next}" value="#{adminBundle.Next} #{areaController.pagination.pageSize}" rendered="#{areaController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.previous}" value="#{adminBundle.Previous} #{areaController.pagination.pageSize}" rendered="#{areaController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.next}" value="#{adminBundle.Next} #{areaController.pagination.pageSize}" rendered="#{areaController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{areaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -42,19 +42,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{areaController.prepareView}" value="#{adminBundle.ListAreaViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.prepareView}" value="#{adminBundle.ListAreaViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{areaController.prepareEdit}" value="#{adminBundle.ListAreaEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.prepareEdit}" value="#{adminBundle.ListAreaEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{areaController.destroy}" value="#{adminBundle.ListAreaDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.destroy}" value="#{adminBundle.ListAreaDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{areaController.prepareCreate}" value="#{adminBundle.ListAreaCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.prepareCreate}" value="#{adminBundle.ListAreaCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{adminBundle.ListAreaIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{adminBundle.ListAreaIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{cataloguesBundle.ListEstadoSolicitudEmpty}" rendered="#{estadoSolicitudController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{estadoSolicitudController.items.rowCount > 0}">
                     <h:outputText value="#{estadoSolicitudController.pagination.pageFirstItem + 1}..#{estadoSolicitudController.pagination.pageLastItem + 1}/#{estadoSolicitudController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{estadoSolicitudController.previous}" value="#{cataloguesBundle.Previous} #{estadoSolicitudController.pagination.pageSize}" rendered="#{estadoSolicitudController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{estadoSolicitudController.next}" value="#{cataloguesBundle.Next} #{estadoSolicitudController.pagination.pageSize}" rendered="#{estadoSolicitudController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoSolicitudController.previous}" value="#{cataloguesBundle.Previous} #{estadoSolicitudController.pagination.pageSize}" rendered="#{estadoSolicitudController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoSolicitudController.next}" value="#{cataloguesBundle.Next} #{estadoSolicitudController.pagination.pageSize}" rendered="#{estadoSolicitudController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{estadoSolicitudController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -42,19 +42,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{estadoSolicitudController.prepareView}" value="#{cataloguesBundle.ListEstadoSolicitudViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoSolicitudController.prepareView}" value="#{cataloguesBundle.ListEstadoSolicitudViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{estadoSolicitudController.prepareEdit}" value="#{cataloguesBundle.ListEstadoSolicitudEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoSolicitudController.prepareEdit}" value="#{cataloguesBundle.ListEstadoSolicitudEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{estadoSolicitudController.destroy}" value="#{cataloguesBundle.ListEstadoSolicitudDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoSolicitudController.destroy}" value="#{cataloguesBundle.ListEstadoSolicitudDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{estadoSolicitudController.prepareCreate}" value="#{cataloguesBundle.ListEstadoSolicitudCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoSolicitudController.prepareCreate}" value="#{cataloguesBundle.ListEstadoSolicitudCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ListEstadoSolicitudIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ListEstadoSolicitudIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

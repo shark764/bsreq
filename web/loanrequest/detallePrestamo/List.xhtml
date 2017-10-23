@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{loanRequestBundle.ListDetallePrestamoEmpty}" rendered="#{detallePrestamoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{detallePrestamoController.items.rowCount > 0}">
                     <h:outputText value="#{detallePrestamoController.pagination.pageFirstItem + 1}..#{detallePrestamoController.pagination.pageLastItem + 1}/#{detallePrestamoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{detallePrestamoController.previous}" value="#{loanRequestBundle.Previous} #{detallePrestamoController.pagination.pageSize}" rendered="#{detallePrestamoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{detallePrestamoController.next}" value="#{loanRequestBundle.Next} #{detallePrestamoController.pagination.pageSize}" rendered="#{detallePrestamoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.previous}" value="#{loanRequestBundle.Previous} #{detallePrestamoController.pagination.pageSize}" rendered="#{detallePrestamoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.next}" value="#{loanRequestBundle.Next} #{detallePrestamoController.pagination.pageSize}" rendered="#{detallePrestamoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{detallePrestamoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -70,19 +70,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{detallePrestamoController.prepareView}" value="#{loanRequestBundle.ListDetallePrestamoViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.prepareView}" value="#{loanRequestBundle.ListDetallePrestamoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{detallePrestamoController.prepareEdit}" value="#{loanRequestBundle.ListDetallePrestamoEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.prepareEdit}" value="#{loanRequestBundle.ListDetallePrestamoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{detallePrestamoController.destroy}" value="#{loanRequestBundle.ListDetallePrestamoDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.destroy}" value="#{loanRequestBundle.ListDetallePrestamoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{detallePrestamoController.prepareCreate}" value="#{loanRequestBundle.ListDetallePrestamoCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.prepareCreate}" value="#{loanRequestBundle.ListDetallePrestamoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{loanRequestBundle.ListDetallePrestamoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{loanRequestBundle.ListDetallePrestamoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

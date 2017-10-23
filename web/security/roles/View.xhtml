@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{securityBundle.ViewRolesLabel_rolesPK_rol}"/>
                     <h:outputText value="#{rolesController.selected.rolesPK.rol}" title="#{securityBundle.ViewRolesTitle_rolesPK_rol}"/>
@@ -23,17 +23,17 @@
                     <h:outputText value="#{rolesController.selected.estado}" title="#{securityBundle.ViewRolesTitle_estado}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{rolesController.destroyAndView}" value="#{securityBundle.ViewRolesDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.destroyAndView}" value="#{securityBundle.ViewRolesDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{securityBundle.ViewRolesEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{securityBundle.ViewRolesEditLink}"/>
                 <br />
-                <h:commandLink action="#{rolesController.prepareCreate}" value="#{securityBundle.ViewRolesCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.prepareCreate}" value="#{securityBundle.ViewRolesCreateLink}" />
                 <br />
-                <h:commandLink action="#{rolesController.prepareList}" value="#{securityBundle.ViewRolesShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.prepareList}" value="#{securityBundle.ViewRolesShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{securityBundle.ViewRolesIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{securityBundle.ViewRolesIndexLink}"/>
 
             </h:form>
         </ui:define>

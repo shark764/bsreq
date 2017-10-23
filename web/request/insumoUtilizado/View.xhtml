@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{requestBundle.ViewInsumoUtilizadoLabel_id}"/>
                     <h:outputText value="#{insumoUtilizadoController.selected.id}" title="#{requestBundle.ViewInsumoUtilizadoTitle_id}"/>
@@ -25,17 +25,17 @@
                     <h:outputText value="#{insumoUtilizadoController.selected.idDetalleSolicitud}" title="#{requestBundle.ViewInsumoUtilizadoTitle_idDetalleSolicitud}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{insumoUtilizadoController.destroyAndView}" value="#{requestBundle.ViewInsumoUtilizadoDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.destroyAndView}" value="#{requestBundle.ViewInsumoUtilizadoDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{requestBundle.ViewInsumoUtilizadoEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{requestBundle.ViewInsumoUtilizadoEditLink}"/>
                 <br />
-                <h:commandLink action="#{insumoUtilizadoController.prepareCreate}" value="#{requestBundle.ViewInsumoUtilizadoCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.prepareCreate}" value="#{requestBundle.ViewInsumoUtilizadoCreateLink}" />
                 <br />
-                <h:commandLink action="#{insumoUtilizadoController.prepareList}" value="#{requestBundle.ViewInsumoUtilizadoShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.prepareList}" value="#{requestBundle.ViewInsumoUtilizadoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{requestBundle.ViewInsumoUtilizadoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ViewInsumoUtilizadoIndexLink}"/>
 
             </h:form>
         </ui:define>

@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{requestBundle.ViewSolicitudRequerimientoLabel_id}"/>
                     <h:outputText value="#{solicitudRequerimientoController.selected.id}" title="#{requestBundle.ViewSolicitudRequerimientoTitle_id}"/>
@@ -27,17 +27,17 @@
                     <h:outputText value="#{solicitudRequerimientoController.selected.idEmpleado}" title="#{requestBundle.ViewSolicitudRequerimientoTitle_idEmpleado}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{solicitudRequerimientoController.destroyAndView}" value="#{requestBundle.ViewSolicitudRequerimientoDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.destroyAndView}" value="#{requestBundle.ViewSolicitudRequerimientoDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{requestBundle.ViewSolicitudRequerimientoEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{requestBundle.ViewSolicitudRequerimientoEditLink}"/>
                 <br />
-                <h:commandLink action="#{solicitudRequerimientoController.prepareCreate}" value="#{requestBundle.ViewSolicitudRequerimientoCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareCreate}" value="#{requestBundle.ViewSolicitudRequerimientoCreateLink}" />
                 <br />
-                <h:commandLink action="#{solicitudRequerimientoController.prepareList}" value="#{requestBundle.ViewSolicitudRequerimientoShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareList}" value="#{requestBundle.ViewSolicitudRequerimientoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{requestBundle.ViewSolicitudRequerimientoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ViewSolicitudRequerimientoIndexLink}"/>
 
             </h:form>
         </ui:define>

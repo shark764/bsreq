@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{cataloguesBundle.ViewMarcaEquipoLabel_id}"/>
                     <h:outputText value="#{marcaEquipoController.selected.id}" title="#{cataloguesBundle.ViewMarcaEquipoTitle_id}"/>
@@ -23,17 +23,17 @@
                     <h:outputText value="#{marcaEquipoController.selected.codigo}" title="#{cataloguesBundle.ViewMarcaEquipoTitle_codigo}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{marcaEquipoController.destroyAndView}" value="#{cataloguesBundle.ViewMarcaEquipoDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{marcaEquipoController.destroyAndView}" value="#{cataloguesBundle.ViewMarcaEquipoDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{cataloguesBundle.ViewMarcaEquipoEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewMarcaEquipoEditLink}"/>
                 <br />
-                <h:commandLink action="#{marcaEquipoController.prepareCreate}" value="#{cataloguesBundle.ViewMarcaEquipoCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{marcaEquipoController.prepareCreate}" value="#{cataloguesBundle.ViewMarcaEquipoCreateLink}" />
                 <br />
-                <h:commandLink action="#{marcaEquipoController.prepareList}" value="#{cataloguesBundle.ViewMarcaEquipoShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{marcaEquipoController.prepareList}" value="#{cataloguesBundle.ViewMarcaEquipoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ViewMarcaEquipoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ViewMarcaEquipoIndexLink}"/>
 
             </h:form>
         </ui:define>

@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <div class="form-group has-feedback form-group-collapsed-fields">
                         <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{securityBundle.CreateRolesLabel_rolesPK_rol}" for="rolesPK_rol" />
@@ -41,13 +41,13 @@
                                 <h:inputText styleClass="form-control input-sm" id="estado" value="#{rolesController.selected.estado}" title="#{securityBundle.CreateRolesTitle_estado}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{rolesController.create}" value="#{securityBundle.CreateRolesSaveLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.create}" value="#{securityBundle.CreateRolesSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{rolesController.prepareList}" value="#{securityBundle.CreateRolesShowAllLink}" immediate="true"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.prepareList}" value="#{securityBundle.CreateRolesShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{securityBundle.CreateRolesIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{securityBundle.CreateRolesIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

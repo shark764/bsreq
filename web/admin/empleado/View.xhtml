@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{adminBundle.ViewEmpleadoLabel_id}"/>
                     <h:outputText value="#{empleadoController.selected.id}" title="#{adminBundle.ViewEmpleadoTitle_id}"/>
@@ -37,17 +37,17 @@
                     <h:outputText value="#{empleadoController.selected.idTipoEmpleado}" title="#{adminBundle.ViewEmpleadoTitle_idTipoEmpleado}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{empleadoController.destroyAndView}" value="#{adminBundle.ViewEmpleadoDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{empleadoController.destroyAndView}" value="#{adminBundle.ViewEmpleadoDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{adminBundle.ViewEmpleadoEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{adminBundle.ViewEmpleadoEditLink}"/>
                 <br />
-                <h:commandLink action="#{empleadoController.prepareCreate}" value="#{adminBundle.ViewEmpleadoCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{empleadoController.prepareCreate}" value="#{adminBundle.ViewEmpleadoCreateLink}" />
                 <br />
-                <h:commandLink action="#{empleadoController.prepareList}" value="#{adminBundle.ViewEmpleadoShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{empleadoController.prepareList}" value="#{adminBundle.ViewEmpleadoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{adminBundle.ViewEmpleadoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{adminBundle.ViewEmpleadoIndexLink}"/>
 
             </h:form>
         </ui:define>

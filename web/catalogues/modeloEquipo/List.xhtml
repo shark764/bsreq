@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{cataloguesBundle.ListModeloEquipoEmpty}" rendered="#{modeloEquipoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{modeloEquipoController.items.rowCount > 0}">
                     <h:outputText value="#{modeloEquipoController.pagination.pageFirstItem + 1}..#{modeloEquipoController.pagination.pageLastItem + 1}/#{modeloEquipoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{modeloEquipoController.previous}" value="#{cataloguesBundle.Previous} #{modeloEquipoController.pagination.pageSize}" rendered="#{modeloEquipoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{modeloEquipoController.next}" value="#{cataloguesBundle.Next} #{modeloEquipoController.pagination.pageSize}" rendered="#{modeloEquipoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{modeloEquipoController.previous}" value="#{cataloguesBundle.Previous} #{modeloEquipoController.pagination.pageSize}" rendered="#{modeloEquipoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{modeloEquipoController.next}" value="#{cataloguesBundle.Next} #{modeloEquipoController.pagination.pageSize}" rendered="#{modeloEquipoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{modeloEquipoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -48,19 +48,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{modeloEquipoController.prepareView}" value="#{cataloguesBundle.ListModeloEquipoViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{modeloEquipoController.prepareView}" value="#{cataloguesBundle.ListModeloEquipoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{modeloEquipoController.prepareEdit}" value="#{cataloguesBundle.ListModeloEquipoEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{modeloEquipoController.prepareEdit}" value="#{cataloguesBundle.ListModeloEquipoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{modeloEquipoController.destroy}" value="#{cataloguesBundle.ListModeloEquipoDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{modeloEquipoController.destroy}" value="#{cataloguesBundle.ListModeloEquipoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{modeloEquipoController.prepareCreate}" value="#{cataloguesBundle.ListModeloEquipoCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{modeloEquipoController.prepareCreate}" value="#{cataloguesBundle.ListModeloEquipoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ListModeloEquipoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ListModeloEquipoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

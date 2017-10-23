@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{inventoryBundle.ListInventarioDefectuosoEmpty}" rendered="#{inventarioDefectuosoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{inventarioDefectuosoController.items.rowCount > 0}">
                     <h:outputText value="#{inventarioDefectuosoController.pagination.pageFirstItem + 1}..#{inventarioDefectuosoController.pagination.pageLastItem + 1}/#{inventarioDefectuosoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{inventarioDefectuosoController.previous}" value="#{inventoryBundle.Previous} #{inventarioDefectuosoController.pagination.pageSize}" rendered="#{inventarioDefectuosoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{inventarioDefectuosoController.next}" value="#{inventoryBundle.Next} #{inventarioDefectuosoController.pagination.pageSize}" rendered="#{inventarioDefectuosoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.previous}" value="#{inventoryBundle.Previous} #{inventarioDefectuosoController.pagination.pageSize}" rendered="#{inventarioDefectuosoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.next}" value="#{inventoryBundle.Next} #{inventarioDefectuosoController.pagination.pageSize}" rendered="#{inventarioDefectuosoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{inventarioDefectuosoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -50,19 +50,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{inventarioDefectuosoController.prepareView}" value="#{inventoryBundle.ListInventarioDefectuosoViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.prepareView}" value="#{inventoryBundle.ListInventarioDefectuosoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{inventarioDefectuosoController.prepareEdit}" value="#{inventoryBundle.ListInventarioDefectuosoEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.prepareEdit}" value="#{inventoryBundle.ListInventarioDefectuosoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{inventarioDefectuosoController.destroy}" value="#{inventoryBundle.ListInventarioDefectuosoDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.destroy}" value="#{inventoryBundle.ListInventarioDefectuosoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{inventarioDefectuosoController.prepareCreate}" value="#{inventoryBundle.ListInventarioDefectuosoCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.prepareCreate}" value="#{inventoryBundle.ListInventarioDefectuosoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{inventoryBundle.ListInventarioDefectuosoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{inventoryBundle.ListInventarioDefectuosoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

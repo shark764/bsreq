@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{requestBundle.ListSolicitudRequerimientoEmpty}" rendered="#{solicitudRequerimientoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{solicitudRequerimientoController.items.rowCount > 0}">
                     <h:outputText value="#{solicitudRequerimientoController.pagination.pageFirstItem + 1}..#{solicitudRequerimientoController.pagination.pageLastItem + 1}/#{solicitudRequerimientoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{solicitudRequerimientoController.previous}" value="#{requestBundle.Previous} #{solicitudRequerimientoController.pagination.pageSize}" rendered="#{solicitudRequerimientoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{solicitudRequerimientoController.next}" value="#{requestBundle.Next} #{solicitudRequerimientoController.pagination.pageSize}" rendered="#{solicitudRequerimientoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.previous}" value="#{requestBundle.Previous} #{solicitudRequerimientoController.pagination.pageSize}" rendered="#{solicitudRequerimientoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.next}" value="#{requestBundle.Next} #{solicitudRequerimientoController.pagination.pageSize}" rendered="#{solicitudRequerimientoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{solicitudRequerimientoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -50,19 +50,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{solicitudRequerimientoController.prepareView}" value="#{requestBundle.ListSolicitudRequerimientoViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareView}" value="#{requestBundle.ListSolicitudRequerimientoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{solicitudRequerimientoController.prepareEdit}" value="#{requestBundle.ListSolicitudRequerimientoEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareEdit}" value="#{requestBundle.ListSolicitudRequerimientoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{solicitudRequerimientoController.destroy}" value="#{requestBundle.ListSolicitudRequerimientoDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.destroy}" value="#{requestBundle.ListSolicitudRequerimientoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{solicitudRequerimientoController.prepareCreate}" value="#{requestBundle.ListSolicitudRequerimientoCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareCreate}" value="#{requestBundle.ListSolicitudRequerimientoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{requestBundle.ListSolicitudRequerimientoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ListSolicitudRequerimientoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <div class="form-group has-feedback form-group-collapsed-fields">
                         <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{securityBundle.EditUsuariosLabel_iduser}" for="iduser" />
@@ -63,15 +63,15 @@
                         </div>
                     </div>
                 </h:panelGrid>
-                <h:commandLink action="#{usuariosController.update}" value="#{securityBundle.EditUsuariosSaveLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.update}" value="#{securityBundle.EditUsuariosSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{securityBundle.EditUsuariosViewLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="View" value="#{securityBundle.EditUsuariosViewLink}"/>
                 <br />
-                <h:commandLink action="#{usuariosController.prepareList}" value="#{securityBundle.EditUsuariosShowAllLink}" immediate="true"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.prepareList}" value="#{securityBundle.EditUsuariosShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{securityBundle.EditUsuariosIndexLink}" />
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{securityBundle.EditUsuariosIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

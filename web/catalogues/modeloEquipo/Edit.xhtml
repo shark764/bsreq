@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <div class="form-group has-feedback form-group-collapsed-fields">
                         <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{cataloguesBundle.EditModeloEquipoLabel_nombre}" for="nombre" />
@@ -45,15 +45,15 @@
                         </div>
                     </div>
                 </h:panelGrid>
-                <h:commandLink action="#{modeloEquipoController.update}" value="#{cataloguesBundle.EditModeloEquipoSaveLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{modeloEquipoController.update}" value="#{cataloguesBundle.EditModeloEquipoSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{cataloguesBundle.EditModeloEquipoViewLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="View" value="#{cataloguesBundle.EditModeloEquipoViewLink}"/>
                 <br />
-                <h:commandLink action="#{modeloEquipoController.prepareList}" value="#{cataloguesBundle.EditModeloEquipoShowAllLink}" immediate="true"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{modeloEquipoController.prepareList}" value="#{cataloguesBundle.EditModeloEquipoShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.EditModeloEquipoIndexLink}" />
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.EditModeloEquipoIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

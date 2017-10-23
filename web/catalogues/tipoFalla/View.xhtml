@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{cataloguesBundle.ViewTipoFallaLabel_id}"/>
                     <h:outputText value="#{tipoFallaController.selected.id}" title="#{cataloguesBundle.ViewTipoFallaTitle_id}"/>
@@ -23,17 +23,17 @@
                     <h:outputText value="#{tipoFallaController.selected.codigo}" title="#{cataloguesBundle.ViewTipoFallaTitle_codigo}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{tipoFallaController.destroyAndView}" value="#{cataloguesBundle.ViewTipoFallaDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoFallaController.destroyAndView}" value="#{cataloguesBundle.ViewTipoFallaDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{cataloguesBundle.ViewTipoFallaEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewTipoFallaEditLink}"/>
                 <br />
-                <h:commandLink action="#{tipoFallaController.prepareCreate}" value="#{cataloguesBundle.ViewTipoFallaCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoFallaController.prepareCreate}" value="#{cataloguesBundle.ViewTipoFallaCreateLink}" />
                 <br />
-                <h:commandLink action="#{tipoFallaController.prepareList}" value="#{cataloguesBundle.ViewTipoFallaShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoFallaController.prepareList}" value="#{cataloguesBundle.ViewTipoFallaShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ViewTipoFallaIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ViewTipoFallaIndexLink}"/>
 
             </h:form>
         </ui:define>

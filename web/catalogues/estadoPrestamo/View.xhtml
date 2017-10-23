@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{cataloguesBundle.ViewEstadoPrestamoLabel_id}"/>
                     <h:outputText value="#{estadoPrestamoController.selected.id}" title="#{cataloguesBundle.ViewEstadoPrestamoTitle_id}"/>
@@ -23,17 +23,17 @@
                     <h:outputText value="#{estadoPrestamoController.selected.codigo}" title="#{cataloguesBundle.ViewEstadoPrestamoTitle_codigo}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{estadoPrestamoController.destroyAndView}" value="#{cataloguesBundle.ViewEstadoPrestamoDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.destroyAndView}" value="#{cataloguesBundle.ViewEstadoPrestamoDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{cataloguesBundle.ViewEstadoPrestamoEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewEstadoPrestamoEditLink}"/>
                 <br />
-                <h:commandLink action="#{estadoPrestamoController.prepareCreate}" value="#{cataloguesBundle.ViewEstadoPrestamoCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.prepareCreate}" value="#{cataloguesBundle.ViewEstadoPrestamoCreateLink}" />
                 <br />
-                <h:commandLink action="#{estadoPrestamoController.prepareList}" value="#{cataloguesBundle.ViewEstadoPrestamoShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.prepareList}" value="#{cataloguesBundle.ViewEstadoPrestamoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ViewEstadoPrestamoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ViewEstadoPrestamoIndexLink}"/>
 
             </h:form>
         </ui:define>

@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <div class="form-group has-feedback form-group-collapsed-fields">
                         <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditInventarioDefectuosoLabel_descripcion}" for="descripcion" />
@@ -36,15 +36,15 @@
                         </div>
                     </div>
                 </h:panelGrid>
-                <h:commandLink action="#{inventarioDefectuosoController.update}" value="#{inventoryBundle.EditInventarioDefectuosoSaveLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.update}" value="#{inventoryBundle.EditInventarioDefectuosoSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{inventoryBundle.EditInventarioDefectuosoViewLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="View" value="#{inventoryBundle.EditInventarioDefectuosoViewLink}"/>
                 <br />
-                <h:commandLink action="#{inventarioDefectuosoController.prepareList}" value="#{inventoryBundle.EditInventarioDefectuosoShowAllLink}" immediate="true"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.prepareList}" value="#{inventoryBundle.EditInventarioDefectuosoShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{inventoryBundle.EditInventarioDefectuosoIndexLink}" />
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{inventoryBundle.EditInventarioDefectuosoIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

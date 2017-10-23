@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{requestBundle.ListInsumoUtilizadoEmpty}" rendered="#{insumoUtilizadoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{insumoUtilizadoController.items.rowCount > 0}">
                     <h:outputText value="#{insumoUtilizadoController.pagination.pageFirstItem + 1}..#{insumoUtilizadoController.pagination.pageLastItem + 1}/#{insumoUtilizadoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{insumoUtilizadoController.previous}" value="#{requestBundle.Previous} #{insumoUtilizadoController.pagination.pageSize}" rendered="#{insumoUtilizadoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{insumoUtilizadoController.next}" value="#{requestBundle.Next} #{insumoUtilizadoController.pagination.pageSize}" rendered="#{insumoUtilizadoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.previous}" value="#{requestBundle.Previous} #{insumoUtilizadoController.pagination.pageSize}" rendered="#{insumoUtilizadoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.next}" value="#{requestBundle.Next} #{insumoUtilizadoController.pagination.pageSize}" rendered="#{insumoUtilizadoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{insumoUtilizadoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -48,19 +48,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{insumoUtilizadoController.prepareView}" value="#{requestBundle.ListInsumoUtilizadoViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.prepareView}" value="#{requestBundle.ListInsumoUtilizadoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{insumoUtilizadoController.prepareEdit}" value="#{requestBundle.ListInsumoUtilizadoEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.prepareEdit}" value="#{requestBundle.ListInsumoUtilizadoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{insumoUtilizadoController.destroy}" value="#{requestBundle.ListInsumoUtilizadoDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.destroy}" value="#{requestBundle.ListInsumoUtilizadoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{insumoUtilizadoController.prepareCreate}" value="#{requestBundle.ListInsumoUtilizadoCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.prepareCreate}" value="#{requestBundle.ListInsumoUtilizadoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{requestBundle.ListInsumoUtilizadoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ListInsumoUtilizadoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

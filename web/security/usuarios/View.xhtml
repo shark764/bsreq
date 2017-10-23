@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{securityBundle.ViewUsuariosLabel_iduser}"/>
                     <h:outputText value="#{usuariosController.selected.iduser}" title="#{securityBundle.ViewUsuariosTitle_iduser}"/>
@@ -27,17 +27,17 @@
                     <h:outputText value="#{usuariosController.selected.idEmpleado}" title="#{securityBundle.ViewUsuariosTitle_idEmpleado}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{usuariosController.destroyAndView}" value="#{securityBundle.ViewUsuariosDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.destroyAndView}" value="#{securityBundle.ViewUsuariosDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{securityBundle.ViewUsuariosEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{securityBundle.ViewUsuariosEditLink}"/>
                 <br />
-                <h:commandLink action="#{usuariosController.prepareCreate}" value="#{securityBundle.ViewUsuariosCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.prepareCreate}" value="#{securityBundle.ViewUsuariosCreateLink}" />
                 <br />
-                <h:commandLink action="#{usuariosController.prepareList}" value="#{securityBundle.ViewUsuariosShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.prepareList}" value="#{securityBundle.ViewUsuariosShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{securityBundle.ViewUsuariosIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{securityBundle.ViewUsuariosIndexLink}"/>
 
             </h:form>
         </ui:define>

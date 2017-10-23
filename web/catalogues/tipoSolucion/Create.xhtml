@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <div class="form-group has-feedback form-group-collapsed-fields">
                         <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{cataloguesBundle.CreateTipoSolucionLabel_nombre}" for="nombre" />
@@ -35,13 +35,13 @@
                     </div>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{tipoSolucionController.create}" value="#{cataloguesBundle.CreateTipoSolucionSaveLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.create}" value="#{cataloguesBundle.CreateTipoSolucionSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{tipoSolucionController.prepareList}" value="#{cataloguesBundle.CreateTipoSolucionShowAllLink}" immediate="true"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.prepareList}" value="#{cataloguesBundle.CreateTipoSolucionShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.CreateTipoSolucionIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.CreateTipoSolucionIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

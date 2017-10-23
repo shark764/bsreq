@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{requestBundle.ListDetalleSolicitudEmpty}" rendered="#{detalleSolicitudController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{detalleSolicitudController.items.rowCount > 0}">
                     <h:outputText value="#{detalleSolicitudController.pagination.pageFirstItem + 1}..#{detalleSolicitudController.pagination.pageLastItem + 1}/#{detalleSolicitudController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{detalleSolicitudController.previous}" value="#{requestBundle.Previous} #{detalleSolicitudController.pagination.pageSize}" rendered="#{detalleSolicitudController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{detalleSolicitudController.next}" value="#{requestBundle.Next} #{detalleSolicitudController.pagination.pageSize}" rendered="#{detalleSolicitudController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.previous}" value="#{requestBundle.Previous} #{detalleSolicitudController.pagination.pageSize}" rendered="#{detalleSolicitudController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.next}" value="#{requestBundle.Next} #{detalleSolicitudController.pagination.pageSize}" rendered="#{detalleSolicitudController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{detalleSolicitudController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -100,19 +100,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{detalleSolicitudController.prepareView}" value="#{requestBundle.ListDetalleSolicitudViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareView}" value="#{requestBundle.ListDetalleSolicitudViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{detalleSolicitudController.prepareEdit}" value="#{requestBundle.ListDetalleSolicitudEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareEdit}" value="#{requestBundle.ListDetalleSolicitudEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{detalleSolicitudController.destroy}" value="#{requestBundle.ListDetalleSolicitudDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.destroy}" value="#{requestBundle.ListDetalleSolicitudDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{detalleSolicitudController.prepareCreate}" value="#{requestBundle.ListDetalleSolicitudCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareCreate}" value="#{requestBundle.ListDetalleSolicitudCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{requestBundle.ListDetalleSolicitudIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ListDetalleSolicitudIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

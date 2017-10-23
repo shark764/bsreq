@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_id}"/>
                     <h:outputText value="#{detalleSolicitudController.selected.id}" title="#{requestBundle.ViewDetalleSolicitudTitle_id}"/>
@@ -45,17 +45,17 @@
                     <h:outputText value="#{detalleSolicitudController.selected.idTipoSolucion}" title="#{requestBundle.ViewDetalleSolicitudTitle_idTipoSolucion}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{detalleSolicitudController.destroyAndView}" value="#{requestBundle.ViewDetalleSolicitudDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.destroyAndView}" value="#{requestBundle.ViewDetalleSolicitudDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{requestBundle.ViewDetalleSolicitudEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{requestBundle.ViewDetalleSolicitudEditLink}"/>
                 <br />
-                <h:commandLink action="#{detalleSolicitudController.prepareCreate}" value="#{requestBundle.ViewDetalleSolicitudCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareCreate}" value="#{requestBundle.ViewDetalleSolicitudCreateLink}" />
                 <br />
-                <h:commandLink action="#{detalleSolicitudController.prepareList}" value="#{requestBundle.ViewDetalleSolicitudShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareList}" value="#{requestBundle.ViewDetalleSolicitudShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{requestBundle.ViewDetalleSolicitudIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ViewDetalleSolicitudIndexLink}"/>
 
             </h:form>
         </ui:define>

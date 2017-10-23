@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{adminBundle.ListEmpleadoEmpty}" rendered="#{empleadoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{empleadoController.items.rowCount > 0}">
                     <h:outputText value="#{empleadoController.pagination.pageFirstItem + 1}..#{empleadoController.pagination.pageLastItem + 1}/#{empleadoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{empleadoController.previous}" value="#{adminBundle.Previous} #{empleadoController.pagination.pageSize}" rendered="#{empleadoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{empleadoController.next}" value="#{adminBundle.Next} #{empleadoController.pagination.pageSize}" rendered="#{empleadoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{empleadoController.previous}" value="#{adminBundle.Previous} #{empleadoController.pagination.pageSize}" rendered="#{empleadoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{empleadoController.next}" value="#{adminBundle.Next} #{empleadoController.pagination.pageSize}" rendered="#{empleadoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{empleadoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -84,19 +84,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{empleadoController.prepareView}" value="#{adminBundle.ListEmpleadoViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{empleadoController.prepareView}" value="#{adminBundle.ListEmpleadoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{empleadoController.prepareEdit}" value="#{adminBundle.ListEmpleadoEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{empleadoController.prepareEdit}" value="#{adminBundle.ListEmpleadoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{empleadoController.destroy}" value="#{adminBundle.ListEmpleadoDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{empleadoController.destroy}" value="#{adminBundle.ListEmpleadoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{empleadoController.prepareCreate}" value="#{adminBundle.ListEmpleadoCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{empleadoController.prepareCreate}" value="#{adminBundle.ListEmpleadoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{adminBundle.ListEmpleadoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{adminBundle.ListEmpleadoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

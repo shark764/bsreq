@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{securityBundle.ListUsuariosEmpty}" rendered="#{usuariosController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{usuariosController.items.rowCount > 0}">
                     <h:outputText value="#{usuariosController.pagination.pageFirstItem + 1}..#{usuariosController.pagination.pageLastItem + 1}/#{usuariosController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{usuariosController.previous}" value="#{securityBundle.Previous} #{usuariosController.pagination.pageSize}" rendered="#{usuariosController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{usuariosController.next}" value="#{securityBundle.Next} #{usuariosController.pagination.pageSize}" rendered="#{usuariosController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.previous}" value="#{securityBundle.Previous} #{usuariosController.pagination.pageSize}" rendered="#{usuariosController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.next}" value="#{securityBundle.Next} #{usuariosController.pagination.pageSize}" rendered="#{usuariosController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{usuariosController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -54,19 +54,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{usuariosController.prepareView}" value="#{securityBundle.ListUsuariosViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.prepareView}" value="#{securityBundle.ListUsuariosViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{usuariosController.prepareEdit}" value="#{securityBundle.ListUsuariosEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.prepareEdit}" value="#{securityBundle.ListUsuariosEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{usuariosController.destroy}" value="#{securityBundle.ListUsuariosDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.destroy}" value="#{securityBundle.ListUsuariosDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{usuariosController.prepareCreate}" value="#{securityBundle.ListUsuariosCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{usuariosController.prepareCreate}" value="#{securityBundle.ListUsuariosCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{securityBundle.ListUsuariosIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{securityBundle.ListUsuariosIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

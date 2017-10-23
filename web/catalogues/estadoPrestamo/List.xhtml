@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{cataloguesBundle.ListEstadoPrestamoEmpty}" rendered="#{estadoPrestamoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{estadoPrestamoController.items.rowCount > 0}">
                     <h:outputText value="#{estadoPrestamoController.pagination.pageFirstItem + 1}..#{estadoPrestamoController.pagination.pageLastItem + 1}/#{estadoPrestamoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{estadoPrestamoController.previous}" value="#{cataloguesBundle.Previous} #{estadoPrestamoController.pagination.pageSize}" rendered="#{estadoPrestamoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{estadoPrestamoController.next}" value="#{cataloguesBundle.Next} #{estadoPrestamoController.pagination.pageSize}" rendered="#{estadoPrestamoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.previous}" value="#{cataloguesBundle.Previous} #{estadoPrestamoController.pagination.pageSize}" rendered="#{estadoPrestamoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.next}" value="#{cataloguesBundle.Next} #{estadoPrestamoController.pagination.pageSize}" rendered="#{estadoPrestamoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{estadoPrestamoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -42,19 +42,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{estadoPrestamoController.prepareView}" value="#{cataloguesBundle.ListEstadoPrestamoViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.prepareView}" value="#{cataloguesBundle.ListEstadoPrestamoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{estadoPrestamoController.prepareEdit}" value="#{cataloguesBundle.ListEstadoPrestamoEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.prepareEdit}" value="#{cataloguesBundle.ListEstadoPrestamoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{estadoPrestamoController.destroy}" value="#{cataloguesBundle.ListEstadoPrestamoDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.destroy}" value="#{cataloguesBundle.ListEstadoPrestamoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{estadoPrestamoController.prepareCreate}" value="#{cataloguesBundle.ListEstadoPrestamoCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.prepareCreate}" value="#{cataloguesBundle.ListEstadoPrestamoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ListEstadoPrestamoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ListEstadoPrestamoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

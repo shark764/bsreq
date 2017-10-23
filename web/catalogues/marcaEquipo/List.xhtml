@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{cataloguesBundle.ListMarcaEquipoEmpty}" rendered="#{marcaEquipoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{marcaEquipoController.items.rowCount > 0}">
                     <h:outputText value="#{marcaEquipoController.pagination.pageFirstItem + 1}..#{marcaEquipoController.pagination.pageLastItem + 1}/#{marcaEquipoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{marcaEquipoController.previous}" value="#{cataloguesBundle.Previous} #{marcaEquipoController.pagination.pageSize}" rendered="#{marcaEquipoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{marcaEquipoController.next}" value="#{cataloguesBundle.Next} #{marcaEquipoController.pagination.pageSize}" rendered="#{marcaEquipoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{marcaEquipoController.previous}" value="#{cataloguesBundle.Previous} #{marcaEquipoController.pagination.pageSize}" rendered="#{marcaEquipoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{marcaEquipoController.next}" value="#{cataloguesBundle.Next} #{marcaEquipoController.pagination.pageSize}" rendered="#{marcaEquipoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{marcaEquipoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -42,19 +42,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{marcaEquipoController.prepareView}" value="#{cataloguesBundle.ListMarcaEquipoViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{marcaEquipoController.prepareView}" value="#{cataloguesBundle.ListMarcaEquipoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{marcaEquipoController.prepareEdit}" value="#{cataloguesBundle.ListMarcaEquipoEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{marcaEquipoController.prepareEdit}" value="#{cataloguesBundle.ListMarcaEquipoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{marcaEquipoController.destroy}" value="#{cataloguesBundle.ListMarcaEquipoDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{marcaEquipoController.destroy}" value="#{cataloguesBundle.ListMarcaEquipoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{marcaEquipoController.prepareCreate}" value="#{cataloguesBundle.ListMarcaEquipoCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{marcaEquipoController.prepareCreate}" value="#{cataloguesBundle.ListMarcaEquipoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ListMarcaEquipoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ListMarcaEquipoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

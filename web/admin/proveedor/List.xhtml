@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{adminBundle.ListProveedorEmpty}" rendered="#{proveedorController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{proveedorController.items.rowCount > 0}">
                     <h:outputText value="#{proveedorController.pagination.pageFirstItem + 1}..#{proveedorController.pagination.pageLastItem + 1}/#{proveedorController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{proveedorController.previous}" value="#{adminBundle.Previous} #{proveedorController.pagination.pageSize}" rendered="#{proveedorController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{proveedorController.next}" value="#{adminBundle.Next} #{proveedorController.pagination.pageSize}" rendered="#{proveedorController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.previous}" value="#{adminBundle.Previous} #{proveedorController.pagination.pageSize}" rendered="#{proveedorController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.next}" value="#{adminBundle.Next} #{proveedorController.pagination.pageSize}" rendered="#{proveedorController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{proveedorController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -54,19 +54,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{proveedorController.prepareView}" value="#{adminBundle.ListProveedorViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareView}" value="#{adminBundle.ListProveedorViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{proveedorController.prepareEdit}" value="#{adminBundle.ListProveedorEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareEdit}" value="#{adminBundle.ListProveedorEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{proveedorController.destroy}" value="#{adminBundle.ListProveedorDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.destroy}" value="#{adminBundle.ListProveedorDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{proveedorController.prepareCreate}" value="#{adminBundle.ListProveedorCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareCreate}" value="#{adminBundle.ListProveedorCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{adminBundle.ListProveedorIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{adminBundle.ListProveedorIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

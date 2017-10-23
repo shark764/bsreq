@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{securityBundle.ListRolesEmpty}" rendered="#{rolesController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{rolesController.items.rowCount > 0}">
                     <h:outputText value="#{rolesController.pagination.pageFirstItem + 1}..#{rolesController.pagination.pageLastItem + 1}/#{rolesController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{rolesController.previous}" value="#{securityBundle.Previous} #{rolesController.pagination.pageSize}" rendered="#{rolesController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{rolesController.next}" value="#{securityBundle.Next} #{rolesController.pagination.pageSize}" rendered="#{rolesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.previous}" value="#{securityBundle.Previous} #{rolesController.pagination.pageSize}" rendered="#{rolesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.next}" value="#{securityBundle.Next} #{rolesController.pagination.pageSize}" rendered="#{rolesController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{rolesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -42,19 +42,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{rolesController.prepareView}" value="#{securityBundle.ListRolesViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.prepareView}" value="#{securityBundle.ListRolesViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{rolesController.prepareEdit}" value="#{securityBundle.ListRolesEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.prepareEdit}" value="#{securityBundle.ListRolesEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{rolesController.destroy}" value="#{securityBundle.ListRolesDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.destroy}" value="#{securityBundle.ListRolesDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{rolesController.prepareCreate}" value="#{securityBundle.ListRolesCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{rolesController.prepareCreate}" value="#{securityBundle.ListRolesCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{securityBundle.ListRolesIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{securityBundle.ListRolesIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{adminBundle.ViewAreaLabel_id}"/>
                     <h:outputText value="#{areaController.selected.id}" title="#{adminBundle.ViewAreaTitle_id}"/>
@@ -23,17 +23,17 @@
                     <h:outputText value="#{areaController.selected.codigo}" title="#{adminBundle.ViewAreaTitle_codigo}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{areaController.destroyAndView}" value="#{adminBundle.ViewAreaDestroyLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.destroyAndView}" value="#{adminBundle.ViewAreaDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{adminBundle.ViewAreaEditLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{adminBundle.ViewAreaEditLink}"/>
                 <br />
-                <h:commandLink action="#{areaController.prepareCreate}" value="#{adminBundle.ViewAreaCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.prepareCreate}" value="#{adminBundle.ViewAreaCreateLink}" />
                 <br />
-                <h:commandLink action="#{areaController.prepareList}" value="#{adminBundle.ViewAreaShowAllLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.prepareList}" value="#{adminBundle.ViewAreaShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{adminBundle.ViewAreaIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{adminBundle.ViewAreaIndexLink}"/>
 
             </h:form>
         </ui:define>

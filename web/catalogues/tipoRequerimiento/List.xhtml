@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{cataloguesBundle.ListTipoRequerimientoEmpty}" rendered="#{tipoRequerimientoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{tipoRequerimientoController.items.rowCount > 0}">
                     <h:outputText value="#{tipoRequerimientoController.pagination.pageFirstItem + 1}..#{tipoRequerimientoController.pagination.pageLastItem + 1}/#{tipoRequerimientoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{tipoRequerimientoController.previous}" value="#{cataloguesBundle.Previous} #{tipoRequerimientoController.pagination.pageSize}" rendered="#{tipoRequerimientoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{tipoRequerimientoController.next}" value="#{cataloguesBundle.Next} #{tipoRequerimientoController.pagination.pageSize}" rendered="#{tipoRequerimientoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoRequerimientoController.previous}" value="#{cataloguesBundle.Previous} #{tipoRequerimientoController.pagination.pageSize}" rendered="#{tipoRequerimientoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoRequerimientoController.next}" value="#{cataloguesBundle.Next} #{tipoRequerimientoController.pagination.pageSize}" rendered="#{tipoRequerimientoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{tipoRequerimientoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -42,19 +42,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{tipoRequerimientoController.prepareView}" value="#{cataloguesBundle.ListTipoRequerimientoViewLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoRequerimientoController.prepareView}" value="#{cataloguesBundle.ListTipoRequerimientoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{tipoRequerimientoController.prepareEdit}" value="#{cataloguesBundle.ListTipoRequerimientoEditLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoRequerimientoController.prepareEdit}" value="#{cataloguesBundle.ListTipoRequerimientoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{tipoRequerimientoController.destroy}" value="#{cataloguesBundle.ListTipoRequerimientoDestroyLink}"/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoRequerimientoController.destroy}" value="#{cataloguesBundle.ListTipoRequerimientoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{tipoRequerimientoController.prepareCreate}" value="#{cataloguesBundle.ListTipoRequerimientoCreateLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoRequerimientoController.prepareCreate}" value="#{cataloguesBundle.ListTipoRequerimientoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cataloguesBundle.ListTipoRequerimientoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ListTipoRequerimientoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
