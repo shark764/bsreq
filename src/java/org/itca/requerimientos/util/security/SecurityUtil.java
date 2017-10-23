@@ -12,7 +12,8 @@ import sun.misc.BASE64Encoder;
 //import sun.misc.CharacterEncoder;
 
 /**
- * * * @author paul
+ *
+ * @author dfhernandez
  */
 public final class SecurityUtil {
 

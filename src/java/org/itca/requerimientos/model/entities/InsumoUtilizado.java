@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "insumo_utilizado")
 @XmlRootElement
 @NamedQueries({
+    @NamedQuery(name = "InsumoUtilizado.entryRange", query = "SELECT i FROM InsumoUtilizado i WHERE i.idDetalleSolicitud.fechaInicio >= :start AND i.idDetalleSolicitud.fechaInicio <= :end"),
     @NamedQuery(name = "InsumoUtilizado.findAll", query = "SELECT i FROM InsumoUtilizado i"),
     @NamedQuery(name = "InsumoUtilizado.findById", query = "SELECT i FROM InsumoUtilizado i WHERE i.id = :id"),
     @NamedQuery(name = "InsumoUtilizado.findByUtlilizado", query = "SELECT i FROM InsumoUtilizado i WHERE i.utlilizado = :utlilizado"),
