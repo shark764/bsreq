@@ -1,0 +1,1500 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"id",
+				"idPrestamo"
+			],
+			[
+				"idT",
+				"idTipoFalla"
+			],
+			[
+				"al",
+				"text-align"
+			],
+			[
+				"ty",
+				"type_show"
+			],
+			[
+				"pa",
+				"parent_record_"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"box",
+				"box-body"
+			],
+			[
+				"req",
+				"REQUEST_PARAM_rows__"
+			],
+			[
+				"wo",
+				"worklist_rows"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"R",
+				"RyxEstudioPendienteLectura"
+			],
+			[
+				"REQUEST_PARAM_r",
+				"REQUEST_PARAM_rows__"
+			],
+			[
+				"TR",
+				"TRUE"
+			],
+			[
+				"i",
+				"i_rq"
+			],
+			[
+				"Par",
+				"REQUEST_PARAM_rows__"
+			],
+			[
+				"em",
+				"employee_"
+			],
+			[
+				"pat",
+				"patient_age"
+			],
+			[
+				"ob",
+				"object"
+			],
+			[
+				"local",
+				"locale"
+			],
+			[
+				"Minsa",
+				"MinsalSimagdBundle"
+			],
+			[
+				"obje",
+				"objects"
+			],
+			[
+				"REQUEST_PARAM_k",
+				"REQUEST_PARAM_keys__"
+			],
+			[
+				"RyxDia",
+				"RyxDiagnosticoRadiologicoLogic"
+			],
+			[
+				"stu",
+				"studies_search"
+			],
+			[
+				"contex",
+				"contextMenu"
+			],
+			[
+				"conte",
+				"contextCall"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"st",
+				"study_request"
+			],
+			[
+				"ed",
+				"edit"
+			],
+			[
+				"adm",
+				"admin_uniqId"
+			],
+			[
+				"pre",
+				"prefixId"
+			],
+			[
+				"va",
+				"val"
+			],
+			[
+				"__x",
+				"__xpdt__"
+			],
+			[
+				"getId",
+				"getIdExpedienteReferido"
+			],
+			[
+				"sima",
+				"simagd_lectura_create"
+			],
+			[
+				"cre",
+				"create_request"
+			],
+			[
+				"Ex",
+				"EXTERNAL_LOCATION_"
+			],
+			[
+				"exte",
+				"EXTERNAL_LOCATION_"
+			],
+			[
+				"idEsta",
+				"getIdEstablecimientoOrigen"
+			],
+			[
+				"ext",
+				"EXTERNAL_LOCATION_"
+			],
+			[
+				"im",
+				"i_img"
+			],
+			[
+				"i_r",
+				"i_rq_pry"
+			],
+			[
+				"sol",
+				"solicitudEstudioProyeccion"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"e",
+				"el"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"nl",
+				"nL_added"
+			],
+			[
+				"t",
+				"text-top"
+			],
+			[
+				"q",
+				"quirúrgica"
+			],
+			[
+				"Re",
+				"Recomendación"
+			],
+			[
+				"quís",
+				"quístico"
+			],
+			[
+				"qui",
+				"quirurgica"
+			],
+			[
+				"defi",
+				"definido"
+			],
+			[
+				"cont",
+				"contraste"
+			],
+			[
+				"del",
+				"delimitadas"
+			],
+			[
+				"cal",
+				"calcificaciones"
+			],
+			[
+				"comp",
+				"complicados"
+			],
+			[
+				"mag",
+				"magnetic_resonance_"
+			],
+			[
+				"ser",
+				"Servidor"
+			],
+			[
+				"set",
+				"setup_tooltipster"
+			],
+			[
+				"tool",
+				"tooltipster"
+			],
+			[
+				"ch",
+				"checked_opt"
+			],
+			[
+				"N",
+				"not-allowed"
+			],
+			[
+				"Ryxpr",
+				"RyxProcedimientoRadiologicoRealizadoListViewGenerator"
+			],
+			[
+				"RyxSol",
+				"RyxDiagnosticoRadiologicoListViewGenerator"
+			],
+			[
+				"tb",
+				"tbl_class"
+			],
+			[
+				"it",
+				"item_v"
+			],
+			[
+				"clín",
+				"clínicos"
+			],
+			[
+				"solic",
+				"solicitud"
+			],
+			[
+				"estu",
+				"estudio"
+			],
+			[
+				"RyxLec",
+				"RyxLecturaPendienteTranscripcion"
+			],
+			[
+				"RyxEstu",
+				"RyxEstudioPendienteLecturaListViewGenerator"
+			],
+			[
+				"Ryx",
+				"RyxLecturaPendienteTranscripcion"
+			],
+			[
+				"form",
+				"Formulario"
+			],
+			[
+				"mam",
+				"mamografía"
+			],
+			[
+				"s",
+				"solicitud"
+			],
+			[
+				"rad",
+				"Radiólogo"
+			],
+			[
+				"méd",
+				"Médico"
+			],
+			[
+				"est",
+				"estudio"
+			],
+			[
+				"ra",
+				"Radiólogos"
+			],
+			[
+				"M",
+				"Médico"
+			],
+			[
+				"diagn",
+				"diagnóstico"
+			],
+			[
+				"ex",
+				"exámenes"
+			],
+			[
+				"u",
+				"utilizados"
+			],
+			[
+				"tra",
+				"transcripción"
+			],
+			[
+				"Ra",
+				"Radiólogo"
+			],
+			[
+				"c",
+				"color"
+			],
+			[
+				"tr",
+				"trabajo"
+			],
+			[
+				"diag",
+				"diagnósticos"
+			],
+			[
+				"auto",
+				"autocomplemento"
+			],
+			[
+				"radi",
+				"radiológicas"
+			],
+			[
+				"resu",
+				"respuesta"
+			],
+			[
+				"esta",
+				"establecimiento"
+			],
+			[
+				"pro",
+				"procedimientos"
+			],
+			[
+				"ca",
+				"Catálogo"
+			],
+			[
+				"serv",
+				"servicio"
+			],
+			[
+				"v",
+				"value"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"a",
+				"ALTER"
+			],
+			[
+				"mi",
+				"MIX_BOTTLES_"
+			],
+			[
+				"MinsalSb",
+				"MinsalSiblhBundle"
+			],
+			[
+				"paste",
+				"Pasteurización"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"nombre",
+				"nombreempleado"
+			],
+			[
+				"nombe",
+				"nombreempleado"
+			],
+			[
+				"code",
+				"code_"
+			],
+			[
+				"cod",
+				"codigoBancoDeLeche"
+			],
+			[
+				"Min",
+				"MinsalSiblhBundle"
+			],
+			[
+				"fie",
+				"field_name"
+			],
+			[
+				"che",
+				"checked"
+			],
+			[
+				"glyphicon-h",
+				"glyphicon-heart"
+			],
+			[
+				"fecha",
+				"fechaRegistro"
+			],
+			[
+				"en",
+				"entity"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"the",
+				"thead"
+			],
+			[
+				"getIdEx",
+				"getIdExpedienteReferido"
+			],
+			[
+				"locale",
+				"localeId"
+			],
+			[
+				"forma",
+				"format"
+			],
+			[
+				"getR",
+				"getResult"
+			],
+			[
+				"RES",
+				"RESULT_SEARCHPATIENT_ryx_target_bstable_"
+			],
+			[
+				"j",
+				"jQuery"
+			],
+			[
+				"cl",
+				"click"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/java/org/itca/requerimientos/model/entities/Equipo.java",
+			"settings":
+			{
+				"buffer_size": 9765,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/java/org/itca/requerimientos/model/entities/DetallePrestamo.java",
+			"settings":
+			{
+				"buffer_size": 5784,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/java/org/itca/requerimientos/model/entities/Prestamo.java",
+			"settings":
+			{
+				"buffer_size": 4465,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/java/org/itca/requerimientos/model/entities/Usuarios.java",
+			"settings":
+			{
+				"buffer_size": 3772,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/java/org/itca/requerimientos/model/entities/SolicitudRequerimiento.java",
+			"settings":
+			{
+				"buffer_size": 4933,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/java/org/itca/requerimientos/model/entities/InsumoUtilizado.java",
+			"settings":
+			{
+				"buffer_size": 4139,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/java/org/itca/requerimientos/model/entities/DetalleSolicitud.java",
+			"settings":
+			{
+				"buffer_size": 8888,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/java/org/itca/requerimientos/model/entities/InventarioDefectuoso.java",
+			"settings":
+			{
+				"buffer_size": 4417,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/dfhernandez/NetBeansProjects/bsreq/src/java/org/itca/requerimientos/controller/facade/AbstractFacade.java",
+		"/home/dfhernandez/NetBeansProjects/bsreq/src/java/org/itca/requerimientos/controller/sbean/AreaController.java",
+		"/home/dfhernandez/NetBeansProjects/bsreq/src/java/org/itca/requerimientos/model/entities/Proveedor.java",
+		"/home/dfhernandez/NetBeansProjects/bsreq/src/java/org/itca/requerimientos/util/security/AuthenticationUtils.java",
+		"/home/dfhernandez/NetBeansProjects/bsreq/src/java/org/itca/requerimientos/util/security/SecurityUtil.java",
+		"/home/dfhernandez/NetBeansProjects/bsreq/src/java/org/itca/requerimientos/model/entities/Roles.java",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/area/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/Dashboard/new_request_dashboard_form.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/Dashboard/new_request_dashboard.html.twig",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/security/roles/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/security/roles/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/security/roles/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/modeloEquipo/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/modeloEquipo/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/modeloEquipo/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoFalla/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoFalla/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoFalla/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoFalla/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoRequerimiento/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoRequerimiento/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoRequerimiento/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoRequerimiento/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoSolucion/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoSolucion/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoSolucion/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/tipoSolucion/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/categoriaEquipo/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/categoriaEquipo/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/categoriaEquipo/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/categoriaEquipo/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/equipo/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/inventarioDefectuoso/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest/detallePrestamo/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest/prestamo/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/detalleSolicitud/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/insumoUtilizado/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/solicitudRequerimiento/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/security/roles/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/security/usuarios/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest/detallePrestamo/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest/detallePrestamo/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest/detallePrestamo/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest/prestamo/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest/prestamo/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest/prestamo/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/detalleSolicitud/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/detalleSolicitud/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/detalleSolicitud/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/insumoUtilizado/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/insumoUtilizado/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/insumoUtilizado/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/solicitudRequerimiento/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/solicitudRequerimiento/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/request/solicitudRequerimiento/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/empleado/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/empleado/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/empleado/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/proveedor/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/proveedor/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/proveedor/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/proveedor/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/tipoEmpleado/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/tipoEmpleado/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/tipoEmpleado/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/tipoEmpleado/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoEquipo/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoEquipo/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoEquipo/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoEquipo/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoPrestamo/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoPrestamo/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoPrestamo/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoPrestamo/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoSolicitud/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoSolicitud/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoSolicitud/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/estadoSolicitud/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/marcaEquipo/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/marcaEquipo/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/marcaEquipo/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/marcaEquipo/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues/modeloEquipo/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/equipo/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/equipo/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/equipo/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/inventarioDefectuoso/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/inventarioDefectuoso/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory/inventarioDefectuoso/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/area/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/area/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/area/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/admin/empleado/View.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/security/usuarios/Create.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/security/usuarios/Edit.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/security/usuarios/List.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/web/template.xhtml",
+		"/home/dfhernandez/NetBeansProjects/bsreq/src/java/org/itca/requerimientos/controller/sbean/DetalleSolicitudController.java",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxEstudioPorImagenesAdmin/base_show.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxSolicitudEstudioAdmin/base_show2.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin/RyxSolicitudEstudioAdmin.php",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxSolicitudEstudioAdmin/print_xray_request.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxSolicitudEstudioAdmin/base_show.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller/RyxSolicitudEstudioAdminController.php",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller/RyxLecturaRadiologicaAdminController.php",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/Scripts/new_request_dashboard_script2.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxSolicitudEstudioAdmin/prc_actionEvents.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/Scripts/new_request_dashboard_script.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/Dashboard/new_request_dashboard2.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxLecturaRadiologicaAdmin/before_create_previewform.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/Scripts/search_patient_dashboard_script.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/Dashboard/search_patient_dashboard.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxCtlPatronDiagnosticoAdmin/base_edit_script.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxLecturaRadiologicaAdmin/before_create_script.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxLecturaRadiologicaAdmin/before_create.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/Menu/block_patient.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxLecturaRadiologicaAdmin/base_edit.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxLecturaRadiologicaAdmin/base_edit_script.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxSolicitudEstudioAdmin/base_edit_script.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/public/js/RyxSolicitudEstudioAdmin/prc_calc_peso_actual.js",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Repository/RyxSolicitudEstudioRepository.php",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin/RyxLecturaRadiologicaAdmin.php",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller/RyxEstudioPorImagenesAdminController.php",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxSolicitudEstudioAdmin/base_edit.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxSolicitudEstudioAdmin/patient_studies_button.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxSolicitudEstudioAdmin/patient_studies_and_results_button.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxSolicitudEstudioAdmin/list_button.html.twig",
+		"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxSolicitudEstudioAdmin/create_button.html.twig"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 432.0,
+		"where_history":
+		[
+			"/home/dfhernandez/NetBeansProjects/bsreq/src/java/org/itca/requerimientos/model/entities",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin,/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues,/home/dfhernandez/NetBeansProjects/bsreq/web/inventory,/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest,/home/dfhernandez/NetBeansProjects/bsreq/web/request,/home/dfhernandez/NetBeansProjects/bsreq/web/security,Create.xhtml,Edit.xhtml",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin,/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues,/home/dfhernandez/NetBeansProjects/bsreq/web/inventory,/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest,/home/dfhernandez/NetBeansProjects/bsreq/web/request,/home/dfhernandez/NetBeansProjects/bsreq/web/security",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin,/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues,/home/dfhernandez/NetBeansProjects/bsreq/web/inventory,/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest,/home/dfhernandez/NetBeansProjects/bsreq/web/request,/home/dfhernandez/NetBeansProjects/bsreq/web/security,View.xhtml",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin,/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues,/home/dfhernandez/NetBeansProjects/bsreq/web/inventory,/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest,/home/dfhernandez/NetBeansProjects/bsreq/web/request,/home/dfhernandez/NetBeansProjects/bsreq/web/security",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin,/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues,/home/dfhernandez/NetBeansProjects/bsreq/web/inventory,/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest,/home/dfhernandez/NetBeansProjects/bsreq/web/request,/home/dfhernandez/NetBeansProjects/bsreq/web/security,View.xhtml",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin,/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues,/home/dfhernandez/NetBeansProjects/bsreq/web/inventory,/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest,/home/dfhernandez/NetBeansProjects/bsreq/web/request,/home/dfhernandez/NetBeansProjects/bsreq/web/security",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/security",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/request",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/request",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogue",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/security",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/request",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/loanrequest",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/loanRequest",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/inventory",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogue",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/catalogues",
+			"/home/dfhernandez/NetBeansProjects/bsreq/web/admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/public/css",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/vendor/sonata-project/admin-bundle/Resources/",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/vendor/sonata-project/admin-bundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/public/css",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Repository",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Repository",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Repository",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Generator",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/RyxLecturaRadiologicaAdmin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Repository",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller",
+			"",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/public/css",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Logic/EntityLogic",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/vendor/",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/vendor/sonata-project",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Repository",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Admin",
+			"<current file>",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/public/css",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Repository",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller",
+			"",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views/General",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/views",
+			"",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Controller",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Repository",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Controller",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Controller",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SiblhBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Controller",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views/",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views/BlhFrascoProcesadoAdmin",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiapsBundle/",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiapsBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiapsBundle/Resources/views/MntEmpleadoAdmin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/public/js",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Resources/public/css",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Resources/views",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Repository",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siblh_sonata/src/Minsal/SiblhBundle/Admin",
+			"/home/dfhernandez/NetBeansProjects/siap_ryx/src/Minsal/SimagdBundle/Repository"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"DetallePrestamo",
+			"AND  ",
+			"notSolved",
+			"fechaInicio",
+			"DetalleSolicitud",
+			"fechaInicio",
+			"DetalleSolicitud",
+			"SaveLink}\" />\n                                            <h:commandLink styleClass=\"btn btn-sm btn-default\" action",
+			"ShowAllLink}\" immediate=\"true\"/>\n                                            <h:link styleClass=\"btn btn-sm btn-default\" outcome=\"/index\"",
+			"ViewLink}\"/>\n                                            <h:commandLink styleClass=\"btn btn-sm btn-default\" action",
+			"SaveLink}\"/>\n                                            <h:link styleClass=\"btn btn-sm btn-default\" outcome=\"View\"",
+			"<div class=\"col-md-9 col-sm-9 col-xs-12 col-md-offset-3\">\n                                            <h:commandLink styleClass=\"btn btn-sm btn-default\" action",
+			"SaveLink}\" />\n                                <h:commandLink",
+			"IndexLink}\" />\n                            </h:form>",
+			"ShowAllLink}\" immediate=\"true\"/>\n                                <h:link",
+			"ViewLink}\"/>\n                                <h:commandLink",
+			"SaveLink}\"/>\n                                <h:link",
+			"\n                                </h:panelGrid>\n                                <h:commandLink",
+			"IndexLink}\" />\n                            </h:form>\n                        </ui:define>\n                    </div>  <!-- x_content -->\n                </div>  <!-- x_panel -->\n            </div>  <!-- col -->\n        </div>  <!-- row -->\n    </ui:composition>\n\n</html>\n",
+			"IndexLink}\"/>\n                            </h:form>\n                        </ui:define>\n                    </div>  <!-- x_content -->\n                </div>  <!-- x_panel -->\n            </div>  <!-- col -->\n        </div>  <!-- row -->\n    </ui:composition>\n\n</html>",
+			"IndexLink}\" />\n            </h:form>\n        </ui:define>\n    </ui:composition>\n\n</html>\n",
+			"IndexLink}\"/>\n            </h:form>\n        </ui:define>\n    </ui:composition>\n\n</html>\n",
+			"<div class=\"col-md-6 col-xs-12\">\n\t\t\t\t<div class=\"x_panel\">",
+			"immediate=\"true\"/>\n                <h:link",
+			"ViewLink}\"/>\n                <h:commandLink",
+			"SaveLink}\"/>\n                <h:link",
+			"\n                                </h:panelGrid>\n                <h:commandLink",
+			"SaveLink}\" />\n                <br />\n                <br />\n                <h:commandLink",
+			"\n                                </h:panelGrid>\n                <br />\n                <h:commandLink",
+			"}\" />\n                            <span class=\"fa fa-pencil-square-o form-control-feedback left\" aria-hidden=\"true\"></span>\n                        </div>\n                    </div>\n                </h:panelGrid>",
+			"}\"/>\n                            </h:selectOneMenu>\n                        </div>\n                    </div>\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                        <h:outputLabel styleClass=\"control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm\"",
+			"}\"/>\n                            </h:selectOneMenu>\n                        </div>\n                    </div>\n                </h:panelGrid>",
+			"}\">\n                                <f:selectItems",
+			"\" />\n                        <div class=\"col-md-9 col-sm-9 col-lg-9 col-xs-12\">\n                            <h:selectOneMenu styleClass=\"form-control input-sm\"",
+			"}\" />\n                            <span class=\"fa fa-pencil-square-o form-control-feedback left\" aria-hidden=\"true\"></span>\n                        </div>\n                    </div>\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                        <h:outputLabel styleClass=\"control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm\"",
+			"\" />\n                        <div class=\"col-md-9 col-sm-9 col-lg-9 col-xs-12\">\n                            <h:inputText styleClass=\"form-control has-feedback-left input-sm\" id=\"",
+			"\n                <h:panelGrid columns=\"2\">\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                        <h:outputLabel styleClass=\"control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm\"",
+			"Title}\"></h:outputText>\n        </ui:define>\n        <ui:define name=\"body\">\n            <h:panelGroup id=\"messagePanel\" layout=\"block\">\n                <h:messages errorStyle=\"color: red\" infoStyle=\"color: green\" layout=\"table\"/>\n            </h:panelGroup>\n            <h:form styleClass=\"form-horizontal form-label-left\">",
+			"\n\n    <ui:composition template=\"/template.xhtml\">\n        <ui:define name=\"title\">\n            <h:outputText value=\"#{",
+			"\n                            <span class=\"fa fa-user form-control-feedback left\" aria-hidden=\"true\"></span>\n                        </div>\n                    </div>",
+			"}\" />\n                        </div>\n                    </div>\n                </h:panelGrid>",
+			"}\" />\n                        </div>\n                    </div>\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">",
+			"<h:inputText styleClass=\"form-control input-sm\"",
+			"}\" />\n                        </div>\n                    </div>\n                </h:panelGrid>",
+			"ShowAllLink}\"/>\n                <br />\n                <br />",
+			"CreateLink}\" />\n                <br />",
+			"EditLink}\"/>\n                <br />",
+			"DestroyLink}\"/>\n                <br />\n                <br />",
+			"}\" />\n                </h:panelGrid>\n                <br />\n                <h:commandLink",
+			"}\" />\n                </h:panelGrid>\n                <h:commandLink",
+			"ShowAllLink}\" immediate=\"true\"/>\n                <br />\n                <br />",
+			"ViewLink}\"/>\n                <br />",
+			"SaveLink}\"/>\n                <br />\n                <br />",
+			".itemsAvailableSelectOne}\"/>\n                                </h:selectOneMenu>\n                        </div>\n                    </div>",
+			"}\">\n                                    <f:selectItems value=\"#{",
+			"\n                        <div class=\"col-md-9 col-sm-9 col-lg-9 col-xs-12\">\n                            <div class=\"has-left-addinputaddon\">\n                                <i class=\"form-control-feedback feedback-leftside glyphicon glyphicon-edit\" style=\"\"></i>\n                                <h:selectOneMenu",
+			"</h:selectOneMenu>\n                            </div>\n                        </div>\n                    </div>",
+			"}\" />\n                            </div>\n                        </div>\n                    </div>",
+			"<div class=\"col-md-9 col-sm-9 col-lg-9 col-xs-12\">\n                            <div class=\"has-left-addinputaddon\">\n                                <i class=\"form-control-feedback feedback-leftside glyphicon glyphicon-edit\" style=\"\"></i>\n                                <h:inputText",
+			"\n                        <div class=\"col-xs-8 col-lg-8 col-md-8 col-sm-8\">\n                            <div class=\"has-left-addinputaddon\">",
+			"<h:outputLabel styleClass=\"col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm\"",
+			"<h:form styleClass=\"form-horizontal\">",
+			"<h:form styleClass=\"form-horizontal\" id=\"form\">",
+			"\n            <h:form>\n                <h:panelGrid columns=\"2\">",
+			"<h:link outcome=\"",
+			"<h:commandLink action=\"#{",
+			"}\" />\n                            </div>\n                        </div>\n                    </div>\n                </h:panelGrid>",
+			"}\"/>\n                </h:panelGrid>",
+			"}\"/>\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">",
+			"}\"/>\n                    </div>\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">",
+			"}\" />\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">",
+			"}\" >\n                        <f:selectItems value=\"#{",
+			"}\"/>\n                    </h:selectOneMenu>",
+			"}\">\n                        <f:selectItems value=\"#{",
+			"\" />\n                    <h:inputText id=\"",
+			"\" />\n                    <h:selectOneMenu id=\"",
+			"\" />\n                    <h:inputText id=\"",
+			"\n                    <h:outputLabel value=\"#{securityBundle.",
+			"\n                    <h:outputLabel value=\"#{requestBundle.",
+			"\n                    <h:outputLabel value=\"#{loanRequestBundle.",
+			"\n                    <h:outputLabel value=\"#{inventoryBundle.",
+			"\n                    <h:outputLabel value=\"#{cataloguesBundle.",
+			"\n                    <h:outputLabel value=\"#{adminBundle.",
+			"|date(",
+			"numberformat",
+			"2.20462262",
+			"{% if result_ is not null %}\n        <!-- <div class=\" col-lg-10 col-md-10 col-sm-10 col-xs-offset-1 \"> -->\n            <div class=\"col-lg-12 col-md-12 col-sm-12\">\n                <div class=\"box box-warning\">",
+			"RyxSolicitudEstudio",
+			"admin.isGranted",
+			"examenEstudio",
+			"solicitudEstudioProcedimientosRealizados",
+			"RyxEstudioPorImagenesAdmin",
+			"object.getLecturaDiagnostico()|first.",
+			"object.getIdEstudio() is not null ? object.",
+			"object.getIdEstudio().getIdProcedimientoRealizado().getIdSolicitudEstudio()",
+			"lctr",
+			"printXRayMultipleRequests",
+			"printXRayRequests",
+			"print_xray_multiple_result",
+			"print_xray_result",
+			"/path/to/qt.5.9.0-install/",
+			"5.2.1",
+			"in_",
+			"ROLE_SONATA_RAYOS_X_INTERPRETACION_ESTUDIOS",
+			"$i_img",
+			"$i_img->",
+			"$i_img,",
+			"$i_img",
+			"ROLE_SONATA_RAYOS_X_INTERPRETACION_ESTUDIOS",
+			"STUDY_OBJECT",
+			"beforeCreate",
+			"simagd_lectura_",
+			"BLOCK_FORM_BEFORE_DIAGNOSIS_",
+			"resetField",
+			"formVa",
+			"jQuery('#BLOCK_FORM_CREATE_STUDYREQUEST_{{ admin.uniqId }}_solicitudEstudioProyeccion').closest('.form-group-closeable')",
+			"').closest('.form-group').",
+			"_idAreaServicioDiagnostico",
+			"{{ admin_uniqId }}_idAreaServicioDiagnostico",
+			" {% if REQUEST_OBJECT is defined and REQUEST_OBJECT is not null %}>",
+			"col-xs-6 col-lg-6 col-md-6 col-sm-6",
+			"col-xs-7 col-lg-7 col-md-7 col-sm-7",
+			"col-xs-6 col-lg-6 col-md-6 col-sm-6",
+			"$this->getRequest()->query->get('uniqid')",
+			"_btn_new_xpatient",
+			"ryx.digitalImage.evt.select2-loaded",
+			"swal({",
+			"ryx.digitalImage.evt.select2-loaded"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"SolicitudRequerimiento",
+			"AND ",
+			"notReturned",
+			"fechaPrestamo",
+			"DetallePrestamo",
+			"fechaPrestamo",
+			"DetallePrestamo",
+			"SaveLink}\" />\n                                            <h:commandLink styleClass=\"btn btn-sm btn-primary\" action",
+			"ShowAllLink}\" immediate=\"true\"/>\n                                            <h:link styleClass=\"btn btn-sm btn-success\" outcome=\"/index\"",
+			"ViewLink}\"/>\n                                            <h:commandLink styleClass=\"btn btn-sm btn-success\" action",
+			"SaveLink}\"/>\n                                            <h:link styleClass=\"btn btn-sm btn-success\" outcome=\"View\"",
+			"<div class=\"col-md-9 col-sm-9 col-xs-12 col-md-offset-3\">\n                                            <h:commandLink styleClass=\"btn btn-sm btn-primary\" action",
+			"SaveLink}\" />\n                                            <h:commandLink",
+			"IndexLink}\" />\n                                        </div>\n                                    </div>\n                            </h:form>",
+			"ShowAllLink}\" immediate=\"true\"/>\n                                            <h:link",
+			"ViewLink}\"/>\n                                            <h:commandLink",
+			"SaveLink}\"/>\n                                            <h:link",
+			"\n                                </h:panelGrid>\n\n                                    <div class=\"ln_solid\"></div>\n\n                                    <div class=\"form-group\">\n                                        <div class=\"col-md-9 col-sm-9 col-xs-12 col-md-offset-3\">\n                                            <h:commandLink",
+			"IndexLink}\" />\n                            </h:form>\n                        </ui:define>\n                    </div>  <!-- x_content -->\n                </div>  <!-- x_panel -->\n            </div>  <!-- col -->\n        </div>  <!-- row -->\n    </ui:composition>\n\n</html>",
+			"IndexLink}\"/>\n                            </h:form>\n                        </ui:define>\n                    </div>  <!-- x_content -->\n                </div>  <!-- x_panel -->\n            </div>  <!-- col -->\n        </div>  <!-- row -->\n    </ui:composition>\n\n</html>",
+			"<div class=\"col-md-6 col-sm-6 col-lg-6 col-xs-12\">\n\t\t\t\t<div class=\"x_panel\">",
+			"immediate=\"true\"/>\n                                <h:link",
+			"ViewLink}\"/>\n                                <h:commandLink",
+			"SaveLink}\"/>\n                                <h:link",
+			"\n                                </h:panelGrid>\n                                <h:commandLink",
+			"SaveLink}\" />\n                                <h:commandLink",
+			"\n                                </h:panelGrid>\n                                <h:commandLink",
+			"}\" />\n                                            <span class=\"fa fa-pencil-square-o form-control-feedback left\" aria-hidden=\"true\"></span>\n                                        </div>\n                                    </div>\n                                </h:panelGrid>",
+			"}\"/>\n                                            </h:selectOneMenu>\n                                        </div>\n                                    </div>\n                                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                                        <h:outputLabel styleClass=\"control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm\"",
+			"}\"/>\n                                            </h:selectOneMenu>\n                                        </div>\n                                    </div>\n                                </h:panelGrid>",
+			"}\">\n                                                <f:selectItems",
+			"\" />\n                                        <div class=\"col-md-9 col-sm-9 col-lg-9 col-xs-12\">\n                                            <h:selectOneMenu styleClass=\"form-control input-sm\"",
+			"}\" />\n                                            <span class=\"fa fa-pencil-square-o form-control-feedback left\" aria-hidden=\"true\"></span>\n                                        </div>\n                                    </div>\n                                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                                        <h:outputLabel styleClass=\"control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm\"",
+			"\" />\n                                        <div class=\"col-md-9 col-sm-9 col-lg-9 col-xs-12\">\n                                            <h:inputText styleClass=\"form-control has-feedback-left input-sm\" id=\"",
+			"\n                                <h:panelGrid columns=\"2\">\n                                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                                        <h:outputLabel styleClass=\"control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm\"",
+			"Title}\"></h:outputText>\n\t\t\t\t\t\t\t\t<small>different form elements</small>\n        \t\t\t\t\t</ui:define>\n\t\t\t\t\t\t</h2>\n\t\t\t\t\t\t<div class=\"clearfix\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"x_content\">\n\t\t\t\t\t\t<br/>\n\t\t\t\t        <ui:define name=\"body\">\n\t\t\t\t            <h:panelGroup id=\"messagePanel\" layout=\"block\">\n\t\t\t\t                <h:messages errorStyle=\"color: red\" infoStyle=\"color: green\" layout=\"table\"/>\n\t\t\t\t            </h:panelGroup>\n\t\t\t\t            <h:form styleClass=\"form-horizontal form-label-left\">",
+			"\n\n    <ui:composition template=\"/template.xhtml\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-6 col-xs-12\">\n\t\t\t\t<div class=\"x_panel\">\n\t\t\t\t\t<div class=\"x_title\">\n\t\t\t\t\t\t<h2>\n\t\t\t\t\t        <ui:define name=\"title\">\n\t\t\t\t\t            <h:outputText value=\"#{",
+			"\n                            <span class=\"fa fa-pencil-square-o form-control-feedback left\" aria-hidden=\"true\"></span>\n                        </div>\n                    </div>",
+			"}\" />\n                            <span class=\"fa fa-user form-control-feedback left\" aria-hidden=\"true\"></span>\n                        </div>\n                    </div>\n                </h:panelGrid>",
+			"}\" />\n                            <span class=\"fa fa-user form-control-feedback left\" aria-hidden=\"true\"></span>\n                        </div>\n                    </div>\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">",
+			"<h:inputText styleClass=\"form-control has-feedback-left input-sm\"",
+			"}\" />\n                </h:panelGrid>",
+			"ShowAllLink}\"/>",
+			"CreateLink}\" />",
+			"EditLink}\"/>",
+			"DestroyLink}\"/>",
+			"}\" />\n                        </div>\n                    </div>\n                </h:panelGrid>\n                <h:commandLink",
+			"ShowAllLink}\" immediate=\"true\"/>",
+			"ViewLink}\"/>",
+			"SaveLink}\"/>",
+			".itemsAvailableSelectOne}\"/>\n                            </h:selectOneMenu>\n                        </div>\n                    </div>",
+			"}\">\n                                <f:selectItems value=\"#{",
+			"\n                        <div class=\"col-md-9 col-sm-9 col-lg-9 col-xs-12\">\n                            <h:selectOneMenu",
+			"</h:selectOneMenu>\n                        </div>\n                    </div>",
+			"}\" />\n                        </div>\n                    </div>",
+			"<div class=\"col-md-9 col-sm-9 col-lg-9 col-xs-12\">\n                            <h:inputText",
+			"\n                        <div class=\"col-md-9 col-sm-9 col-lg-9 col-xs-12\">\n                            <div class=\"has-left-addinputaddon\">",
+			"<h:outputLabel styleClass=\"control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm\"",
+			"<h:form styleClass=\"form-horizontal form-label-left\">",
+			"<h:form styleClass=\"form-horizontal\">",
+			"\n            <h:form styleClass=\"form-horizontal\" id=\"form\">\n                <h:panelGrid columns=\"2\">",
+			"<h:link styleClass=\"btn btn-sm btn-default\" outcome=\"",
+			"<h:commandLink styleClass=\"btn btn-sm btn-default\" action=\"#{",
+			"}\" />\n                </h:panelGrid>",
+			"}\" />\n                            </div>\n                        </div>\n                    </div>\n                </h:panelGrid>",
+			"}\" />\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">",
+			"}\">\n                                    <f:selectItems value=\"#{",
+			"}\"/>\n                                </h:selectOneMenu>\n                            </div>\n                        </div>\n                    </div>",
+			"}\">\n                                    <f:selectItems value=\"#{",
+			"\" />\n                        <div class=\"col-xs-8 col-lg-8 col-md-8 col-sm-8\">\n                            <div class=\"has-left-addinputaddon\">\n                                <i class=\"form-control-feedback feedback-leftside glyphicon glyphicon-edit\" style=\"\"></i>\n                                <h:inputText styleClass=\"form-control input-sm\" id=\"",
+			"\" />\n                        <div class=\"col-xs-8 col-lg-8 col-md-8 col-sm-8\">\n                            <div class=\"has-left-addinputaddon\">\n                                <i class=\"form-control-feedback feedback-leftside glyphicon glyphicon-edit\" style=\"\"></i>\n                                <h:selectOneMenu styleClass=\"form-control input-sm\" id=\"",
+			"\" />\n                        <div class=\"col-xs-8 col-lg-8 col-md-8 col-sm-8\">\n                            <div class=\"has-left-addinputaddon\">\n                                <i class=\"form-control-feedback feedback-leftside glyphicon glyphicon-edit\" style=\"\"></i>\n                                <h:inputText styleClass=\"form-control input-sm\" id=\"",
+			"\" />\n                    <div class=\"col-xs-8 col-lg-8 col-md-8 col-sm-8\">\n\t\t\t\t\t\t<div class=\"has-left-addinputaddon\">\n\t\t\t\t\t\t\t<i class=\"form-control-feedback feedback-leftside glyphicon glyphicon-edit\" style=\"\"></i>\n\t\t\t\t\t\t\t<h:inputText styleClass=\"form-control input-sm\" id=\"",
+			"\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                        <h:outputLabel styleClass=\"col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm\" value=\"#{securityBundle.",
+			"\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                        <h:outputLabel styleClass=\"col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm\" value=\"#{requestBundle.",
+			"\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                        <h:outputLabel styleClass=\"col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm\" value=\"#{loanRequestBundle.",
+			"\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                        <h:outputLabel styleClass=\"col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm\" value=\"#{inventoryBundle.",
+			"\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                        <h:outputLabel styleClass=\"col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm\" value=\"#{cataloguesBundle.",
+			"\n                    <div class=\"form-group has-feedback form-group-collapsed-fields\">\n                        <h:outputLabel styleClass=\"col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm\" value=\"#{adminBundle.",
+			"number_format",
+			"{% if result_ is not null %}\n        <!-- <div class=\" col-lg-10 col-md-10 col-sm-10 col-xs-offset-1 \"> -->\n            <div class=\"col-lg-12 col-md-12 col-sm-12\">\n                <div class=\"box box-success\">",
+			"RyxSolicitudEstudioAdmin",
+			"is_granted",
+			"RyxSolicitudEstudio",
+			"object.",
+			"object",
+			"slctd",
+			"print_xray_multiple_request",
+			"print_xray_request",
+			"/home/dfhernandez/Qt5.9.0/",
+			"5.9.0",
+			"ROLE_SONATA_RAYOS_X_SOLICITUDES_ESTUDIO",
+			"$i_rq",
+			"$i_rq->",
+			"$i_rq,",
+			"REQUEST_OBJECT",
+			"newRequestDashboard",
+			"simagd_solicitud_estudio_",
+			"BLOCK_FORM_CREATE_STUDYREQUEST_",
+			"jQuery('.form-group-closeable')",
+			"').closest('.form-group-closeable').",
+			" {% if REQUEST_OBJECT is defined and REQUEST_OBJECT is not null %}value=\"{{ REQUEST_OBJECT.getI() }}\"{% endif %}>",
+			"col-xs-5 col-lg-5 col-md-5 col-sm-5",
+			"col-xs-6 col-lg-6 col-md-6 col-sm-6",
+			"col-xs-8 col-lg-8 col-md-8 col-sm-8",
+			"col-xs-7 col-lg-7 col-md-7 col-sm-7",
+			"child_record_",
+			" ",
+			"button.html.twig' %}</div>",
+			"<div class=\"btn-group\" role=\"group\" aria-label=\"...\">",
+			"{{ admin.uniqId }}_generatePatternTitle",
+			"{{ admin.uniqId }}_setPatternTitle();",
+			"{{ admin.uniqId }}_nombre",
+			"_lecturaDiagnostico_' + nL_added + '_resultado",
+			"{{ pcdt.getNombre() }},&nbsp;",
+			"_display_results_",
+			"()|trim|default('-')|raw }}</td>",
+			"()|trim|default('-')|raw",
+			"<th class=\"col-lg-3 col-md-3 col-sm-3 label-entity-show-th\">ESTADO</th>",
+			"<th class=\"col-lg-3 col-md-3 col-sm-3 label-entity-show-th",
+			"</td>\n                        </tr>\n                    </table>",
+			"</td>\n                        </tr>\n                        <tr>",
+			"</td>\n                            <td class=\"col-lg-3 col-md-3 col-sm-3 label-entity-show-td",
+			"<tr>\n                            <td class",
+			"<div class=\"col-lg-9 col-md-9 col-sm-9 label-entity-show-td",
+			"padding: 5px 15px;",
+			"<div class=\"col-lg-3 col-md-3 col-sm-3 label-entity-show-td",
+			"<div class=\"col-lg-3 col-md-3 col-sm-3 label-entity-show-th"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/java/org/itca/requerimientos/model/entities/Equipo.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9765,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1265,
+								1265
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 72.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/java/org/itca/requerimientos/model/entities/DetallePrestamo.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5784,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1161,
+								1161
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/java/org/itca/requerimientos/model/entities/Prestamo.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4465,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1157,
+								1157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/java/org/itca/requerimientos/model/entities/Usuarios.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/java/org/itca/requerimientos/model/entities/SolicitudRequerimiento.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4933,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1197,
+								1197
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/java/org/itca/requerimientos/model/entities/InsumoUtilizado.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4139,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								961,
+								962
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 131.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/java/org/itca/requerimientos/model/entities/DetalleSolicitud.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8888,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1430,
+								1430
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 5.0,
+						"translation.y": 288.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/java/org/itca/requerimientos/model/entities/InventarioDefectuoso.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4417,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1035,
+								1200
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 144.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 20.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "bsreq.sublime-project",
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

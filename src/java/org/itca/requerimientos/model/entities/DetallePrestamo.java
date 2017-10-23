@@ -33,6 +33,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "detalle_prestamo")
 @XmlRootElement
 @NamedQueries({
+    @NamedQuery(name = "DetallePrestamo.returnedOverTime", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaEntrega >= :limit"),
+    @NamedQuery(name = "DetallePrestamo.notReturned", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaEntrega IS NULL"),
+    @NamedQuery(name = "DetallePrestamo.notReturnedByEmployee", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaEntrega IS NULL AND d.idPrestamo.idEmpleado = :id"),
+    @NamedQuery(name = "DetallePrestamo.entryRange", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaPrestamo >= :start AND d.fechaPrestamo <= :end"),
     @NamedQuery(name = "DetallePrestamo.findAll", query = "SELECT d FROM DetallePrestamo d"),
     @NamedQuery(name = "DetallePrestamo.findById", query = "SELECT d FROM DetallePrestamo d WHERE d.id = :id"),
     @NamedQuery(name = "DetallePrestamo.findByFechaPrestamo", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaPrestamo = :fechaPrestamo"),
