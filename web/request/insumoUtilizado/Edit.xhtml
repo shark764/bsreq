@@ -15,14 +15,35 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{requestBundle.EditInsumoUtilizadoLabel_utlilizado}" for="utlilizado" />
-                    <h:inputText id="utlilizado" value="#{insumoUtilizadoController.selected.utlilizado}" title="#{requestBundle.EditInsumoUtilizadoTitle_utlilizado}" />
-                    <h:outputLabel value="#{requestBundle.EditInsumoUtilizadoLabel_desperdicio}" for="desperdicio" />
-                    <h:inputText id="desperdicio" value="#{insumoUtilizadoController.selected.desperdicio}" title="#{requestBundle.EditInsumoUtilizadoTitle_desperdicio}" required="true" requiredMessage="#{requestBundle.EditInsumoUtilizadoRequiredMessage_desperdicio}"/>
-                    <h:outputLabel value="#{requestBundle.EditInsumoUtilizadoLabel_idDetalleSolicitud}" for="idDetalleSolicitud" />
-                    <h:selectOneMenu id="idDetalleSolicitud" value="#{insumoUtilizadoController.selected.idDetalleSolicitud}" title="#{requestBundle.EditInsumoUtilizadoTitle_idDetalleSolicitud}" required="true" requiredMessage="#{requestBundle.EditInsumoUtilizadoRequiredMessage_idDetalleSolicitud}">
-                        <f:selectItems value="#{detalleSolicitudController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{requestBundle.EditInsumoUtilizadoLabel_utlilizado}" for="utlilizado" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="utlilizado" value="#{insumoUtilizadoController.selected.utlilizado}" title="#{requestBundle.EditInsumoUtilizadoTitle_utlilizado}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{requestBundle.EditInsumoUtilizadoLabel_desperdicio}" for="desperdicio" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="desperdicio" value="#{insumoUtilizadoController.selected.desperdicio}" title="#{requestBundle.EditInsumoUtilizadoTitle_desperdicio}" required="true" requiredMessage="#{requestBundle.EditInsumoUtilizadoRequiredMessage_desperdicio}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{requestBundle.EditInsumoUtilizadoLabel_idDetalleSolicitud}" for="idDetalleSolicitud" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idDetalleSolicitud" value="#{insumoUtilizadoController.selected.idDetalleSolicitud}" title="#{requestBundle.EditInsumoUtilizadoTitle_idDetalleSolicitud}" required="true" requiredMessage="#{requestBundle.EditInsumoUtilizadoRequiredMessage_idDetalleSolicitud}">
+                                    <f:selectItems value="#{detalleSolicitudController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
                 </h:panelGrid>
                 <h:commandLink action="#{insumoUtilizadoController.update}" value="#{requestBundle.EditInsumoUtilizadoSaveLink}"/>
                 <br />

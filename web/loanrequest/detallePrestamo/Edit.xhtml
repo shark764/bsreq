@@ -15,20 +15,48 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{loanRequestBundle.EditDetallePrestamoLabel_descripcion}" for="descripcion" />
-                    <h:inputText id="descripcion" value="#{detallePrestamoController.selected.descripcion}" title="#{loanRequestBundle.EditDetallePrestamoTitle_descripcion}" />
-                    <h:outputLabel value="#{loanRequestBundle.EditDetallePrestamoLabel_idEquipo}" for="idEquipo" />
-                    <h:selectOneMenu id="idEquipo" value="#{detallePrestamoController.selected.idEquipo}" title="#{loanRequestBundle.EditDetallePrestamoTitle_idEquipo}" required="true" requiredMessage="#{loanRequestBundle.EditDetallePrestamoRequiredMessage_idEquipo}">
-                        <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{loanRequestBundle.EditDetallePrestamoLabel_idEstadoPrestamo}" for="idEstadoPrestamo" />
-                    <h:selectOneMenu id="idEstadoPrestamo" value="#{detallePrestamoController.selected.idEstadoPrestamo}" title="#{loanRequestBundle.EditDetallePrestamoTitle_idEstadoPrestamo}" required="true" requiredMessage="#{loanRequestBundle.EditDetallePrestamoRequiredMessage_idEstadoPrestamo}">
-                        <f:selectItems value="#{estadoPrestamoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{loanRequestBundle.EditDetallePrestamoLabel_idPrestamo}" for="idPrestamo" />
-                    <h:selectOneMenu id="idPrestamo" value="#{detallePrestamoController.selected.idPrestamo}" title="#{loanRequestBundle.EditDetallePrestamoTitle_idPrestamo}" required="true" requiredMessage="#{loanRequestBundle.EditDetallePrestamoRequiredMessage_idPrestamo}">
-                        <f:selectItems value="#{prestamoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{loanRequestBundle.EditDetallePrestamoLabel_descripcion}" for="descripcion" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="descripcion" value="#{detallePrestamoController.selected.descripcion}" title="#{loanRequestBundle.EditDetallePrestamoTitle_descripcion}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{loanRequestBundle.EditDetallePrestamoLabel_idEquipo}" for="idEquipo" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idEquipo" value="#{detallePrestamoController.selected.idEquipo}" title="#{loanRequestBundle.EditDetallePrestamoTitle_idEquipo}" required="true" requiredMessage="#{loanRequestBundle.EditDetallePrestamoRequiredMessage_idEquipo}">
+                                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{loanRequestBundle.EditDetallePrestamoLabel_idEstadoPrestamo}" for="idEstadoPrestamo" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idEstadoPrestamo" value="#{detallePrestamoController.selected.idEstadoPrestamo}" title="#{loanRequestBundle.EditDetallePrestamoTitle_idEstadoPrestamo}" required="true" requiredMessage="#{loanRequestBundle.EditDetallePrestamoRequiredMessage_idEstadoPrestamo}">
+                                    <f:selectItems value="#{estadoPrestamoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{loanRequestBundle.EditDetallePrestamoLabel_idPrestamo}" for="idPrestamo" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idPrestamo" value="#{detallePrestamoController.selected.idPrestamo}" title="#{loanRequestBundle.EditDetallePrestamoTitle_idPrestamo}" required="true" requiredMessage="#{loanRequestBundle.EditDetallePrestamoRequiredMessage_idPrestamo}">
+                                    <f:selectItems value="#{prestamoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
                 </h:panelGrid>
                 <h:commandLink action="#{detallePrestamoController.update}" value="#{loanRequestBundle.EditDetallePrestamoSaveLink}"/>
                 <br />

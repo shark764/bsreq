@@ -15,42 +15,126 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{equipoController.selected.nombre}" title="#{inventoryBundle.EditEquipoTitle_nombre}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_serie}" for="serie" />
-                    <h:inputText id="serie" value="#{equipoController.selected.serie}" title="#{inventoryBundle.EditEquipoTitle_serie}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_serie}"/>
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_inventario}" for="inventario" />
-                    <h:inputText id="inventario" value="#{equipoController.selected.inventario}" title="#{inventoryBundle.EditEquipoTitle_inventario}" />
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_existencia}" for="existencia" />
-                    <h:inputText id="existencia" value="#{equipoController.selected.existencia}" title="#{inventoryBundle.EditEquipoTitle_existencia}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_existencia}"/>
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_ip}" for="ip" />
-                    <h:inputText id="ip" value="#{equipoController.selected.ip}" title="#{inventoryBundle.EditEquipoTitle_ip}" />
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_descripcion}" for="descripcion" />
-                    <h:inputText id="descripcion" value="#{equipoController.selected.descripcion}" title="#{inventoryBundle.EditEquipoTitle_descripcion}" />
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_idArea}" for="idArea" />
-                    <h:selectOneMenu id="idArea" value="#{equipoController.selected.idArea}" title="#{inventoryBundle.EditEquipoTitle_idArea}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_idArea}">
-                        <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_idCategoriaEquipo}" for="idCategoriaEquipo" />
-                    <h:selectOneMenu id="idCategoriaEquipo" value="#{equipoController.selected.idCategoriaEquipo}" title="#{inventoryBundle.EditEquipoTitle_idCategoriaEquipo}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_idCategoriaEquipo}">
-                        <f:selectItems value="#{categoriaEquipoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_idEquipo}" for="idEquipo" />
-                    <h:selectOneMenu id="idEquipo" value="#{equipoController.selected.idEquipo}" title="#{inventoryBundle.EditEquipoTitle_idEquipo}" >
-                        <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_idEstadoEquipo}" for="idEstadoEquipo" />
-                    <h:selectOneMenu id="idEstadoEquipo" value="#{equipoController.selected.idEstadoEquipo}" title="#{inventoryBundle.EditEquipoTitle_idEstadoEquipo}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_idEstadoEquipo}">
-                        <f:selectItems value="#{estadoEquipoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_idModelo}" for="idModelo" />
-                    <h:selectOneMenu id="idModelo" value="#{equipoController.selected.idModelo}" title="#{inventoryBundle.EditEquipoTitle_idModelo}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_idModelo}">
-                        <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{inventoryBundle.EditEquipoLabel_idProveedor}" for="idProveedor" />
-                    <h:selectOneMenu id="idProveedor" value="#{equipoController.selected.idProveedor}" title="#{inventoryBundle.EditEquipoTitle_idProveedor}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_idProveedor}">
-                        <f:selectItems value="#{proveedorController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_nombre}" for="nombre" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="nombre" value="#{equipoController.selected.nombre}" title="#{inventoryBundle.EditEquipoTitle_nombre}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_nombre}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_serie}" for="serie" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="serie" value="#{equipoController.selected.serie}" title="#{inventoryBundle.EditEquipoTitle_serie}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_serie}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_inventario}" for="inventario" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="inventario" value="#{equipoController.selected.inventario}" title="#{inventoryBundle.EditEquipoTitle_inventario}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_existencia}" for="existencia" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="existencia" value="#{equipoController.selected.existencia}" title="#{inventoryBundle.EditEquipoTitle_existencia}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_existencia}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_ip}" for="ip" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="ip" value="#{equipoController.selected.ip}" title="#{inventoryBundle.EditEquipoTitle_ip}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_descripcion}" for="descripcion" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="descripcion" value="#{equipoController.selected.descripcion}" title="#{inventoryBundle.EditEquipoTitle_descripcion}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_idArea}" for="idArea" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idArea" value="#{equipoController.selected.idArea}" title="#{inventoryBundle.EditEquipoTitle_idArea}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_idArea}">
+                                    <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_idCategoriaEquipo}" for="idCategoriaEquipo" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idCategoriaEquipo" value="#{equipoController.selected.idCategoriaEquipo}" title="#{inventoryBundle.EditEquipoTitle_idCategoriaEquipo}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_idCategoriaEquipo}">
+                                    <f:selectItems value="#{categoriaEquipoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_idEquipo}" for="idEquipo" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idEquipo" value="#{equipoController.selected.idEquipo}" title="#{inventoryBundle.EditEquipoTitle_idEquipo}">
+                                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_idEstadoEquipo}" for="idEstadoEquipo" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idEstadoEquipo" value="#{equipoController.selected.idEstadoEquipo}" title="#{inventoryBundle.EditEquipoTitle_idEstadoEquipo}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_idEstadoEquipo}">
+                                    <f:selectItems value="#{estadoEquipoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_idModelo}" for="idModelo" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idModelo" value="#{equipoController.selected.idModelo}" title="#{inventoryBundle.EditEquipoTitle_idModelo}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_idModelo}">
+                                    <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{inventoryBundle.EditEquipoLabel_idProveedor}" for="idProveedor" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idProveedor" value="#{equipoController.selected.idProveedor}" title="#{inventoryBundle.EditEquipoTitle_idProveedor}" required="true" requiredMessage="#{inventoryBundle.EditEquipoRequiredMessage_idProveedor}">
+                                    <f:selectItems value="#{proveedorController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
                 </h:panelGrid>
                 <h:commandLink action="#{equipoController.update}" value="#{inventoryBundle.EditEquipoSaveLink}"/>
                 <br />

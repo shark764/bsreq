@@ -15,30 +15,93 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{adminBundle.EditEmpleadoLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{empleadoController.selected.nombre}" title="#{adminBundle.EditEmpleadoTitle_nombre}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{adminBundle.EditEmpleadoLabel_apellido}" for="apellido" />
-                    <h:inputText id="apellido" value="#{empleadoController.selected.apellido}" title="#{adminBundle.EditEmpleadoTitle_apellido}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_apellido}"/>
-                    <h:outputLabel value="#{adminBundle.EditEmpleadoLabel_genero}" for="genero" />
-                    <h:inputText id="genero" value="#{empleadoController.selected.genero}" title="#{adminBundle.EditEmpleadoTitle_genero}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_genero}"/>
-                    <h:outputLabel value="#{adminBundle.EditEmpleadoLabel_dui}" for="dui" />
-                    <h:inputText id="dui" value="#{empleadoController.selected.dui}" title="#{adminBundle.EditEmpleadoTitle_dui}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_dui}"/>
-                    <h:outputLabel value="#{adminBundle.EditEmpleadoLabel_nit}" for="nit" />
-                    <h:inputText id="nit" value="#{empleadoController.selected.nit}" title="#{adminBundle.EditEmpleadoTitle_nit}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_nit}"/>
-                    <h:outputLabel value="#{adminBundle.EditEmpleadoLabel_direccion}" for="direccion" />
-                    <h:inputText id="direccion" value="#{empleadoController.selected.direccion}" title="#{adminBundle.EditEmpleadoTitle_direccion}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_direccion}"/>
-                    <h:outputLabel value="#{adminBundle.EditEmpleadoLabel_idArea}" for="idArea" />
-                    <h:selectOneMenu id="idArea" value="#{empleadoController.selected.idArea}" title="#{adminBundle.EditEmpleadoTitle_idArea}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_idArea}">
-                        <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{adminBundle.EditEmpleadoLabel_idEmpleado}" for="idEmpleado" />
-                    <h:selectOneMenu id="idEmpleado" value="#{empleadoController.selected.idEmpleado}" title="#{adminBundle.EditEmpleadoTitle_idEmpleado}" >
-                        <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{adminBundle.EditEmpleadoLabel_idTipoEmpleado}" for="idTipoEmpleado" />
-                    <h:selectOneMenu id="idTipoEmpleado" value="#{empleadoController.selected.idTipoEmpleado}" title="#{adminBundle.EditEmpleadoTitle_idTipoEmpleado}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_idTipoEmpleado}">
-                        <f:selectItems value="#{tipoEmpleadoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{adminBundle.EditEmpleadoLabel_nombre}" for="nombre" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="nombre" value="#{empleadoController.selected.nombre}" title="#{adminBundle.EditEmpleadoTitle_nombre}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_nombre}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{adminBundle.EditEmpleadoLabel_apellido}" for="apellido" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="apellido" value="#{empleadoController.selected.apellido}" title="#{adminBundle.EditEmpleadoTitle_apellido}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_apellido}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{adminBundle.EditEmpleadoLabel_genero}" for="genero" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="genero" value="#{empleadoController.selected.genero}" title="#{adminBundle.EditEmpleadoTitle_genero}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_genero}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{adminBundle.EditEmpleadoLabel_dui}" for="dui" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="dui" value="#{empleadoController.selected.dui}" title="#{adminBundle.EditEmpleadoTitle_dui}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_dui}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{adminBundle.EditEmpleadoLabel_nit}" for="nit" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="nit" value="#{empleadoController.selected.nit}" title="#{adminBundle.EditEmpleadoTitle_nit}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_nit}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{adminBundle.EditEmpleadoLabel_direccion}" for="direccion" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="direccion" value="#{empleadoController.selected.direccion}" title="#{adminBundle.EditEmpleadoTitle_direccion}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_direccion}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{adminBundle.EditEmpleadoLabel_idArea}" for="idArea" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idArea" value="#{empleadoController.selected.idArea}" title="#{adminBundle.EditEmpleadoTitle_idArea}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_idArea}">
+                                    <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{adminBundle.EditEmpleadoLabel_idEmpleado}" for="idEmpleado" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idEmpleado" value="#{empleadoController.selected.idEmpleado}" title="#{adminBundle.EditEmpleadoTitle_idEmpleado}">
+                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{adminBundle.EditEmpleadoLabel_idTipoEmpleado}" for="idTipoEmpleado" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idTipoEmpleado" value="#{empleadoController.selected.idTipoEmpleado}" title="#{adminBundle.EditEmpleadoTitle_idTipoEmpleado}" required="true" requiredMessage="#{adminBundle.EditEmpleadoRequiredMessage_idTipoEmpleado}">
+                                    <f:selectItems value="#{tipoEmpleadoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
                 </h:panelGrid>
                 <h:commandLink action="#{empleadoController.update}" value="#{adminBundle.EditEmpleadoSaveLink}"/>
                 <br />

@@ -15,14 +15,28 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{loanRequestBundle.EditPrestamoLabel_idArea}" for="idArea" />
-                    <h:selectOneMenu id="idArea" value="#{prestamoController.selected.idArea}" title="#{loanRequestBundle.EditPrestamoTitle_idArea}" required="true" requiredMessage="#{loanRequestBundle.EditPrestamoRequiredMessage_idArea}">
-                        <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{loanRequestBundle.EditPrestamoLabel_idEmpleado}" for="idEmpleado" />
-                    <h:selectOneMenu id="idEmpleado" value="#{prestamoController.selected.idEmpleado}" title="#{loanRequestBundle.EditPrestamoTitle_idEmpleado}" required="true" requiredMessage="#{loanRequestBundle.EditPrestamoRequiredMessage_idEmpleado}">
-                        <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{loanRequestBundle.EditPrestamoLabel_idArea}" for="idArea" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idArea" value="#{prestamoController.selected.idArea}" title="#{loanRequestBundle.EditPrestamoTitle_idArea}" required="true" requiredMessage="#{loanRequestBundle.EditPrestamoRequiredMessage_idArea}">
+                                    <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{loanRequestBundle.EditPrestamoLabel_idEmpleado}" for="idEmpleado" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idEmpleado" value="#{prestamoController.selected.idEmpleado}" title="#{loanRequestBundle.EditPrestamoTitle_idEmpleado}" required="true" requiredMessage="#{loanRequestBundle.EditPrestamoRequiredMessage_idEmpleado}">
+                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
                 </h:panelGrid>
                 <h:commandLink action="#{prestamoController.update}" value="#{loanRequestBundle.EditPrestamoSaveLink}"/>
                 <br />

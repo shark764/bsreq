@@ -15,18 +15,53 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{securityBundle.EditUsuariosLabel_iduser}" for="iduser" />
-                    <h:inputText id="iduser" value="#{usuariosController.selected.iduser}" title="#{securityBundle.EditUsuariosTitle_iduser}" required="true" requiredMessage="#{securityBundle.EditUsuariosRequiredMessage_iduser}"/>
-                    <h:outputLabel value="#{securityBundle.EditUsuariosLabel_nombUser}" for="nombUser" />
-                    <h:inputText id="nombUser" value="#{usuariosController.selected.nombUser}" title="#{securityBundle.EditUsuariosTitle_nombUser}" />
-                    <h:outputLabel value="#{securityBundle.EditUsuariosLabel_clave}" for="clave" />
-                    <h:inputText id="clave" value="#{usuariosController.selected.clave}" title="#{securityBundle.EditUsuariosTitle_clave}" />
-                    <h:outputLabel value="#{securityBundle.EditUsuariosLabel_estado}" for="estado" />
-                    <h:inputText id="estado" value="#{usuariosController.selected.estado}" title="#{securityBundle.EditUsuariosTitle_estado}" />
-                    <h:outputLabel value="#{securityBundle.EditUsuariosLabel_idEmpleado}" for="idEmpleado" />
-                    <h:selectOneMenu id="idEmpleado" value="#{usuariosController.selected.idEmpleado}" title="#{securityBundle.EditUsuariosTitle_idEmpleado}" >
-                        <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{securityBundle.EditUsuariosLabel_iduser}" for="iduser" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="iduser" value="#{usuariosController.selected.iduser}" title="#{securityBundle.EditUsuariosTitle_iduser}" required="true" requiredMessage="#{securityBundle.EditUsuariosRequiredMessage_iduser}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{securityBundle.EditUsuariosLabel_nombUser}" for="nombUser" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="nombUser" value="#{usuariosController.selected.nombUser}" title="#{securityBundle.EditUsuariosTitle_nombUser}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{securityBundle.EditUsuariosLabel_clave}" for="clave" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="clave" value="#{usuariosController.selected.clave}" title="#{securityBundle.EditUsuariosTitle_clave}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{securityBundle.EditUsuariosLabel_estado}" for="estado" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="estado" value="#{usuariosController.selected.estado}" title="#{securityBundle.EditUsuariosTitle_estado}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{securityBundle.EditUsuariosLabel_idEmpleado}" for="idEmpleado" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:selectOneMenu styleClass="form-control input-sm" id="idEmpleado" value="#{usuariosController.selected.idEmpleado}" title="#{securityBundle.EditUsuariosTitle_idEmpleado}">
+                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                    </div>
                 </h:panelGrid>
                 <h:commandLink action="#{usuariosController.update}" value="#{securityBundle.EditUsuariosSaveLink}"/>
                 <br />

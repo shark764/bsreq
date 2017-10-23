@@ -15,12 +15,30 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{securityBundle.EditRolesLabel_rolesPK_rol}" for="rolesPK_rol" />
-                    <h:inputText id="rolesPK_rol" value="#{rolesController.selected.rolesPK.rol}" title="#{securityBundle.EditRolesTitle_rolesPK_rol}" required="true" requiredMessage="#{securityBundle.EditRolesRequiredMessage_rolesPK_rol}"/>
-                    <h:outputLabel value="#{securityBundle.EditRolesLabel_rolesPK_iduser}" for="rolesPK_iduser" />
-                    <h:inputText id="rolesPK_iduser" value="#{rolesController.selected.rolesPK.iduser}" title="#{securityBundle.EditRolesTitle_rolesPK_iduser}" required="true" requiredMessage="#{securityBundle.EditRolesRequiredMessage_rolesPK_iduser}"/>
-                    <h:outputLabel value="#{securityBundle.EditRolesLabel_estado}" for="estado" />
-                    <h:inputText id="estado" value="#{rolesController.selected.estado}" title="#{securityBundle.EditRolesTitle_estado}" />
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{securityBundle.EditRolesLabel_rolesPK_rol}" for="rolesPK_rol" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="rolesPK_rol" value="#{rolesController.selected.rolesPK.rol}" title="#{securityBundle.EditRolesTitle_rolesPK_rol}" required="true" requiredMessage="#{securityBundle.EditRolesRequiredMessage_rolesPK_rol}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{securityBundle.EditRolesLabel_rolesPK_iduser}" for="rolesPK_iduser" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="rolesPK_iduser" value="#{rolesController.selected.rolesPK.iduser}" title="#{securityBundle.EditRolesTitle_rolesPK_iduser}" required="true" requiredMessage="#{securityBundle.EditRolesRequiredMessage_rolesPK_iduser}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{securityBundle.EditRolesLabel_estado}" for="estado" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="estado" value="#{rolesController.selected.estado}" title="#{securityBundle.EditRolesTitle_estado}" />
                 </h:panelGrid>
                 <h:commandLink action="#{rolesController.update}" value="#{securityBundle.EditRolesSaveLink}"/>
                 <br />

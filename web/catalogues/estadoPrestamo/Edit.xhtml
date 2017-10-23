@@ -15,10 +15,24 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{cataloguesBundle.EditEstadoPrestamoLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{estadoPrestamoController.selected.nombre}" title="#{cataloguesBundle.EditEstadoPrestamoTitle_nombre}" required="true" requiredMessage="#{cataloguesBundle.EditEstadoPrestamoRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{cataloguesBundle.EditEstadoPrestamoLabel_codigo}" for="codigo" />
-                    <h:inputText id="codigo" value="#{estadoPrestamoController.selected.codigo}" title="#{cataloguesBundle.EditEstadoPrestamoTitle_codigo}" required="true" requiredMessage="#{cataloguesBundle.EditEstadoPrestamoRequiredMessage_codigo}"/>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{cataloguesBundle.EditEstadoPrestamoLabel_nombre}" for="nombre" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="nombre" value="#{estadoPrestamoController.selected.nombre}" title="#{cataloguesBundle.EditEstadoPrestamoTitle_nombre}" required="true" requiredMessage="#{cataloguesBundle.EditEstadoPrestamoRequiredMessage_nombre}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback form-group-collapsed-fields">
+                        <h:outputLabel styleClass="col-xs-2 col-lg-2 col-md-2 col-sm-2 control-label input-sm" value="#{cataloguesBundle.EditEstadoPrestamoLabel_codigo}" for="codigo" />
+                        <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
+                            <div class="has-left-addinputaddon">
+                                <i class="form-control-feedback feedback-leftside glyphicon glyphicon-edit" style=""></i>
+                                <h:inputText styleClass="form-control input-sm" id="codigo" value="#{estadoPrestamoController.selected.codigo}" title="#{cataloguesBundle.EditEstadoPrestamoTitle_codigo}" required="true" requiredMessage="#{cataloguesBundle.EditEstadoPrestamoRequiredMessage_codigo}" />
+                            </div>
+                        </div>
+                    </div>
                 </h:panelGrid>
                 <h:commandLink action="#{estadoPrestamoController.update}" value="#{cataloguesBundle.EditEstadoPrestamoSaveLink}"/>
                 <br />
