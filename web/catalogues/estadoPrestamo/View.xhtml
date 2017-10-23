@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{cataloguesBundle.ViewEstadoPrestamoLabel_id}"/>
                     <h:outputText value="#{estadoPrestamoController.selected.id}" title="#{cataloguesBundle.ViewEstadoPrestamoTitle_id}"/>
@@ -22,17 +22,10 @@
                     <h:outputText value="#{cataloguesBundle.ViewEstadoPrestamoLabel_codigo}"/>
                     <h:outputText value="#{estadoPrestamoController.selected.codigo}" title="#{cataloguesBundle.ViewEstadoPrestamoTitle_codigo}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.destroyAndView}" value="#{cataloguesBundle.ViewEstadoPrestamoDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewEstadoPrestamoEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.prepareCreate}" value="#{cataloguesBundle.ViewEstadoPrestamoCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoPrestamoController.prepareList}" value="#{cataloguesBundle.ViewEstadoPrestamoShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ViewEstadoPrestamoIndexLink}"/>
 
             </h:form>

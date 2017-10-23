@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{cataloguesBundle.ViewEstadoSolicitudLabel_id}"/>
                     <h:outputText value="#{estadoSolicitudController.selected.id}" title="#{cataloguesBundle.ViewEstadoSolicitudTitle_id}"/>
@@ -22,17 +22,10 @@
                     <h:outputText value="#{cataloguesBundle.ViewEstadoSolicitudLabel_codigo}"/>
                     <h:outputText value="#{estadoSolicitudController.selected.codigo}" title="#{cataloguesBundle.ViewEstadoSolicitudTitle_codigo}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoSolicitudController.destroyAndView}" value="#{cataloguesBundle.ViewEstadoSolicitudDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewEstadoSolicitudEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoSolicitudController.prepareCreate}" value="#{cataloguesBundle.ViewEstadoSolicitudCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoSolicitudController.prepareList}" value="#{cataloguesBundle.ViewEstadoSolicitudShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ViewEstadoSolicitudIndexLink}"/>
 
             </h:form>

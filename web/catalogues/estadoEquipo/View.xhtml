@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{cataloguesBundle.ViewEstadoEquipoLabel_id}"/>
                     <h:outputText value="#{estadoEquipoController.selected.id}" title="#{cataloguesBundle.ViewEstadoEquipoTitle_id}"/>
@@ -22,17 +22,10 @@
                     <h:outputText value="#{cataloguesBundle.ViewEstadoEquipoLabel_codigo}"/>
                     <h:outputText value="#{estadoEquipoController.selected.codigo}" title="#{cataloguesBundle.ViewEstadoEquipoTitle_codigo}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoEquipoController.destroyAndView}" value="#{cataloguesBundle.ViewEstadoEquipoDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewEstadoEquipoEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoEquipoController.prepareCreate}" value="#{cataloguesBundle.ViewEstadoEquipoCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{estadoEquipoController.prepareList}" value="#{cataloguesBundle.ViewEstadoEquipoShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ViewEstadoEquipoIndexLink}"/>
 
             </h:form>

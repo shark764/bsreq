@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{inventoryBundle.ViewCategoriaEquipoLabel_id}"/>
                     <h:outputText value="#{categoriaEquipoController.selected.id}" title="#{inventoryBundle.ViewCategoriaEquipoTitle_id}"/>
@@ -22,17 +22,10 @@
                     <h:outputText value="#{inventoryBundle.ViewCategoriaEquipoLabel_codigo}"/>
                     <h:outputText value="#{categoriaEquipoController.selected.codigo}" title="#{inventoryBundle.ViewCategoriaEquipoTitle_codigo}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.destroyAndView}" value="#{inventoryBundle.ViewCategoriaEquipoDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{inventoryBundle.ViewCategoriaEquipoEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareCreate}" value="#{inventoryBundle.ViewCategoriaEquipoCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareList}" value="#{inventoryBundle.ViewCategoriaEquipoShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{inventoryBundle.ViewCategoriaEquipoIndexLink}"/>
 
             </h:form>

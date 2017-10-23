@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{inventoryBundle.ViewInventarioDefectuosoLabel_id}"/>
                     <h:outputText value="#{inventarioDefectuosoController.selected.id}" title="#{inventoryBundle.ViewInventarioDefectuosoTitle_id}"/>
@@ -26,17 +26,10 @@
                     <h:outputText value="#{inventoryBundle.ViewInventarioDefectuosoLabel_idEquipo}"/>
                     <h:outputText value="#{inventarioDefectuosoController.selected.idEquipo}" title="#{inventoryBundle.ViewInventarioDefectuosoTitle_idEquipo}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.destroyAndView}" value="#{inventoryBundle.ViewInventarioDefectuosoDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{inventoryBundle.ViewInventarioDefectuosoEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.prepareCreate}" value="#{inventoryBundle.ViewInventarioDefectuosoCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.prepareList}" value="#{inventoryBundle.ViewInventarioDefectuosoShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{inventoryBundle.ViewInventarioDefectuosoIndexLink}"/>
 
             </h:form>

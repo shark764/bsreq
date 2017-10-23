@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{adminBundle.ViewTipoEmpleadoLabel_id}"/>
                     <h:outputText value="#{tipoEmpleadoController.selected.id}" title="#{adminBundle.ViewTipoEmpleadoTitle_id}"/>
@@ -22,17 +22,10 @@
                     <h:outputText value="#{adminBundle.ViewTipoEmpleadoLabel_codigo}"/>
                     <h:outputText value="#{tipoEmpleadoController.selected.codigo}" title="#{adminBundle.ViewTipoEmpleadoTitle_codigo}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoEmpleadoController.destroyAndView}" value="#{adminBundle.ViewTipoEmpleadoDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{adminBundle.ViewTipoEmpleadoEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoEmpleadoController.prepareCreate}" value="#{adminBundle.ViewTipoEmpleadoCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoEmpleadoController.prepareList}" value="#{adminBundle.ViewTipoEmpleadoShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{adminBundle.ViewTipoEmpleadoIndexLink}"/>
 
             </h:form>

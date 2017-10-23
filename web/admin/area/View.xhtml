@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{adminBundle.ViewAreaLabel_id}"/>
                     <h:outputText value="#{areaController.selected.id}" title="#{adminBundle.ViewAreaTitle_id}"/>
@@ -22,17 +22,10 @@
                     <h:outputText value="#{adminBundle.ViewAreaLabel_codigo}"/>
                     <h:outputText value="#{areaController.selected.codigo}" title="#{adminBundle.ViewAreaTitle_codigo}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.destroyAndView}" value="#{adminBundle.ViewAreaDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{adminBundle.ViewAreaEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.prepareCreate}" value="#{adminBundle.ViewAreaCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{areaController.prepareList}" value="#{adminBundle.ViewAreaShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{adminBundle.ViewAreaIndexLink}"/>
 
             </h:form>

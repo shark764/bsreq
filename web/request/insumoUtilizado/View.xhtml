@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{requestBundle.ViewInsumoUtilizadoLabel_id}"/>
                     <h:outputText value="#{insumoUtilizadoController.selected.id}" title="#{requestBundle.ViewInsumoUtilizadoTitle_id}"/>
@@ -24,17 +24,10 @@
                     <h:outputText value="#{requestBundle.ViewInsumoUtilizadoLabel_idDetalleSolicitud}"/>
                     <h:outputText value="#{insumoUtilizadoController.selected.idDetalleSolicitud}" title="#{requestBundle.ViewInsumoUtilizadoTitle_idDetalleSolicitud}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.destroyAndView}" value="#{requestBundle.ViewInsumoUtilizadoDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{requestBundle.ViewInsumoUtilizadoEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.prepareCreate}" value="#{requestBundle.ViewInsumoUtilizadoCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.prepareList}" value="#{requestBundle.ViewInsumoUtilizadoShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ViewInsumoUtilizadoIndexLink}"/>
 
             </h:form>

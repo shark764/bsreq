@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{loanRequestBundle.ViewDetallePrestamoLabel_id}"/>
                     <h:outputText value="#{detallePrestamoController.selected.id}" title="#{loanRequestBundle.ViewDetallePrestamoTitle_id}"/>
@@ -34,17 +34,10 @@
                     <h:outputText value="#{loanRequestBundle.ViewDetallePrestamoLabel_idPrestamo}"/>
                     <h:outputText value="#{detallePrestamoController.selected.idPrestamo}" title="#{loanRequestBundle.ViewDetallePrestamoTitle_idPrestamo}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.destroyAndView}" value="#{loanRequestBundle.ViewDetallePrestamoDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{loanRequestBundle.ViewDetallePrestamoEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.prepareCreate}" value="#{loanRequestBundle.ViewDetallePrestamoCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.prepareList}" value="#{loanRequestBundle.ViewDetallePrestamoShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{loanRequestBundle.ViewDetallePrestamoIndexLink}"/>
 
             </h:form>

@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{adminBundle.ViewProveedorLabel_id}"/>
                     <h:outputText value="#{proveedorController.selected.id}" title="#{adminBundle.ViewProveedorTitle_id}"/>
@@ -26,17 +26,10 @@
                     <h:outputText value="#{adminBundle.ViewProveedorLabel_nrc}"/>
                     <h:outputText value="#{proveedorController.selected.nrc}" title="#{adminBundle.ViewProveedorTitle_nrc}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.destroyAndView}" value="#{adminBundle.ViewProveedorDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{adminBundle.ViewProveedorEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareCreate}" value="#{adminBundle.ViewProveedorCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareList}" value="#{adminBundle.ViewProveedorShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{adminBundle.ViewProveedorIndexLink}"/>
 
             </h:form>

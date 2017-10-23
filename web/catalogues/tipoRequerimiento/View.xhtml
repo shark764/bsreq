@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{cataloguesBundle.ViewTipoRequerimientoLabel_id}"/>
                     <h:outputText value="#{tipoRequerimientoController.selected.id}" title="#{cataloguesBundle.ViewTipoRequerimientoTitle_id}"/>
@@ -22,17 +22,10 @@
                     <h:outputText value="#{cataloguesBundle.ViewTipoRequerimientoLabel_codigo}"/>
                     <h:outputText value="#{tipoRequerimientoController.selected.codigo}" title="#{cataloguesBundle.ViewTipoRequerimientoTitle_codigo}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoRequerimientoController.destroyAndView}" value="#{cataloguesBundle.ViewTipoRequerimientoDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewTipoRequerimientoEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoRequerimientoController.prepareCreate}" value="#{cataloguesBundle.ViewTipoRequerimientoCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoRequerimientoController.prepareList}" value="#{cataloguesBundle.ViewTipoRequerimientoShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ViewTipoRequerimientoIndexLink}"/>
 
             </h:form>

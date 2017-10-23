@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form styleClass="form-horizontal">
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{cataloguesBundle.ViewTipoFallaLabel_id}"/>
                     <h:outputText value="#{tipoFallaController.selected.id}" title="#{cataloguesBundle.ViewTipoFallaTitle_id}"/>
@@ -22,17 +22,10 @@
                     <h:outputText value="#{cataloguesBundle.ViewTipoFallaLabel_codigo}"/>
                     <h:outputText value="#{tipoFallaController.selected.codigo}" title="#{cataloguesBundle.ViewTipoFallaTitle_codigo}" />
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoFallaController.destroyAndView}" value="#{cataloguesBundle.ViewTipoFallaDestroyLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewTipoFallaEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoFallaController.prepareCreate}" value="#{cataloguesBundle.ViewTipoFallaCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoFallaController.prepareList}" value="#{cataloguesBundle.ViewTipoFallaShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ViewTipoFallaIndexLink}"/>
 
             </h:form>
