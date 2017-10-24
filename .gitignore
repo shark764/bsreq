@@ -24,8 +24,8 @@ hs_err_pid*
 #netbeans specific
 core
 nbproject/*
-!nbproject/project.properties
-!nbproject/project.xml
+#!nbproject/project.properties
+#!nbproject/project.xml
 nbproject/private/
 nbbuild/
 
@@ -44,3 +44,7 @@ nbdist/
 *.swp
 *.DS_Store
 *.lock
+
+#Excluir archivos de sublime-text
+*.sublime-workspace
+*.sublime-project
