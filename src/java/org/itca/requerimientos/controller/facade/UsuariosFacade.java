@@ -27,5 +27,18 @@ public class UsuariosFacade extends AbstractFacade<Usuarios> {
     public UsuariosFacade() {
         super(Usuarios.class);
     }
+
+    public boolean login(String username, String password)
+    {
+        try {
+            Usuarios u = em.createNamedQuery("Usuarios.login", Usuarios.class)
+                    .setParameter("username", username)
+                    .setParameter("password", password)
+                    .getSingleResult();
+            return u != null;
+        } catch (Exception e) {
+            return false;
+        }
+    }
     
 }
