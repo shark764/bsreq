@@ -33,12 +33,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "detalle_prestamo")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "DetallePrestamo.returnedOverTime", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaEntrega >= :limit"),
+    @NamedQuery(name = "DetallePrestamo.limitTime", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaLimite >= :now"),
+    @NamedQuery(name = "DetallePrestamo.findByEmployee", query = "SELECT d FROM DetallePrestamo d WHERE d.idPrestamo.idEmpleado = :id"),
+    @NamedQuery(name = "DetallePrestamo.findByEquipment", query = "SELECT d FROM DetallePrestamo d WHERE d.idEquipo = :id"),
+    @NamedQuery(name = "DetallePrestamo.returnedOverTime", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaEntrega >= d.fechaLimite"),
     @NamedQuery(name = "DetallePrestamo.notReturned", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaEntrega IS NULL"),
     @NamedQuery(name = "DetallePrestamo.notReturnedByEmployee", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaEntrega IS NULL AND d.idPrestamo.idEmpleado = :id"),
     @NamedQuery(name = "DetallePrestamo.entryRange", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaPrestamo >= :start AND d.fechaPrestamo <= :end"),
     @NamedQuery(name = "DetallePrestamo.findAll", query = "SELECT d FROM DetallePrestamo d"),
     @NamedQuery(name = "DetallePrestamo.findById", query = "SELECT d FROM DetallePrestamo d WHERE d.id = :id"),
+    @NamedQuery(name = "DetallePrestamo.findByFechaLimite", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaLimite = :fechaLimite"),
     @NamedQuery(name = "DetallePrestamo.findByFechaPrestamo", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaPrestamo = :fechaPrestamo"),
     @NamedQuery(name = "DetallePrestamo.findByFechaEntrega", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaEntrega = :fechaEntrega"),
     @NamedQuery(name = "DetallePrestamo.findByDescripcion", query = "SELECT d FROM DetallePrestamo d WHERE d.descripcion = :descripcion")})
@@ -63,6 +67,11 @@ public class DetallePrestamo implements Serializable {
     @Column(name = "fecha_entrega")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaEntrega;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "fecha_limite")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaLimite;
     @Size(max = 255)
     @Column(name = "descripcion")
     private String descripcion;
@@ -110,6 +119,14 @@ public class DetallePrestamo implements Serializable {
 
     public void setFechaEntrega(Date fechaEntrega) {
         this.fechaEntrega = fechaEntrega;
+    }
+
+    public Date getFechaLimite() {
+        return fechaLimite;
+    }
+
+    public void setFechaLimite(Date fechaLimite) {
+        this.fechaLimite = fechaLimite;
     }
 
     public String getDescripcion() {

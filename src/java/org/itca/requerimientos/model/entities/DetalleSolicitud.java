@@ -37,6 +37,10 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "detalle_solicitud")
 @XmlRootElement
 @NamedQueries({
+    @NamedQuery(name = "DetalleSolicitud.limitTime", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaLimite >= :now"),
+    @NamedQuery(name = "DetalleSolicitud.solvedOverTime", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaFin >= d.fechaLimite"),
+    @NamedQuery(name = "DetalleSolicitud.findByEquipment", query = "SELECT d FROM DetalleSolicitud d WHERE d.idEquipo = :id"),
+    @NamedQuery(name = "DetalleSolicitud.findByEmployee", query = "SELECT d FROM DetalleSolicitud d WHERE d.idSolicitudRequerimiento.idEmpleado = :id"),
     @NamedQuery(name = "DetalleSolicitud.notSolved", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaFin IS NULL"),
     @NamedQuery(name = "DetalleSolicitud.notSolvedByAssignedTechnician", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaFin IS NULL AND d.idTecnicoAsignado = :id"),
     @NamedQuery(name = "DetalleSolicitud.entryRange", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaInicio >= :start AND d.fechaInicio <= :end"),
@@ -46,6 +50,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "DetalleSolicitud.findByFaultType", query = "SELECT d FROM DetalleSolicitud d WHERE d.idTipoFalla = :id"),
     @NamedQuery(name = "DetalleSolicitud.findAll", query = "SELECT d FROM DetalleSolicitud d"),
     @NamedQuery(name = "DetalleSolicitud.findById", query = "SELECT d FROM DetalleSolicitud d WHERE d.id = :id"),
+    @NamedQuery(name = "DetalleSolicitud.findByFechaLimite", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaLimite = :fechaLimite"),
     @NamedQuery(name = "DetalleSolicitud.findByFechaInicio", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaInicio = :fechaInicio"),
     @NamedQuery(name = "DetalleSolicitud.findByFechaFin", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaFin = :fechaFin"),
     @NamedQuery(name = "DetalleSolicitud.findByDescripcion", query = "SELECT d FROM DetalleSolicitud d WHERE d.descripcion = :descripcion"),
@@ -73,6 +78,11 @@ public class DetalleSolicitud implements Serializable {
     @Column(name = "fecha_fin")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaFin;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "fecha_limite")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaLimite;
     @Size(max = 255)
     @Column(name = "descripcion")
     private String descripcion;
@@ -116,6 +126,13 @@ public class DetalleSolicitud implements Serializable {
         this.fechaFin = fechaFin;
     }
 
+    public DetalleSolicitud(Long id, Date fechaInicio, Date fechaFin, Date fechaLimite) {
+        this.id = id;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.fechaLimite = fechaLimite;
+    }
+
     public Long getId() {
         return id;
     }
@@ -138,6 +155,14 @@ public class DetalleSolicitud implements Serializable {
 
     public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
+    }
+
+    public Date getFechaLimite() {
+        return fechaLimite;
+    }
+
+    public void setFechaLimite(Date fechaLimite) {
+        this.fechaLimite = fechaLimite;
     }
 
     public String getDescripcion() {
