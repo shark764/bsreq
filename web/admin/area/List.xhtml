@@ -10,6 +10,15 @@
             <h:outputText value="#{adminBundle.ListAreaTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
+            
+            <h:form>
+                <h:commandButton actionListener="#{areaController.PDF}" value="PDF" />
+                <h:commandButton actionListener="#{areaController.DOCX}" value="Docx" />
+                <h:commandButton actionListener="#{areaController.XLSX}" value="Xlsx" />
+                <h:commandButton actionListener="#{areaController.ODT}" value="Odt" />
+                <h:commandButton actionListener="#{areaController.PPT}" value="Ppt" />
+            </h:form>
+
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>

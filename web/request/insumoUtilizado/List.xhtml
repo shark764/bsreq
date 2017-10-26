@@ -38,12 +38,12 @@
             </h:form>
             
             <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'wastedRange'}">
-                <h:inputText value="#{insumoUtilizadoController.startwasted}" required="true" />
-                <h:inputText value="#{insumoUtilizadoController.endwasted}" required="true" />
+                <h:inputText value="#{insumoUtilizadoController.startWasted}" required="true" />
+                <h:inputText value="#{insumoUtilizadoController.endWasted}" required="true" />
                 <h:commandButton value="submit" action="#{insumoUtilizadoController.filterByWastedRange}" />
                 <h:messages />
-                <h:outputText value="#{insumoUtilizadoController.startwasted}" />
-                <h:outputText value="#{insumoUtilizadoController.endwasted}" />
+                <h:outputText value="#{insumoUtilizadoController.startWasted}" />
+                <h:outputText value="#{insumoUtilizadoController.endWasted}" />
             </h:form>
             
             <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'entryRange'}">
