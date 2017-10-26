@@ -12,13 +12,22 @@
         <ui:define name="body">
             
             <h:form>
+                <h:selectOneMenu value="#{equipoController.dataFilterType}" required="true">
+                    <f:selectItems value="#{equipoController.dataFilterTypeValue}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{equipoController.applyDataFilterType}" />
+                <h:messages />
+                <h:outputText value="#{equipoController.dataFilterType}" />
+            </h:form>
+            
+            <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'nonStock'}">
                 <h:inputText value="#{equipoController.minStock}" required="true" />
                 <h:commandButton value="submit" action="#{equipoController.filterByMinStock}" />
                 <h:messages />
                 <h:outputText value="#{equipoController.minStock}" />
             </h:form>
             
-            <h:form>
+            <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'stockRange'}">
                 <h:inputText value="#{equipoController.startStock}" required="true" />
                 <h:inputText value="#{equipoController.endStock}" required="true" />
                 <h:commandButton value="submit" action="#{equipoController.filterByStockRange}" />
@@ -27,7 +36,7 @@
                 <h:outputText value="#{equipoController.endStock}" />
             </h:form>
             
-            <h:form>
+            <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'findByProvider'}">
                 <h:selectOneMenu value="#{equipoController.equipmentProvider}" required="true">
                     <f:selectItems value="#{proveedorController.itemsAvailableSelectOne}"/>
                 </h:selectOneMenu>
@@ -35,7 +44,7 @@
                 <h:messages />
             </h:form>
             
-            <h:form>
+            <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'findByModel'}">
                 <h:selectOneMenu value="#{equipoController.equipmentModel}" required="true">
                     <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
                 </h:selectOneMenu>
@@ -43,9 +52,13 @@
                 <h:messages />
             </h:form>
             
-            <h:form>
-                <h:inputText value="#{equipoController.startDate}" required="true" />
-                <h:inputText value="#{equipoController.endDate}" required="true" />
+            <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'entryRange'}">
+                <h:inputText value="#{equipoController.startDate}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:inputText>
+                <h:inputText value="#{equipoController.endDate}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:inputText>
                 <h:commandButton value="submit" action="#{equipoController.filterByEntryRange}" />
                 <h:messages />
                 <h:outputText value="#{equipoController.startDate}" />
@@ -97,7 +110,7 @@
                                 <h:outputText value="#{inventoryBundle.ListEquipoTitle_fechaAdquisicion}"/>
                             </f:facet>
                             <h:outputText value="#{item.fechaAdquisicion}">
-                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
                             </h:outputText>
                         </h:column>
                         <h:column>

@@ -19,11 +19,11 @@
                     <h:outputText value="#{detalleSolicitudController.selected.id}" title="#{requestBundle.ViewDetalleSolicitudTitle_id}"/>
                     <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_fechaInicio}"/>
                     <h:outputText value="#{detalleSolicitudController.selected.fechaInicio}" title="#{requestBundle.ViewDetalleSolicitudTitle_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
                     </h:outputText>
                     <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_fechaFin}"/>
                     <h:outputText value="#{detalleSolicitudController.selected.fechaFin}" title="#{requestBundle.ViewDetalleSolicitudTitle_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
                     </h:outputText>
                     <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_descripcion}"/>
                     <h:outputText value="#{detalleSolicitudController.selected.descripcion}" title="#{requestBundle.ViewDetalleSolicitudTitle_descripcion}"/>
