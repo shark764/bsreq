@@ -20,11 +20,11 @@
                 <h:outputText value="#{inventarioDefectuosoController.dataFilterType}" />
             </h:form>
             
-            <h:form rendered="#{inventarioDefectuosoController.dataFilterType != 'NONE' and inventarioDefectuosoController.dataFilterType == 'findByEquipment'}">
+            <h:form rendered="#{inventarioDefectuosoController.dataFilterType != 'NONE' and inventarioDefectuosoController.dataFilterType == 'findByEquipmentModel'}">
                 <h:selectOneMenu value="#{inventarioDefectuosoController.equipmentModel}" required="true">
                     <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
                 </h:selectOneMenu>
-                <h:commandButton value="submit" action="#{inventarioDefectuosoController.filterByEquipment}" />
+                <h:commandButton value="submit" action="#{inventarioDefectuosoController.filterByEquipmentModel}" />
                 <h:messages />
             </h:form>
             

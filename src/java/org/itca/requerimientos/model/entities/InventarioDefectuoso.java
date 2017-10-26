@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "inventario_defectuoso")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "InventarioDefectuoso.findByEquipment", query = "SELECT i FROM InventarioDefectuoso i WHERE i.idEquipo = :id"),
+    @NamedQuery(name = "InventarioDefectuoso.findByEquipmentModel", query = "SELECT i FROM InventarioDefectuoso i WHERE i.idEquipo.idModelo = :id"),
     @NamedQuery(name = "InventarioDefectuoso.entryRange", query = "SELECT i FROM InventarioDefectuoso i WHERE i.fechaIngreso >= :start AND i.fechaIngreso <= :end"),
     @NamedQuery(name = "InventarioDefectuoso.findAll", query = "SELECT i FROM InventarioDefectuoso i"),
     @NamedQuery(name = "InventarioDefectuoso.findById", query = "SELECT i FROM InventarioDefectuoso i WHERE i.id = :id"),

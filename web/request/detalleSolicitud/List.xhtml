@@ -10,6 +10,100 @@
             <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
+            
+            <h:form>
+                <h:selectOneMenu value="#{detalleSolicitudController.dataFilterType}" required="true">
+                    <f:selectItems value="#{detalleSolicitudController.dataFilterTypeValue}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{detalleSolicitudController.applyDataFilterType}" />
+                <h:messages />
+                <h:outputText value="#{detalleSolicitudController.dataFilterType}" />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'limitTime'}">
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterByLimitTime}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByEmployee'}">
+                <h:selectOneMenu value="#{detalleSolicitudController.employee}" required="true">
+                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterByEmployee}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByEquipment'}">
+                <h:selectOneMenu value="#{detalleSolicitudController.equipment}" required="true">
+                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterByEquipment}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByRequestType'}">
+                <h:selectOneMenu value="#{detalleSolicitudController.requestType}" required="true">
+                    <f:selectItems value="#{tipoRequerimientoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterByRequestType}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByFaultType'}">
+                <h:selectOneMenu value="#{detalleSolicitudController.faultType}" required="true">
+                    <f:selectItems value="#{tipoFallaController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterByFaultType}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findBySolutionType'}">
+                <h:selectOneMenu value="#{detalleSolicitudController.solutionType}" required="true">
+                    <f:selectItems value="#{tipoSolucionController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterBySolutionType}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'solvedOverTime'}">
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterSolvedOverTime}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'notSolved'}">
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterNotSolved}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'notSolvedByAssignedTechnician'}">
+                <h:selectOneMenu value="#{detalleSolicitudController.employee}" required="true">
+                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterNotSolvedByAssignedTechnician}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByAssignedTechnician'}">
+                <h:selectOneMenu value="#{detalleSolicitudController.employee}" required="true">
+                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterByAssignedTechnician}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'entryRange'}">
+                <h:inputText value="#{detalleSolicitudController.startDate}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:inputText>
+                <h:inputText value="#{detalleSolicitudController.endDate}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:inputText>
+                <h:commandButton value="submit" action="#{detalleSolicitudController.filterByEntryRange}" />
+                <h:messages />
+                <h:outputText value="#{detalleSolicitudController.startDate}" />
+                <h:outputText value="#{detalleSolicitudController.endDate}" />
+            </h:form>
+
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>

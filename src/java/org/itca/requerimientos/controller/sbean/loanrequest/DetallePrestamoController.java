@@ -20,6 +20,8 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import org.itca.requerimientos.model.entities.Empleado;
+import org.itca.requerimientos.model.entities.Equipo;
 
 @ManagedBean(name = "detallePrestamoController")
 @SessionScoped
@@ -33,11 +35,8 @@ public class DetallePrestamoController implements Serializable {
     private int selectedItemIndex;
 
     private String dataFilterType;
-    private Integer minStock;
-    private Integer startStock;
-    private Integer endStock;
-    private Proveedor equipmentProvider;
-    private ModeloEquipo equipmentModel;
+    private Empleado employee;
+    private Equipo equipment;
     private Date startDate;
     private Date endDate;
 
@@ -55,55 +54,33 @@ public class DetallePrestamoController implements Serializable {
     {
         dataFilterTypeValue = new LinkedHashMap<String, Object>();
         dataFilterTypeValue.put(" -- seleccione filtro -- ", "NONE"); // label, value
-        dataFilterTypeValue.put("Equipos con mínima existencia en inventario", "nonStock");
-        dataFilterTypeValue.put("Buscar entre rango de exitencia en inventario", "stockRange");
-        dataFilterTypeValue.put("Buscar por proveedor", "findByProvider");
-        dataFilterTypeValue.put("Buscar por modelo", "findByModel");
-        dataFilterTypeValue.put("Buscar entre rango de fecha de adquisición", "entryRange");
+        dataFilterTypeValue.put("Prestamos cercanos a tiempo límite", "limitTime");
+        dataFilterTypeValue.put("Buscar préstamos por prestatario", "findByEmployee");
+        dataFilterTypeValue.put("Buscar préstamos por equipo", "findByEquipment");
+        dataFilterTypeValue.put("Equipos entregados sobre tiempo límite", "returnedOverTime");
+        dataFilterTypeValue.put("Equipos no entregados", "notReturned");
+        dataFilterTypeValue.put("Equipos no entregados por prestatario", "notReturnedByEmployee");
+        dataFilterTypeValue.put("Buscar entre rango de fecha de préstamo", "entryRange");
     }
     public Map<String, Object> getDataFilterTypeValue()
     {
         return dataFilterTypeValue;
     }
 
-    public Integer getMinStock() {
-        return minStock;
+    public Empleado getEmployee() {
+        return employee;
     }
 
-    public void setMinStock(Integer minStock) {
-        this.minStock = minStock;
+    public void setEmployee(Empleado employee) {
+        this.employee = employee;
     }
 
-    public Integer getStartStock() {
-        return startStock;
+    public Equipo getEquipment() {
+        return equipment;
     }
 
-    public void setStartStock(Integer startStock) {
-        this.startStock = startStock;
-    }
-
-    public Integer getEndStock() {
-        return endStock;
-    }
-
-    public void setEndStock(Integer endStock) {
-        this.endStock = endStock;
-    }
-
-    public Proveedor getEquipmentProvider() {
-        return equipmentProvider;
-    }
-
-    public void setEquipmentProvider(Proveedor equipmentProvider) {
-        this.equipmentProvider = equipmentProvider;
-    }
-
-    public ModeloEquipo getEquipmentModel() {
-        return equipmentModel;
-    }
-
-    public void setEquipmentModel(ModeloEquipo equipmentModel) {
-        this.equipmentModel = equipmentModel;
+    public void setEquipment(Equipo equipment) {
+        this.equipment = equipment;
     }
 
     public Date getStartDate() {
@@ -127,23 +104,34 @@ public class DetallePrestamoController implements Serializable {
         recreateModel();
     }
 
-    public void filterByMinStock() {
-        System.out.println("minStock is: " + minStock);
+    public void filterByLimitTime() {
+        Date limitTime = new Date();
+        System.out.println("limitTime is: " + limitTime);
         recreateModel();
     }
 
-    public void filterByStockRange() {
-        System.out.println("startStock is: " + startStock + ", endStock is: " + endStock);
+    public void filterByEmployee() {
+        System.out.println("employee is: " + employee);
         recreateModel();
     }
 
-    public void filterByEquipmentProvider() {
-        System.out.println("equipmentProvider is: " + equipmentProvider);
+    public void filterByEquipment() {
+        System.out.println("equipment is: " + equipment);
         recreateModel();
     }
 
-    public void filterByEquipmentModel() {
-        System.out.println("equipmentModel is: " + equipmentModel);
+    public void filterReturnedOverTime() {
+        System.out.println("overTime is: " + new Date());
+        recreateModel();
+    }
+
+    public void filterNotReturned() {
+        System.out.println("overTime not returned is: " + new Date());
+        recreateModel();
+    }
+
+    public void filterNotReturnedByEmployee() {
+        System.out.println("employee is: " + employee);
         recreateModel();
     }
 
@@ -170,7 +158,7 @@ public class DetallePrestamoController implements Serializable {
 
     public PaginationHelper getPagination() {
         if (pagination == null) {
-            pagination = new PaginationHelper(10) {
+            pagination = new PaginationHelper(15) {
 
                 @Override
                 public int getItemsCount() {

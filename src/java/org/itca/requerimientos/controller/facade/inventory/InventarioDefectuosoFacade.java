@@ -41,5 +41,14 @@ public class InventarioDefectuosoFacade extends AbstractFacade<InventarioDefectu
         list = q.getResultList();
         return list;
     }
+
+    public List<InventarioDefectuoso> findByEquipmentModel(Integer id)
+    {
+        List<InventarioDefectuoso> list = null;
+        Query q = em.createNamedQuery("InventarioDefectuoso.findByEquipmentModel");
+        q.setParameter("id", id);
+        list = q.getResultList();
+        return list;
+    }
     
 }

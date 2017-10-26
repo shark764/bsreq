@@ -20,7 +20,7 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
-import org.itca.requerimientos.model.entities.Equipo;
+import org.itca.requerimientos.model.entities.ModeloEquipo;
 
 @ManagedBean(name = "inventarioDefectuosoController")
 @SessionScoped
@@ -34,7 +34,7 @@ public class InventarioDefectuosoController implements Serializable {
     private int selectedItemIndex;
 
     private String dataFilterType;
-    private Equipo equipment;
+    private ModeloEquipo equipmentModel;
     private Date startDate;
     private Date endDate;
 
@@ -52,20 +52,20 @@ public class InventarioDefectuosoController implements Serializable {
     {
         dataFilterTypeValue = new LinkedHashMap<String, Object>();
         dataFilterTypeValue.put(" -- seleccione filtro -- ", "NONE"); // label, value
-        dataFilterTypeValue.put("Buscar por modelo", "findByModel");
-        dataFilterTypeValue.put("Buscar entre rango de fecha de adquisición", "entryRange");
+        dataFilterTypeValue.put("Buscar por modelos de equipo", "findByEquipmentModel");
+        dataFilterTypeValue.put("Buscar entre rango de fecha de ingreso a inventario defectuoso", "entryRange");
     }
     public Map<String, Object> getDataFilterTypeValue()
     {
         return dataFilterTypeValue;
     }
 
-    public ModeloEquipo getEquipment() {
-        return equipment;
+    public ModeloEquipo getEquipmentModel() {
+        return equipmentModel;
     }
 
-    public void setEquipment(ModeloEquipo equipment) {
-        this.equipment = equipment;
+    public void setEquipmentModel(ModeloEquipo equipmentModel) {
+        this.equipmentModel = equipmentModel;
     }
 
     public Date getStartDate() {
@@ -89,8 +89,8 @@ public class InventarioDefectuosoController implements Serializable {
         recreateModel();
     }
 
-    public void filterByEquipment() {
-        System.out.println("equipment is: " + equipment);
+    public void filterByEquipmentModel() {
+        System.out.println("equipmentModel is: " + equipmentModel);
         recreateModel();
     }
 
@@ -117,7 +117,7 @@ public class InventarioDefectuosoController implements Serializable {
 
     public PaginationHelper getPagination() {
         if (pagination == null) {
-            pagination = new PaginationHelper(10) {
+            pagination = new PaginationHelper(15) {
 
                 @Override
                 public int getItemsCount() {

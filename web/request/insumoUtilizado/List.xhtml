@@ -10,6 +10,55 @@
             <h:outputText value="#{requestBundle.ListInsumoUtilizadoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
+            
+            <h:form>
+                <h:selectOneMenu value="#{insumoUtilizadoController.dataFilterType}" required="true">
+                    <f:selectItems value="#{insumoUtilizadoController.dataFilterTypeValue}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{insumoUtilizadoController.applyDataFilterType}" />
+                <h:messages />
+                <h:outputText value="#{insumoUtilizadoController.dataFilterType}" />
+            </h:form>
+            
+            <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'findByEquipment'}">
+                <h:selectOneMenu value="#{insumoUtilizadoController.equipment}" required="true">
+                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{insumoUtilizadoController.filterByEquipment}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'usedRange'}">
+                <h:inputText value="#{insumoUtilizadoController.startUsed}" required="true" />
+                <h:inputText value="#{insumoUtilizadoController.endUsed}" required="true" />
+                <h:commandButton value="submit" action="#{insumoUtilizadoController.filterByUsedRange}" />
+                <h:messages />
+                <h:outputText value="#{insumoUtilizadoController.startUsed}" />
+                <h:outputText value="#{insumoUtilizadoController.endUsed}" />
+            </h:form>
+            
+            <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'wastedRange'}">
+                <h:inputText value="#{insumoUtilizadoController.startwasted}" required="true" />
+                <h:inputText value="#{insumoUtilizadoController.endwasted}" required="true" />
+                <h:commandButton value="submit" action="#{insumoUtilizadoController.filterByWastedRange}" />
+                <h:messages />
+                <h:outputText value="#{insumoUtilizadoController.startwasted}" />
+                <h:outputText value="#{insumoUtilizadoController.endwasted}" />
+            </h:form>
+            
+            <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'entryRange'}">
+                <h:inputText value="#{insumoUtilizadoController.startDate}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:inputText>
+                <h:inputText value="#{insumoUtilizadoController.endDate}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:inputText>
+                <h:commandButton value="submit" action="#{insumoUtilizadoController.filterByEntryRange}" />
+                <h:messages />
+                <h:outputText value="#{insumoUtilizadoController.startDate}" />
+                <h:outputText value="#{insumoUtilizadoController.endDate}" />
+            </h:form>
+
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
