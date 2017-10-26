@@ -51,3 +51,6 @@ nbdist/
 #Excluir archivos de sublime-text
 *.sublime-workspace
 *.sublime-project
+
+#Excluir jar de proyecto
+!web/resources/jar/*
