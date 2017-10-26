@@ -10,6 +10,61 @@
             <h:outputText value="#{loanRequestBundle.ListDetallePrestamoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
+            
+            <h:form>
+                <h:selectOneMenu value="#{equipoController.dataFilterType}" required="true">
+                    <f:selectItems value="#{equipoController.dataFilterTypeValue}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{equipoController.applyDataFilterType}" />
+                <h:messages />
+                <h:outputText value="#{equipoController.dataFilterType}" />
+            </h:form>
+            
+            <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'nonStock'}">
+                <h:inputText value="#{equipoController.minStock}" required="true" />
+                <h:commandButton value="submit" action="#{equipoController.filterByMinStock}" />
+                <h:messages />
+                <h:outputText value="#{equipoController.minStock}" />
+            </h:form>
+            
+            <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'stockRange'}">
+                <h:inputText value="#{equipoController.startStock}" required="true" />
+                <h:inputText value="#{equipoController.endStock}" required="true" />
+                <h:commandButton value="submit" action="#{equipoController.filterByStockRange}" />
+                <h:messages />
+                <h:outputText value="#{equipoController.startStock}" />
+                <h:outputText value="#{equipoController.endStock}" />
+            </h:form>
+            
+            <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'findByProvider'}">
+                <h:selectOneMenu value="#{equipoController.equipmentProvider}" required="true">
+                    <f:selectItems value="#{proveedorController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{equipoController.filterByEquipmentProvider}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'findByModel'}">
+                <h:selectOneMenu value="#{equipoController.equipmentModel}" required="true">
+                    <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="submit" action="#{equipoController.filterByEquipmentModel}" />
+                <h:messages />
+            </h:form>
+            
+            <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'entryRange'}">
+                <h:inputText value="#{equipoController.startDate}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:inputText>
+                <h:inputText value="#{equipoController.endDate}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:inputText>
+                <h:commandButton value="submit" action="#{equipoController.filterByEntryRange}" />
+                <h:messages />
+                <h:outputText value="#{equipoController.startDate}" />
+                <h:outputText value="#{equipoController.endDate}" />
+            </h:form>
+
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
