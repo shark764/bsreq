@@ -18,6 +18,8 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import org.itca.requerimientos.model.entities.ModeloEquipo;
+import org.itca.requerimientos.model.entities.Proveedor;
 
 @ManagedBean(name = "equipoController")
 @SessionScoped
@@ -29,6 +31,95 @@ public class EquipoController implements Serializable {
     private org.itca.requerimientos.controller.facade.inventory.EquipoFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+
+    private Integer minStock;
+    private Integer startStock;
+    private Integer endStock;
+    private Proveedor equipmentProvider;
+    private ModeloEquipo equipmentModel;
+    private Date startDate;
+    private Date endDate;
+
+    public Integer getMinStock() {
+        return minStock;
+    }
+
+    public void setMinStock(Integer minStock) {
+        this.minStock = minStock;
+    }
+
+    public Integer getStartStock() {
+        return startStock;
+    }
+
+    public void setStartStock(Integer startStock) {
+        this.startStock = startStock;
+    }
+
+    public Integer getEndStock() {
+        return endStock;
+    }
+
+    public void setEndStock(Integer endStock) {
+        this.endStock = endStock;
+    }
+
+    public Proveedor getEquipmentProvider() {
+        return equipmentProvider;
+    }
+
+    public void setEquipmentProvider(Proveedor equipmentProvider) {
+        this.equipmentProvider = equipmentProvider;
+    }
+
+    public ModeloEquipo getEquipmentModel() {
+        return equipmentModel;
+    }
+
+    public void setEquipmentModel(ModeloEquipo equipmentModel) {
+        this.equipmentModel = equipmentModel;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public void filterByMinStock() {
+        System.out.println("minStock is: " + minStock);
+        recreateModel();
+    }
+
+    public void filterByStockRange() {
+        System.out.println("startStock is: " + startStock + ", endStock is: " + endStock);
+        recreateModel();
+    }
+
+    public void filterByEquipmentProvider() {
+        System.out.println("equipmentProvider is: " + equipmentProvider);
+        recreateModel();
+    }
+
+    public void filterByEquipmentModel() {
+        System.out.println("equipmentModel is: " + equipmentModel);
+        recreateModel();
+    }
+
+    public void filterByEntryRange() {
+        System.out.println("startDate is: " + startDate + ", endDate is: " + endDate);
+        recreateModel();
+    }
 
     public EquipoController() {
     }

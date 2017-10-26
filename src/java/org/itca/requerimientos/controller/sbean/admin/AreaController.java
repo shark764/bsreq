@@ -29,50 +29,6 @@ public class AreaController implements Serializable {
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
-    private Integer minStock;
-
-    public Integer getMinStock() {
-        return minStock;
-    }
-
-    public void setMinStock(Integer minStock) {
-        this.minStock = minStock;
-    }
-
-    public void filterByMinStock() {
-        System.out.println("minStock: " + minStock);
-        recreateModel();
-    }
-    
-    private String text;
-    private Integer number;
-    private String result;
-
-    public void submit() {
-        result = "Submitted values: " + text + ", " + number;
-        System.out.println(result);
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
-    public String getResult() {
-        return result;
-    }
-
     public AreaController() {
     }
 
@@ -145,7 +101,6 @@ public class AreaController implements Serializable {
     public String prepareEdit() {
         current = (Area) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
-//        return "Create";
         return "Edit";
     }
 

@@ -10,22 +10,6 @@
             <h:outputText value="#{adminBundle.ListAreaTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            
-            <h:form>
-                <h:inputText value="#{areaController.text}" required="true" />
-                <h:inputText value="#{areaController.number}" required="true" />
-                <h:commandButton value="submit" action="#{areaController.submit}" />
-                <h:messages />
-                <h:outputText value="#{areaController.result}" />
-            </h:form>
-            
-            <h:form>
-                <h:inputText value="#{areaController.minStock}" required="true" />
-                <h:commandButton value="submit" action="#{areaController.filterByMinStock}" />
-                <h:messages />
-                <h:outputText value="#{areaController.minStock}" />
-            </h:form>
-
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
