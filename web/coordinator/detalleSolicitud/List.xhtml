@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+
+            <h:form>
+                <h:selectOneMenu value="#{coordinatorController.dataFilterType}" required="true">
+                    <f:selectItems value="#{coordinatorController.dataFilterTypeValue}"/>
+                </h:selectOneMenu>
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.applyDataFilterType}" />
+                <h:messages />
+                <h:outputText value="#{coordinatorController.dataFilterType}" />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'limitTime'}">
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByLimitTime}" />
+                <h:messages />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByEmployee'}">
+                <h:selectOneMenu value="#{coordinatorController.employee}" required="true">
+                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByEmployee}" />
+                <h:messages />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByEquipment'}">
+                <h:selectOneMenu value="#{coordinatorController.equipment}" required="true">
+                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByEquipment}" />
+                <h:messages />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByRequestType'}">
+                <h:selectOneMenu value="#{coordinatorController.requestType}" required="true">
+                    <f:selectItems value="#{tipoRequerimientoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByRequestType}" />
+                <h:messages />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByFaultType'}">
+                <h:selectOneMenu value="#{coordinatorController.faultType}" required="true">
+                    <f:selectItems value="#{tipoFallaController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByFaultType}" />
+                <h:messages />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findBySolutionType'}">
+                <h:selectOneMenu value="#{coordinatorController.solutionType}" required="true">
+                    <f:selectItems value="#{tipoSolucionController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterBySolutionType}" />
+                <h:messages />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'solvedOverTime'}">
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterSolvedOverTime}" />
+                <h:messages />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'notSolved'}">
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterNotSolved}" />
+                <h:messages />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'notSolvedByAssignedTechnician'}">
+                <h:selectOneMenu value="#{coordinatorController.employee}" required="true">
+                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterNotSolvedByAssignedTechnician}" />
+                <h:messages />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByAssignedTechnician'}">
+                <h:selectOneMenu value="#{coordinatorController.employee}" required="true">
+                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByAssignedTechnician}" />
+                <h:messages />
+            </h:form>
+
+            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'entryRange'}">
+                <h:inputText value="#{coordinatorController.startDate}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:inputText>
+                <h:inputText value="#{coordinatorController.endDate}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:inputText>
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByEntryRange}" />
+                <h:messages />
+                <h:outputText value="#{coordinatorController.startDate}" />
+                <h:outputText value="#{coordinatorController.endDate}" />
+            </h:form>
+
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{requestBundle.ListDetalleSolicitudEmpty}" rendered="#{coordinatorController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{coordinatorController.items.rowCount > 0}">
+                    <h:outputText value="#{coordinatorController.pagination.pageFirstItem + 1}..#{coordinatorController.pagination.pageLastItem + 1}/#{coordinatorController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.previous}" value="#{requestBundle.Previous} #{coordinatorController.pagination.pageSize}" rendered="#{coordinatorController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.next}" value="#{requestBundle.Next} #{coordinatorController.pagination.pageSize}" rendered="#{coordinatorController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{coordinatorController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_fechaInicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaInicio}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_fechaFin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaFin}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_descripcion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.descripcion}"/>
+                            <h:inputText value="#{item.descripcion}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_comentario}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.comentario}"/>
+                            <h:inputText value="#{item.comentario}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_fechaLimite}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaLimite}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTecnicoAsignado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idTecnicoAsignado}"/>
+                            <h:selectOneMenu styleClass="form-control input-sm" value="#{item.idTecnicoAsignado}">
+                                <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idEquipo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idEquipo}"/>
+                            <h:selectOneMenu styleClass="form-control input-sm" value="#{item.idEquipo}">
+                                <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idEstadoSolicitud}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idEstadoSolicitud}"/>
+                            <h:selectOneMenu styleClass="form-control input-sm" value="#{item.idEstadoSolicitud}">
+                                <f:selectItems value="#{estadoSolicitudController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idSolicitudRequerimiento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idSolicitudRequerimiento}"/>
+                            <h:selectOneMenu styleClass="form-control input-sm" value="#{item.idSolicitudRequerimiento}">
+                                <f:selectItems value="#{solicitudRequerimientoController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTipoFalla}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idTipoFalla}"/>
+                            <h:selectOneMenu styleClass="form-control input-sm" value="#{item.idTipoFalla}">
+                                <f:selectItems value="#{tipoFallaController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTipoRequerimiento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idTipoRequerimiento}"/>
+                            <h:selectOneMenu styleClass="form-control input-sm" value="#{item.idTipoRequerimiento}">
+                                <f:selectItems value="#{tipoRequerimientoController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTipoSolucion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idTipoSolucion}"/>
+                            <h:selectOneMenu styleClass="form-control input-sm" value="#{item.idTipoSolucion}">
+                                <f:selectItems value="#{tipoSolucionController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.prepareView}" value="#{requestBundle.ListDetalleSolicitudViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.prepareEdit}" value="#{requestBundle.ListDetalleSolicitudEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.destroy}" value="#{requestBundle.ListDetalleSolicitudDestroyLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Actualizar" action="#{coordinatorController.updateSelectedRow(item)}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.prepareCreate}" value="#{requestBundle.ListDetalleSolicitudCreateLink}"/>
+                <br />
+                <br />
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ListDetalleSolicitudIndexLink}"/>
+            </h:form>
+
+            <script type="text/javascript">
+                window.alert("https://www.mkyong.com/jsf2/custom-converter-in-jsf-2-0/");
+            </script>
+        </ui:define>
+    </ui:composition>
+</html>

@@ -8,6 +8,7 @@ package org.itca.requerimientos.controller.facade.catalogues;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import org.itca.requerimientos.controller.facade.AbstractFacade;
 import org.itca.requerimientos.model.entities.EstadoPrestamo;
 
@@ -17,7 +18,7 @@ import org.itca.requerimientos.model.entities.EstadoPrestamo;
  */
 @Stateless
 public class EstadoPrestamoFacade extends AbstractFacade<EstadoPrestamo> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override
@@ -27,6 +28,13 @@ public class EstadoPrestamoFacade extends AbstractFacade<EstadoPrestamo> {
 
     public EstadoPrestamoFacade() {
         super(EstadoPrestamo.class);
+    }
+
+    public EstadoPrestamo findByCodigo(String codigo)
+    {
+        Query q = em.createNamedQuery("EstadoPrestamo.findByCodigo");
+        q.setParameter("codigo", codigo);
+        return (EstadoPrestamo) q.getSingleResult();
     }
     
 }

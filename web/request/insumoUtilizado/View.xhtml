@@ -23,6 +23,10 @@
                     <h:outputText value="#{insumoUtilizadoController.selected.desperdicio}" title="#{requestBundle.ViewInsumoUtilizadoTitle_desperdicio}"/>
                     <h:outputText value="#{requestBundle.ViewInsumoUtilizadoLabel_idDetalleSolicitud}"/>
                     <h:outputText value="#{insumoUtilizadoController.selected.idDetalleSolicitud}" title="#{requestBundle.ViewInsumoUtilizadoTitle_idDetalleSolicitud}" />
+                    <h:outputText value="#{requestBundle.ViewInsumoUtilizadoLabel_idInsumo}"/>
+                    <h:outputText value="#{insumoUtilizadoController.selected.idInsumo}" title="#{requestBundle.ViewInsumoUtilizadoTitle_idInsumo}" />
+                    <h:outputText value="#{requestBundle.ViewInsumoUtilizadoLabel_idEquipoIntercambio}"/>
+                    <h:outputText value="#{insumoUtilizadoController.selected.idEquipoIntercambio}" title="#{requestBundle.ViewInsumoUtilizadoTitle_idEquipoIntercambio}" />
                 </h:panelGrid>
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.destroyAndView}" value="#{requestBundle.ViewInsumoUtilizadoDestroyLink}"/>
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{requestBundle.ViewInsumoUtilizadoEditLink}"/>

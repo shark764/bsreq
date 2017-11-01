@@ -15,7 +15,7 @@
                 <h:selectOneMenu value="#{inventarioDefectuosoController.dataFilterType}" required="true">
                     <f:selectItems value="#{inventarioDefectuosoController.dataFilterTypeValue}"/>
                 </h:selectOneMenu>
-                <h:commandButton value="submit" action="#{inventarioDefectuosoController.applyDataFilterType}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{inventarioDefectuosoController.applyDataFilterType}" />
                 <h:messages />
                 <h:outputText value="#{inventarioDefectuosoController.dataFilterType}" />
             </h:form>
@@ -24,7 +24,7 @@
                 <h:selectOneMenu value="#{inventarioDefectuosoController.equipmentModel}" required="true">
                     <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
                 </h:selectOneMenu>
-                <h:commandButton value="submit" action="#{inventarioDefectuosoController.filterByEquipmentModel}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{inventarioDefectuosoController.filterByEquipmentModel}" />
                 <h:messages />
             </h:form>
             
@@ -35,7 +35,7 @@
                 <h:inputText value="#{inventarioDefectuosoController.endDate}" required="true">
                     <f:convertDateTime pattern="dd/MM/yyyy" />
                 </h:inputText>
-                <h:commandButton value="submit" action="#{inventarioDefectuosoController.filterByEntryRange}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{inventarioDefectuosoController.filterByEntryRange}" />
                 <h:messages />
                 <h:outputText value="#{inventarioDefectuosoController.startDate}" />
                 <h:outputText value="#{inventarioDefectuosoController.endDate}" />

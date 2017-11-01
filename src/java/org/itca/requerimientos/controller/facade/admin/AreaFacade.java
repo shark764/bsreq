@@ -17,7 +17,7 @@ import org.itca.requerimientos.model.entities.Area;
  */
 @Stateless
 public class AreaFacade extends AbstractFacade<Area> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override

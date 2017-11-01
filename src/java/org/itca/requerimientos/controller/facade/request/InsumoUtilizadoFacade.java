@@ -20,7 +20,7 @@ import org.itca.requerimientos.model.entities.InsumoUtilizado;
  */
 @Stateless
 public class InsumoUtilizadoFacade extends AbstractFacade<InsumoUtilizado> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override
@@ -67,6 +67,24 @@ public class InsumoUtilizadoFacade extends AbstractFacade<InsumoUtilizado> {
         Query q = em.createNamedQuery("InsumoUtilizado.entryRange");
         q.setParameter("start", start);
         q.setParameter("end", end);
+        list = q.getResultList();
+        return list;
+    }
+
+    public List<InsumoUtilizado> findByEquipmentUsed(Integer id)
+    {
+        List<InsumoUtilizado> list = null;
+        Query q = em.createNamedQuery("InsumoUtilizado.findByEquipmentUsed");
+        q.setParameter("id", id);
+        list = q.getResultList();
+        return list;
+    }
+
+    public List<InsumoUtilizado> findByResourceUsed(Integer id)
+    {
+        List<InsumoUtilizado> list = null;
+        Query q = em.createNamedQuery("InsumoUtilizado.findByResourceUsed");
+        q.setParameter("id", id);
         list = q.getResultList();
         return list;
     }

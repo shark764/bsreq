@@ -64,6 +64,7 @@ public class RolesController implements Serializable {
     }
 
     public String prepareList() {
+        recreatePagination();
         recreateModel();
         return "List";
     }
@@ -76,6 +77,8 @@ public class RolesController implements Serializable {
     
     public String createAndView() {
         if (current == null) {
+            recreatePagination();
+            recreateModel();
             return "List";
         }
         return "View";
@@ -134,6 +137,7 @@ public class RolesController implements Serializable {
             return "View";
         } else {
             // all items were removed - go back to list
+            recreatePagination();
             recreateModel();
             return "List";
         }

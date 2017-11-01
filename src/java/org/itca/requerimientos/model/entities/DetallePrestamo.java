@@ -42,10 +42,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "DetallePrestamo.entryRange", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaPrestamo >= :start AND d.fechaPrestamo <= :end"),
     @NamedQuery(name = "DetallePrestamo.findAll", query = "SELECT d FROM DetallePrestamo d"),
     @NamedQuery(name = "DetallePrestamo.findById", query = "SELECT d FROM DetallePrestamo d WHERE d.id = :id"),
-    @NamedQuery(name = "DetallePrestamo.findByFechaLimite", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaLimite = :fechaLimite"),
     @NamedQuery(name = "DetallePrestamo.findByFechaPrestamo", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaPrestamo = :fechaPrestamo"),
     @NamedQuery(name = "DetallePrestamo.findByFechaEntrega", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaEntrega = :fechaEntrega"),
-    @NamedQuery(name = "DetallePrestamo.findByDescripcion", query = "SELECT d FROM DetallePrestamo d WHERE d.descripcion = :descripcion")})
+    @NamedQuery(name = "DetallePrestamo.findByDescripcion", query = "SELECT d FROM DetallePrestamo d WHERE d.descripcion = :descripcion"),
+    @NamedQuery(name = "DetallePrestamo.findByFechaLimite", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaLimite = :fechaLimite"),
+    @NamedQuery(name = "DetallePrestamo.findByComentario", query = "SELECT d FROM DetallePrestamo d WHERE d.comentario = :comentario")})
 public class DetallePrestamo implements Serializable {
     private static final long serialVersionUID = 1L;
     @TableGenerator(name = "sec_detalle_prestamo",
@@ -67,14 +68,15 @@ public class DetallePrestamo implements Serializable {
     @Column(name = "fecha_entrega")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaEntrega;
-    @Basic(optional = false)
-    @NotNull
+    @Size(max = 255)
+    @Column(name = "descripcion")
+    private String descripcion;
     @Column(name = "fecha_limite")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaLimite;
     @Size(max = 255)
-    @Column(name = "descripcion")
-    private String descripcion;
+    @Column(name = "comentario")
+    private String comentario;
     @JoinColumn(name = "id_equipo", referencedColumnName = "id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Equipo idEquipo;
@@ -95,6 +97,10 @@ public class DetallePrestamo implements Serializable {
     public DetallePrestamo(Long id, Date fechaPrestamo) {
         this.id = id;
         this.fechaPrestamo = fechaPrestamo;
+    }
+
+    public DetallePrestamo(Prestamo idPrestamo) {
+        this.idPrestamo = idPrestamo;
     }
 
     public Long getId() {
@@ -121,6 +127,14 @@ public class DetallePrestamo implements Serializable {
         this.fechaEntrega = fechaEntrega;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     public Date getFechaLimite() {
         return fechaLimite;
     }
@@ -129,12 +143,12 @@ public class DetallePrestamo implements Serializable {
         this.fechaLimite = fechaLimite;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getComentario() {
+        return comentario;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
     public Equipo getIdEquipo() {

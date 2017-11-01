@@ -118,6 +118,11 @@ public class Equipo implements Serializable {
     private Proveedor idProveedor;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idEquipo", fetch = FetchType.LAZY)
     private List<DetalleSolicitud> detalleSolicitudList;
+    @JoinColumn(name = "id_empleado_asignado", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Empleado idEmpleadoAsignado;
+    @OneToMany(mappedBy = "idEquipoIntercambio", fetch = FetchType.LAZY)
+    private List<InsumoUtilizado> insumoUtilizadoList;
 
     public Equipo() {
     }
@@ -273,6 +278,14 @@ public class Equipo implements Serializable {
         this.idProveedor = idProveedor;
     }
 
+    public Empleado getIdEmpleadoAsignado() {
+        return idEmpleadoAsignado;
+    }
+
+    public void setIdEmpleadoAsignado(Empleado idEmpleadoAsignado) {
+        this.idEmpleadoAsignado = idEmpleadoAsignado;
+    }
+
     @XmlTransient
     public List<DetalleSolicitud> getDetalleSolicitudList() {
         return detalleSolicitudList;
@@ -306,6 +319,15 @@ public class Equipo implements Serializable {
     public String toString() {
         return "[" + this.inventario + "] " + this.nombre;
         // return "org.itca.requerimientos.model.entities.Equipo[ id=" + id + " ]";
+    }
+
+    @XmlTransient
+    public List<InsumoUtilizado> getInsumoUtilizadoList() {
+        return insumoUtilizadoList;
+    }
+
+    public void setInsumoUtilizadoList(List<InsumoUtilizado> insumoUtilizadoList) {
+        this.insumoUtilizadoList = insumoUtilizadoList;
     }
     
 }

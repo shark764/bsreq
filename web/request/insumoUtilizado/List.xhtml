@@ -15,7 +15,7 @@
                 <h:selectOneMenu value="#{insumoUtilizadoController.dataFilterType}" required="true">
                     <f:selectItems value="#{insumoUtilizadoController.dataFilterTypeValue}"/>
                 </h:selectOneMenu>
-                <h:commandButton value="submit" action="#{insumoUtilizadoController.applyDataFilterType}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoUtilizadoController.applyDataFilterType}" />
                 <h:messages />
                 <h:outputText value="#{insumoUtilizadoController.dataFilterType}" />
             </h:form>
@@ -24,14 +24,14 @@
                 <h:selectOneMenu value="#{insumoUtilizadoController.equipment}" required="true">
                     <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
                 </h:selectOneMenu>
-                <h:commandButton value="submit" action="#{insumoUtilizadoController.filterByEquipment}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoUtilizadoController.filterByEquipment}" />
                 <h:messages />
             </h:form>
             
             <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'usedRange'}">
                 <h:inputText value="#{insumoUtilizadoController.startUsed}" required="true" />
                 <h:inputText value="#{insumoUtilizadoController.endUsed}" required="true" />
-                <h:commandButton value="submit" action="#{insumoUtilizadoController.filterByUsedRange}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoUtilizadoController.filterByUsedRange}" />
                 <h:messages />
                 <h:outputText value="#{insumoUtilizadoController.startUsed}" />
                 <h:outputText value="#{insumoUtilizadoController.endUsed}" />
@@ -40,7 +40,7 @@
             <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'wastedRange'}">
                 <h:inputText value="#{insumoUtilizadoController.startWasted}" required="true" />
                 <h:inputText value="#{insumoUtilizadoController.endWasted}" required="true" />
-                <h:commandButton value="submit" action="#{insumoUtilizadoController.filterByWastedRange}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoUtilizadoController.filterByWastedRange}" />
                 <h:messages />
                 <h:outputText value="#{insumoUtilizadoController.startWasted}" />
                 <h:outputText value="#{insumoUtilizadoController.endWasted}" />
@@ -53,7 +53,7 @@
                 <h:inputText value="#{insumoUtilizadoController.endDate}" required="true">
                     <f:convertDateTime pattern="dd/MM/yyyy" />
                 </h:inputText>
-                <h:commandButton value="submit" action="#{insumoUtilizadoController.filterByEntryRange}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoUtilizadoController.filterByEntryRange}" />
                 <h:messages />
                 <h:outputText value="#{insumoUtilizadoController.startDate}" />
                 <h:outputText value="#{insumoUtilizadoController.endDate}" />
@@ -92,6 +92,18 @@
                                 <h:outputText value="#{requestBundle.ListInsumoUtilizadoTitle_idDetalleSolicitud}"/>
                             </f:facet>
                             <h:outputText value="#{item.idDetalleSolicitud}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListInsumoUtilizadoTitle_idInsumo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idInsumo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{requestBundle.ListInsumoUtilizadoTitle_idEquipoIntercambio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idEquipoIntercambio}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">

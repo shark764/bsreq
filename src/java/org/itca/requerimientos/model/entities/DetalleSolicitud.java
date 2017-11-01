@@ -50,11 +50,11 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "DetalleSolicitud.findByFaultType", query = "SELECT d FROM DetalleSolicitud d WHERE d.idTipoFalla = :id"),
     @NamedQuery(name = "DetalleSolicitud.findAll", query = "SELECT d FROM DetalleSolicitud d"),
     @NamedQuery(name = "DetalleSolicitud.findById", query = "SELECT d FROM DetalleSolicitud d WHERE d.id = :id"),
-    @NamedQuery(name = "DetalleSolicitud.findByFechaLimite", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaLimite = :fechaLimite"),
     @NamedQuery(name = "DetalleSolicitud.findByFechaInicio", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaInicio = :fechaInicio"),
     @NamedQuery(name = "DetalleSolicitud.findByFechaFin", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaFin = :fechaFin"),
     @NamedQuery(name = "DetalleSolicitud.findByDescripcion", query = "SELECT d FROM DetalleSolicitud d WHERE d.descripcion = :descripcion"),
-    @NamedQuery(name = "DetalleSolicitud.findByComentario", query = "SELECT d FROM DetalleSolicitud d WHERE d.comentario = :comentario")})
+    @NamedQuery(name = "DetalleSolicitud.findByComentario", query = "SELECT d FROM DetalleSolicitud d WHERE d.comentario = :comentario"),
+    @NamedQuery(name = "DetalleSolicitud.findByFechaLimite", query = "SELECT d FROM DetalleSolicitud d WHERE d.fechaLimite = :fechaLimite")})
 public class DetalleSolicitud implements Serializable {
     private static final long serialVersionUID = 1L;
     @TableGenerator(name = "sec_detalle_solicitud",
@@ -73,26 +73,22 @@ public class DetalleSolicitud implements Serializable {
     @Column(name = "fecha_inicio")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaInicio;
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "fecha_fin")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaFin;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "fecha_limite")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaLimite;
     @Size(max = 255)
     @Column(name = "descripcion")
     private String descripcion;
     @Size(max = 255)
     @Column(name = "comentario")
     private String comentario;
+    @Column(name = "fecha_limite")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaLimite;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idDetalleSolicitud", fetch = FetchType.LAZY)
     private List<InsumoUtilizado> insumoUtilizadoList;
     @JoinColumn(name = "id_tecnico_asignado", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Empleado idTecnicoAsignado;
     @JoinColumn(name = "id_equipo", referencedColumnName = "id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
@@ -104,13 +100,13 @@ public class DetalleSolicitud implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private SolicitudRequerimiento idSolicitudRequerimiento;
     @JoinColumn(name = "id_tipo_falla", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private TipoFalla idTipoFalla;
     @JoinColumn(name = "id_tipo_requerimiento", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private TipoRequerimiento idTipoRequerimiento;
     @JoinColumn(name = "id_tipo_solucion", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private TipoSolucion idTipoSolucion;
 
     public DetalleSolicitud() {
@@ -120,17 +116,20 @@ public class DetalleSolicitud implements Serializable {
         this.id = id;
     }
 
-    public DetalleSolicitud(Long id, Date fechaInicio, Date fechaFin) {
+    public DetalleSolicitud(Long id, Date fechaInicio) {
         this.id = id;
         this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
     }
-
+    
     public DetalleSolicitud(Long id, Date fechaInicio, Date fechaFin, Date fechaLimite) {
         this.id = id;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.fechaLimite = fechaLimite;
+    }
+
+    public DetalleSolicitud(SolicitudRequerimiento idSolicitudRequerimiento) {
+        this.idSolicitudRequerimiento = idSolicitudRequerimiento;
     }
 
     public Long getId() {
@@ -157,14 +156,6 @@ public class DetalleSolicitud implements Serializable {
         this.fechaFin = fechaFin;
     }
 
-    public Date getFechaLimite() {
-        return fechaLimite;
-    }
-
-    public void setFechaLimite(Date fechaLimite) {
-        this.fechaLimite = fechaLimite;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -179,6 +170,14 @@ public class DetalleSolicitud implements Serializable {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public Date getFechaLimite() {
+        return fechaLimite;
+    }
+
+    public void setFechaLimite(Date fechaLimite) {
+        this.fechaLimite = fechaLimite;
     }
 
     @XmlTransient

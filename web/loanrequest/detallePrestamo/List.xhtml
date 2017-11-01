@@ -15,13 +15,13 @@
                 <h:selectOneMenu value="#{detallePrestamoController.dataFilterType}" required="true">
                     <f:selectItems value="#{detallePrestamoController.dataFilterTypeValue}"/>
                 </h:selectOneMenu>
-                <h:commandButton value="submit" action="#{detallePrestamoController.applyDataFilterType}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.applyDataFilterType}" />
                 <h:messages />
                 <h:outputText value="#{detallePrestamoController.dataFilterType}" />
             </h:form>
             
             <h:form rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'limitTime'}">
-                <h:commandButton value="submit" action="#{detallePrestamoController.filterByLimitTime}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterByLimitTime}" />
                 <h:messages />
             </h:form>
             
@@ -29,7 +29,7 @@
                 <h:selectOneMenu value="#{detallePrestamoController.employee}" required="true">
                     <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
                 </h:selectOneMenu>
-                <h:commandButton value="submit" action="#{detallePrestamoController.filterByEmployee}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterByEmployee}" />
                 <h:messages />
             </h:form>
             
@@ -37,17 +37,17 @@
                 <h:selectOneMenu value="#{detallePrestamoController.equipment}" required="true">
                     <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
                 </h:selectOneMenu>
-                <h:commandButton value="submit" action="#{detallePrestamoController.filterByEquipment}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterByEquipment}" />
                 <h:messages />
             </h:form>
             
             <h:form rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'returnedOverTime'}">
-                <h:commandButton value="submit" action="#{detallePrestamoController.filterReturnedOverTime}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterReturnedOverTime}" />
                 <h:messages />
             </h:form>
             
             <h:form rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'notReturned'}">
-                <h:commandButton value="submit" action="#{detallePrestamoController.filterNotReturned}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterNotReturned}" />
                 <h:messages />
             </h:form>
             
@@ -55,7 +55,7 @@
                 <h:selectOneMenu value="#{detallePrestamoController.employee}" required="true">
                     <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
                 </h:selectOneMenu>
-                <h:commandButton value="submit" action="#{detallePrestamoController.filterNotReturnedByEmployee}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterNotReturnedByEmployee}" />
                 <h:messages />
             </h:form>
             
@@ -66,7 +66,7 @@
                 <h:inputText value="#{detallePrestamoController.endDate}" required="true">
                     <f:convertDateTime pattern="dd/MM/yyyy" />
                 </h:inputText>
-                <h:commandButton value="submit" action="#{detallePrestamoController.filterByEntryRange}" />
+                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterByEntryRange}" />
                 <h:messages />
                 <h:outputText value="#{detallePrestamoController.startDate}" />
                 <h:outputText value="#{detallePrestamoController.endDate}" />

@@ -6,6 +6,8 @@ import org.itca.requerimientos.controller.sbean.util.PaginationHelper;
 import org.itca.requerimientos.controller.facade.catalogues.MarcaEquipoFacade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -17,6 +19,7 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import org.itca.requerimientos.model.entities.ModeloEquipo;
 
 @ManagedBean(name = "marcaEquipoController")
 @SessionScoped
@@ -28,6 +31,90 @@ public class MarcaEquipoController implements Serializable {
     private org.itca.requerimientos.controller.facade.catalogues.MarcaEquipoFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+    
+    @EJB
+    private org.itca.requerimientos.controller.facade.catalogues.ModeloEquipoFacade ejbModeloEquipoFacade;
+    private List<ModeloEquipo> equipmentModelList;
+    private boolean hasNew = false;
+
+    public boolean isHasNew() {
+        return hasNew;
+    }
+
+    public void setHasNew(boolean hasNew) {
+        this.hasNew = hasNew;
+    }
+    
+    public List<ModeloEquipo> getEquipmentModelList() {
+        if (this.equipmentModelList == null) {
+            if (current == null) {
+                this.equipmentModelList = new ArrayList<ModeloEquipo>();  // nueva lista si current es null
+                return equipmentModelList;
+            }
+            this.equipmentModelList = current.getModeloEquipoList();  // asignar lista de objetos dependientes
+        }
+        return equipmentModelList;
+    }
+
+    public void setEquipmentModelList(List<ModeloEquipo> equipmentModelList) {
+        this.equipmentModelList = equipmentModelList;
+    }
+    
+    public void updateEquipmentModel(ModeloEquipo mq) {
+        this.hasNew = false;    // cambiar de registro a edición
+        if(current.getId() != null) {   // registrar si existe entidad padre
+            if(mq.getId() != null) {
+                this.ejbModeloEquipoFacade.edit(mq); // editar existente
+            }
+            else {
+                this.ejbModeloEquipoFacade.create(mq);   // crear nuevo
+            }
+        }
+        System.out.println("Updating: [" + mq.getCodigo()+ "] " + mq.getNombre());
+        // recreateModel();
+        // return null;
+    }
+    
+    public void removeEquipmentModel(ModeloEquipo mq) {
+        this.hasNew = false;
+        System.out.println("Removing: [" + mq.getCodigo()+ "] " + mq.getNombre());
+        this.equipmentModelList.remove(mq);    // borrar de lista
+        if(mq.getId() != null) {
+            this.ejbModeloEquipoFacade.remove(mq);   // borrar registro de PU
+        }
+        // recreateModel();
+        // return null;
+    }
+    
+    public void addNewEquipmentModel() {
+        if (this.equipmentModelList == null) {
+            this.equipmentModelList = new ArrayList<ModeloEquipo>();
+        }
+        this.equipmentModelList.add((new ModeloEquipo(current)));
+        this.hasNew = true;
+        System.out.println("Adding - count: " + this.equipmentModelList.size());
+    }
+
+    public void PDF() {
+        System.out.println("report is: PDF");
+        recreateModel();
+    }
+    public void DOCX() {
+        System.out.println("report is: DOCX");
+        recreateModel();
+    }
+    public void XLSX() {
+        System.out.println("report is: XLSX");
+        recreateModel();
+    }
+    public void ODT() {
+        System.out.println("report is: ODT");
+        recreateModel();
+    }
+    public void PPT() {
+        System.out.println("report is: PPT");
+        recreateModel();
+    }
 
     public MarcaEquipoController() {
     }
@@ -63,6 +150,7 @@ public class MarcaEquipoController implements Serializable {
     }
 
     public String prepareList() {
+        recreatePagination();
         recreateModel();
         return "List";
     }
@@ -75,6 +163,8 @@ public class MarcaEquipoController implements Serializable {
     
     public String createAndView() {
         if (current == null) {
+            recreatePagination();
+            recreateModel();
             return "List";
         }
         return "View";
@@ -82,12 +172,16 @@ public class MarcaEquipoController implements Serializable {
 
     public String prepareCreate() {
         current = new MarcaEquipo();
+        this.equipmentModelList = current.getModeloEquipoList();
         selectedItemIndex = -1;
         return "Create";
     }
 
     public String create() {
         try {
+            if (this.equipmentModelList != null) {
+                current.setModeloEquipoList(this.equipmentModelList);
+            }
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/org/itca/requerimientos/bundles/CataloguesBundle").getString("MarcaEquipoCreated"));
             // return prepareCreate();
@@ -100,12 +194,16 @@ public class MarcaEquipoController implements Serializable {
 
     public String prepareEdit() {
         current = (MarcaEquipo) getItems().getRowData();
+        this.equipmentModelList = current.getModeloEquipoList();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "Edit";
     }
 
     public String update() {
         try {
+            // if (this.equipmentModelList != null) {
+            //     current.setModeloEquipoList(this.equipmentModelList);
+            // }
             getFacade().edit(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/org/itca/requerimientos/bundles/CataloguesBundle").getString("MarcaEquipoUpdated"));
             return "View";
@@ -132,6 +230,7 @@ public class MarcaEquipoController implements Serializable {
             return "View";
         } else {
             // all items were removed - go back to list
+            recreatePagination();
             recreateModel();
             return "List";
         }
@@ -229,6 +328,7 @@ public class MarcaEquipoController implements Serializable {
             if (object instanceof MarcaEquipo) {
                 MarcaEquipo o = (MarcaEquipo) object;
                 return getStringKey(o.getId());
+                // return object.toString();
             } else {
                 throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + MarcaEquipo.class.getName());
             }

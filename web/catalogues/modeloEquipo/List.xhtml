@@ -46,6 +46,12 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
+                                <h:outputText value="#{cataloguesBundle.ListModeloEquipoTitle_existencia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.existencia}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
                             <h:commandLink styleClass="btn btn-sm btn-default" action="#{modeloEquipoController.prepareView}" value="#{cataloguesBundle.ListModeloEquipoViewLink}"/>

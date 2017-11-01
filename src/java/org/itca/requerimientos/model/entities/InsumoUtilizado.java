@@ -29,6 +29,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "insumo_utilizado")
 @XmlRootElement
 @NamedQueries({
+    @NamedQuery(name = "InsumoUtilizado.findByEquipmentUsed", query = "SELECT i FROM InsumoUtilizado i WHERE i.idEquipoIntercambio = :id"),
+    @NamedQuery(name = "InsumoUtilizado.findByResourceUsed", query = "SELECT i FROM InsumoUtilizado i WHERE i.idInsumo = :id"),
     @NamedQuery(name = "InsumoUtilizado.findByEquipment", query = "SELECT i FROM InsumoUtilizado i WHERE i.idDetalleSolicitud.idEquipo = :id"),
     @NamedQuery(name = "InsumoUtilizado.usedRange", query = "SELECT i FROM InsumoUtilizado i WHERE i.utlilizado >= :start AND i.utlilizado <= :end"),
     @NamedQuery(name = "InsumoUtilizado.wastedRange", query = "SELECT i FROM InsumoUtilizado i WHERE i.desperdicio >= :start AND i.desperdicio <= :end"),
@@ -52,13 +54,17 @@ public class InsumoUtilizado implements Serializable {
     private Long id;
     @Column(name = "utlilizado")
     private Short utlilizado;
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "desperdicio")
-    private short desperdicio;
+    private Short desperdicio;
     @JoinColumn(name = "id_detalle_solicitud", referencedColumnName = "id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private DetalleSolicitud idDetalleSolicitud;
+    @JoinColumn(name = "id_equipo_intercambio", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Equipo idEquipoIntercambio;
+    @JoinColumn(name = "id_insumo", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Insumo idInsumo;
 
     public InsumoUtilizado() {
     }
@@ -70,6 +76,10 @@ public class InsumoUtilizado implements Serializable {
     public InsumoUtilizado(Long id, short desperdicio) {
         this.id = id;
         this.desperdicio = desperdicio;
+    }
+
+    public InsumoUtilizado(DetalleSolicitud idDetalleSolicitud) {
+        this.idDetalleSolicitud = idDetalleSolicitud;
     }
 
     public Long getId() {
@@ -88,11 +98,11 @@ public class InsumoUtilizado implements Serializable {
         this.utlilizado = utlilizado;
     }
 
-    public short getDesperdicio() {
+    public Short getDesperdicio() {
         return desperdicio;
     }
 
-    public void setDesperdicio(short desperdicio) {
+    public void setDesperdicio(Short desperdicio) {
         this.desperdicio = desperdicio;
     }
 
@@ -102,6 +112,22 @@ public class InsumoUtilizado implements Serializable {
 
     public void setIdDetalleSolicitud(DetalleSolicitud idDetalleSolicitud) {
         this.idDetalleSolicitud = idDetalleSolicitud;
+    }
+
+    public Equipo getIdEquipoIntercambio() {
+        return idEquipoIntercambio;
+    }
+
+    public void setIdEquipoIntercambio(Equipo idEquipoIntercambio) {
+        this.idEquipoIntercambio = idEquipoIntercambio;
+    }
+
+    public Insumo getIdInsumo() {
+        return idInsumo;
+    }
+
+    public void setIdInsumo(Insumo idInsumo) {
+        this.idInsumo = idInsumo;
     }
 
     @Override
@@ -126,7 +152,7 @@ public class InsumoUtilizado implements Serializable {
 
     @Override
     public String toString() {
-        return "[Utilizado: " + this.utlilizado + "] " + this.idDetalleSolicitud;
+        return "[Utilizado: " + this.utlilizado + "] " + this.idInsumo;
         // return "org.itca.requerimientos.model.entities.InsumoUtilizado[ id=" + id + " ]";
     }
     

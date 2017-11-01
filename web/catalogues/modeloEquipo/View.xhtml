@@ -23,6 +23,8 @@
                     <h:outputText value="#{modeloEquipoController.selected.codigo}" title="#{cataloguesBundle.ViewModeloEquipoTitle_codigo}"/>
                     <h:outputText value="#{cataloguesBundle.ViewModeloEquipoLabel_idMarca}"/>
                     <h:outputText value="#{modeloEquipoController.selected.idMarca}" title="#{cataloguesBundle.ViewModeloEquipoTitle_idMarca}" />
+                    <h:outputText value="#{cataloguesBundle.ViewModeloEquipoLabel_existencia}"/>
+                    <h:outputText value="#{modeloEquipoController.selected.existencia}" title="#{cataloguesBundle.ViewModeloEquipoTitle_existencia}"/>
                 </h:panelGrid>
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{modeloEquipoController.destroyAndView}" value="#{cataloguesBundle.ViewModeloEquipoDestroyLink}"/>
                 <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{cataloguesBundle.ViewModeloEquipoEditLink}"/>

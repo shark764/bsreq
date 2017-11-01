@@ -6,25 +6,25 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="/template.xhtml">
-		<div class="row">
-			<div class="col-md-6 col-sm-6 col-lg-6 col-xs-12">
-				<div class="x_panel">
-					<div class="x_title">
-						<h2>
-					        <ui:define name="title">
-					            <h:outputText value="#{cataloguesBundle.EditMarcaEquipoTitle}"></h:outputText>
-								<small>different form elements</small>
-        					</ui:define>
-						</h2>
-						<div class="clearfix"></div>
-					</div>
-					<div class="x_content">
-						<br/>
-				        <ui:define name="body">
-				            <h:panelGroup id="messagePanel" layout="block">
-				                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-				            </h:panelGroup>
-				            <h:form styleClass="form-horizontal form-label-left">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>
+                            <ui:define name="title">
+                                <h:outputText value="#{cataloguesBundle.EditMarcaEquipoTitle}"></h:outputText>
+                                <small>Formulario de registro</small>
+                            </ui:define>
+                        </h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br/>
+                        <ui:define name="body">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:form styleClass="form-horizontal form-label-left">
                                 <h:panelGrid columns="2">
                                     <div class="form-group has-feedback form-group-collapsed-fields">
                                         <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{cataloguesBundle.EditMarcaEquipoLabel_nombre}" for="nombre" />
@@ -42,22 +42,80 @@
                                     </div>
                                 </h:panelGrid>
 
-                                    <div class="ln_solid"></div>
+                                <div class="ln_solid"></div>
 
-                                    <div class="form-group">
-                                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                                            <h:commandLink styleClass="btn btn-sm btn-primary" action="#{marcaEquipoController.update}" value="#{cataloguesBundle.EditMarcaEquipoSaveLink}"/>
-                                            <h:link styleClass="btn btn-sm btn-success" outcome="View" value="#{cataloguesBundle.EditMarcaEquipoViewLink}"/>
-                                            <h:commandLink styleClass="btn btn-sm btn-success" action="#{marcaEquipoController.prepareList}" value="#{cataloguesBundle.EditMarcaEquipoShowAllLink}" immediate="true"/>
-                                            <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{cataloguesBundle.EditMarcaEquipoIndexLink}" />
+                                <h:panelGroup rendered="#{not empty marcaEquipoController.equipmentModelList}">
+                                    <h:dataTable value="#{marcaEquipoController.equipmentModelList}" var="mq">
+                                        <h:column>
+                                            <f:facet name="header">ID</f:facet>
+                                            <h:outputText value="#{mq.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Código</f:facet>
+                                            <h:inputText value="#{mq.codigo}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Nombre</f:facet>
+                                            <h:inputText value="#{mq.nombre}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Existencia</f:facet>
+                                            <h:inputText value="#{mq.existencia}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header"><h:outputText value="&nbsp;"/></f:facet>
+                                            <h:commandButton styleClass="btn btn-sm btn-default" value="#{not empty mq.codigo ? 'Actualizar' : 'Agregar'}" action="#{marcaEquipoController.updateEquipmentModel(mq)}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandButton styleClass="btn btn-sm btn-default" value="Borrar" action="#{marcaEquipoController.removeEquipmentModel(mq)}"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </h:panelGroup>
+
+                                <div class="ln_solid"></div>
+
+                                <h:panelGroup rendered="#{not marcaEquipoController.hasNew}">
+                                    <h:commandButton styleClass="btn btn-sm btn-default" value="Agregar nuevo" action="#{marcaEquipoController.addNewEquipmentModel}" id="add_new" />
+                                    <h:messages />
+                                </h:panelGroup>
+
+                                <div class="ln_solid"></div>
+
+                                <div class="form-group">
+                                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                        <h:commandLink styleClass="btn btn-sm btn-primary" action="#{marcaEquipoController.update}" value="#{cataloguesBundle.EditMarcaEquipoSaveLink}" />
+                                        <h:link styleClass="btn btn-sm btn-success" outcome="View" value="#{cataloguesBundle.EditMarcaEquipoViewLink}" />
+                                        <h:commandLink styleClass="btn btn-sm btn-success" action="#{marcaEquipoController.prepareList}" value="#{cataloguesBundle.EditMarcaEquipoShowAllLink}" immediate="true" />
+                                        <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{cataloguesBundle.EditMarcaEquipoIndexLink}" />
                                         </div>
                                     </div>
                             </h:form>
+                            
+                            <h:form>
+                                <h:commandButton actionListener="#{marcaEquipoController.PDF}" value="PDF" />
+                                <h:commandButton actionListener="#{marcaEquipoController.DOCX}" value="Docx" />
+                                <h:commandButton actionListener="#{marcaEquipoController.XLSX}" value="Xlsx" />
+                                <h:commandButton actionListener="#{marcaEquipoController.ODT}" value="Odt" />
+                                <h:commandButton actionListener="#{marcaEquipoController.PPT}" value="Ppt" />
+                            </h:form>
+
                         </ui:define>
                     </div>  <!-- x_content -->
                 </div>  <!-- x_panel -->
             </div>  <!-- col -->
         </div>  <!-- row -->
     </ui:composition>
+    
+<!--    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            document.getElementById("add_form:add_new").onclick = function() {
+                myFunction();
+            };
+
+            function myFunction() {
+                window.console.log("vacío");
+                document.getElementById("add_form:add_new").disabled = true;
+            }
+        });
+    </script>-->
 
 </html>

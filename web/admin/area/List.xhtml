@@ -10,13 +10,36 @@
             <h:outputText value="#{adminBundle.ListAreaTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            
+
             <h:form>
                 <h:commandButton actionListener="#{areaController.PDF}" value="PDF" />
                 <h:commandButton actionListener="#{areaController.DOCX}" value="Docx" />
                 <h:commandButton actionListener="#{areaController.XLSX}" value="Xlsx" />
                 <h:commandButton actionListener="#{areaController.ODT}" value="Odt" />
                 <h:commandButton actionListener="#{areaController.PPT}" value="Ppt" />
+            </h:form>
+
+            <h:form>
+                <h:panelGroup rendered="#{areaController.items.rowCount > 0}">
+                    <h:dataTable value="#{areaController.customerList}" var="c">
+                        <h:column>
+                            <f:facet name="header">ID</f:facet>
+                            <h:outputText value="#{c.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Código</f:facet>
+                            <h:inputText value="#{c.codigo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nombre</f:facet>
+                            <h:inputText value="#{c.nombre}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><h:outputText value="&nbsp;"/></f:facet>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Actualizar" action="#{areaController.updateCustomer(c)}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
             </h:form>
 
             <h:form styleClass="jsfcrud_list_form">

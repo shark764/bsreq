@@ -6,6 +6,7 @@ import org.itca.requerimientos.controller.sbean.util.PaginationHelper;
 import org.itca.requerimientos.controller.facade.admin.AreaFacade;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -28,6 +29,42 @@ public class AreaController implements Serializable {
     private org.itca.requerimientos.controller.facade.admin.AreaFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+    
+    private List<Area> customerList;
+
+    public List<Area> getCustomerList() {
+        if (customerList == null) {
+//            customerList = new ArrayList<Area>();
+            customerList = getFacade().findAll();
+        }
+        return customerList;
+    }
+    public void updateCustomer(Area c) {
+        System.out.println("Updating: [" + c.getCodigo()+ "] " + c.getNombre());
+        recreateModel();
+//        return null;
+    }
+
+    public void PDF() {
+        System.out.println("report is: PDF");
+        recreateModel();
+    }
+    public void DOCX() {
+        System.out.println("report is: DOCX");
+        recreateModel();
+    }
+    public void XLSX() {
+        System.out.println("report is: XLSX");
+        recreateModel();
+    }
+    public void ODT() {
+        System.out.println("report is: ODT");
+        recreateModel();
+    }
+    public void PPT() {
+        System.out.println("report is: PPT");
+        recreateModel();
+    }
 
     public AreaController() {
     }
@@ -63,6 +100,7 @@ public class AreaController implements Serializable {
     }
 
     public String prepareList() {
+        recreatePagination();
         recreateModel();
         return "List";
     }
@@ -75,6 +113,8 @@ public class AreaController implements Serializable {
     
     public String createAndView() {
         if (current == null) {
+            recreatePagination();
+            recreateModel();
             return "List";
         }
         return "View";
@@ -132,6 +172,7 @@ public class AreaController implements Serializable {
             return "View";
         } else {
             // all items were removed - go back to list
+            recreatePagination();
             recreateModel();
             return "List";
         }
@@ -229,6 +270,7 @@ public class AreaController implements Serializable {
             if (object instanceof Area) {
                 Area o = (Area) object;
                 return getStringKey(o.getId());
+                // return object.toString();
             } else {
                 throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Area.class.getName());
             }

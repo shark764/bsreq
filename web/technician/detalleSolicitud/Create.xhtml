@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>
+                            <ui:define name="title">
+                                <h:outputText value="#{requestBundle.CreateDetalleSolicitudTitle}"></h:outputText>
+                                <small>different form elements</small>
+                            </ui:define>
+                        </h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br/>
+                        <ui:define name="body">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:form styleClass="form-horizontal form-label-left">
+                                <h:panelGrid columns="2">
+                                    <div class="form-group has-feedback form-group-collapsed-fields">
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.CreateDetalleSolicitudLabel_descripcion}" for="descripcion" />
+                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                            <h:inputText styleClass="form-control has-feedback-left input-sm" id="descripcion" value="#{technicianController.selected.descripcion}" title="#{requestBundle.CreateDetalleSolicitudTitle_descripcion}" />
+                                            <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback form-group-collapsed-fields">
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.CreateDetalleSolicitudLabel_comentario}" for="comentario" />
+                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                            <h:inputText styleClass="form-control has-feedback-left input-sm" id="comentario" value="#{technicianController.selected.comentario}" title="#{requestBundle.CreateDetalleSolicitudTitle_comentario}" />
+                                            <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback form-group-collapsed-fields">
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.CreateDetalleSolicitudLabel_idTecnicoAsignado}" for="idTecnicoAsignado" />
+                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                            <h:selectOneMenu styleClass="form-control input-sm" id="idTecnicoAsignado" value="#{technicianController.selected.idTecnicoAsignado}" title="#{requestBundle.CreateDetalleSolicitudTitle_idTecnicoAsignado}" required="true" requiredMessage="#{requestBundle.CreateDetalleSolicitudRequiredMessage_idTecnicoAsignado}">
+                                                <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback form-group-collapsed-fields">
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.CreateDetalleSolicitudLabel_idEquipo}" for="idEquipo" />
+                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                            <h:selectOneMenu styleClass="form-control input-sm" id="idEquipo" value="#{technicianController.selected.idEquipo}" title="#{requestBundle.CreateDetalleSolicitudTitle_idEquipo}" required="true" requiredMessage="#{requestBundle.CreateDetalleSolicitudRequiredMessage_idEquipo}">
+                                                <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback form-group-collapsed-fields">
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.CreateDetalleSolicitudLabel_idEstadoSolicitud}" for="idEstadoSolicitud" />
+                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                            <h:selectOneMenu styleClass="form-control input-sm" id="idEstadoSolicitud" value="#{technicianController.selected.idEstadoSolicitud}" title="#{requestBundle.CreateDetalleSolicitudTitle_idEstadoSolicitud}" required="true" requiredMessage="#{requestBundle.CreateDetalleSolicitudRequiredMessage_idEstadoSolicitud}">
+                                                <f:selectItems value="#{estadoSolicitudController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback form-group-collapsed-fields">
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.CreateDetalleSolicitudLabel_idSolicitudRequerimiento}" for="idSolicitudRequerimiento" />
+                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                            <h:selectOneMenu styleClass="form-control input-sm" id="idSolicitudRequerimiento" value="#{technicianController.selected.idSolicitudRequerimiento}" title="#{requestBundle.CreateDetalleSolicitudTitle_idSolicitudRequerimiento}" required="true" requiredMessage="#{requestBundle.CreateDetalleSolicitudRequiredMessage_idSolicitudRequerimiento}">
+                                                <f:selectItems value="#{solicitudRequerimientoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback form-group-collapsed-fields">
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.CreateDetalleSolicitudLabel_idTipoFalla}" for="idTipoFalla" />
+                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                            <h:selectOneMenu styleClass="form-control input-sm" id="idTipoFalla" value="#{technicianController.selected.idTipoFalla}" title="#{requestBundle.CreateDetalleSolicitudTitle_idTipoFalla}" required="true" requiredMessage="#{requestBundle.CreateDetalleSolicitudRequiredMessage_idTipoFalla}">
+                                                <f:selectItems value="#{tipoFallaController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback form-group-collapsed-fields">
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.CreateDetalleSolicitudLabel_idTipoRequerimiento}" for="idTipoRequerimiento" />
+                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                            <h:selectOneMenu styleClass="form-control input-sm" id="idTipoRequerimiento" value="#{technicianController.selected.idTipoRequerimiento}" title="#{requestBundle.CreateDetalleSolicitudTitle_idTipoRequerimiento}" required="true" requiredMessage="#{requestBundle.CreateDetalleSolicitudRequiredMessage_idTipoRequerimiento}">
+                                                <f:selectItems value="#{tipoRequerimientoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback form-group-collapsed-fields">
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.CreateDetalleSolicitudLabel_idTipoSolucion}" for="idTipoSolucion" />
+                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                            <h:selectOneMenu styleClass="form-control input-sm" id="idTipoSolucion" value="#{technicianController.selected.idTipoSolucion}" title="#{requestBundle.CreateDetalleSolicitudTitle_idTipoSolucion}" required="true" requiredMessage="#{requestBundle.CreateDetalleSolicitudRequiredMessage_idTipoSolucion}">
+                                                <f:selectItems value="#{tipoSolucionController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+
+                                <div class="ln_solid"></div>
+
+                                <h:panelGroup rendered="#{not empty technicianController.resourcesUsedList}">
+                                    <h:dataTable value="#{technicianController.resourcesUsedList}" var="iu">
+                                        <h:column>
+                                            <f:facet name="header">ID</f:facet>
+                                            <h:outputText value="#{iu.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Insumo</f:facet>
+                                            <h:selectOneMenu value="#{iu.idInsumo}">
+                                                <f:selectItems value="#{insumoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Equipo / Componente</f:facet>
+                                            <h:selectOneMenu value="#{iu.idEquipoIntercambio}">
+                                                <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Utilizado</f:facet>
+                                            <h:inputText value="#{iu.utlilizado}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Desperdicio</f:facet>
+                                            <h:inputText value="#{iu.desperdicio}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header"><h:outputText value="&nbsp;"/></f:facet>
+                                            <h:commandButton styleClass="btn btn-sm btn-default" value="#{not empty iu.utlilizado ? 'Actualizar' : 'Agregar'}" action="#{technicianController.updateResourcesUsed(iu)}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandButton styleClass="btn btn-sm btn-default" value="Borrar" action="#{technicianController.removeResourcesUsed(iu)}"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </h:panelGroup>
+
+                                <div class="ln_solid"></div>
+
+                                <h:panelGroup rendered="#{not technicianController.hasNew}">
+                                    <h:commandButton styleClass="btn btn-sm btn-default" value="Agregar nuevo" action="#{technicianController.addNewResourcesUsed}" id="add_new" />
+                                    <h:messages />
+                                </h:panelGroup>
+
+                                <div class="ln_solid"></div>
+
+                                <div class="form-group">
+                                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                        <h:commandLink styleClass="btn btn-sm btn-primary" action="#{technicianController.create}" value="#{requestBundle.CreateDetalleSolicitudSaveLink}" />
+                                        <h:commandLink styleClass="btn btn-sm btn-primary" action="#{technicianController.prepareList}" value="#{requestBundle.CreateDetalleSolicitudShowAllLink}" immediate="true" />
+                                        <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{requestBundle.CreateDetalleSolicitudIndexLink}" />
+                                    </div>
+                                </div>
+                            </h:form>
+                        </ui:define>
+                    </div>  <!-- x_content -->
+                </div>  <!-- x_panel -->
+            </div>  <!-- col -->
+        </div>  <!-- row -->
+    </ui:composition>
+
+</html>

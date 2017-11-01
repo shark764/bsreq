@@ -20,7 +20,7 @@ import org.itca.requerimientos.model.entities.InventarioDefectuoso;
  */
 @Stateless
 public class InventarioDefectuosoFacade extends AbstractFacade<InventarioDefectuoso> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override

@@ -6,25 +6,25 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="/template.xhtml">
-		<div class="row">
-			<div class="col-md-6 col-sm-6 col-lg-6 col-xs-12">
-				<div class="x_panel">
-					<div class="x_title">
-						<h2>
-					        <ui:define name="title">
-					            <h:outputText value="#{inventoryBundle.EditInventarioDefectuosoTitle}"></h:outputText>
-								<small>different form elements</small>
-        					</ui:define>
-						</h2>
-						<div class="clearfix"></div>
-					</div>
-					<div class="x_content">
-						<br/>
-				        <ui:define name="body">
-				            <h:panelGroup id="messagePanel" layout="block">
-				                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-				            </h:panelGroup>
-				            <h:form styleClass="form-horizontal form-label-left">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>
+                            <ui:define name="title">
+                                <h:outputText value="#{inventoryBundle.EditInventarioDefectuosoTitle}"></h:outputText>
+                                <small>different form elements</small>
+                            </ui:define>
+                        </h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br/>
+                        <ui:define name="body">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:form styleClass="form-horizontal form-label-left">
                                 <h:panelGrid columns="2">
                                     <div class="form-group has-feedback form-group-collapsed-fields">
                                         <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{inventoryBundle.EditInventarioDefectuosoLabel_descripcion}" for="descripcion" />
@@ -43,16 +43,16 @@
                                     </div>
                                 </h:panelGrid>
 
-                                    <div class="ln_solid"></div>
+                                <div class="ln_solid"></div>
 
-                                    <div class="form-group">
-                                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                                            <h:commandLink styleClass="btn btn-sm btn-primary" action="#{inventarioDefectuosoController.update}" value="#{inventoryBundle.EditInventarioDefectuosoSaveLink}"/>
-                                            <h:link styleClass="btn btn-sm btn-success" outcome="View" value="#{inventoryBundle.EditInventarioDefectuosoViewLink}"/>
-                                            <h:commandLink styleClass="btn btn-sm btn-success" action="#{inventarioDefectuosoController.prepareList}" value="#{inventoryBundle.EditInventarioDefectuosoShowAllLink}" immediate="true"/>
-                                            <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.EditInventarioDefectuosoIndexLink}" />
-                                        </div>
+                                <div class="form-group">
+                                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                        <h:commandLink styleClass="btn btn-sm btn-primary" action="#{inventarioDefectuosoController.update}" value="#{inventoryBundle.EditInventarioDefectuosoSaveLink}"/>
+                                        <h:link styleClass="btn btn-sm btn-success" outcome="View" value="#{inventoryBundle.EditInventarioDefectuosoViewLink}"/>
+                                        <h:commandLink styleClass="btn btn-sm btn-success" action="#{inventarioDefectuosoController.prepareList}" value="#{inventoryBundle.EditInventarioDefectuosoShowAllLink}" immediate="true"/>
+                                        <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.EditInventarioDefectuosoIndexLink}" />
                                     </div>
+                                </div>
                             </h:form>
                         </ui:define>
                     </div>  <!-- x_content -->

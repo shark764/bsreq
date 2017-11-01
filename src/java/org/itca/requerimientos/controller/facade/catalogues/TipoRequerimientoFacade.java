@@ -17,7 +17,7 @@ import org.itca.requerimientos.model.entities.TipoRequerimiento;
  */
 @Stateless
 public class TipoRequerimientoFacade extends AbstractFacade<TipoRequerimiento> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override

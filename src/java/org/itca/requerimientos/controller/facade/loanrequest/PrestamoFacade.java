@@ -17,7 +17,7 @@ import org.itca.requerimientos.model.entities.Prestamo;
  */
 @Stateless
 public class PrestamoFacade extends AbstractFacade<Prestamo> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override

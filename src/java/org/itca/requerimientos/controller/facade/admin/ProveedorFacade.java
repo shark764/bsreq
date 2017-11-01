@@ -17,7 +17,7 @@ import org.itca.requerimientos.model.entities.Proveedor;
  */
 @Stateless
 public class ProveedorFacade extends AbstractFacade<Proveedor> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override

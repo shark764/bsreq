@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "empleado")
 @XmlRootElement
 @NamedQueries({
+    @NamedQuery(name = "Empleado.findByBoss", query = "SELECT e FROM Empleado e WHERE e.idEmpleado = :id"),
     @NamedQuery(name = "Empleado.findAll", query = "SELECT e FROM Empleado e"),
     @NamedQuery(name = "Empleado.findById", query = "SELECT e FROM Empleado e WHERE e.id = :id"),
     @NamedQuery(name = "Empleado.findByNombre", query = "SELECT e FROM Empleado e WHERE e.nombre = :nombre"),
@@ -101,8 +102,10 @@ public class Empleado implements Serializable {
     @JoinColumn(name = "id_tipo_empleado", referencedColumnName = "id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private TipoEmpleado idTipoEmpleado;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idTecnicoAsignado", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "idTecnicoAsignado", fetch = FetchType.LAZY)
     private List<DetalleSolicitud> detalleSolicitudList;
+    @OneToMany(mappedBy = "idEmpleadoAsignado", fetch = FetchType.LAZY)
+    private List<Equipo> equipoList;
 
     public Empleado() {
     }
@@ -244,6 +247,15 @@ public class Empleado implements Serializable {
 
     public void setDetalleSolicitudList(List<DetalleSolicitud> detalleSolicitudList) {
         this.detalleSolicitudList = detalleSolicitudList;
+    }
+
+    @XmlTransient
+    public List<Equipo> getEquipoList() {
+        return equipoList;
+    }
+
+    public void setEquipoList(List<Equipo> equipoList) {
+        this.equipoList = equipoList;
     }
 
     @Override

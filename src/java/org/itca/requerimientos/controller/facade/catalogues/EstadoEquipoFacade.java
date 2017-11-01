@@ -17,7 +17,7 @@ import org.itca.requerimientos.model.entities.EstadoEquipo;
  */
 @Stateless
 public class EstadoEquipoFacade extends AbstractFacade<EstadoEquipo> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override

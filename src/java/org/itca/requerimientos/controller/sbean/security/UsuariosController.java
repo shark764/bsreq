@@ -64,6 +64,7 @@ public class UsuariosController implements Serializable {
     }
 
     public String prepareList() {
+        recreatePagination();
         recreateModel();
         return "List";
     }
@@ -76,6 +77,8 @@ public class UsuariosController implements Serializable {
     
     public String createAndView() {
         if (current == null) {
+            recreatePagination();
+            recreateModel();
             return "List";
         }
         return "View";
@@ -135,6 +138,7 @@ public class UsuariosController implements Serializable {
             return "View";
         } else {
             // all items were removed - go back to list
+            recreatePagination();
             recreateModel();
             return "List";
         }
@@ -232,6 +236,7 @@ public class UsuariosController implements Serializable {
             if (object instanceof Usuarios) {
                 Usuarios o = (Usuarios) object;
                 return getStringKey(o.getIduser());
+                // return object.toString();
             } else {
                 throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Usuarios.class.getName());
             }

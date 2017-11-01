@@ -8,7 +8,6 @@ package org.itca.requerimientos.model.entities;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -59,7 +58,7 @@ public class TipoRequerimiento implements Serializable {
     @Size(min = 1, max = 3)
     @Column(name = "codigo")
     private String codigo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idTipoRequerimiento", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "idTipoRequerimiento", fetch = FetchType.LAZY)
     private List<DetalleSolicitud> detalleSolicitudList;
 
     public TipoRequerimiento() {

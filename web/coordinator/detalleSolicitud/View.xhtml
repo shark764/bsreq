@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{requestBundle.ViewDetalleSolicitudTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form styleClass="form-horizontal form-label-left">
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_id}"/>
+                    <h:outputText value="#{coordinatorController.selected.id}" title="#{requestBundle.ViewDetalleSolicitudTitle_id}"/>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_fechaInicio}"/>
+                    <h:outputText value="#{coordinatorController.selected.fechaInicio}" title="#{requestBundle.ViewDetalleSolicitudTitle_fechaInicio}">
+                        <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_fechaFin}"/>
+                    <h:outputText value="#{coordinatorController.selected.fechaFin}" title="#{requestBundle.ViewDetalleSolicitudTitle_fechaFin}">
+                        <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_descripcion}"/>
+                    <h:outputText value="#{coordinatorController.selected.descripcion}" title="#{requestBundle.ViewDetalleSolicitudTitle_descripcion}"/>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_comentario}"/>
+                    <h:outputText value="#{coordinatorController.selected.comentario}" title="#{requestBundle.ViewDetalleSolicitudTitle_comentario}"/>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_idTecnicoAsignado}"/>
+                    <h:outputText value="#{coordinatorController.selected.idTecnicoAsignado}" title="#{requestBundle.ViewDetalleSolicitudTitle_idTecnicoAsignado}"/>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_idEquipo}"/>
+                    <h:outputText value="#{coordinatorController.selected.idEquipo}" title="#{requestBundle.ViewDetalleSolicitudTitle_idEquipo}"/>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_idEstadoSolicitud}"/>
+                    <h:outputText value="#{coordinatorController.selected.idEstadoSolicitud}" title="#{requestBundle.ViewDetalleSolicitudTitle_idEstadoSolicitud}"/>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_idSolicitudRequerimiento}"/>
+                    <h:outputText value="#{coordinatorController.selected.idSolicitudRequerimiento}" title="#{requestBundle.ViewDetalleSolicitudTitle_idSolicitudRequerimiento}"/>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_idTipoFalla}"/>
+                    <h:outputText value="#{coordinatorController.selected.idTipoFalla}" title="#{requestBundle.ViewDetalleSolicitudTitle_idTipoFalla}"/>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_idTipoRequerimiento}"/>
+                    <h:outputText value="#{coordinatorController.selected.idTipoRequerimiento}" title="#{requestBundle.ViewDetalleSolicitudTitle_idTipoRequerimiento}"/>
+                    <h:outputText value="#{requestBundle.ViewDetalleSolicitudLabel_idTipoSolucion}"/>
+                    <h:outputText value="#{coordinatorController.selected.idTipoSolucion}" title="#{requestBundle.ViewDetalleSolicitudTitle_idTipoSolucion}" />
+                </h:panelGrid>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.destroyAndView}" value="#{requestBundle.ViewDetalleSolicitudDestroyLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="Edit" value="#{requestBundle.ViewDetalleSolicitudEditLink}"/>
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.prepareCreate}" value="#{requestBundle.ViewDetalleSolicitudCreateLink}" />
+                <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.prepareList}" value="#{requestBundle.ViewDetalleSolicitudShowAllLink}"/>
+                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ViewDetalleSolicitudIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -182,6 +182,7 @@ public class InsumoUtilizadoController implements Serializable {
     }
 
     public String prepareList() {
+        recreatePagination();
         recreateModel();
         return "List";
     }
@@ -194,6 +195,8 @@ public class InsumoUtilizadoController implements Serializable {
     
     public String createAndView() {
         if (current == null) {
+            recreatePagination();
+            recreateModel();
             return "List";
         }
         return "View";
@@ -251,6 +254,7 @@ public class InsumoUtilizadoController implements Serializable {
             return "View";
         } else {
             // all items were removed - go back to list
+            recreatePagination();
             recreateModel();
             return "List";
         }
@@ -348,6 +352,7 @@ public class InsumoUtilizadoController implements Serializable {
             if (object instanceof InsumoUtilizado) {
                 InsumoUtilizado o = (InsumoUtilizado) object;
                 return getStringKey(o.getId());
+                // return object.toString();
             } else {
                 throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + InsumoUtilizado.class.getName());
             }

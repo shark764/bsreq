@@ -37,7 +37,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "ModeloEquipo.findAll", query = "SELECT m FROM ModeloEquipo m"),
     @NamedQuery(name = "ModeloEquipo.findById", query = "SELECT m FROM ModeloEquipo m WHERE m.id = :id"),
     @NamedQuery(name = "ModeloEquipo.findByNombre", query = "SELECT m FROM ModeloEquipo m WHERE m.nombre = :nombre"),
-    @NamedQuery(name = "ModeloEquipo.findByCodigo", query = "SELECT m FROM ModeloEquipo m WHERE m.codigo = :codigo")})
+    @NamedQuery(name = "ModeloEquipo.findByCodigo", query = "SELECT m FROM ModeloEquipo m WHERE m.codigo = :codigo"),
+    @NamedQuery(name = "ModeloEquipo.findByExistencia", query = "SELECT m FROM ModeloEquipo m WHERE m.existencia = :existencia")})
 public class ModeloEquipo implements Serializable {
     private static final long serialVersionUID = 1L;
     @TableGenerator(name = "sec_modelo_equipo",
@@ -61,6 +62,8 @@ public class ModeloEquipo implements Serializable {
     @Size(min = 1, max = 3)
     @Column(name = "codigo")
     private String codigo;
+    @Column(name = "existencia")
+    private Short existencia;
     @JoinColumn(name = "id_marca", referencedColumnName = "id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private MarcaEquipo idMarca;
@@ -78,6 +81,10 @@ public class ModeloEquipo implements Serializable {
         this.id = id;
         this.nombre = nombre;
         this.codigo = codigo;
+    }
+
+    public ModeloEquipo(MarcaEquipo idMarca) {
+        this.idMarca = idMarca;
     }
 
     public Short getId() {
@@ -102,6 +109,14 @@ public class ModeloEquipo implements Serializable {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public Short getExistencia() {
+        return existencia;
+    }
+
+    public void setExistencia(Short existencia) {
+        this.existencia = existencia;
     }
 
     public MarcaEquipo getIdMarca() {

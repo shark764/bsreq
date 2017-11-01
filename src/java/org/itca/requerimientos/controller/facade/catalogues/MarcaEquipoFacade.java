@@ -17,7 +17,7 @@ import org.itca.requerimientos.model.entities.MarcaEquipo;
  */
 @Stateless
 public class MarcaEquipoFacade extends AbstractFacade<MarcaEquipo> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override

@@ -63,6 +63,7 @@ public class EmpleadoController implements Serializable {
     }
 
     public String prepareList() {
+        recreatePagination();
         recreateModel();
         return "List";
     }
@@ -75,6 +76,8 @@ public class EmpleadoController implements Serializable {
     
     public String createAndView() {
         if (current == null) {
+            recreatePagination();
+            recreateModel();
             return "List";
         }
         return "View";
@@ -132,6 +135,7 @@ public class EmpleadoController implements Serializable {
             return "View";
         } else {
             // all items were removed - go back to list
+            recreatePagination();
             recreateModel();
             return "List";
         }
@@ -229,6 +233,7 @@ public class EmpleadoController implements Serializable {
             if (object instanceof Empleado) {
                 Empleado o = (Empleado) object;
                 return getStringKey(o.getId());
+                // return object.toString();
             } else {
                 throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Empleado.class.getName());
             }

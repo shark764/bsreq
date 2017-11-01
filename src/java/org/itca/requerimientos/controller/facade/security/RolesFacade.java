@@ -17,7 +17,7 @@ import org.itca.requerimientos.model.entities.Roles;
  */
 @Stateless
 public class RolesFacade extends AbstractFacade<Roles> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override

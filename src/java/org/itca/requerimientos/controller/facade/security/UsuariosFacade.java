@@ -17,7 +17,7 @@ import org.itca.requerimientos.model.entities.Usuarios;
  */
 @Stateless
 public class UsuariosFacade extends AbstractFacade<Usuarios> {
-    @PersistenceContext(unitName = "BsReqPU")
+    @PersistenceContext(unitName = "SysBsReqPU")
     private EntityManager em;
 
     @Override
