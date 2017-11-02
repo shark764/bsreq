@@ -12,7 +12,7 @@
                     <div class="x_title">
                         <h2>
                             <ui:define name="title">
-                                <h:outputText value="#{inventoryBundle.CreateInsumoTitle}"></h:outputText>
+                                <h:outputText value="#{inventoryBundle.CreateInventarioDefectuosoTitle}"></h:outputText>
                                 <small>different form elements</small>
                             </ui:define>
                         </h2>
@@ -27,16 +27,9 @@
                             <h:form styleClass="form-horizontal form-label-left">
                                 <h:panelGrid columns="2">
                                     <div class="form-group has-feedback form-group-collapsed-fields">
-                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{inventoryBundle.CreateInsumoLabel_nombre}" for="nombre" />
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{inventoryBundle.CreateInventarioDefectuosoLabel_descripcion}" for="descripcion" />
                                         <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
-                                            <h:inputText styleClass="form-control has-feedback-left input-sm" id="nombre" value="#{insumoController.selected.nombre}" title="#{inventoryBundle.CreateInsumoTitle_nombre}" />
-                                            <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group has-feedback form-group-collapsed-fields">
-                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{inventoryBundle.CreateInsumoLabel_existencia}" for="existencia" />
-                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
-                                            <h:inputText styleClass="form-control has-feedback-left input-sm" id="existencia" value="#{insumoController.selected.existencia}" title="#{inventoryBundle.CreateInsumoTitle_existencia}" />
+                                            <h:inputText styleClass="form-control has-feedback-left input-sm" value="#{equipoController.equipoDefectuoso.descripcion}" title="#{inventoryBundle.CreateInventarioDefectuosoTitle_descripcion}" />
                                             <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -46,9 +39,9 @@
 
                                 <div class="form-group">
                                     <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                                        <h:commandLink styleClass="btn btn-sm btn-primary" action="#{insumoController.create}" value="#{inventoryBundle.CreateInsumoSaveLink}" />
-                                        <h:commandLink styleClass="btn btn-sm btn-primary" action="#{insumoController.prepareList}" value="#{inventoryBundle.CreateInsumoShowAllLink}" immediate="true" />
-                                        <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.CreateInsumoIndexLink}" />
+                                        <h:commandLink styleClass="btn btn-sm btn-primary" action="#{equipoController.insertIntoDefective}" value="#{inventoryBundle.CreateInventarioDefectuosoSaveLink}" />
+                                        <h:commandLink styleClass="btn btn-sm btn-primary" action="#{equipoController.prepareList}" value="#{inventoryBundle.CreateInventarioDefectuosoShowAllLink}" immediate="true" />
+                                        <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.CreateInventarioDefectuosoIndexLink}" />
                                     </div>
                                 </div>
                             </h:form>

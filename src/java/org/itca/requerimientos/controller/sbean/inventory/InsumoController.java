@@ -141,6 +141,15 @@ public class InsumoController implements Serializable {
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
+    
+    public String createAndView() {
+        if (current == null) {
+            recreatePagination();
+            recreateModel();
+            return "List";
+        }
+        return "View";
+    }
 
     public String prepareCreate() {
         current = new Insumo();
@@ -152,7 +161,8 @@ public class InsumoController implements Serializable {
         try {
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/org/itca/requerimientos/bundles/InventoryBundle").getString("InsumoCreated"));
-            return prepareCreate();
+            // return prepareCreate();
+            return createAndView();
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/org/itca/requerimientos/bundles/InventoryBundle").getString("PersistenceErrorOccured"));
             return null;

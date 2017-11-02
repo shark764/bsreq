@@ -79,6 +79,10 @@ public class InventarioDefectuoso implements Serializable {
         this.fechaIngreso = fechaIngreso;
     }
 
+    public InventarioDefectuoso(Equipo idEquipo) {
+        this.idEquipo = idEquipo;
+    }
+
     public Long getId() {
         return id;
     }

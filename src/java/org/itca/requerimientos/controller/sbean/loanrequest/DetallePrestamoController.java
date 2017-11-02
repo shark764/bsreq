@@ -33,6 +33,20 @@ public class DetallePrestamoController implements Serializable {
     private org.itca.requerimientos.controller.facade.loanrequest.DetallePrestamoFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+    
+    @EJB
+    private org.itca.requerimientos.controller.facade.catalogues.EstadoPrestamoFacade ejbEstadoPrestamoFacade;
+
+    public String returnEquipment() {
+        current = (DetallePrestamo) getItems().getRowData();
+        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
+        current.setFechaEntrega(new Date());
+        current.setIdEstadoPrestamo(ejbEstadoPrestamoFacade.findByCodigo("005"));
+        System.out.println("equipment returned: " + this.current);
+        getFacade().edit(current);
+        JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/org/itca/requerimientos/bundles/LoanRequestBundle").getString("DetallePrestamoUpdated"));
+        return "View";
+    }
 
     private String dataFilterType;
     private Empleado employee;

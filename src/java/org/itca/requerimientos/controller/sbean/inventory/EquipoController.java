@@ -20,6 +20,7 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import org.itca.requerimientos.model.entities.InventarioDefectuoso;
 import org.itca.requerimientos.model.entities.ModeloEquipo;
 import org.itca.requerimientos.model.entities.Proveedor;
 
@@ -33,6 +34,35 @@ public class EquipoController implements Serializable {
     private org.itca.requerimientos.controller.facade.inventory.EquipoFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+    
+    @EJB
+    private org.itca.requerimientos.controller.facade.inventory.InventarioDefectuosoFacade ejbInventarioDefectuosoFacade;
+
+    private InventarioDefectuoso equipoDefectuoso;
+
+    public InventarioDefectuoso getEquipoDefectuoso() {
+        return equipoDefectuoso;
+    }
+
+    public void setEquipoDefectuoso(InventarioDefectuoso equipoDefectuoso) {
+        this.equipoDefectuoso = equipoDefectuoso;
+    }
+
+    public String addToDefective() {
+        current = (Equipo) getItems().getRowData();
+        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
+        this.equipoDefectuoso = new InventarioDefectuoso(current);
+        System.out.println("go to form: " + this.equipoDefectuoso);
+        return "AddToDefective";
+    }
+    
+    public String insertIntoDefective() {
+        this.equipoDefectuoso.setFechaIngreso(new Date());
+        System.out.println("about to persist: " + this.equipoDefectuoso);
+        this.ejbInventarioDefectuosoFacade.create(this.equipoDefectuoso);   // enviar a inventario defectuoso
+        JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/org/itca/requerimientos/bundles/InventoryBundle").getString("InventarioDefectuosoCreated"));
+        return createAndView();
+    }
 
     private String dataFilterType;
     private Integer minStock;

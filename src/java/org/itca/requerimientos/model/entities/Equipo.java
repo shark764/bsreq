@@ -295,6 +295,15 @@ public class Equipo implements Serializable {
         this.detalleSolicitudList = detalleSolicitudList;
     }
 
+    @XmlTransient
+    public List<InsumoUtilizado> getInsumoUtilizadoList() {
+        return insumoUtilizadoList;
+    }
+
+    public void setInsumoUtilizadoList(List<InsumoUtilizado> insumoUtilizadoList) {
+        this.insumoUtilizadoList = insumoUtilizadoList;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -317,17 +326,8 @@ public class Equipo implements Serializable {
 
     @Override
     public String toString() {
-        return "[" + this.inventario + "] " + this.nombre;
+        return "[Inventario: " + this.inventario + "] " + this.nombre;
         // return "org.itca.requerimientos.model.entities.Equipo[ id=" + id + " ]";
-    }
-
-    @XmlTransient
-    public List<InsumoUtilizado> getInsumoUtilizadoList() {
-        return insumoUtilizadoList;
-    }
-
-    public void setInsumoUtilizadoList(List<InsumoUtilizado> insumoUtilizadoList) {
-        this.insumoUtilizadoList = insumoUtilizadoList;
     }
     
 }
