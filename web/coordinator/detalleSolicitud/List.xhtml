@@ -18,11 +18,11 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <br>
+                        <br />
 
                         <h4>Opciones de filtrado </h4>
                         <p class="font-gray-dark">
-                            Cada opci\u00f3n funciona de manera individual y debe presionar Aceptar para aplicar filtro.
+                            Cada opción funciona de manera individual y debe presionar <strong>Aceptar</strong> para aplicar filtro.
                         </p>
                         <h:form styleClass="form-inline">
                             <div class="form-group">
@@ -36,7 +36,7 @@
                         </h:form>
 
                         <h:panelGroup rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'limitTime'}">
-                            <h4>A resolver m\u00e1ximo el d\u00eda de hoy </h4>
+                            <h4>A resolver máximo el día de hoy </h4>
                             <h:form styleClass="form-inline">
                                 <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterByLimitTime}" />
                                 <h:messages />
@@ -100,10 +100,10 @@
                         </h:panelGroup>
 
                         <h:panelGroup rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findBySolutionType'}">
-                            <h4>Filtrar por soluci\u00f3n brindada </h4>
+                            <h4>Filtrar por solución brindada </h4>
                             <h:form styleClass="form-inline">
                                 <div class="form-group">
-                                    <h:outputLabel value="Soluci\u00f3n" />
+                                    <h:outputLabel value="Solución" />
                                     <h:selectOneMenu styleClass="form-control" value="#{coordinatorController.solutionType}" required="true">
                                         <f:selectItems value="#{tipoSolucionController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
@@ -114,7 +114,7 @@
                         </h:panelGroup>
 
                         <h:panelGroup rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'solvedOverTime'}">
-                            <h4>Solventados sobre tiempo l\u00edmite </h4>
+                            <h4>Solventados sobre tiempo límite </h4>
                             <h:form styleClass="form-inline">
                                 <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterSolvedOverTime}" />
                                 <h:messages />
@@ -130,10 +130,10 @@
                         </h:panelGroup>
 
                         <h:panelGroup rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'notSolvedByAssignedTechnician'}">
-                            <h4>No solventados por t\u00e9cnico asignado </h4>
+                            <h4>No solventados por técnico asignado </h4>
                             <h:form styleClass="form-inline">
                                 <div class="form-group">
-                                    <h:outputLabel value="T\u00e9cnico" />
+                                    <h:outputLabel value="Técnico" />
                                     <h:selectOneMenu styleClass="form-control" value="#{coordinatorController.employee}" required="true">
                                         <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>
@@ -147,7 +147,7 @@
                             <h4>Filtrar por técnico asignado </h4>
                             <h:form styleClass="form-inline">
                                 <div class="form-group">
-                                    <h:outputLabel value="T\u00e9cnico" />
+                                    <h:outputLabel value="Técnico" />
                                     <h:selectOneMenu styleClass="form-control" value="#{coordinatorController.employee}" required="true">
                                         <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
                                     </h:selectOneMenu>

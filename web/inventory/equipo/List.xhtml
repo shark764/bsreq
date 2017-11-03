@@ -18,11 +18,11 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <br>
+                        <br />
 
                         <h4>Opciones de filtrado </h4>
                         <p class="font-gray-dark">
-                            Cada opci\u00f3n funciona de manera individual y debe presionar Aceptar para aplicar filtro.
+                            Cada opción funciona de manera individual y debe presionar <strong>Aceptar</strong> para aplicar filtro.
                         </p>
                         <h:form styleClass="form-inline">
                             <div class="form-group">
@@ -36,10 +36,10 @@
                         </h:form>
 
                         <h:panelGroup rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'nonStock'}">
-                            <h4>Cantidad m\u00e1xima en stock </h4>
+                            <h4>Cantidad máxima en stock </h4>
                             <h:form styleClass="form-inline">
                                 <div class="form-group">
-                                    <h:outputLabel value="Cantidad m\u00e1xima" />
+                                    <h:outputLabel value="Cantidad máxima" />
                                     <h:inputText styleClass="form-control" value="#{equipoController.minStock}" required="true" />
                                 </div>
                                 <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{equipoController.filterByMinStock}" />
@@ -51,11 +51,11 @@
                             <h4>Rango de existencia en stock </h4>
                             <h:form styleClass="form-inline">
                                 <div class="form-group">
-                                    <h:outputLabel value="Cantidad m\u00ednima" />
+                                    <h:outputLabel value="Cantidad mínima" />
                                     <h:inputText styleClass="form-control" value="#{equipoController.startStock}" required="true" />
                                 </div>
                                 <div class="form-group">
-                                    <h:outputLabel value="Cantidad m\u00e1xima" />
+                                    <h:outputLabel value="Cantidad máxima" />
                                     <h:inputText styleClass="form-control" value="#{equipoController.endStock}" required="true" />
                                 </div>
                                 <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{equipoController.filterByStockRange}" />
@@ -92,7 +92,7 @@
                         </h:panelGroup>
 
                         <h:panelGroup rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'entryRange'}">
-                            <h4>Rango de fecha de adquisici\u00f3n </h4>
+                            <h4>Rango de fecha de adquisición </h4>
                             <h:form styleClass="form-inline">
                                 <div class="form-group">
                                     <h:outputLabel value="Fecha inicio" />

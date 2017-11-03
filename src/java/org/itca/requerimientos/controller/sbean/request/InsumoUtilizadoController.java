@@ -34,10 +34,10 @@ public class InsumoUtilizadoController implements Serializable {
     private int selectedItemIndex;
 
     private String dataFilterType;
-    private Integer startUsed;
-    private Integer endUsed;
-    private Integer startWasted;
-    private Integer endWasted;
+    private Short startUsed;
+    private Short endUsed;
+    private Short startWasted;
+    private Short endWasted;
     private Equipo equipment;
     private Date startDate;
     private Date endDate;
@@ -66,35 +66,35 @@ public class InsumoUtilizadoController implements Serializable {
         return dataFilterTypeValue;
     }
 
-    public Integer getStartUsed() {
+    public Short getStartUsed() {
         return startUsed;
     }
 
-    public void setStartUsed(Integer startUsed) {
+    public void setStartUsed(Short startUsed) {
         this.startUsed = startUsed;
     }
 
-    public Integer getEndUsed() {
+    public Short getEndUsed() {
         return endUsed;
     }
 
-    public void setEndUsed(Integer endUsed) {
+    public void setEndUsed(Short endUsed) {
         this.endUsed = endUsed;
     }
 
-    public Integer getStartWasted() {
+    public Short getStartWasted() {
         return startWasted;
     }
 
-    public void setStartWasted(Integer startWasted) {
+    public void setStartWasted(Short startWasted) {
         this.startWasted = startWasted;
     }
 
-    public Integer getEndWasted() {
+    public Short getEndWasted() {
         return endWasted;
     }
 
-    public void setEndWasted(Integer endWasted) {
+    public void setEndWasted(Short endWasted) {
         this.endWasted = endWasted;
     }
 
@@ -174,7 +174,7 @@ public class InsumoUtilizadoController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
-                    else if ("findByEquipment".equals(dataFilterType) && equipment != null) {
+                    if ("findByEquipment".equals(dataFilterType) && equipment != null) {
                         return new ListDataModel(getFacade().findByEquipment(equipment.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
                     }
                     else if ("usedRange".equals(dataFilterType) && startUsed != null && endUsed != null) {

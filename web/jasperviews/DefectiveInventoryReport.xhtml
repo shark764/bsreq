@@ -24,7 +24,7 @@
             <h:commandButton actionListener="#{defectiveInventoryReport.PPT}" value="Ppt" />
         </h:form>
 
-        <h:dataTable value="#{defectiveInventoryReport.modelList}" var="modelItem">
+        <h:dataTable value="#{defectiveInventoryReport.modelList}" var="modelItem" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
             <h:column>
                 <f:facet name="header">Cód. Marca</f:facet>
                 <h:outputText value="#{modelItem.t01codigo}" />
