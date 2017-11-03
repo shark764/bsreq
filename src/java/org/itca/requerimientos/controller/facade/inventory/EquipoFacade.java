@@ -55,7 +55,7 @@ public class EquipoFacade extends AbstractFacade<Equipo> {
         return list;
     }
 
-    public List<Equipo> findByProvider(Integer id, int[] range)
+    public List<Equipo> findByProvider(Short id, int[] range)
     {
         List<Equipo> list = null;
         Query q = em.createNamedQuery("Equipo.findByProvider");
@@ -78,7 +78,7 @@ public class EquipoFacade extends AbstractFacade<Equipo> {
         return list;
     }
 
-    public List<Equipo> findByModel(Integer id, int[] range)
+    public List<Equipo> findByModel(Short id, int[] range)
     {
         List<Equipo> list = null;
         Query q = em.createNamedQuery("Equipo.findByModel");

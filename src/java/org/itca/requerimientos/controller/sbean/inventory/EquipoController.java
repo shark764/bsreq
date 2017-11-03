@@ -211,9 +211,20 @@ public class EquipoController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
-                    System.out.println("PAGINATION dataFilterType is: " + dataFilterType + ", minStock: " + minStock);
                     if ("nonStock".equals(dataFilterType) && minStock != null) {
                         return new ListDataModel(getFacade().nonStock(minStock, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("stockRange".equals(dataFilterType) && startStock != null && endStock != null) {
+                        return new ListDataModel(getFacade().stockRange(startStock, endStock, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("findByProvider".equals(dataFilterType) && equipmentProvider != null) {
+                        return new ListDataModel(getFacade().findByProvider(equipmentProvider.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("findByModel".equals(dataFilterType) && equipmentModel != null) {
+                        return new ListDataModel(getFacade().findByModel(equipmentModel.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("entryRange".equals(dataFilterType) && startDate != null && endDate != null) {
+                        return new ListDataModel(getFacade().entryRange(startDate, endDate, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
                     }
                     return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
                 }

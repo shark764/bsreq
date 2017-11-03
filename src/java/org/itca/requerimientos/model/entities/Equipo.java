@@ -37,10 +37,10 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "equipo")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Equipo.findByModel", query = "SELECT e FROM Equipo e WHERE e.idModelo = :id"),
+    @NamedQuery(name = "Equipo.findByModel", query = "SELECT e FROM Equipo e WHERE e.idModelo.id = :id"),
     @NamedQuery(name = "Equipo.nonStock", query = "SELECT e FROM Equipo e WHERE e.existencia <= :min"),
     @NamedQuery(name = "Equipo.entryRange", query = "SELECT e FROM Equipo e WHERE e.fechaAdquisicion >= :start AND e.fechaAdquisicion <= :end"),
-    @NamedQuery(name = "Equipo.findByProvider", query = "SELECT e FROM Equipo e WHERE e.idProveedor = :id"),
+    @NamedQuery(name = "Equipo.findByProvider", query = "SELECT e FROM Equipo e WHERE e.idProveedor.id = :id"),
     @NamedQuery(name = "Equipo.stockRange", query = "SELECT e FROM Equipo e WHERE e.existencia >= :start AND e.existencia <= :end"),
     @NamedQuery(name = "Equipo.findAll", query = "SELECT e FROM Equipo e"),
     @NamedQuery(name = "Equipo.findById", query = "SELECT e FROM Equipo e WHERE e.id = :id"),
