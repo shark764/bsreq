@@ -29,42 +29,6 @@ public class AreaController implements Serializable {
     private org.itca.requerimientos.controller.facade.admin.AreaFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
-    
-    private List<Area> customerList;
-
-    public List<Area> getCustomerList() {
-        if (customerList == null) {
-//            customerList = new ArrayList<Area>();
-            customerList = getFacade().findAll();
-        }
-        return customerList;
-    }
-    public void updateCustomer(Area c) {
-        System.out.println("Updating: [" + c.getCodigo()+ "] " + c.getNombre());
-        recreateModel();
-//        return null;
-    }
-
-    public void PDF() {
-        System.out.println("report is: PDF");
-        recreateModel();
-    }
-    public void DOCX() {
-        System.out.println("report is: DOCX");
-        recreateModel();
-    }
-    public void XLSX() {
-        System.out.println("report is: XLSX");
-        recreateModel();
-    }
-    public void ODT() {
-        System.out.println("report is: ODT");
-        recreateModel();
-    }
-    public void PPT() {
-        System.out.println("report is: PPT");
-        recreateModel();
-    }
 
     public AreaController() {
     }

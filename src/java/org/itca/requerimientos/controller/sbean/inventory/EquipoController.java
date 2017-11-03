@@ -211,6 +211,10 @@ public class EquipoController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
+                    System.out.println("PAGINATION dataFilterType is: " + dataFilterType + ", minStock: " + minStock);
+                    if ("nonStock".equals(dataFilterType) && minStock != null) {
+                        return new ListDataModel(getFacade().nonStock(minStock, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
                     return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
                 }
             };

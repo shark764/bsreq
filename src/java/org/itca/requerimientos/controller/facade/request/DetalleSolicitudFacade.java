@@ -35,101 +35,123 @@ public class DetalleSolicitudFacade extends AbstractFacade<DetalleSolicitud> {
         super(DetalleSolicitud.class);
     }
 
-    public List<DetalleSolicitud> notSolved()
+    public List<DetalleSolicitud> notSolved(int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.notSolved");
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetalleSolicitud> notSolvedByAssignedTechnician(Integer id)
+    public List<DetalleSolicitud> notSolvedByAssignedTechnician(Integer id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.notSolvedByAssignedTechnician");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetalleSolicitud> entryRange(Date start, Date end)
+    public List<DetalleSolicitud> entryRange(Date start, Date end, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.entryRange");
         q.setParameter("start", start);
         q.setParameter("end", end);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetalleSolicitud> findByAssignedTechnician(Integer id)
+    public List<DetalleSolicitud> findByAssignedTechnician(Integer id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.findByAssignedTechnician");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetalleSolicitud> findBySolutionType(Integer id)
+    public List<DetalleSolicitud> findBySolutionType(Integer id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.findBySolutionType");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetalleSolicitud> findByRequestType(Integer id)
+    public List<DetalleSolicitud> findByRequestType(Integer id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.findByRequestType");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetalleSolicitud> findByFaultType(Integer id)
+    public List<DetalleSolicitud> findByFaultType(Integer id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.findByFaultType");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetalleSolicitud> findByEquipment(Integer id)
+    public List<DetalleSolicitud> findByEquipment(Integer id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.findByEquipment");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetalleSolicitud> findByEmployee(Integer id)
+    public List<DetalleSolicitud> findByEmployee(Integer id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.findByEmployee");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetalleSolicitud> limitTime()
+    public List<DetalleSolicitud> limitTime(int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.limitTime");
         q.setParameter("now", new Date());
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetalleSolicitud> solvedOverTime()
+    public List<DetalleSolicitud> solvedOverTime(int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.solvedOverTime");
         // q.setParameter("limit", new Date());
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }

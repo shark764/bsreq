@@ -32,49 +32,59 @@ public class EquipoFacade extends AbstractFacade<Equipo> {
         super(Equipo.class);
     }
 
-    public List<Equipo> nonStock(Integer min)
+    public List<Equipo> nonStock(Integer min, int[] range)
     {
         List<Equipo> list = null;
         Query q = em.createNamedQuery("Equipo.nonStock");
         q.setParameter("min", min);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<Equipo> entryRange(Date start, Date end)
+    public List<Equipo> entryRange(Date start, Date end, int[] range)
     {
         List<Equipo> list = null;
         Query q = em.createNamedQuery("Equipo.entryRange");
         q.setParameter("start", start);
         q.setParameter("end", end);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<Equipo> findByProvider(Integer id)
+    public List<Equipo> findByProvider(Integer id, int[] range)
     {
         List<Equipo> list = null;
         Query q = em.createNamedQuery("Equipo.findByProvider");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<Equipo> stockRange(Integer start, Integer end)
+    public List<Equipo> stockRange(Integer start, Integer end, int[] range)
     {
         List<Equipo> list = null;
         Query q = em.createNamedQuery("Equipo.stockRange");
         q.setParameter("start", start);
         q.setParameter("end", end);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<Equipo> findByModel(Integer id)
+    public List<Equipo> findByModel(Integer id, int[] range)
     {
         List<Equipo> list = null;
         Query q = em.createNamedQuery("Equipo.findByModel");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }

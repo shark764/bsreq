@@ -32,59 +32,71 @@ public class InsumoUtilizadoFacade extends AbstractFacade<InsumoUtilizado> {
         super(InsumoUtilizado.class);
     }
 
-    public List<InsumoUtilizado> usedRange(Integer start, Integer end)
+    public List<InsumoUtilizado> usedRange(Integer start, Integer end, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.usedRange");
         q.setParameter("start", start);
         q.setParameter("end", end);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<InsumoUtilizado> wastedRange(Integer start, Integer end)
+    public List<InsumoUtilizado> wastedRange(Integer start, Integer end, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.wastedRange");
         q.setParameter("start", start);
         q.setParameter("end", end);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<InsumoUtilizado> findByEquipment(Integer id)
+    public List<InsumoUtilizado> findByEquipment(Integer id, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.findByEquipment");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<InsumoUtilizado> entryRange(Date start, Date end)
+    public List<InsumoUtilizado> entryRange(Date start, Date end, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.entryRange");
         q.setParameter("start", start);
         q.setParameter("end", end);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<InsumoUtilizado> findByEquipmentUsed(Integer id)
+    public List<InsumoUtilizado> findByEquipmentUsed(Integer id, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.findByEquipmentUsed");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<InsumoUtilizado> findByResourceUsed(Integer id)
+    public List<InsumoUtilizado> findByResourceUsed(Integer id, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.findByResourceUsed");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }

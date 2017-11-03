@@ -31,21 +31,25 @@ public class InsumoFacade extends AbstractFacade<Insumo> {
         super(Insumo.class);
     }
 
-    public List<Insumo> nonStock(Integer min)
+    public List<Insumo> nonStock(Integer min, int[] range)
     {
         List<Insumo> list = null;
         Query q = em.createNamedQuery("Insumo.nonStock");
         q.setParameter("min", min);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<Insumo> stockRange(Integer start, Integer end)
+    public List<Insumo> stockRange(Integer start, Integer end, int[] range)
     {
         List<Insumo> list = null;
         Query q = em.createNamedQuery("Insumo.stockRange");
         q.setParameter("start", start);
         q.setParameter("end", end);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }

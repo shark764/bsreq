@@ -33,74 +33,90 @@ public class DetallePrestamoFacade extends AbstractFacade<DetallePrestamo> {
         super(DetallePrestamo.class);
     }
 
-    public List<DetallePrestamo> returnedOverTime()
+    public List<DetallePrestamo> returnedOverTime(int[] range)
     {
         List<DetallePrestamo> list = null;
         Query q = em.createNamedQuery("DetallePrestamo.returnedOverTime");
         // q.setParameter("limit", new Date());
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetallePrestamo> notReturnedLimit()
+    public List<DetallePrestamo> notReturnedLimit(int[] range)
     {
         List<DetallePrestamo> list = null;
         Query q = em.createNamedQuery("DetallePrestamo.notReturnedLimit");
         q.setParameter("now", new Date());
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetallePrestamo> notReturned()
+    public List<DetallePrestamo> notReturned(int[] range)
     {
         List<DetallePrestamo> list = null;
         Query q = em.createNamedQuery("DetallePrestamo.notReturned");
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetallePrestamo> notReturnedByEmployee(Integer id)
+    public List<DetallePrestamo> notReturnedByEmployee(Integer id, int[] range)
     {
         List<DetallePrestamo> list = null;
         Query q = em.createNamedQuery("DetallePrestamo.notReturnedByEmployee");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetallePrestamo> entryRange(Date start, Date end)
+    public List<DetallePrestamo> entryRange(Date start, Date end, int[] range)
     {
         List<DetallePrestamo> list = null;
         Query q = em.createNamedQuery("DetallePrestamo.entryRange");
         q.setParameter("start", start);
         q.setParameter("end", end);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetallePrestamo> findByEquipment(Integer id)
+    public List<DetallePrestamo> findByEquipment(Integer id, int[] range)
     {
         List<DetallePrestamo> list = null;
         Query q = em.createNamedQuery("DetallePrestamo.findByEquipment");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetallePrestamo> findByEmployee(Integer id)
+    public List<DetallePrestamo> findByEmployee(Integer id, int[] range)
     {
         List<DetallePrestamo> list = null;
         Query q = em.createNamedQuery("DetallePrestamo.findByEmployee");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<DetallePrestamo> limitTime()
+    public List<DetallePrestamo> limitTime(int[] range)
     {
         List<DetallePrestamo> list = null;
         Query q = em.createNamedQuery("DetallePrestamo.limitTime");
         q.setParameter("now", new Date());
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }

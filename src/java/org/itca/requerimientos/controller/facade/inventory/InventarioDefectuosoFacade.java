@@ -33,21 +33,25 @@ public class InventarioDefectuosoFacade extends AbstractFacade<InventarioDefectu
         super(InventarioDefectuoso.class);
     }
 
-    public List<InventarioDefectuoso> entryRange(Date start, Date end)
+    public List<InventarioDefectuoso> entryRange(Date start, Date end, int[] range)
     {
         List<InventarioDefectuoso> list = null;
         Query q = em.createNamedQuery("InventarioDefectuoso.entryRange");
         q.setParameter("start", start);
         q.setParameter("end", end);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
 
-    public List<InventarioDefectuoso> findByEquipmentModel(Integer id)
+    public List<InventarioDefectuoso> findByEquipmentModel(Integer id, int[] range)
     {
         List<InventarioDefectuoso> list = null;
         Query q = em.createNamedQuery("InventarioDefectuoso.findByEquipmentModel");
         q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
         list = q.getResultList();
         return list;
     }
