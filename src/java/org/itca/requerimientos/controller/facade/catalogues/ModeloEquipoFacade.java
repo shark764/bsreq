@@ -5,11 +5,14 @@
  */
 package org.itca.requerimientos.controller.facade.catalogues;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import org.itca.requerimientos.controller.facade.AbstractFacade;
 import org.itca.requerimientos.model.entities.ModeloEquipo;
+import org.itca.requerimientos.model.entities.jasper.ModeloEquipoJasper;
 
 /**
  *
@@ -27,6 +30,13 @@ public class ModeloEquipoFacade extends AbstractFacade<ModeloEquipo> {
 
     public ModeloEquipoFacade() {
         super(ModeloEquipo.class);
+    }
+
+    public List<ModeloEquipoJasper> findAllForStockByEquipmentModelReport() {
+        List<ModeloEquipoJasper> list = null;
+        Query q = em.createNamedQuery("ModeloEquipo.stockByEquipmentModelReport");
+        list = q.getResultList();
+        return list;
     }
     
 }

@@ -9,14 +9,20 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.ColumnResult;
+import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SqlResultSetMapping;
+import javax.persistence.SqlResultSetMappings;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
@@ -24,6 +30,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import org.itca.requerimientos.model.entities.jasper.RetrasoPrestamoJasper;
 
 /**
  *
@@ -47,6 +54,25 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "DetallePrestamo.findByDescripcion", query = "SELECT d FROM DetallePrestamo d WHERE d.descripcion = :descripcion"),
     @NamedQuery(name = "DetallePrestamo.findByFechaLimite", query = "SELECT d FROM DetallePrestamo d WHERE d.fechaLimite = :fechaLimite"),
     @NamedQuery(name = "DetallePrestamo.findByComentario", query = "SELECT d FROM DetallePrestamo d WHERE d.comentario = :comentario")})
+@NamedNativeQueries({
+    @NamedNativeQuery(name = "DetallePrestamo.equipmentReturnedOverTimeReport", query = "SELECT t04.codigo as t04codigo, t04.nombre as t04nombre, t01.nombre AS t01nombre, t02.fecha_prestamo as t02fechaprestamo, t02.fecha_entrega as t02fechaentrega, ABS(DATEDIFF(t02.fecha_limite, t02.fecha_entrega)) as t02retraso FROM equipo AS t01 JOIN detalle_prestamo AS t02 ON t01.id = t02.id_equipo JOIN prestamo AS t03 ON t03.id = t02.id_prestamo JOIN area AS t04 ON t04.id = t03.id_area WHERE t02.fecha_entrega IS NOT NULL AND t02.fecha_limite < t02.fecha_entrega ORDER BY 6 DESC, 5 DESC, 2, 3", resultSetMapping = "RetrasoPrestamoJasperValueMapping"),
+})
+@SqlResultSetMappings({
+    @SqlResultSetMapping(
+	    name = "RetrasoPrestamoJasperValueMapping",
+	    classes = @ConstructorResult(
+		    targetClass = RetrasoPrestamoJasper.class,
+		    columns = {
+			@ColumnResult(name = "t04codigo"),
+			@ColumnResult(name = "t04nombre"),
+			@ColumnResult(name = "t01nombre"),
+			@ColumnResult(name = "t02fechaprestamo", type = Date.class),
+			@ColumnResult(name = "t02fechaentrega", type = Date.class),
+			@ColumnResult(name = "t02retraso", type = Integer.class)
+		    }
+	    )
+    )
+})
 public class DetallePrestamo implements Serializable {
     private static final long serialVersionUID = 1L;
     @TableGenerator(name = "sec_detalle_prestamo",

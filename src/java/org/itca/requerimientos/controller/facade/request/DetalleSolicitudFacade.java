@@ -13,6 +13,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import org.itca.requerimientos.controller.facade.AbstractFacade;
 import org.itca.requerimientos.model.entities.DetalleSolicitud;
+import org.itca.requerimientos.model.entities.jasper.SolicitudEquipoJasper;
+import org.itca.requerimientos.model.entities.jasper.SolicitudFallaJasper;
+import org.itca.requerimientos.model.entities.jasper.SolicitudTecnicoJasper;
 
 /**
  *
@@ -127,6 +130,27 @@ public class DetalleSolicitudFacade extends AbstractFacade<DetalleSolicitud> {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.solvedOverTime");
         // q.setParameter("limit", new Date());
+        list = q.getResultList();
+        return list;
+    }
+
+    public List<SolicitudEquipoJasper> findAllForRequestByEquipmentModelReport() {
+        List<SolicitudEquipoJasper> list = null;
+        Query q = em.createNamedQuery("DetalleSolicitud.requestByEquipmentModelReport");
+        list = q.getResultList();
+        return list;
+    }
+
+    public List<SolicitudFallaJasper> findAllForRequestByEquipmentFailureReport() {
+        List<SolicitudFallaJasper> list = null;
+        Query q = em.createNamedQuery("DetalleSolicitud.requestByEquipmentFailureReport");
+        list = q.getResultList();
+        return list;
+    }
+
+    public List<SolicitudTecnicoJasper> findAllForRequestByAssignedTechnicianReport() {
+        List<SolicitudTecnicoJasper> list = null;
+        Query q = em.createNamedQuery("DetalleSolicitud.requestByAssignedTechnicianReport");
         list = q.getResultList();
         return list;
     }

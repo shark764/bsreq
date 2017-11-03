@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <ul>
+                <c:forEach items="#{jasperBean.jasperReportOptions}" var="jrOption">
+                    <li><h:link styleClass="btn btn-sm btn-default" outcome="#{jrOption.key}" value="#{jrOption.value}"/></li>
+                </c:forEach>
+            </ul>
+        </h:form>
+
+        <h:form>
+            <h:commandButton actionListener="#{requestByEquipmentModelReport.PDF}" value="PDF" />
+            <h:commandButton actionListener="#{requestByEquipmentModelReport.DOCX}" value="Docx" />
+            <h:commandButton actionListener="#{requestByEquipmentModelReport.XLSX}" value="Xlsx" />
+            <h:commandButton actionListener="#{requestByEquipmentModelReport.ODT}" value="Odt" />
+            <h:commandButton actionListener="#{requestByEquipmentModelReport.PPT}" value="Ppt" />
+        </h:form>
+
+        <h:dataTable value="#{requestByEquipmentModelReport.modelList}" var="modelItem">
+            <h:column>
+                <f:facet name="header">Cód. Marca</f:facet>
+                <h:outputText value="#{modelItem.t01codigo}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Marca</f:facet>
+                <h:outputText value="#{modelItem.t01nombre}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Cód. Modelo</f:facet>
+                <h:outputText value="#{modelItem.t02codigo}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Modelo</f:facet>
+                <h:outputText value="#{modelItem.t02nombre}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">N° requerimientos</f:facet>
+                <h:outputText value="#{modelItem.t04conteo}" />
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>

@@ -13,6 +13,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import org.itca.requerimientos.controller.facade.AbstractFacade;
 import org.itca.requerimientos.model.entities.InventarioDefectuoso;
+import org.itca.requerimientos.model.entities.jasper.InventarioDefectuosoJasper;
 
 /**
  *
@@ -47,6 +48,13 @@ public class InventarioDefectuosoFacade extends AbstractFacade<InventarioDefectu
         List<InventarioDefectuoso> list = null;
         Query q = em.createNamedQuery("InventarioDefectuoso.findByEquipmentModel");
         q.setParameter("id", id);
+        list = q.getResultList();
+        return list;
+    }
+
+    public List<InventarioDefectuosoJasper> findAllForDefectiveInventoryReport() {
+        List<InventarioDefectuosoJasper> list = null;
+        Query q = em.createNamedQuery("InventarioDefectuoso.defectiveInventoryReport");
         list = q.getResultList();
         return list;
     }

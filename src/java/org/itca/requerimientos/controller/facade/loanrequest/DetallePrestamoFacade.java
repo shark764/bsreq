@@ -13,6 +13,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import org.itca.requerimientos.controller.facade.AbstractFacade;
 import org.itca.requerimientos.model.entities.DetallePrestamo;
+import org.itca.requerimientos.model.entities.jasper.RetrasoPrestamoJasper;
 
 /**
  *
@@ -100,6 +101,13 @@ public class DetallePrestamoFacade extends AbstractFacade<DetallePrestamo> {
         List<DetallePrestamo> list = null;
         Query q = em.createNamedQuery("DetallePrestamo.limitTime");
         q.setParameter("now", new Date());
+        list = q.getResultList();
+        return list;
+    }
+
+    public List<RetrasoPrestamoJasper> findAllForEquipmentReturnedOverTimeReport() {
+        List<RetrasoPrestamoJasper> list = null;
+        Query q = em.createNamedQuery("DetallePrestamo.equipmentReturnedOverTimeReport");
         list = q.getResultList();
         return list;
     }
