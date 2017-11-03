@@ -126,6 +126,12 @@ public class InventarioDefectuosoController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
+                    else if ("findByEquipmentModel".equals(dataFilterType) && equipmentModel != null) {
+                        return new ListDataModel(getFacade().findByEquipmentModel(equipmentModel.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("entryRange".equals(dataFilterType) && startDate != null && endDate != null) {
+                        return new ListDataModel(getFacade().entryRange(startDate, endDate, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
                     return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
                 }
             };

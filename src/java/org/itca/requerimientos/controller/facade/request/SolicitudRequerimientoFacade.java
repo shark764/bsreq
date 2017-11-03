@@ -28,5 +28,39 @@ public class SolicitudRequerimientoFacade extends AbstractFacade<SolicitudRequer
     public SolicitudRequerimientoFacade() {
         super(SolicitudRequerimiento.class);
     }
+
+    public List<SolicitudRequerimiento> findByArea(Short id, int[] range)
+    {
+        List<SolicitudRequerimiento> list = null;
+        Query q = em.createNamedQuery("SolicitudRequerimiento.findByArea");
+        q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
+        list = q.getResultList();
+        return list;
+    }
+
+    public List<SolicitudRequerimiento> findByEmployee(Integer id, int[] range)
+    {
+        List<SolicitudRequerimiento> list = null;
+        Query q = em.createNamedQuery("SolicitudRequerimiento.findByEmployee");
+        q.setParameter("id", id);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
+        list = q.getResultList();
+        return list;
+    }
+
+    public List<SolicitudRequerimiento> entryRange(Date start, Date end, int[] range)
+    {
+        List<SolicitudRequerimiento> list = null;
+        Query q = em.createNamedQuery("SolicitudRequerimiento.entryRange");
+        q.setParameter("start", start);
+        q.setParameter("end", end);
+        q.setMaxResults(range[1] - range[0] + 1);
+        q.setFirstResult(range[0]);
+        list = q.getResultList();
+        return list;
+    }
     
 }

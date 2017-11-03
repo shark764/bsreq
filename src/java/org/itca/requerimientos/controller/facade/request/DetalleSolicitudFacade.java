@@ -79,7 +79,7 @@ public class DetalleSolicitudFacade extends AbstractFacade<DetalleSolicitud> {
         return list;
     }
 
-    public List<DetalleSolicitud> findBySolutionType(Integer id, int[] range)
+    public List<DetalleSolicitud> findBySolutionType(Short id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.findBySolutionType");
@@ -90,7 +90,7 @@ public class DetalleSolicitudFacade extends AbstractFacade<DetalleSolicitud> {
         return list;
     }
 
-    public List<DetalleSolicitud> findByRequestType(Integer id, int[] range)
+    public List<DetalleSolicitud> findByRequestType(Short id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.findByRequestType");
@@ -101,7 +101,7 @@ public class DetalleSolicitudFacade extends AbstractFacade<DetalleSolicitud> {
         return list;
     }
 
-    public List<DetalleSolicitud> findByFaultType(Integer id, int[] range)
+    public List<DetalleSolicitud> findByFaultType(Short id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.findByFaultType");
@@ -112,7 +112,7 @@ public class DetalleSolicitudFacade extends AbstractFacade<DetalleSolicitud> {
         return list;
     }
 
-    public List<DetalleSolicitud> findByEquipment(Integer id, int[] range)
+    public List<DetalleSolicitud> findByEquipment(Long id, int[] range)
     {
         List<DetalleSolicitud> list = null;
         Query q = em.createNamedQuery("DetalleSolicitud.findByEquipment");

@@ -10,7 +10,7 @@
             <h:outputText value="#{adminBundle.ListProveedorTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:form styleClass="jsfcrud_list_form">
+            <h:form styleClass="">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -19,7 +19,7 @@
                     <h:outputText value="#{proveedorController.pagination.pageFirstItem + 1}..#{proveedorController.pagination.pageLastItem + 1}/#{proveedorController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.previous}" value="#{adminBundle.Previous} #{proveedorController.pagination.pageSize}" rendered="#{proveedorController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.next}" value="#{adminBundle.Next} #{proveedorController.pagination.pageSize}" rendered="#{proveedorController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{proveedorController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{proveedorController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{adminBundle.ListProveedorTitle_id}"/>
@@ -66,7 +66,7 @@
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareCreate}" value="#{adminBundle.ListProveedorCreateLink}"/>
                 <br />
                 <br />
-                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{adminBundle.ListProveedorIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{adminBundle.ListProveedorIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

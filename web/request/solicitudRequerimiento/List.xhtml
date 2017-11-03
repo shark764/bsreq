@@ -10,7 +10,7 @@
             <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:form styleClass="jsfcrud_list_form">
+            <h:form styleClass="">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -19,7 +19,7 @@
                     <h:outputText value="#{solicitudRequerimientoController.pagination.pageFirstItem + 1}..#{solicitudRequerimientoController.pagination.pageLastItem + 1}/#{solicitudRequerimientoController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.previous}" value="#{requestBundle.Previous} #{solicitudRequerimientoController.pagination.pageSize}" rendered="#{solicitudRequerimientoController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.next}" value="#{requestBundle.Next} #{solicitudRequerimientoController.pagination.pageSize}" rendered="#{solicitudRequerimientoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{solicitudRequerimientoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{solicitudRequerimientoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle_id}"/>
@@ -62,7 +62,7 @@
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareCreate}" value="#{requestBundle.ListSolicitudRequerimientoCreateLink}"/>
                 <br />
                 <br />
-                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ListSolicitudRequerimientoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{requestBundle.ListSolicitudRequerimientoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

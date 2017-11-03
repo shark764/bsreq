@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "solicitud_requerimiento")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "SolicitudRequerimiento.findByArea", query = "SELECT s FROM SolicitudRequerimiento s WHERE s.idArea = :id"),
-    @NamedQuery(name = "SolicitudRequerimiento.findByEmployee", query = "SELECT s FROM SolicitudRequerimiento s WHERE s.idEmpleado = :id"),
+    @NamedQuery(name = "SolicitudRequerimiento.findByArea", query = "SELECT s FROM SolicitudRequerimiento s WHERE s.idArea.id = :id"),
+    @NamedQuery(name = "SolicitudRequerimiento.findByEmployee", query = "SELECT s FROM SolicitudRequerimiento s WHERE s.idEmpleado.id = :id"),
     @NamedQuery(name = "SolicitudRequerimiento.entryRange", query = "SELECT s FROM SolicitudRequerimiento s WHERE s.fecha >= :start AND s.fecha <= :end"),
     @NamedQuery(name = "SolicitudRequerimiento.findAll", query = "SELECT s FROM SolicitudRequerimiento s"),
     @NamedQuery(name = "SolicitudRequerimiento.findById", query = "SELECT s FROM SolicitudRequerimiento s WHERE s.id = :id"),

@@ -123,6 +123,12 @@ public class InsumoController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
+                    if ("nonStock".equals(dataFilterType) && minStock != null) {
+                        return new ListDataModel(getFacade().nonStock(minStock, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("stockRange".equals(dataFilterType) && startStock != null && endStock != null) {
+                        return new ListDataModel(getFacade().stockRange(startStock, endStock, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
                     return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
                 }
             };

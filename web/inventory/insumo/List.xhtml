@@ -10,78 +10,122 @@
             <h:outputText value="#{inventoryBundle.ListInsumoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            
-            <h:form>
-                <h:selectOneMenu value="#{insumoController.dataFilterType}" required="true">
-                    <f:selectItems value="#{insumoController.dataFilterTypeValue}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoController.applyDataFilterType}" />
-                <h:messages />
-                <h:outputText value="#{insumoController.dataFilterType}" />
-            </h:form>
 
-                <h:form rendered="#{insumoController.dataFilterType != 'NONE' and insumoController.dataFilterType == 'nonStock'}">
-                    <h:inputText value="#{insumoController.minStock}" required="true" />
-                    <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoController.filterByMinStock}" />
-                    <h:messages />
-                    <h:outputText value="#{insumoController.minStock}" />
-                </h:form>
+            <h:panelGroup rendered="#{insumoController.items.rowCount > 0}">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Filtros <small>seleccione una de las opciones de filtrado</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br>
 
-                <h:form rendered="#{insumoController.dataFilterType != 'NONE' and insumoController.dataFilterType == 'stockRange'}">
-                    <h:inputText value="#{insumoController.startStock}" required="true" />
-                    <h:inputText value="#{insumoController.endStock}" required="true" />
-                    <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoController.filterByStockRange}" />
-                    <h:messages />
-                    <h:outputText value="#{insumoController.startStock}" />
-                    <h:outputText value="#{insumoController.endStock}" />
-                </h:form>
+                        <h4>Opciones de filtrado </h4>
+                        <p class="font-gray-dark">
+                            Cada opci\u00f3n funciona de manera individual y debe presionar Aceptar para aplicar filtro.
+                        </p>
+                        <h:form styleClass="form-inline">
+                            <div class="form-group">
+                                <h:outputLabel value="Filtro" />
+                                <h:selectOneMenu styleClass="form-control" value="#{ styleClass="form-control" value="#{insumoController.dataFilterType}" required="true">
+                                    <f:selectItems value="#{insumoController.dataFilterTypeValue}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoController.applyDataFilterType}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form styleClass="jsfcrud_list_form">
-                <h:panelGroup id="messagePanel" layout="block">
-                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                </h:panelGroup>
-                <h:outputText escape="false" value="#{inventoryBundle.ListInsumoEmpty}" rendered="#{insumoController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{insumoController.items.rowCount > 0}">
-                    <h:outputText value="#{insumoController.pagination.pageFirstItem + 1}..#{insumoController.pagination.pageLastItem + 1}/#{insumoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.previous}" value="#{inventoryBundle.Previous} #{insumoController.pagination.pageSize}" rendered="#{insumoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.next}" value="#{inventoryBundle.Next} #{insumoController.pagination.pageSize}" rendered="#{insumoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{insumoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListInsumoTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListInsumoTitle_nombre}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.nombre}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListInsumoTitle_existencia}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.existencia}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.prepareView}" value="#{inventoryBundle.ListInsumoViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.prepareEdit}" value="#{inventoryBundle.ListInsumoEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.destroy}" value="#{inventoryBundle.ListInsumoDestroyLink}"/>
-                        </h:column>
-                    </h:dataTable>
-                </h:panelGroup>
-                <br />
-                <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.prepareCreate}" value="#{inventoryBundle.ListInsumoCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{inventoryBundle.ListInsumoIndexLink}"/>
-            </h:form>
+                        <h4>Cantidad m\u00e1xima en stock </h4>
+                        <h:form styleClass="form-inline" rendered="#{insumoController.dataFilterType != 'NONE' and insumoController.dataFilterType == 'nonStock'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Cantidad m\u00e1xima" />
+                                <h:inputText styleClass="form-control" value="#{insumoController.minStock}" required="true" />
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoController.filterByMinStock}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Rango de existencia en stock </h4>
+                        <h:form styleClass="form-inline" rendered="#{insumoController.dataFilterType != 'NONE' and insumoController.dataFilterType == 'stockRange'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Cantidad m\u00ednima" />
+                                <h:inputText styleClass="form-control" value="#{insumoController.startStock}" required="true" />
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="Cantidad m\u00e1xima" />
+                                <h:inputText styleClass="form-control" value="#{insumoController.endStock}" required="true" />
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoController.filterByStockRange}" />
+                            <h:messages />
+                        </h:form>
+                    </div>
+                </div>
+            </h:panelGroup>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Listado de registros <small>vista de tabla</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <p>Registros ingresados al sistema</p>
+
+                        <h:form styleClass="">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:outputText escape="false" value="#{inventoryBundle.ListInsumoEmpty}" rendered="#{insumoController.items.rowCount == 0}"/>
+                            <h:panelGroup rendered="#{insumoController.items.rowCount > 0}">
+                                <h:outputText value="#{insumoController.pagination.pageFirstItem + 1}..#{insumoController.pagination.pageLastItem + 1}/#{insumoController.pagination.itemsCount}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.previous}" value="#{inventoryBundle.Previous} #{insumoController.pagination.pageSize}" rendered="#{insumoController.pagination.hasPreviousPage}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.next}" value="#{inventoryBundle.Next} #{insumoController.pagination.pageSize}" rendered="#{insumoController.pagination.hasNextPage}"/>&nbsp;
+
+                                <div class="table-responsive">
+                                    <h:dataTable value="#{insumoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListInsumoTitle_id}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListInsumoTitle_nombre}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.nombre}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListInsumoTitle_existencia}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.existencia}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.prepareView}" value="#{inventoryBundle.ListInsumoViewLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.prepareEdit}" value="#{inventoryBundle.ListInsumoEditLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.destroy}" value="#{inventoryBundle.ListInsumoDestroyLink}"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </div>
+                            </h:panelGroup>
+                            <br />
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.prepareCreate}" value="#{inventoryBundle.ListInsumoCreateLink}"/>
+                            <br />
+                            <br />
+                            <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.ListInsumoIndexLink}"/>
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 

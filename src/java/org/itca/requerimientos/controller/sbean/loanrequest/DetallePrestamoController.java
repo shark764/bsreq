@@ -181,6 +181,27 @@ public class DetallePrestamoController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
+                    if ("limitTime".equals(dataFilterType)) {
+                        return new ListDataModel(getFacade().limitTime(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("findByEmployee".equals(dataFilterType) && employee != null) {
+                        return new ListDataModel(getFacade().findByEmployee(employee.getId(), endStock, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("findByEquipment".equals(dataFilterType) && equipment != null) {
+                        return new ListDataModel(getFacade().findByEquipment(equipment.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("returnedOverTime".equals(dataFilterType)) {
+                        return new ListDataModel(getFacade().returnedOverTime(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("notReturned".equals(dataFilterType)) {
+                        return new ListDataModel(getFacade().notReturned(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("notReturnedByEmployee".equals(dataFilterType) && employee != null) {
+                        return new ListDataModel(getFacade().notReturnedByEmployee(employee.getId(), endStock, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("entryRange".equals(dataFilterType) && startDate != null && endDate != null) {
+                        return new ListDataModel(getFacade().entryRange(startDate, endDate, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
                     return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
                 }
             };

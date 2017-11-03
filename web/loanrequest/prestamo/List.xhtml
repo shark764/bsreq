@@ -10,7 +10,7 @@
             <h:outputText value="#{loanRequestBundle.ListPrestamoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:form styleClass="jsfcrud_list_form">
+            <h:form styleClass="">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -19,7 +19,7 @@
                     <h:outputText value="#{prestamoController.pagination.pageFirstItem + 1}..#{prestamoController.pagination.pageLastItem + 1}/#{prestamoController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.previous}" value="#{loanRequestBundle.Previous} #{prestamoController.pagination.pageSize}" rendered="#{prestamoController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.next}" value="#{loanRequestBundle.Next} #{prestamoController.pagination.pageSize}" rendered="#{prestamoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{prestamoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{prestamoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{loanRequestBundle.ListPrestamoTitle_id}"/>
@@ -62,7 +62,7 @@
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.prepareCreate}" value="#{loanRequestBundle.ListPrestamoCreateLink}"/>
                 <br />
                 <br />
-                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{loanRequestBundle.ListPrestamoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{loanRequestBundle.ListPrestamoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

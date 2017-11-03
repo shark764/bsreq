@@ -10,7 +10,7 @@
             <h:outputText value="#{cataloguesBundle.ListTipoFallaTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:form styleClass="jsfcrud_list_form">
+            <h:form styleClass="">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -19,7 +19,7 @@
                     <h:outputText value="#{tipoFallaController.pagination.pageFirstItem + 1}..#{tipoFallaController.pagination.pageLastItem + 1}/#{tipoFallaController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoFallaController.previous}" value="#{cataloguesBundle.Previous} #{tipoFallaController.pagination.pageSize}" rendered="#{tipoFallaController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoFallaController.next}" value="#{cataloguesBundle.Next} #{tipoFallaController.pagination.pageSize}" rendered="#{tipoFallaController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{tipoFallaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{tipoFallaController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{cataloguesBundle.ListTipoFallaTitle_id}"/>
@@ -54,7 +54,7 @@
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoFallaController.prepareCreate}" value="#{cataloguesBundle.ListTipoFallaCreateLink}"/>
                 <br />
                 <br />
-                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ListTipoFallaIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{cataloguesBundle.ListTipoFallaIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

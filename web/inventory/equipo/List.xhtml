@@ -12,62 +12,99 @@
         <ui:define name="body">
 
             <h:panelGroup rendered="#{equipoController.items.rowCount > 0}">
-                <h:form>
-                    <h:selectOneMenu value="#{equipoController.dataFilterType}" required="true">
-                        <f:selectItems value="#{equipoController.dataFilterTypeValue}"/>
-                    </h:selectOneMenu>
-                    <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{equipoController.applyDataFilterType}" />
-                    <h:messages />
-                    <h:outputText value="#{equipoController.dataFilterType}" />
-                </h:form>
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Filtros <small>seleccione una de las opciones de filtrado</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br>
 
-                <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'nonStock'}">
-                    <h:inputText value="#{equipoController.minStock}" required="true" />
-                    <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{equipoController.filterByMinStock}" />
-                    <h:messages />
-                    <h:outputText value="#{equipoController.minStock}" />
-                </h:form>
+                        <h4>Opciones de filtrado </h4>
+                        <p class="font-gray-dark">
+                            Cada opci\u00f3n funciona de manera individual y debe presionar Aceptar para aplicar filtro.
+                        </p>
+                        <h:form styleClass="form-inline">
+                            <div class="form-group">
+                                <h:outputLabel value="Filtro" />
+                                <h:selectOneMenu styleClass="form-control" value="#{equipoController.dataFilterType}" required="true">
+                                    <f:selectItems value="#{equipoController.dataFilterTypeValue}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{equipoController.applyDataFilterType}" />
+                            <h:messages />
+                        </h:form>
 
-                <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'stockRange'}">
-                    <h:inputText value="#{equipoController.startStock}" required="true" />
-                    <h:inputText value="#{equipoController.endStock}" required="true" />
-                    <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{equipoController.filterByStockRange}" />
-                    <h:messages />
-                    <h:outputText value="#{equipoController.startStock}" />
-                    <h:outputText value="#{equipoController.endStock}" />
-                </h:form>
+                        <h4>Cantidad m\u00e1xima en stock </h4>
+                        <h:form styleClass="form-inline" rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'nonStock'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Cantidad m\u00e1xima" />
+                                <h:inputText styleClass="form-control" value="#{equipoController.minStock}" required="true" />
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{equipoController.filterByMinStock}" />
+                            <h:messages />
+                        </h:form>
 
-                <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'findByProvider'}">
-                    <h:selectOneMenu value="#{equipoController.equipmentProvider}" required="true">
-                        <f:selectItems value="#{proveedorController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{equipoController.filterByEquipmentProvider}" />
-                    <h:messages />
-                </h:form>
+                        <h4>Rango de existencia en stock </h4>
+                        <h:form styleClass="form-inline" rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'stockRange'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Cantidad m\u00ednima" />
+                                <h:inputText styleClass="form-control" value="#{equipoController.startStock}" required="true" />
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="Cantidad m\u00e1xima" />
+                                <h:inputText styleClass="form-control" value="#{equipoController.endStock}" required="true" />
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{equipoController.filterByStockRange}" />
+                            <h:messages />
+                        </h:form>
 
-                <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'findByModel'}">
-                    <h:selectOneMenu value="#{equipoController.equipmentModel}" required="true">
-                        <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{equipoController.filterByEquipmentModel}" />
-                    <h:messages />
-                </h:form>
+                        <h4>Filtrar por proveedor </h4>
+                        <h:form styleClass="form-inline" rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'findByProvider'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Proveedor" />
+                                <h:selectOneMenu styleClass="form-control" value="#{equipoController.equipmentProvider}" required="true">
+                                    <f:selectItems value="#{proveedorController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{equipoController.filterByEquipmentProvider}" />
+                            <h:messages />
+                        </h:form>
 
-                <h:form rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'entryRange'}">
-                    <h:inputText value="#{equipoController.startDate}" required="true">
-                        <f:convertDateTime pattern="dd/MM/yyyy" />
-                    </h:inputText>
-                    <h:inputText value="#{equipoController.endDate}" required="true">
-                        <f:convertDateTime pattern="dd/MM/yyyy" />
-                    </h:inputText>
-                    <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{equipoController.filterByEntryRange}" />
-                    <h:messages />
-                    <h:outputText value="#{equipoController.startDate}" />
-                    <h:outputText value="#{equipoController.endDate}" />
-                </h:form>
+                        <h4>Filtrar por modelo </h4>
+                        <h:form styleClass="form-inline" rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'findByModel'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Modelo" />
+                                <h:selectOneMenu styleClass="form-control" value="#{equipoController.equipmentModel}" required="true">
+                                    <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{equipoController.filterByEquipmentModel}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Rango de fecha de adquisici\u00f3n </h4>
+                        <h:form styleClass="form-inline" rendered="#{equipoController.dataFilterType != 'NONE' and equipoController.dataFilterType == 'entryRange'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Fecha inicio" />
+                                <h:inputText styleClass="form-control" value="#{equipoController.startDate}" required="true">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="Fecha fin" />
+                                <h:inputText styleClass="form-control" value="#{equipoController.endDate}" required="true">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{equipoController.filterByEntryRange}" />
+                            <h:messages />
+                        </h:form>
+                    </div>
+                </div>
             </h:panelGroup>
-                
-            <h:form styleClass="jsfcrud_list_form">
+
+            <h:form styleClass="">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -76,7 +113,7 @@
                     <h:outputText value="#{equipoController.pagination.pageFirstItem + 1}..#{equipoController.pagination.pageLastItem + 1}/#{equipoController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.previous}" value="#{inventoryBundle.Previous} #{equipoController.pagination.pageSize}" rendered="#{equipoController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.next}" value="#{inventoryBundle.Next} #{equipoController.pagination.pageSize}" rendered="#{equipoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{equipoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{equipoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{inventoryBundle.ListEquipoTitle_id}"/>
@@ -181,7 +218,7 @@
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.prepareCreate}" value="#{inventoryBundle.ListEquipoCreateLink}"/>
                 <br />
                 <br />
-                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{inventoryBundle.ListEquipoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.ListEquipoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

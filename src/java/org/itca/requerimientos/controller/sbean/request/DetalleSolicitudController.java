@@ -300,6 +300,39 @@ public class DetalleSolicitudController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
+                    if ("limitTime".equals(dataFilterType)) {
+                        return new ListDataModel(getFacade().limitTime(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    if ("solvedOverTime".equals(dataFilterType)) {
+                        return new ListDataModel(getFacade().solvedOverTime(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("findByEquipment".equals(dataFilterType) && equipment != null) {
+                        return new ListDataModel(getFacade().findByEquipment(equipment.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("findByEmployee".equals(dataFilterType) && employee != null) {
+                        return new ListDataModel(getFacade().findByEmployee(employee.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    if ("notSolved".equals(dataFilterType)) {
+                        return new ListDataModel(getFacade().notSolved(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("notSolvedByAssignedTechnician".equals(dataFilterType) && employee != null) {
+                        return new ListDataModel(getFacade().notSolvedByAssignedTechnician(employee.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("entryRange".equals(dataFilterType) && startDate != null && endDate != null) {
+                        return new ListDataModel(getFacade().entryRange(startDate, endDate, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("findByAssignedTechnician".equals(dataFilterType) && employee != null) {
+                        return new ListDataModel(getFacade().findByAssignedTechnician(employee.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("findBySolutionType".equals(dataFilterType) && solutionType != null) {
+                        return new ListDataModel(getFacade().findBySolutionType(solutionType.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("findByRequestType".equals(dataFilterType) && requestType != null) {
+                        return new ListDataModel(getFacade().findByRequestType(requestType.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("findByFaultType".equals(dataFilterType) && faultType != null) {
+                        return new ListDataModel(getFacade().findByFaultType(faultType.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
                     return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
                 }
             };

@@ -32,7 +32,7 @@ public class InsumoUtilizadoFacade extends AbstractFacade<InsumoUtilizado> {
         super(InsumoUtilizado.class);
     }
 
-    public List<InsumoUtilizado> usedRange(Integer start, Integer end, int[] range)
+    public List<InsumoUtilizado> usedRange(Short start, Short end, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.usedRange");
@@ -44,7 +44,7 @@ public class InsumoUtilizadoFacade extends AbstractFacade<InsumoUtilizado> {
         return list;
     }
 
-    public List<InsumoUtilizado> wastedRange(Integer start, Integer end, int[] range)
+    public List<InsumoUtilizado> wastedRange(Short start, Short end, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.wastedRange");
@@ -56,7 +56,7 @@ public class InsumoUtilizadoFacade extends AbstractFacade<InsumoUtilizado> {
         return list;
     }
 
-    public List<InsumoUtilizado> findByEquipment(Integer id, int[] range)
+    public List<InsumoUtilizado> findByEquipment(Long id, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.findByEquipment");
@@ -79,7 +79,7 @@ public class InsumoUtilizadoFacade extends AbstractFacade<InsumoUtilizado> {
         return list;
     }
 
-    public List<InsumoUtilizado> findByEquipmentUsed(Integer id, int[] range)
+    public List<InsumoUtilizado> findByEquipmentUsed(Long id, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.findByEquipmentUsed");
@@ -90,7 +90,7 @@ public class InsumoUtilizadoFacade extends AbstractFacade<InsumoUtilizado> {
         return list;
     }
 
-    public List<InsumoUtilizado> findByResourceUsed(Integer id, int[] range)
+    public List<InsumoUtilizado> findByResourceUsed(Short id, int[] range)
     {
         List<InsumoUtilizado> list = null;
         Query q = em.createNamedQuery("InsumoUtilizado.findByResourceUsed");

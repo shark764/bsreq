@@ -174,6 +174,18 @@ public class InsumoUtilizadoController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
+                    else if ("findByEquipment".equals(dataFilterType) && equipment != null) {
+                        return new ListDataModel(getFacade().findByEquipment(equipment.getId(), new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("usedRange".equals(dataFilterType) && startUsed != null && endUsed != null) {
+                        return new ListDataModel(getFacade().usedRange(startUsed, endUsed, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("wastedRange".equals(dataFilterType) && startWasted != null && endWasted != null) {
+                        return new ListDataModel(getFacade().wastedRange(startWasted, endWasted, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
+                    else if ("entryRange".equals(dataFilterType) && startDate != null && endDate != null) {
+                        return new ListDataModel(getFacade().entryRange(startDate, endDate, new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    }
                     return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
                 }
             };

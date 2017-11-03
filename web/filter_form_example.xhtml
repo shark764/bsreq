@@ -1,0 +1,24 @@
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Filtros <small>seleccione una de las opciones de filtrado</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br>
+
+                        <h4>Opciones de filtrado </h4>
+                        <p class="font-gray-dark">
+                            Cada opción funciona de manera individual y debe presionar Aceptar para aplicar filtro.
+                        </p>
+                        <h:form styleClass="form-inline">
+                            <div class="form-group">
+                                <h:outputLabel value="Filtro" />
+                                <h:selectOneMenu value="#{equipoController.dataFilterType}" required="true">
+                                    <f:selectItems value="#{equipoController.dataFilterTypeValue}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{equipoController.applyDataFilterType}" />
+                            <h:messages />
+                        </h:form>
+                    </div>
+                </div>

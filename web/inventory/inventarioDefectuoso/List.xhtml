@@ -10,38 +10,65 @@
             <h:outputText value="#{inventoryBundle.ListInventarioDefectuosoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            
-            <h:form>
-                <h:selectOneMenu value="#{inventarioDefectuosoController.dataFilterType}" required="true">
-                    <f:selectItems value="#{inventarioDefectuosoController.dataFilterTypeValue}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{inventarioDefectuosoController.applyDataFilterType}" />
-                <h:messages />
-                <h:outputText value="#{inventarioDefectuosoController.dataFilterType}" />
-            </h:form>
-            
-            <h:form rendered="#{inventarioDefectuosoController.dataFilterType != 'NONE' and inventarioDefectuosoController.dataFilterType == 'findByEquipmentModel'}">
-                <h:selectOneMenu value="#{inventarioDefectuosoController.equipmentModel}" required="true">
-                    <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{inventarioDefectuosoController.filterByEquipmentModel}" />
-                <h:messages />
-            </h:form>
-            
-            <h:form rendered="#{inventarioDefectuosoController.dataFilterType != 'NONE' and inventarioDefectuosoController.dataFilterType == 'entryRange'}">
-                <h:inputText value="#{inventarioDefectuosoController.startDate}" required="true">
-                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                </h:inputText>
-                <h:inputText value="#{inventarioDefectuosoController.endDate}" required="true">
-                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                </h:inputText>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{inventarioDefectuosoController.filterByEntryRange}" />
-                <h:messages />
-                <h:outputText value="#{inventarioDefectuosoController.startDate}" />
-                <h:outputText value="#{inventarioDefectuosoController.endDate}" />
-            </h:form>
 
-            <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup rendered="#{inventarioDefectuosoController.items.rowCount > 0}">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Filtros <small>seleccione una de las opciones de filtrado</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br>
+
+                        <h4>Opciones de filtrado </h4>
+                        <p class="font-gray-dark">
+                            Cada opci\u00f3n funciona de manera individual y debe presionar Aceptar para aplicar filtro.
+                        </p>
+                        <h:form styleClass="form-inline">
+                            <div class="form-group">
+                                <h:outputLabel value="Filtro" />
+                                <h:selectOneMenu styleClass="form-control" value="#{ styleClass="form-control" value="#{inventarioDefectuosoController.dataFilterType}" required="true">
+                                    <f:selectItems value="#{inventarioDefectuosoController.dataFilterTypeValue}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{inventarioDefectuosoController.applyDataFilterType}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Filtrar por modelo </h4>
+                        <h:form styleClass="form-inline" rendered="#{inventarioDefectuosoController.dataFilterType != 'NONE' and inventarioDefectuosoController.dataFilterType == 'findByEquipmentModel'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Modelo" />
+                                <h:selectOneMenu styleClass="form-control" value="#{inventarioDefectuosoController.equipmentModel}" required="true">
+                                    <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{inventarioDefectuosoController.filterByEquipmentModel}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Filtrar por rango de fecha de falla </h4>
+                        <h:form styleClass="form-inline" rendered="#{inventarioDefectuosoController.dataFilterType != 'NONE' and inventarioDefectuosoController.dataFilterType == 'entryRange'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Fecha inicio" />
+                                <h:inputText styleClass="form-control" value="#{inventarioDefectuosoController.startDate}" required="true">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="Fecha fin" />
+                                <h:inputText styleClass="form-control" value="#{inventarioDefectuosoController.endDate}" required="true">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{inventarioDefectuosoController.filterByEntryRange}" />
+                            <h:messages />
+                        </h:form>
+                    </div>
+                </div>
+            </h:panelGroup>
+
+            <h:form styleClass="">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -50,7 +77,7 @@
                     <h:outputText value="#{inventarioDefectuosoController.pagination.pageFirstItem + 1}..#{inventarioDefectuosoController.pagination.pageLastItem + 1}/#{inventarioDefectuosoController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.previous}" value="#{inventoryBundle.Previous} #{inventarioDefectuosoController.pagination.pageSize}" rendered="#{inventarioDefectuosoController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.next}" value="#{inventoryBundle.Next} #{inventarioDefectuosoController.pagination.pageSize}" rendered="#{inventarioDefectuosoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{inventarioDefectuosoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{inventarioDefectuosoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{inventoryBundle.ListInventarioDefectuosoTitle_id}"/>
@@ -93,7 +120,7 @@
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{inventarioDefectuosoController.prepareCreate}" value="#{inventoryBundle.ListInventarioDefectuosoCreateLink}"/>
                 <br />
                 <br />
-                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{inventoryBundle.ListInventarioDefectuosoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.ListInventarioDefectuosoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

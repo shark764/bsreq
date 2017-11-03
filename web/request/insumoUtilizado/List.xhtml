@@ -10,56 +10,93 @@
             <h:outputText value="#{requestBundle.ListInsumoUtilizadoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            
-            <h:form>
-                <h:selectOneMenu value="#{insumoUtilizadoController.dataFilterType}" required="true">
-                    <f:selectItems value="#{insumoUtilizadoController.dataFilterTypeValue}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoUtilizadoController.applyDataFilterType}" />
-                <h:messages />
-                <h:outputText value="#{insumoUtilizadoController.dataFilterType}" />
-            </h:form>
-            
-            <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'findByEquipment'}">
-                <h:selectOneMenu value="#{insumoUtilizadoController.equipment}" required="true">
-                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoUtilizadoController.filterByEquipment}" />
-                <h:messages />
-            </h:form>
-            
-            <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'usedRange'}">
-                <h:inputText value="#{insumoUtilizadoController.startUsed}" required="true" />
-                <h:inputText value="#{insumoUtilizadoController.endUsed}" required="true" />
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoUtilizadoController.filterByUsedRange}" />
-                <h:messages />
-                <h:outputText value="#{insumoUtilizadoController.startUsed}" />
-                <h:outputText value="#{insumoUtilizadoController.endUsed}" />
-            </h:form>
-            
-            <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'wastedRange'}">
-                <h:inputText value="#{insumoUtilizadoController.startWasted}" required="true" />
-                <h:inputText value="#{insumoUtilizadoController.endWasted}" required="true" />
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoUtilizadoController.filterByWastedRange}" />
-                <h:messages />
-                <h:outputText value="#{insumoUtilizadoController.startWasted}" />
-                <h:outputText value="#{insumoUtilizadoController.endWasted}" />
-            </h:form>
-            
-            <h:form rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'entryRange'}">
-                <h:inputText value="#{insumoUtilizadoController.startDate}" required="true">
-                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                </h:inputText>
-                <h:inputText value="#{insumoUtilizadoController.endDate}" required="true">
-                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                </h:inputText>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{insumoUtilizadoController.filterByEntryRange}" />
-                <h:messages />
-                <h:outputText value="#{insumoUtilizadoController.startDate}" />
-                <h:outputText value="#{insumoUtilizadoController.endDate}" />
-            </h:form>
 
-            <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup rendered="#{insumoUtilizadoController.items.rowCount > 0}">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Filtros <small>seleccione una de las opciones de filtrado</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br>
+
+                        <h4>Opciones de filtrado </h4>
+                        <p class="font-gray-dark">
+                            Cada opci\u00f3n funciona de manera individual y debe presionar Aceptar para aplicar filtro.
+                        </p>
+                        <h:form styleClass="form-inline">
+                            <div class="form-group">
+                                <h:outputLabel value="Filtro" />
+                                <h:selectOneMenu styleClass="form-control" value="#{ styleClass="form-control" value="#{insumoUtilizadoController.dataFilterType}" required="true">
+                                    <f:selectItems value="#{insumoUtilizadoController.dataFilterTypeValue}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.applyDataFilterType}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Filtrar por equipo </h4>
+                        <h:form styleClass="form-inline" rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'findByEquipment'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Equipo" />
+                                <h:selectOneMenu styleClass="form-control" value="#{insumoUtilizadoController.equipment}" required="true">
+                                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByEquipment}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Rango de cantidad usada </h4>
+                        <h:form styleClass="form-inline" rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'usedRange'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Cantidad m\u00ednima" />
+                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.startUsed}" required="true" />
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="Cantidad m\u00e1xima" />
+                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.endUsed}" required="true" />
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByUsedRange}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Rango de cantidad desperdiciada </h4>
+                        <h:form styleClass="form-inline" rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'wastedRange'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Cantidad m\u00ednima" />
+                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.startWasted}" required="true" />
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="Cantidad m\u00e1xima" />
+                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.endWasted}" required="true" />
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByWastedRange}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Requerimientos por rango de fecha </h4>
+                        <h:form styleClass="form-inline" rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'entryRange'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Fecha inicio" />
+                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.startDate}" required="true">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="Fecha fin" />
+                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.endDate}" required="true">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByEntryRange}" />
+                            <h:messages />
+                        </h:form>
+                    </div>
+                </div>
+            </h:panelGroup>
+
+            <h:form styleClass="">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -68,7 +105,7 @@
                     <h:outputText value="#{insumoUtilizadoController.pagination.pageFirstItem + 1}..#{insumoUtilizadoController.pagination.pageLastItem + 1}/#{insumoUtilizadoController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.previous}" value="#{requestBundle.Previous} #{insumoUtilizadoController.pagination.pageSize}" rendered="#{insumoUtilizadoController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.next}" value="#{requestBundle.Next} #{insumoUtilizadoController.pagination.pageSize}" rendered="#{insumoUtilizadoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{insumoUtilizadoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{insumoUtilizadoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{requestBundle.ListInsumoUtilizadoTitle_id}"/>
@@ -121,7 +158,7 @@
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoUtilizadoController.prepareCreate}" value="#{requestBundle.ListInsumoUtilizadoCreateLink}"/>
                 <br />
                 <br />
-                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ListInsumoUtilizadoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{requestBundle.ListInsumoUtilizadoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

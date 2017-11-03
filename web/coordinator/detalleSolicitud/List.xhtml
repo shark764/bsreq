@@ -11,100 +11,154 @@
         </ui:define>
         <ui:define name="body">
 
-            <h:form>
-                <h:selectOneMenu value="#{coordinatorController.dataFilterType}" required="true">
-                    <f:selectItems value="#{coordinatorController.dataFilterTypeValue}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.applyDataFilterType}" />
-                <h:messages />
-                <h:outputText value="#{coordinatorController.dataFilterType}" />
-            </h:form>
+            <h:panelGroup rendered="#{coordinatorController.items.rowCount > 0}">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Filtros <small>seleccione una de las opciones de filtrado</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'limitTime'}">
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByLimitTime}" />
-                <h:messages />
-            </h:form>
+                        <h4>Opciones de filtrado </h4>
+                        <p class="font-gray-dark">
+                            Cada opci\u00f3n funciona de manera individual y debe presionar Aceptar para aplicar filtro.
+                        </p>
+                        <h:form styleClass="form-inline">
+                            <div class="form-group">
+                                <h:outputLabel value="Filtro" />
+                                <h:selectOneMenu styleClass="form-control" value="#{ styleClass="form-control" value="#{coordinatorController.dataFilterType}" required="true">
+                                    <f:selectItems value="#{coordinatorController.dataFilterTypeValue}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.applyDataFilterType}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByEmployee'}">
-                <h:selectOneMenu value="#{coordinatorController.employee}" required="true">
-                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByEmployee}" />
-                <h:messages />
-            </h:form>
+                        <h4>A resolver m\u00e1ximo el d\u00eda de hoy </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'limitTime'}">
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterByLimitTime}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByEquipment'}">
-                <h:selectOneMenu value="#{coordinatorController.equipment}" required="true">
-                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByEquipment}" />
-                <h:messages />
-            </h:form>
+                        <h4>Filtrar por empleado solicitante </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByEmployee'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Empleado solicitante" />
+                                <h:selectOneMenu styleClass="form-control" value="#{coordinatorController.employee}" required="true">
+                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterByEmployee}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByRequestType'}">
-                <h:selectOneMenu value="#{coordinatorController.requestType}" required="true">
-                    <f:selectItems value="#{tipoRequerimientoController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByRequestType}" />
-                <h:messages />
-            </h:form>
+                        <h4>Filtrar por equipo </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByEquipment'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Equipo" />
+                                <h:selectOneMenu styleClass="form-control" value="#{coordinatorController.equipment}" required="true">
+                                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterByEquipment}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByFaultType'}">
-                <h:selectOneMenu value="#{coordinatorController.faultType}" required="true">
-                    <f:selectItems value="#{tipoFallaController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByFaultType}" />
-                <h:messages />
-            </h:form>
+                        <h4>Filtrar por tipo de mantenimiento </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByRequestType'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Mantenimiento" />
+                                <h:selectOneMenu styleClass="form-control" value="#{coordinatorController.requestType}" required="true">
+                                    <f:selectItems value="#{tipoRequerimientoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterByRequestType}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findBySolutionType'}">
-                <h:selectOneMenu value="#{coordinatorController.solutionType}" required="true">
-                    <f:selectItems value="#{tipoSolucionController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterBySolutionType}" />
-                <h:messages />
-            </h:form>
+                        <h4>Filtrar por falla </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByFaultType'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Falla" />
+                                <h:selectOneMenu styleClass="form-control" value="#{coordinatorController.faultType}" required="true">
+                                    <f:selectItems value="#{tipoFallaController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterByFaultType}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'solvedOverTime'}">
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterSolvedOverTime}" />
-                <h:messages />
-            </h:form>
+                        <h4>Filtrar por soluci\u00f3n brindada </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findBySolutionType'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Soluci\u00f3n" />
+                                <h:selectOneMenu styleClass="form-control" value="#{coordinatorController.solutionType}" required="true">
+                                    <f:selectItems value="#{tipoSolucionController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterBySolutionType}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'notSolved'}">
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterNotSolved}" />
-                <h:messages />
-            </h:form>
+                        <h4>Solventados sobre tiempo l\u00edmite </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'solvedOverTime'}">
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterSolvedOverTime}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'notSolvedByAssignedTechnician'}">
-                <h:selectOneMenu value="#{coordinatorController.employee}" required="true">
-                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterNotSolvedByAssignedTechnician}" />
-                <h:messages />
-            </h:form>
+                        <h4>No solventados </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'notSolved'}">
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterNotSolved}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByAssignedTechnician'}">
-                <h:selectOneMenu value="#{coordinatorController.employee}" required="true">
-                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByAssignedTechnician}" />
-                <h:messages />
-            </h:form>
+                        <h4>No solventados por t\u00e9cnico asignado </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'notSolvedByAssignedTechnician'}">
+                            <div class="form-group">
+                                <h:outputLabel value="T\u00e9cnico" />
+                                <h:selectOneMenu styleClass="form-control" value="#{coordinatorController.employee}" required="true">
+                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterNotSolvedByAssignedTechnician}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'entryRange'}">
-                <h:inputText value="#{coordinatorController.startDate}" required="true">
-                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                </h:inputText>
-                <h:inputText value="#{coordinatorController.endDate}" required="true">
-                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                </h:inputText>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{coordinatorController.filterByEntryRange}" />
-                <h:messages />
-                <h:outputText value="#{coordinatorController.startDate}" />
-                <h:outputText value="#{coordinatorController.endDate}" />
-            </h:form>
+                        <h4>Filtrar por técnico asignado </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'findByAssignedTechnician'}">
+                            <div class="form-group">
+                                <h:outputLabel value="T\u00e9cnico" />
+                                <h:selectOneMenu styleClass="form-control" value="#{coordinatorController.employee}" required="true">
+                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterByAssignedTechnician}" />
+                            <h:messages />
+                        </h:form>
 
-            <h:form styleClass="jsfcrud_list_form">
+                        <h4>Requerimientos por rango de fecha </h4>
+                        <h:form styleClass="form-inline" rendered="#{coordinatorController.dataFilterType != 'NONE' and coordinatorController.dataFilterType == 'entryRange'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Fecha inicio" />
+                                <h:inputText styleClass="form-control" value="#{coordinatorController.startDate}" required="true">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="Fecha fin" />
+                                <h:inputText styleClass="form-control" value="#{coordinatorController.endDate}" required="true">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{coordinatorController.filterByEntryRange}" />
+                            <h:messages />
+                        </h:form>
+                    </div>
+                </div>
+            </h:panelGroup>
+
+            <h:form styleClass="">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -113,7 +167,7 @@
                     <h:outputText value="#{coordinatorController.pagination.pageFirstItem + 1}..#{coordinatorController.pagination.pageLastItem + 1}/#{coordinatorController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.previous}" value="#{requestBundle.Previous} #{coordinatorController.pagination.pageSize}" rendered="#{coordinatorController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.next}" value="#{requestBundle.Next} #{coordinatorController.pagination.pageSize}" rendered="#{coordinatorController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{coordinatorController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{coordinatorController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_id}"/>
@@ -141,14 +195,14 @@
                                 <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_descripcion}"/>
                             </f:facet>
                             <h:outputText value="#{item.descripcion}"/>
-                            <h:inputText value="#{item.descripcion}" />
+                            <h:inputText styleClass="form-control" value="#{item.descripcion}" />
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_comentario}"/>
                             </f:facet>
                             <h:outputText value="#{item.comentario}"/>
-                            <h:inputText value="#{item.comentario}" />
+                            <h:inputText styleClass="form-control" value="#{item.comentario}" />
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -239,7 +293,7 @@
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{coordinatorController.prepareCreate}" value="#{requestBundle.ListDetalleSolicitudCreateLink}"/>
                 <br />
                 <br />
-                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{requestBundle.ListDetalleSolicitudIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{requestBundle.ListDetalleSolicitudIndexLink}"/>
             </h:form>
 
             <script type="text/javascript">

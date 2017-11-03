@@ -10,7 +10,7 @@
             <h:outputText value="#{cataloguesBundle.ListTipoSolucionTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:form styleClass="jsfcrud_list_form">
+            <h:form styleClass="">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -19,7 +19,7 @@
                     <h:outputText value="#{tipoSolucionController.pagination.pageFirstItem + 1}..#{tipoSolucionController.pagination.pageLastItem + 1}/#{tipoSolucionController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.previous}" value="#{cataloguesBundle.Previous} #{tipoSolucionController.pagination.pageSize}" rendered="#{tipoSolucionController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.next}" value="#{cataloguesBundle.Next} #{tipoSolucionController.pagination.pageSize}" rendered="#{tipoSolucionController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{tipoSolucionController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{tipoSolucionController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{cataloguesBundle.ListTipoSolucionTitle_id}"/>
@@ -54,7 +54,7 @@
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{tipoSolucionController.prepareCreate}" value="#{cataloguesBundle.ListTipoSolucionCreateLink}"/>
                 <br />
                 <br />
-                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{cataloguesBundle.ListTipoSolucionIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{cataloguesBundle.ListTipoSolucionIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

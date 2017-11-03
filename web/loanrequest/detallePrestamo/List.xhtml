@@ -10,69 +10,107 @@
             <h:outputText value="#{loanRequestBundle.ListDetallePrestamoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            
-            <h:form>
-                <h:selectOneMenu value="#{detallePrestamoController.dataFilterType}" required="true">
-                    <f:selectItems value="#{detallePrestamoController.dataFilterTypeValue}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.applyDataFilterType}" />
-                <h:messages />
-                <h:outputText value="#{detallePrestamoController.dataFilterType}" />
-            </h:form>
-            
-            <h:form rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'limitTime'}">
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterByLimitTime}" />
-                <h:messages />
-            </h:form>
-            
-            <h:form rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'findByEmployee'}">
-                <h:selectOneMenu value="#{detallePrestamoController.employee}" required="true">
-                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterByEmployee}" />
-                <h:messages />
-            </h:form>
-            
-            <h:form rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'findByEquipment'}">
-                <h:selectOneMenu value="#{detallePrestamoController.equipment}" required="true">
-                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterByEquipment}" />
-                <h:messages />
-            </h:form>
-            
-            <h:form rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'returnedOverTime'}">
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterReturnedOverTime}" />
-                <h:messages />
-            </h:form>
-            
-            <h:form rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'notReturned'}">
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterNotReturned}" />
-                <h:messages />
-            </h:form>
-            
-            <h:form rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'notReturnedByEmployee'}">
-                <h:selectOneMenu value="#{detallePrestamoController.employee}" required="true">
-                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                </h:selectOneMenu>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterNotReturnedByEmployee}" />
-                <h:messages />
-            </h:form>
-            
-            <h:form rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'entryRange'}">
-                <h:inputText value="#{detallePrestamoController.startDate}" required="true">
-                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                </h:inputText>
-                <h:inputText value="#{detallePrestamoController.endDate}" required="true">
-                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                </h:inputText>
-                <h:commandButton styleClass="btn btn-sm btn-default" value="submit" action="#{detallePrestamoController.filterByEntryRange}" />
-                <h:messages />
-                <h:outputText value="#{detallePrestamoController.startDate}" />
-                <h:outputText value="#{detallePrestamoController.endDate}" />
-            </h:form>
 
-            <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup rendered="#{detallePrestamoController.items.rowCount > 0}">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Filtros <small>seleccione una de las opciones de filtrado</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br>
+
+                        <h4>Opciones de filtrado </h4>
+                        <p class="font-gray-dark">
+                            Cada opci\u00f3n funciona de manera individual y debe presionar Aceptar para aplicar filtro.
+                        </p>
+                        <h:form styleClass="form-inline">
+                            <div class="form-group">
+                                <h:outputLabel value="Filtro" />
+                                <h:selectOneMenu styleClass="form-control" value="#{ styleClass="form-control" value="#{detallePrestamoController.dataFilterType}" required="true">
+                                    <f:selectItems value="#{detallePrestamoController.dataFilterTypeValue}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detallePrestamoController.applyDataFilterType}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>A entregar hoy </h4>
+                        <h:form styleClass="form-inline" rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'limitTime'}">
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detallePrestamoController.filterByLimitTime}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Filtrar por empleado </h4>
+                        <h:form styleClass="form-inline" rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'findByEmployee'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Empleado" />
+                                <h:selectOneMenu styleClass="form-control" value="#{detallePrestamoController.employee}" required="true">
+                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detallePrestamoController.filterByEmployee}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Filtrar por equipo </h4>
+                        <h:form styleClass="form-inline" rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'findByEquipment'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Equipo" />
+                                <h:selectOneMenu styleClass="form-control" value="#{detallePrestamoController.equipment}" required="true">
+                                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detallePrestamoController.filterByEquipment}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Retornados sobre l\u00edmite de tiempo </h4>
+                        <h:form styleClass="form-inline" rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'returnedOverTime'}">
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detallePrestamoController.filterReturnedOverTime}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>No retornados </h4>
+                        <h:form styleClass="form-inline" rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'notReturned'}">
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detallePrestamoController.filterNotReturned}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>No retornados por empleado </h4>
+                        <h:form styleClass="form-inline" rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'notReturnedByEmployee'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Empleado" />
+                                <h:selectOneMenu styleClass="form-control" value="#{detallePrestamoController.employee}" required="true">
+                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detallePrestamoController.filterNotReturnedByEmployee}" />
+                            <h:messages />
+                        </h:form>
+
+                        <h4>Pr\u00e9stamos por rango de fecha </h4>
+                        <h:form styleClass="form-inline" rendered="#{detallePrestamoController.dataFilterType != 'NONE' and detallePrestamoController.dataFilterType == 'entryRange'}">
+                            <div class="form-group">
+                                <h:outputLabel value="Fecha inicio" />
+                                <h:inputText styleClass="form-control" value="#{detallePrestamoController.startDate}" required="true">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="Fecha fin" />
+                                <h:inputText styleClass="form-control" value="#{detallePrestamoController.endDate}" required="true">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                            </div>
+                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detallePrestamoController.filterByEntryRange}" />
+                            <h:messages />
+                        </h:form>
+                    </div>
+                </div>
+            </h:panelGroup>
+
+            <h:form styleClass="">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -81,7 +119,7 @@
                     <h:outputText value="#{detallePrestamoController.pagination.pageFirstItem + 1}..#{detallePrestamoController.pagination.pageLastItem + 1}/#{detallePrestamoController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.previous}" value="#{loanRequestBundle.Previous} #{detallePrestamoController.pagination.pageSize}" rendered="#{detallePrestamoController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.next}" value="#{loanRequestBundle.Next} #{detallePrestamoController.pagination.pageSize}" rendered="#{detallePrestamoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{detallePrestamoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{detallePrestamoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{loanRequestBundle.ListDetallePrestamoTitle_id}"/>
@@ -146,7 +184,7 @@
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{detallePrestamoController.prepareCreate}" value="#{loanRequestBundle.ListDetallePrestamoCreateLink}"/>
                 <br />
                 <br />
-                <h:link styleClass="btn btn-sm btn-default" outcome="/index" value="#{loanRequestBundle.ListDetallePrestamoIndexLink}"/>
+                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{loanRequestBundle.ListDetallePrestamoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

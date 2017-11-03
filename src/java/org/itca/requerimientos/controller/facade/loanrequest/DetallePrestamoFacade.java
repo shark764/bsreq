@@ -88,7 +88,7 @@ public class DetallePrestamoFacade extends AbstractFacade<DetallePrestamo> {
         return list;
     }
 
-    public List<DetallePrestamo> findByEquipment(Integer id, int[] range)
+    public List<DetallePrestamo> findByEquipment(Long id, int[] range)
     {
         List<DetallePrestamo> list = null;
         Query q = em.createNamedQuery("DetallePrestamo.findByEquipment");
