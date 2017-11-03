@@ -51,32 +51,57 @@ public class JasperUtil {
         return nameJR;
     }
     
-    public String getReportExportName(String selected) {
+    public String getReportExportName(String selected, String type) {
         String exportJR = "";
         switch (selected) {
             case "stockByEquipmentModelReport":
-                exportJR = "reporte-existencia-por-modelo.pdf";
+                exportJR = "reporte-existencia-por-modelo";
                 break;
             case "defectiveInventoryReport":
-                exportJR = "reporte-inventario-defectuoso.pdf";
+                exportJR = "reporte-inventario-defectuoso";
                 break;
             case "equipmentReturnedOverTimeReport":
-                exportJR = "reporte-prestamos-retrasados.pdf";
+                exportJR = "reporte-prestamos-retrasados";
                 break;
             case "requestByAssignedTechnicianReport":
-                exportJR = "reporte-solicitudes-por-tecnico.pdf";
+                exportJR = "reporte-solicitudes-por-tecnico";
                 break;
             case "requestByEquipmentFailureReport":
-                exportJR = "reporte-solicitudes-por-falla.pdf";
+                exportJR = "reporte-solicitudes-por-falla";
                 break;
             case "requestByEquipmentModelReport":
-                exportJR = "reporte-solicitudes-por-modelo.pdf";
+                exportJR = "reporte-solicitudes-por-modelo";
                 break;
             default:
                 break;
         }
         System.out.println("exportJR: " + exportJR);
-        return exportJR;
+        return exportJR + getFileExtension(type);
+    }
+    
+    public String getFileExtension(String type) {
+        String extensionJR = ".xml";
+        switch (type) {
+            case "PDF":
+                extensionJR = ".pdf";
+                break;
+            case "DOCX":
+                extensionJR = ".docx";
+                break;
+            case "XLSX":
+                extensionJR = ".xlsx";
+                break;
+            case "ODT":
+                extensionJR = ".odt";
+                break;
+            case "PPT":
+                extensionJR = ".pptx";
+                break;
+            default:
+                break;
+        }
+        System.out.println("extensionJR: " + extensionJR);
+        return extensionJR;
     }
     
 }
