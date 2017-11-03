@@ -32,7 +32,7 @@
                                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{marcaEquipoController.next}" value="#{cataloguesBundle.Next} #{marcaEquipoController.pagination.pageSize}" rendered="#{marcaEquipoController.pagination.hasNextPage}"/>&nbsp;
 
                                 <div class="table-responsive">
-                                    <h:dataTable value="#{marcaEquipoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                    <h:dataTable value="#{marcaEquipoController.items}" var="item" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                                         <h:column>
                                             <f:facet name="header">
                                                 <h:outputText value="#{cataloguesBundle.ListMarcaEquipoTitle_id}"/>

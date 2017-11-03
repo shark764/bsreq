@@ -47,15 +47,15 @@
                         <p>Registros ingresados al sistema</p>
 
                         <h:form styleClass="form-inline">
-                            <h:commandButton actionListener="#{stockByEquipmentModelReport.PDF}" value="PDF" />
-                            <h:commandButton actionListener="#{stockByEquipmentModelReport.DOCX}" value="Docx" />
-                            <h:commandButton actionListener="#{stockByEquipmentModelReport.XLSX}" value="Xlsx" />
-                            <h:commandButton actionListener="#{stockByEquipmentModelReport.ODT}" value="Odt" />
-                            <h:commandButton actionListener="#{stockByEquipmentModelReport.PPT}" value="Ppt" />
+                            <h:commandButton actionListener="#{defectiveInventoryReport.PDF}" value="PDF" />
+                            <h:commandButton actionListener="#{defectiveInventoryReport.DOCX}" value="Docx" />
+                            <h:commandButton actionListener="#{defectiveInventoryReport.XLSX}" value="Xlsx" />
+                            <h:commandButton actionListener="#{defectiveInventoryReport.ODT}" value="Odt" />
+                            <h:commandButton actionListener="#{defectiveInventoryReport.PPT}" value="Ppt" />
                         </h:form>
 
                         <div class="table-responsive">
-                            <h:dataTable value="#{stockByEquipmentModelReport.modelList}" var="modelItem" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                            <h:dataTable value="#{defectiveInventoryReport.modelList}" var="modelItem" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                                 <h:column>
                                     <f:facet name="header">Cód. Marca</f:facet>
                                     <h:outputText value="#{modelItem.t01codigo}" />
@@ -75,6 +75,28 @@
                                 <h:column>
                                     <f:facet name="header">Existencia</f:facet>
                                     <h:outputText value="#{modelItem.t02existencia}" />
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Equipo</f:facet>
+                                    <h:outputText value="#{modelItem.t03nombre}" />
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Equipo</f:facet>
+                                    <h:outputText value="#{modelItem.t03nombre}" />
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Inventario</f:facet>
+                                    <h:outputText value="#{modelItem.t03inventario}" />
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Serie</f:facet>
+                                    <h:outputText value="#{modelItem.t03serie}" />
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Fecha de desecho</f:facet>
+                                    <h:outputText value="#{modelItem.t04fecha}">
+                                        <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+                                    </h:outputText>
                                 </h:column>
                             </h:dataTable>
                         </div>

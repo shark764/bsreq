@@ -136,7 +136,7 @@
                                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.next}" value="#{inventoryBundle.Next} #{equipoController.pagination.pageSize}" rendered="#{equipoController.pagination.hasNextPage}"/>&nbsp;
 
                                 <div class="table-responsive">
-                                    <h:dataTable value="#{equipoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                    <h:dataTable value="#{equipoController.items}" var="item" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                                         <h:column>
                                             <f:facet name="header">
                                                 <h:outputText value="#{inventoryBundle.ListEquipoTitle_id}"/>

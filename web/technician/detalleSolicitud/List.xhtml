@@ -202,7 +202,7 @@
                                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{technicianController.next}" value="#{requestBundle.Next} #{technicianController.pagination.pageSize}" rendered="#{technicianController.pagination.hasNextPage}"/>&nbsp;
 
                                 <div class="table-responsive">
-                                    <h:dataTable value="#{technicianController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                    <h:dataTable value="#{technicianController.items}" var="item" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                                         <h:column>
                                             <f:facet name="header">
                                                 <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_id}"/>

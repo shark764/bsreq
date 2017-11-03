@@ -88,7 +88,7 @@
                                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.next}" value="#{inventoryBundle.Next} #{insumoController.pagination.pageSize}" rendered="#{insumoController.pagination.hasNextPage}"/>&nbsp;
 
                                 <div class="table-responsive">
-                                    <h:dataTable value="#{insumoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                    <h:dataTable value="#{insumoController.items}" var="item" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                                         <h:column>
                                             <f:facet name="header">
                                                 <h:outputText value="#{inventoryBundle.ListInsumoTitle_id}"/>

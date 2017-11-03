@@ -32,7 +32,7 @@
                                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{empleadoController.next}" value="#{adminBundle.Next} #{empleadoController.pagination.pageSize}" rendered="#{empleadoController.pagination.hasNextPage}"/>&nbsp;
 
                                 <div class="table-responsive">
-                                    <h:dataTable value="#{empleadoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                    <h:dataTable value="#{empleadoController.items}" var="item" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
                                         <h:column>
                                             <f:facet name="header">
                                                 <h:outputText value="#{adminBundle.ListEmpleadoTitle_id}"/>
