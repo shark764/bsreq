@@ -10,52 +10,70 @@
             <h:outputText value="#{inventoryBundle.ListCategoriaEquipoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:form styleClass="">
-                <h:panelGroup id="messagePanel" layout="block">
-                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                </h:panelGroup>
-                <h:outputText escape="false" value="#{inventoryBundle.ListCategoriaEquipoEmpty}" rendered="#{categoriaEquipoController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{categoriaEquipoController.items.rowCount > 0}">
-                    <h:outputText value="#{categoriaEquipoController.pagination.pageFirstItem + 1}..#{categoriaEquipoController.pagination.pageLastItem + 1}/#{categoriaEquipoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.previous}" value="#{inventoryBundle.Previous} #{categoriaEquipoController.pagination.pageSize}" rendered="#{categoriaEquipoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.next}" value="#{inventoryBundle.Next} #{categoriaEquipoController.pagination.pageSize}" rendered="#{categoriaEquipoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{categoriaEquipoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListCategoriaEquipoTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListCategoriaEquipoTitle_nombre}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.nombre}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListCategoriaEquipoTitle_codigo}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.codigo}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareView}" value="#{inventoryBundle.ListCategoriaEquipoViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareEdit}" value="#{inventoryBundle.ListCategoriaEquipoEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.destroy}" value="#{inventoryBundle.ListCategoriaEquipoDestroyLink}"/>
-                        </h:column>
-                    </h:dataTable>
-                </h:panelGroup>
-                <br />
-                <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareCreate}" value="#{inventoryBundle.ListCategoriaEquipoCreateLink}"/>
-                <br />
-                <br />
-                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.ListCategoriaEquipoIndexLink}"/>
-            </h:form>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Listado de registros <small>vista de tabla</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <p>Registros ingresados al sistema</p>
+
+                        <h:form styleClass="">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:outputText escape="false" value="#{inventoryBundle.ListCategoriaEquipoEmpty}" rendered="#{categoriaEquipoController.items.rowCount == 0}"/>
+                            <h:panelGroup rendered="#{categoriaEquipoController.items.rowCount > 0}">
+                                <h:outputText value="#{categoriaEquipoController.pagination.pageFirstItem + 1}..#{categoriaEquipoController.pagination.pageLastItem + 1}/#{categoriaEquipoController.pagination.itemsCount}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.previous}" value="#{inventoryBundle.Previous} #{categoriaEquipoController.pagination.pageSize}" rendered="#{categoriaEquipoController.pagination.hasPreviousPage}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.next}" value="#{inventoryBundle.Next} #{categoriaEquipoController.pagination.pageSize}" rendered="#{categoriaEquipoController.pagination.hasNextPage}"/>&nbsp;
+
+                                <div class="table-responsive">
+                                    <h:dataTable value="#{categoriaEquipoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListCategoriaEquipoTitle_id}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListCategoriaEquipoTitle_nombre}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.nombre}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListCategoriaEquipoTitle_codigo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.codigo}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareView}" value="#{inventoryBundle.ListCategoriaEquipoViewLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareEdit}" value="#{inventoryBundle.ListCategoriaEquipoEditLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.destroy}" value="#{inventoryBundle.ListCategoriaEquipoDestroyLink}"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </div>
+                            </h:panelGroup>
+                            <br />
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{categoriaEquipoController.prepareCreate}" value="#{inventoryBundle.ListCategoriaEquipoCreateLink}"/>
+                            <br />
+                            <br />
+                            <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.ListCategoriaEquipoIndexLink}"/>
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 

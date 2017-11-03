@@ -158,121 +158,139 @@
                 </div>
             </h:panelGroup>
 
-            <h:form styleClass="">
-                <h:panelGroup id="messagePanel" layout="block">
-                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                </h:panelGroup>
-                <h:outputText escape="false" value="#{requestBundle.ListDetalleSolicitudEmpty}" rendered="#{detalleSolicitudController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{detalleSolicitudController.items.rowCount > 0}">
-                    <h:outputText value="#{detalleSolicitudController.pagination.pageFirstItem + 1}..#{detalleSolicitudController.pagination.pageLastItem + 1}/#{detalleSolicitudController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.previous}" value="#{requestBundle.Previous} #{detalleSolicitudController.pagination.pageSize}" rendered="#{detalleSolicitudController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.next}" value="#{requestBundle.Next} #{detalleSolicitudController.pagination.pageSize}" rendered="#{detalleSolicitudController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{detalleSolicitudController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_fechaInicio}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.fechaInicio}">
-                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                            </h:outputText>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_fechaFin}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.fechaFin}">
-                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                            </h:outputText>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_descripcion}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.descripcion}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_comentario}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.comentario}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_fechaLimite}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.fechaLimite}">
-                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                            </h:outputText>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTecnicoAsignado}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idTecnicoAsignado}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idEquipo}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idEquipo}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idEstadoSolicitud}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idEstadoSolicitud}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idSolicitudRequerimiento}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idSolicitudRequerimiento}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTipoFalla}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idTipoFalla}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTipoRequerimiento}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idTipoRequerimiento}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTipoSolucion}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idTipoSolucion}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareView}" value="#{requestBundle.ListDetalleSolicitudViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareEdit}" value="#{requestBundle.ListDetalleSolicitudEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.destroy}" value="#{requestBundle.ListDetalleSolicitudDestroyLink}"/>
-                        </h:column>
-                    </h:dataTable>
-                </h:panelGroup>
-                <br />
-                <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareCreate}" value="#{requestBundle.ListDetalleSolicitudCreateLink}"/>
-                <br />
-                <br />
-                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{requestBundle.ListDetalleSolicitudIndexLink}"/>
-            </h:form>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Listado de registros <small>vista de tabla</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <p>Registros ingresados al sistema</p>
+
+                        <h:form styleClass="">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:outputText escape="false" value="#{requestBundle.ListDetalleSolicitudEmpty}" rendered="#{detalleSolicitudController.items.rowCount == 0}"/>
+                            <h:panelGroup rendered="#{detalleSolicitudController.items.rowCount > 0}">
+                                <h:outputText value="#{detalleSolicitudController.pagination.pageFirstItem + 1}..#{detalleSolicitudController.pagination.pageLastItem + 1}/#{detalleSolicitudController.pagination.itemsCount}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.previous}" value="#{requestBundle.Previous} #{detalleSolicitudController.pagination.pageSize}" rendered="#{detalleSolicitudController.pagination.hasPreviousPage}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.next}" value="#{requestBundle.Next} #{detalleSolicitudController.pagination.pageSize}" rendered="#{detalleSolicitudController.pagination.hasNextPage}"/>&nbsp;
+
+                                <div class="table-responsive">
+                                    <h:dataTable value="#{detalleSolicitudController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_id}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_fechaInicio}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.fechaInicio}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                            </h:outputText>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_fechaFin}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.fechaFin}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                            </h:outputText>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_descripcion}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.descripcion}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_comentario}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.comentario}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_fechaLimite}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.fechaLimite}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                            </h:outputText>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTecnicoAsignado}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idTecnicoAsignado}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idEquipo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idEquipo}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idEstadoSolicitud}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idEstadoSolicitud}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idSolicitudRequerimiento}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idSolicitudRequerimiento}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTipoFalla}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idTipoFalla}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTipoRequerimiento}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idTipoRequerimiento}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListDetalleSolicitudTitle_idTipoSolucion}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idTipoSolucion}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareView}" value="#{requestBundle.ListDetalleSolicitudViewLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareEdit}" value="#{requestBundle.ListDetalleSolicitudEditLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.destroy}" value="#{requestBundle.ListDetalleSolicitudDestroyLink}"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </div>
+                            </h:panelGroup>
+                            <br />
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{detalleSolicitudController.prepareCreate}" value="#{requestBundle.ListDetalleSolicitudCreateLink}"/>
+                            <br />
+                            <br />
+                            <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{requestBundle.ListDetalleSolicitudIndexLink}"/>
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
 
             <script type="text/javascript">
-                window.alert("https://www.mkyong.com/jsf2/custom-converter-in-jsf-2-0/");
+                // window.alert("https://www.mkyong.com/jsf2/custom-converter-in-jsf-2-0/");
             </script>
         </ui:define>
     </ui:composition>

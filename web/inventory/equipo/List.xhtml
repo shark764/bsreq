@@ -104,122 +104,140 @@
                 </div>
             </h:panelGroup>
 
-            <h:form styleClass="">
-                <h:panelGroup id="messagePanel" layout="block">
-                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                </h:panelGroup>
-                <h:outputText escape="false" value="#{inventoryBundle.ListEquipoEmpty}" rendered="#{equipoController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{equipoController.items.rowCount > 0}">
-                    <h:outputText value="#{equipoController.pagination.pageFirstItem + 1}..#{equipoController.pagination.pageLastItem + 1}/#{equipoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.previous}" value="#{inventoryBundle.Previous} #{equipoController.pagination.pageSize}" rendered="#{equipoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.next}" value="#{inventoryBundle.Next} #{equipoController.pagination.pageSize}" rendered="#{equipoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{equipoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_nombre}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.nombre}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_serie}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.serie}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_inventario}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.inventario}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_existencia}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.existencia}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_fechaAdquisicion}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.fechaAdquisicion}">
-                                <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
-                            </h:outputText>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_ip}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.ip}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_descripcion}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.descripcion}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idArea}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idArea}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idCategoriaEquipo}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idCategoriaEquipo}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idEquipo}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idEquipo}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idEstadoEquipo}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idEstadoEquipo}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idModelo}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idModelo}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idProveedor}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idProveedor}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.prepareView}" value="#{inventoryBundle.ListEquipoViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.prepareEdit}" value="#{inventoryBundle.ListEquipoEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.destroy}" value="#{inventoryBundle.ListEquipoDestroyLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.addToDefective}" value="Defectuoso"/>
-                        </h:column>
-                    </h:dataTable>
-                </h:panelGroup>
-                <br />
-                <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.prepareCreate}" value="#{inventoryBundle.ListEquipoCreateLink}"/>
-                <br />
-                <br />
-                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.ListEquipoIndexLink}"/>
-            </h:form>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Listado de registros <small>vista de tabla</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <p>Registros ingresados al sistema</p>
+
+                        <h:form styleClass="">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:outputText escape="false" value="#{inventoryBundle.ListEquipoEmpty}" rendered="#{equipoController.items.rowCount == 0}"/>
+                            <h:panelGroup rendered="#{equipoController.items.rowCount > 0}">
+                                <h:outputText value="#{equipoController.pagination.pageFirstItem + 1}..#{equipoController.pagination.pageLastItem + 1}/#{equipoController.pagination.itemsCount}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.previous}" value="#{inventoryBundle.Previous} #{equipoController.pagination.pageSize}" rendered="#{equipoController.pagination.hasPreviousPage}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.next}" value="#{inventoryBundle.Next} #{equipoController.pagination.pageSize}" rendered="#{equipoController.pagination.hasNextPage}"/>&nbsp;
+
+                                <div class="table-responsive">
+                                    <h:dataTable value="#{equipoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_id}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_nombre}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.nombre}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_serie}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.serie}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_inventario}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.inventario}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_existencia}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.existencia}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_fechaAdquisicion}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.fechaAdquisicion}">
+                                                <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+                                            </h:outputText>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_ip}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.ip}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_descripcion}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.descripcion}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idArea}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idArea}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idCategoriaEquipo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idCategoriaEquipo}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idEquipo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idEquipo}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idEstadoEquipo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idEstadoEquipo}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idModelo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idModelo}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{inventoryBundle.ListEquipoTitle_idProveedor}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idProveedor}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.prepareView}" value="#{inventoryBundle.ListEquipoViewLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.prepareEdit}" value="#{inventoryBundle.ListEquipoEditLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.destroy}" value="#{inventoryBundle.ListEquipoDestroyLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.addToDefective}" value="Defectuoso"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </div>
+                            </h:panelGroup>
+                            <br />
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{equipoController.prepareCreate}" value="#{inventoryBundle.ListEquipoCreateLink}"/>
+                            <br />
+                            <br />
+                            <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.ListEquipoIndexLink}"/>
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 

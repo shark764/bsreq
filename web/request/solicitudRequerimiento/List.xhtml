@@ -10,60 +10,78 @@
             <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:form styleClass="">
-                <h:panelGroup id="messagePanel" layout="block">
-                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                </h:panelGroup>
-                <h:outputText escape="false" value="#{requestBundle.ListSolicitudRequerimientoEmpty}" rendered="#{solicitudRequerimientoController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{solicitudRequerimientoController.items.rowCount > 0}">
-                    <h:outputText value="#{solicitudRequerimientoController.pagination.pageFirstItem + 1}..#{solicitudRequerimientoController.pagination.pageLastItem + 1}/#{solicitudRequerimientoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.previous}" value="#{requestBundle.Previous} #{solicitudRequerimientoController.pagination.pageSize}" rendered="#{solicitudRequerimientoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.next}" value="#{requestBundle.Next} #{solicitudRequerimientoController.pagination.pageSize}" rendered="#{solicitudRequerimientoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{solicitudRequerimientoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle_fecha}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.fecha}">
-                                <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
-                            </h:outputText>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle_idArea}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idArea}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle_idEmpleado}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idEmpleado}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareView}" value="#{requestBundle.ListSolicitudRequerimientoViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareEdit}" value="#{requestBundle.ListSolicitudRequerimientoEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.destroy}" value="#{requestBundle.ListSolicitudRequerimientoDestroyLink}"/>
-                        </h:column>
-                    </h:dataTable>
-                </h:panelGroup>
-                <br />
-                <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareCreate}" value="#{requestBundle.ListSolicitudRequerimientoCreateLink}"/>
-                <br />
-                <br />
-                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{requestBundle.ListSolicitudRequerimientoIndexLink}"/>
-            </h:form>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Listado de registros <small>vista de tabla</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <p>Registros ingresados al sistema</p>
+
+                        <h:form styleClass="">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:outputText escape="false" value="#{requestBundle.ListSolicitudRequerimientoEmpty}" rendered="#{solicitudRequerimientoController.items.rowCount == 0}"/>
+                            <h:panelGroup rendered="#{solicitudRequerimientoController.items.rowCount > 0}">
+                                <h:outputText value="#{solicitudRequerimientoController.pagination.pageFirstItem + 1}..#{solicitudRequerimientoController.pagination.pageLastItem + 1}/#{solicitudRequerimientoController.pagination.itemsCount}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.previous}" value="#{requestBundle.Previous} #{solicitudRequerimientoController.pagination.pageSize}" rendered="#{solicitudRequerimientoController.pagination.hasPreviousPage}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.next}" value="#{requestBundle.Next} #{solicitudRequerimientoController.pagination.pageSize}" rendered="#{solicitudRequerimientoController.pagination.hasNextPage}"/>&nbsp;
+
+                                <div class="table-responsive">
+                                    <h:dataTable value="#{solicitudRequerimientoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle_id}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle_fecha}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.fecha}">
+                                                <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+                                            </h:outputText>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle_idArea}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idArea}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{requestBundle.ListSolicitudRequerimientoTitle_idEmpleado}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idEmpleado}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareView}" value="#{requestBundle.ListSolicitudRequerimientoViewLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareEdit}" value="#{requestBundle.ListSolicitudRequerimientoEditLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.destroy}" value="#{requestBundle.ListSolicitudRequerimientoDestroyLink}"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </div>
+                            </h:panelGroup>
+                            <br />
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{solicitudRequerimientoController.prepareCreate}" value="#{requestBundle.ListSolicitudRequerimientoCreateLink}"/>
+                            <br />
+                            <br />
+                            <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{requestBundle.ListSolicitudRequerimientoIndexLink}"/>
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 

@@ -10,64 +10,82 @@
             <h:outputText value="#{adminBundle.ListProveedorTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:form styleClass="">
-                <h:panelGroup id="messagePanel" layout="block">
-                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                </h:panelGroup>
-                <h:outputText escape="false" value="#{adminBundle.ListProveedorEmpty}" rendered="#{proveedorController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{proveedorController.items.rowCount > 0}">
-                    <h:outputText value="#{proveedorController.pagination.pageFirstItem + 1}..#{proveedorController.pagination.pageLastItem + 1}/#{proveedorController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.previous}" value="#{adminBundle.Previous} #{proveedorController.pagination.pageSize}" rendered="#{proveedorController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.next}" value="#{adminBundle.Next} #{proveedorController.pagination.pageSize}" rendered="#{proveedorController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{proveedorController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{adminBundle.ListProveedorTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{adminBundle.ListProveedorTitle_nombre}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.nombre}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{adminBundle.ListProveedorTitle_nit}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.nit}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{adminBundle.ListProveedorTitle_direccion}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.direccion}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{adminBundle.ListProveedorTitle_nrc}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.nrc}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareView}" value="#{adminBundle.ListProveedorViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareEdit}" value="#{adminBundle.ListProveedorEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.destroy}" value="#{adminBundle.ListProveedorDestroyLink}"/>
-                        </h:column>
-                    </h:dataTable>
-                </h:panelGroup>
-                <br />
-                <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareCreate}" value="#{adminBundle.ListProveedorCreateLink}"/>
-                <br />
-                <br />
-                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{adminBundle.ListProveedorIndexLink}"/>
-            </h:form>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Listado de registros <small>vista de tabla</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <p>Registros ingresados al sistema</p>
+
+                        <h:form styleClass="">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:outputText escape="false" value="#{adminBundle.ListProveedorEmpty}" rendered="#{proveedorController.items.rowCount == 0}"/>
+                            <h:panelGroup rendered="#{proveedorController.items.rowCount > 0}">
+                                <h:outputText value="#{proveedorController.pagination.pageFirstItem + 1}..#{proveedorController.pagination.pageLastItem + 1}/#{proveedorController.pagination.itemsCount}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.previous}" value="#{adminBundle.Previous} #{proveedorController.pagination.pageSize}" rendered="#{proveedorController.pagination.hasPreviousPage}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.next}" value="#{adminBundle.Next} #{proveedorController.pagination.pageSize}" rendered="#{proveedorController.pagination.hasNextPage}"/>&nbsp;
+
+                                <div class="table-responsive">
+                                    <h:dataTable value="#{proveedorController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{adminBundle.ListProveedorTitle_id}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{adminBundle.ListProveedorTitle_nombre}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.nombre}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{adminBundle.ListProveedorTitle_nit}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.nit}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{adminBundle.ListProveedorTitle_direccion}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.direccion}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{adminBundle.ListProveedorTitle_nrc}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.nrc}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareView}" value="#{adminBundle.ListProveedorViewLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareEdit}" value="#{adminBundle.ListProveedorEditLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.destroy}" value="#{adminBundle.ListProveedorDestroyLink}"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </div>
+                            </h:panelGroup>
+                            <br />
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{proveedorController.prepareCreate}" value="#{adminBundle.ListProveedorCreateLink}"/>
+                            <br />
+                            <br />
+                            <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{adminBundle.ListProveedorIndexLink}"/>
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 

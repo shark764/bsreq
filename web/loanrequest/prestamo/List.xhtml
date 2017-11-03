@@ -10,60 +10,78 @@
             <h:outputText value="#{loanRequestBundle.ListPrestamoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:form styleClass="">
-                <h:panelGroup id="messagePanel" layout="block">
-                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                </h:panelGroup>
-                <h:outputText escape="false" value="#{loanRequestBundle.ListPrestamoEmpty}" rendered="#{prestamoController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{prestamoController.items.rowCount > 0}">
-                    <h:outputText value="#{prestamoController.pagination.pageFirstItem + 1}..#{prestamoController.pagination.pageLastItem + 1}/#{prestamoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.previous}" value="#{loanRequestBundle.Previous} #{prestamoController.pagination.pageSize}" rendered="#{prestamoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.next}" value="#{loanRequestBundle.Next} #{prestamoController.pagination.pageSize}" rendered="#{prestamoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{prestamoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{loanRequestBundle.ListPrestamoTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{loanRequestBundle.ListPrestamoTitle_fecha}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.fecha}">
-                                <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
-                            </h:outputText>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{loanRequestBundle.ListPrestamoTitle_idArea}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idArea}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{loanRequestBundle.ListPrestamoTitle_idEmpleado}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idEmpleado}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.prepareView}" value="#{loanRequestBundle.ListPrestamoViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.prepareEdit}" value="#{loanRequestBundle.ListPrestamoEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.destroy}" value="#{loanRequestBundle.ListPrestamoDestroyLink}"/>
-                        </h:column>
-                    </h:dataTable>
-                </h:panelGroup>
-                <br />
-                <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.prepareCreate}" value="#{loanRequestBundle.ListPrestamoCreateLink}"/>
-                <br />
-                <br />
-                <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{loanRequestBundle.ListPrestamoIndexLink}"/>
-            </h:form>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Listado de registros <small>vista de tabla</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <p>Registros ingresados al sistema</p>
+
+                        <h:form styleClass="">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:outputText escape="false" value="#{loanRequestBundle.ListPrestamoEmpty}" rendered="#{prestamoController.items.rowCount == 0}"/>
+                            <h:panelGroup rendered="#{prestamoController.items.rowCount > 0}">
+                                <h:outputText value="#{prestamoController.pagination.pageFirstItem + 1}..#{prestamoController.pagination.pageLastItem + 1}/#{prestamoController.pagination.itemsCount}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.previous}" value="#{loanRequestBundle.Previous} #{prestamoController.pagination.pageSize}" rendered="#{prestamoController.pagination.hasPreviousPage}"/>&nbsp;
+                                <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.next}" value="#{loanRequestBundle.Next} #{prestamoController.pagination.pageSize}" rendered="#{prestamoController.pagination.hasNextPage}"/>&nbsp;
+
+                                <div class="table-responsive">
+                                    <h:dataTable value="#{prestamoController.items}" var="item" rules="all" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{loanRequestBundle.ListPrestamoTitle_id}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{loanRequestBundle.ListPrestamoTitle_fecha}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.fecha}">
+                                                <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+                                            </h:outputText>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{loanRequestBundle.ListPrestamoTitle_idArea}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idArea}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{loanRequestBundle.ListPrestamoTitle_idEmpleado}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idEmpleado}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.prepareView}" value="#{loanRequestBundle.ListPrestamoViewLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.prepareEdit}" value="#{loanRequestBundle.ListPrestamoEditLink}"/>
+                                            <h:outputText value=" "/>
+                                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.destroy}" value="#{loanRequestBundle.ListPrestamoDestroyLink}"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </div>
+                            </h:panelGroup>
+                            <br />
+                            <h:commandLink styleClass="btn btn-sm btn-default" action="#{prestamoController.prepareCreate}" value="#{loanRequestBundle.ListPrestamoCreateLink}"/>
+                            <br />
+                            <br />
+                            <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{loanRequestBundle.ListPrestamoIndexLink}"/>
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 
