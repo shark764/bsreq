@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form styleClass="form-horizontal form-label-left">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{inventoryBundle.ViewInsumoLabel_id}"/>
                     <h:outputText value="#{insumoController.selected.id}" title="#{inventoryBundle.ViewInsumoTitle_id}"/>
@@ -22,17 +22,10 @@
                     <h:outputText value="#{inventoryBundle.ViewInsumoLabel_existencia}"/>
                     <h:outputText value="#{insumoController.selected.existencia}" title="#{inventoryBundle.ViewInsumoTitle_existencia}"/>
                 </h:panelGrid>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.destroyAndView}" value="#{inventoryBundle.ViewInsumoDestroyLink}"/>
-                <br />
-                <br />
                 <h:link outcome="Edit" value="#{inventoryBundle.ViewInsumoEditLink}"/>
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.prepareCreate}" value="#{inventoryBundle.ViewInsumoCreateLink}" />
-                <br />
                 <h:commandLink styleClass="btn btn-sm btn-default" action="#{insumoController.prepareList}" value="#{inventoryBundle.ViewInsumoShowAllLink}"/>
-                <br />
-                <br />
                 <h:link styleClass="btn btn-sm btn-success" outcome="/index" value="#{inventoryBundle.ViewInsumoIndexLink}"/>
 
             </h:form>

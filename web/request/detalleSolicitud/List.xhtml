@@ -27,7 +27,7 @@
                         <h:form styleClass="form-inline">
                             <div class="form-group">
                                 <h:outputLabel value="Filtro" />
-                                <h:selectOneMenu styleClass="form-control" value="#{ styleClass="form-control" value="#{detalleSolicitudController.dataFilterType}" required="true">
+                                <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.dataFilterType}" required="true">
                                     <f:selectItems value="#{detalleSolicitudController.dataFilterTypeValue}"/>
                                 </h:selectOneMenu>
                             </div>
@@ -35,125 +35,147 @@
                             <h:messages />
                         </h:form>
 
-                        <h4>A resolver m\u00e1ximo el d\u00eda de hoy </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'limitTime'}">
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByLimitTime}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'limitTime'}">
+                            <h4>A resolver m\u00e1ximo el d\u00eda de hoy </h4>
+                            <h:form styleClass="form-inline">
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByLimitTime}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Filtrar por empleado solicitante </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByEmployee'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Empleado solicitante" />
-                                <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.employee}" required="true">
-                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                                </h:selectOneMenu>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByEmployee}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByEmployee'}">
+                            <h4>Filtrar por empleado solicitante </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Empleado solicitante" />
+                                    <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.employee}" required="true">
+                                        <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByEmployee}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Filtrar por equipo </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByEquipment'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Equipo" />
-                                <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.equipment}" required="true">
-                                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
-                                </h:selectOneMenu>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByEquipment}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByEquipment'}">
+                            <h4>Filtrar por equipo </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Equipo" />
+                                    <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.equipment}" required="true">
+                                        <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByEquipment}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Filtrar por tipo de mantenimiento </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByRequestType'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Mantenimiento" />
-                                <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.requestType}" required="true">
-                                    <f:selectItems value="#{tipoRequerimientoController.itemsAvailableSelectOne}"/>
-                                </h:selectOneMenu>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByRequestType}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByRequestType'}">
+                            <h4>Filtrar por tipo de mantenimiento </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Mantenimiento" />
+                                    <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.requestType}" required="true">
+                                        <f:selectItems value="#{tipoRequerimientoController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByRequestType}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Filtrar por falla </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByFaultType'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Falla" />
-                                <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.faultType}" required="true">
-                                    <f:selectItems value="#{tipoFallaController.itemsAvailableSelectOne}"/>
-                                </h:selectOneMenu>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByFaultType}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByFaultType'}">
+                            <h4>Filtrar por falla </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Falla" />
+                                    <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.faultType}" required="true">
+                                        <f:selectItems value="#{tipoFallaController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByFaultType}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Filtrar por soluci\u00f3n brindada </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findBySolutionType'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Soluci\u00f3n" />
-                                <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.solutionType}" required="true">
-                                    <f:selectItems value="#{tipoSolucionController.itemsAvailableSelectOne}"/>
-                                </h:selectOneMenu>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterBySolutionType}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findBySolutionType'}">
+                            <h4>Filtrar por soluci\u00f3n brindada </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Soluci\u00f3n" />
+                                    <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.solutionType}" required="true">
+                                        <f:selectItems value="#{tipoSolucionController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterBySolutionType}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Solventados sobre tiempo l\u00edmite </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'solvedOverTime'}">
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterSolvedOverTime}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'solvedOverTime'}">
+                            <h4>Solventados sobre tiempo l\u00edmite </h4>
+                            <h:form styleClass="form-inline">
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterSolvedOverTime}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>No solventados </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'notSolved'}">
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterNotSolved}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'notSolved'}">
+                            <h4>No solventados </h4>
+                            <h:form styleClass="form-inline">
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterNotSolved}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>No solventados por t\u00e9cnico asignado </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'notSolvedByAssignedTechnician'}">
-                            <div class="form-group">
-                                <h:outputLabel value="T\u00e9cnico" />
-                                <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.employee}" required="true">
-                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                                </h:selectOneMenu>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterNotSolvedByAssignedTechnician}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'notSolvedByAssignedTechnician'}">
+                            <h4>No solventados por t\u00e9cnico asignado </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="T\u00e9cnico" />
+                                    <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.employee}" required="true">
+                                        <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterNotSolvedByAssignedTechnician}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Filtrar por técnico asignado </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByAssignedTechnician'}">
-                            <div class="form-group">
-                                <h:outputLabel value="T\u00e9cnico" />
-                                <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.employee}" required="true">
-                                    <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
-                                </h:selectOneMenu>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByAssignedTechnician}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'findByAssignedTechnician'}">
+                            <h4>Filtrar por técnico asignado </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="T\u00e9cnico" />
+                                    <h:selectOneMenu styleClass="form-control" value="#{detalleSolicitudController.employee}" required="true">
+                                        <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByAssignedTechnician}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Requerimientos por rango de fecha </h4>
-                        <h:form styleClass="form-inline" rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'entryRange'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Fecha inicio" />
-                                <h:inputText styleClass="form-control" value="#{detalleSolicitudController.startDate}" required="true">
-                                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                                </h:inputText>
-                            </div>
-                            <div class="form-group">
-                                <h:outputLabel value="Fecha fin" />
-                                <h:inputText styleClass="form-control" value="#{detalleSolicitudController.endDate}" required="true">
-                                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                                </h:inputText>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByEntryRange}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{detalleSolicitudController.dataFilterType != 'NONE' and detalleSolicitudController.dataFilterType == 'entryRange'}">
+                            <h4>Requerimientos por rango de fecha </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Fecha inicio" />
+                                    <h:inputText styleClass="form-control" value="#{detalleSolicitudController.startDate}" required="true">
+                                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                                    </h:inputText>
+                                </div>
+                                <div class="form-group">
+                                    <h:outputLabel value="Fecha fin" />
+                                    <h:inputText styleClass="form-control" value="#{detalleSolicitudController.endDate}" required="true">
+                                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                                    </h:inputText>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{detalleSolicitudController.filterByEntryRange}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
                     </div>
                 </div>
             </h:panelGroup>

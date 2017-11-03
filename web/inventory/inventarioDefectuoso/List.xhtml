@@ -27,7 +27,7 @@
                         <h:form styleClass="form-inline">
                             <div class="form-group">
                                 <h:outputLabel value="Filtro" />
-                                <h:selectOneMenu styleClass="form-control" value="#{ styleClass="form-control" value="#{inventarioDefectuosoController.dataFilterType}" required="true">
+                                <h:selectOneMenu styleClass="form-control" value="#{inventarioDefectuosoController.dataFilterType}" required="true">
                                     <f:selectItems value="#{inventarioDefectuosoController.dataFilterTypeValue}"/>
                                 </h:selectOneMenu>
                             </div>
@@ -35,35 +35,39 @@
                             <h:messages />
                         </h:form>
 
-                        <h4>Filtrar por modelo </h4>
-                        <h:form styleClass="form-inline" rendered="#{inventarioDefectuosoController.dataFilterType != 'NONE' and inventarioDefectuosoController.dataFilterType == 'findByEquipmentModel'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Modelo" />
-                                <h:selectOneMenu styleClass="form-control" value="#{inventarioDefectuosoController.equipmentModel}" required="true">
-                                    <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
-                                </h:selectOneMenu>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{inventarioDefectuosoController.filterByEquipmentModel}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{inventarioDefectuosoController.dataFilterType != 'NONE' and inventarioDefectuosoController.dataFilterType == 'findByEquipmentModel'}">
+                            <h4>Filtrar por modelo </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Modelo" />
+                                    <h:selectOneMenu styleClass="form-control" value="#{inventarioDefectuosoController.equipmentModel}" required="true">
+                                        <f:selectItems value="#{modeloEquipoController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{inventarioDefectuosoController.filterByEquipmentModel}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Filtrar por rango de fecha de falla </h4>
-                        <h:form styleClass="form-inline" rendered="#{inventarioDefectuosoController.dataFilterType != 'NONE' and inventarioDefectuosoController.dataFilterType == 'entryRange'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Fecha inicio" />
-                                <h:inputText styleClass="form-control" value="#{inventarioDefectuosoController.startDate}" required="true">
-                                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                                </h:inputText>
-                            </div>
-                            <div class="form-group">
-                                <h:outputLabel value="Fecha fin" />
-                                <h:inputText styleClass="form-control" value="#{inventarioDefectuosoController.endDate}" required="true">
-                                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                                </h:inputText>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{inventarioDefectuosoController.filterByEntryRange}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{inventarioDefectuosoController.dataFilterType != 'NONE' and inventarioDefectuosoController.dataFilterType == 'entryRange'}">
+                            <h4>Filtrar por rango de fecha de falla </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Fecha inicio" />
+                                    <h:inputText styleClass="form-control" value="#{inventarioDefectuosoController.startDate}" required="true">
+                                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                                    </h:inputText>
+                                </div>
+                                <div class="form-group">
+                                    <h:outputLabel value="Fecha fin" />
+                                    <h:inputText styleClass="form-control" value="#{inventarioDefectuosoController.endDate}" required="true">
+                                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                                    </h:inputText>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{inventarioDefectuosoController.filterByEntryRange}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
                     </div>
                 </div>
             </h:panelGroup>

@@ -27,7 +27,7 @@
                         <h:form styleClass="form-inline">
                             <div class="form-group">
                                 <h:outputLabel value="Filtro" />
-                                <h:selectOneMenu styleClass="form-control" value="#{ styleClass="form-control" value="#{insumoController.dataFilterType}" required="true">
+                                <h:selectOneMenu styleClass="form-control" value="#{insumoController.dataFilterType}" required="true">
                                     <f:selectItems value="#{insumoController.dataFilterTypeValue}"/>
                                 </h:selectOneMenu>
                             </div>
@@ -35,29 +35,33 @@
                             <h:messages />
                         </h:form>
 
-                        <h4>Cantidad m\u00e1xima en stock </h4>
-                        <h:form styleClass="form-inline" rendered="#{insumoController.dataFilterType != 'NONE' and insumoController.dataFilterType == 'nonStock'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Cantidad m\u00e1xima" />
-                                <h:inputText styleClass="form-control" value="#{insumoController.minStock}" required="true" />
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoController.filterByMinStock}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{insumoController.dataFilterType != 'NONE' and insumoController.dataFilterType == 'nonStock'}">
+                            <h4>Cantidad m\u00e1xima en stock </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Cantidad m\u00e1xima" />
+                                    <h:inputText styleClass="form-control" value="#{insumoController.minStock}" required="true" />
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoController.filterByMinStock}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Rango de existencia en stock </h4>
-                        <h:form styleClass="form-inline" rendered="#{insumoController.dataFilterType != 'NONE' and insumoController.dataFilterType == 'stockRange'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Cantidad m\u00ednima" />
-                                <h:inputText styleClass="form-control" value="#{insumoController.startStock}" required="true" />
-                            </div>
-                            <div class="form-group">
-                                <h:outputLabel value="Cantidad m\u00e1xima" />
-                                <h:inputText styleClass="form-control" value="#{insumoController.endStock}" required="true" />
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoController.filterByStockRange}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{insumoController.dataFilterType != 'NONE' and insumoController.dataFilterType == 'stockRange'}">
+                            <h4>Rango de existencia en stock </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Cantidad m\u00ednima" />
+                                    <h:inputText styleClass="form-control" value="#{insumoController.startStock}" required="true" />
+                                </div>
+                                <div class="form-group">
+                                    <h:outputLabel value="Cantidad m\u00e1xima" />
+                                    <h:inputText styleClass="form-control" value="#{insumoController.endStock}" required="true" />
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoController.filterByStockRange}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
                     </div>
                 </div>
             </h:panelGroup>

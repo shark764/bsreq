@@ -27,7 +27,7 @@
                         <h:form styleClass="form-inline">
                             <div class="form-group">
                                 <h:outputLabel value="Filtro" />
-                                <h:selectOneMenu styleClass="form-control" value="#{ styleClass="form-control" value="#{insumoUtilizadoController.dataFilterType}" required="true">
+                                <h:selectOneMenu styleClass="form-control" value="#{insumoUtilizadoController.dataFilterType}" required="true">
                                     <f:selectItems value="#{insumoUtilizadoController.dataFilterTypeValue}"/>
                                 </h:selectOneMenu>
                             </div>
@@ -35,63 +35,71 @@
                             <h:messages />
                         </h:form>
 
-                        <h4>Filtrar por equipo </h4>
-                        <h:form styleClass="form-inline" rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'findByEquipment'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Equipo" />
-                                <h:selectOneMenu styleClass="form-control" value="#{insumoUtilizadoController.equipment}" required="true">
-                                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
-                                </h:selectOneMenu>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByEquipment}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'findByEquipment'}">
+                            <h4>Filtrar por equipo </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Equipo" />
+                                    <h:selectOneMenu styleClass="form-control" value="#{insumoUtilizadoController.equipment}" required="true">
+                                        <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByEquipment}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Rango de cantidad usada </h4>
-                        <h:form styleClass="form-inline" rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'usedRange'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Cantidad m\u00ednima" />
-                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.startUsed}" required="true" />
-                            </div>
-                            <div class="form-group">
-                                <h:outputLabel value="Cantidad m\u00e1xima" />
-                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.endUsed}" required="true" />
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByUsedRange}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'usedRange'}">
+                            <h4>Rango de cantidad usada </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Cantidad m\u00ednima" />
+                                    <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.startUsed}" required="true" />
+                                </div>
+                                <div class="form-group">
+                                    <h:outputLabel value="Cantidad m\u00e1xima" />
+                                    <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.endUsed}" required="true" />
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByUsedRange}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Rango de cantidad desperdiciada </h4>
-                        <h:form styleClass="form-inline" rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'wastedRange'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Cantidad m\u00ednima" />
-                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.startWasted}" required="true" />
-                            </div>
-                            <div class="form-group">
-                                <h:outputLabel value="Cantidad m\u00e1xima" />
-                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.endWasted}" required="true" />
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByWastedRange}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'wastedRange'}">
+                            <h4>Rango de cantidad desperdiciada </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Cantidad m\u00ednima" />
+                                    <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.startWasted}" required="true" />
+                                </div>
+                                <div class="form-group">
+                                    <h:outputLabel value="Cantidad m\u00e1xima" />
+                                    <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.endWasted}" required="true" />
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByWastedRange}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
 
-                        <h4>Requerimientos por rango de fecha </h4>
-                        <h:form styleClass="form-inline" rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'entryRange'}">
-                            <div class="form-group">
-                                <h:outputLabel value="Fecha inicio" />
-                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.startDate}" required="true">
-                                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                                </h:inputText>
-                            </div>
-                            <div class="form-group">
-                                <h:outputLabel value="Fecha fin" />
-                                <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.endDate}" required="true">
-                                    <f:convertDateTime pattern="dd/MM/yyyy" />
-                                </h:inputText>
-                            </div>
-                            <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByEntryRange}" />
-                            <h:messages />
-                        </h:form>
+                        <h:panelGroup rendered="#{insumoUtilizadoController.dataFilterType != 'NONE' and insumoUtilizadoController.dataFilterType == 'entryRange'}">
+                            <h4>Requerimientos por rango de fecha </h4>
+                            <h:form styleClass="form-inline">
+                                <div class="form-group">
+                                    <h:outputLabel value="Fecha inicio" />
+                                    <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.startDate}" required="true">
+                                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                                    </h:inputText>
+                                </div>
+                                <div class="form-group">
+                                    <h:outputLabel value="Fecha fin" />
+                                    <h:inputText styleClass="form-control" value="#{insumoUtilizadoController.endDate}" required="true">
+                                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                                    </h:inputText>
+                                </div>
+                                <h:commandButton styleClass="btn btn-sm btn-default" value="Aceptar" action="#{insumoUtilizadoController.filterByEntryRange}" />
+                                <h:messages />
+                            </h:form>
+                        </h:panelGroup>
                     </div>
                 </div>
             </h:panelGroup>
