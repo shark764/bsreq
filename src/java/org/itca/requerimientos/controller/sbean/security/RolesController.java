@@ -222,7 +222,7 @@ public class RolesController implements Serializable {
             org.itca.requerimientos.model.entities.RolesPK key;
             String values[] = value.split(SEPARATOR_ESCAPED);
             key = new org.itca.requerimientos.model.entities.RolesPK();
-            key.setRol(Integer.parseInt(values[0]));
+            key.setRol(values[0]);
             key.setIduser(values[1]);
             return key;
         }

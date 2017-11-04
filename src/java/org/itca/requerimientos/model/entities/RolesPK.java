@@ -20,8 +20,9 @@ import javax.validation.constraints.Size;
 public class RolesPK implements Serializable {
     @Basic(optional = false)
     @NotNull
+    @Size(min = 1, max = 30)
     @Column(name = "Rol")
-    private int rol;
+    private String rol;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
@@ -31,16 +32,16 @@ public class RolesPK implements Serializable {
     public RolesPK() {
     }
 
-    public RolesPK(int rol, String iduser) {
+    public RolesPK(String rol, String iduser) {
         this.rol = rol;
         this.iduser = iduser;
     }
 
-    public int getRol() {
+    public String getRol() {
         return rol;
     }
 
-    public void setRol(int rol) {
+    public void setRol(String rol) {
         this.rol = rol;
     }
 
@@ -55,7 +56,7 @@ public class RolesPK implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) rol;
+        hash += (rol != null ? rol.hashCode() : 0);
         hash += (iduser != null ? iduser.hashCode() : 0);
         return hash;
     }
@@ -67,7 +68,7 @@ public class RolesPK implements Serializable {
             return false;
         }
         RolesPK other = (RolesPK) object;
-        if (this.rol != other.rol) {
+        if ((this.rol == null && other.rol != null) || (this.rol != null && !this.rol.equals(other.rol))) {
             return false;
         }
         if ((this.iduser == null && other.iduser != null) || (this.iduser != null && !this.iduser.equals(other.iduser))) {

@@ -40,7 +40,7 @@ public class Roles implements Serializable {
         this.rolesPK = rolesPK;
     }
 
-    public Roles(int rol, String iduser) {
+    public Roles(String rol, String iduser) {
         this.rolesPK = new RolesPK(rol, iduser);
     }
 

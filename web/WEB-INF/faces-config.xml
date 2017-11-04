@@ -28,5 +28,13 @@
             <base-name>/org/itca/requerimientos/bundles/RequestBundle</base-name>
             <var>requestBundle</var>
         </resource-bundle>
+        <resource-bundle>
+            <base-name>/org/itca/requerimientos/bundles/SecurityBundle</base-name>
+            <var>securityBundle</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/org/itca/requerimientos/bundles/SecurityBundle</base-name>
+            <var>securityBundle</var>
+        </resource-bundle>
     </application>
 </faces-config>
