@@ -24,7 +24,11 @@
                         <h:panelGroup id="messagePanel" layout="block">
                             <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                         </h:panelGroup>
-                        <h:form styleClass="form-horizontal form-label-left" id="login" onsubmit="document.getElementById('login').action='j_security_check';" prependId="false">
+                        <h:form
+                                styleClass="form-horizontal form-label-left"
+                                id="login"
+                                onsubmit="document.getElementById('login').action='j_security_check';"
+                                prependId="false">
                             <div class="form-group has-feedback form-group-collapsed-fields">
                                 <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="Usuario" for="j_username" />
                                 <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">

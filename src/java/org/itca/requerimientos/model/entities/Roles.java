@@ -44,6 +44,11 @@ public class Roles implements Serializable {
         this.rolesPK = new RolesPK(rol, iduser);
     }
 
+    public Roles(String rol, String iduser, Integer estado) {
+        this.rolesPK = new RolesPK(rol, iduser);
+        this.estado = estado;
+    }
+
     public RolesPK getRolesPK() {
         return rolesPK;
     }

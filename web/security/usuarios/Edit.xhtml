@@ -42,7 +42,7 @@
                                     <div class="form-group has-feedback form-group-collapsed-fields">
                                         <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{securityBundle.EditUsuariosLabel_clave}" for="clave" />
                                         <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
-                                            <h:inputText styleClass="form-control has-feedback-left input-sm" id="clave" value="#{usuariosController.selected.clave}" title="#{securityBundle.EditUsuariosTitle_clave}" />
+                                            <h:inputSecret styleClass="form-control has-feedback-left input-sm" id="clave" value="#{usuariosController.selected.clave}" title="#{securityBundle.EditUsuariosTitle_clave}" />
                                             <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -59,6 +59,14 @@
                                             <h:selectOneMenu styleClass="form-control input-sm" id="idEmpleado" value="#{usuariosController.selected.idEmpleado}" title="#{securityBundle.EditUsuariosTitle_idEmpleado}">
                                                 <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"/>
                                             </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback form-group-collapsed-fields">
+                                        <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="Roles" for="userRoles" />
+                                        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                            <h:selectManyCheckbox styleClass="form-control input-sm" id="userRoles" value="#{usuariosController.userRoles}">
+                                                <f:selectItems value="#{usuariosController.rolesMap}"/>
+                                            </h:selectManyCheckbox>
                                         </div>
                                     </div>
 

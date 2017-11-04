@@ -13,6 +13,14 @@
     </h:head>
 
     <h:body>
+        <h:panelGroup rendered="#{not empty user}"></h:panelGroup>
+        <h:panelGroup>
+            <p>Welcome, #{user}</p>
+            <h:form>
+                <h:commandButton styleClass="btn btn-sm btn-primary" value="Salir" action="#{userSessionBean.logout}" />
+            </h:form>
+        </h:panelGroup>
+
         <h1>
             <ui:insert name="title">Default Title</ui:insert>
         </h1>

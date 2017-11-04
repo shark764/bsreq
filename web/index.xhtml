@@ -1,69 +1,87 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
-    </h:head>
-    <h:body>
-        Hello from Facelets
-        <br />
-        <table>
-            <tr>
-                <td><h:link outcome="/catalogues/estadoEquipo/List" value="Show All EstadoEquipo Items"/></td>
-                <td><h:link outcome="/catalogues/estadoPrestamo/List" value="Show All EstadoPrestamo Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/catalogues/estadoSolicitud/List" value="Show All EstadoSolicitud Items"/></td>
-                <td><h:link outcome="/catalogues/marcaEquipo/List" value="Show All MarcaEquipo Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/catalogues/modeloEquipo/List" value="Show All ModeloEquipo Items"/></td>
-                <td><h:link outcome="/catalogues/tipoFalla/List" value="Show All TipoFalla Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/catalogues/tipoRequerimiento/List" value="Show All TipoRequerimiento Items"/></td>
-                <td><h:link outcome="/catalogues/tipoSolucion/List" value="Show All TipoSolucion Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/security/roles/List" value="Show All Roles Items"/></td>
-                <td><h:link outcome="/security/usuarios/List" value="Show All Usuarios Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/inventory/categoriaEquipo/List" value="Show All CategoriaEquipo Items"/></td>
-                <td><h:link outcome="/inventory/equipo/List" value="Show All Equipo Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/inventory/inventarioDefectuoso/List" value="Show All InventarioDefectuoso Items"/></td>
-                <td><h:link outcome="/admin/area/List" value="Show All Area Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/admin/empleado/List" value="Show All Empleado Items"/></td>
-                <td><h:link outcome="/admin/proveedor/List" value="Show All Proveedor Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/admin/tipoEmpleado/List" value="Show All TipoEmpleado Items"/></td>
-                <td><h:link outcome="/loanrequest/detallePrestamo/List" value="Show All DetallePrestamo Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/loanrequest/prestamo/List" value="Show All Prestamo Items"/></td>
-                <td><h:link outcome="/request/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/request/insumoUtilizado/List" value="Show All InsumoUtilizado Items"/></td>
-                <td><h:link outcome="/request/solicitudRequerimiento/List" value="Show All SolicitudRequerimiento Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/inventory/insumo/List" value="Show All Insumo Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/coordinator/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
-                <td><h:link outcome="/technician/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
-            </tr>
-            <tr>
-                <td><h:link outcome="/jasperviews/generate" value="Generar reportes"/></td>
-            </tr>
-        </table>
-    </h:body>
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Bienvenido"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Sistema de Requerimientos Informáticos <small>Bienvenido</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <p>Página principal</p>
+
+                        <table>
+                            <tr>
+                                <td><h:link outcome="/catalogues/estadoEquipo/List" value="Show All EstadoEquipo Items"/></td>
+                                <td><h:link outcome="/catalogues/estadoPrestamo/List" value="Show All EstadoPrestamo Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/catalogues/estadoSolicitud/List" value="Show All EstadoSolicitud Items"/></td>
+                                <td><h:link outcome="/catalogues/marcaEquipo/List" value="Show All MarcaEquipo Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/catalogues/modeloEquipo/List" value="Show All ModeloEquipo Items"/></td>
+                                <td><h:link outcome="/catalogues/tipoFalla/List" value="Show All TipoFalla Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/catalogues/tipoRequerimiento/List" value="Show All TipoRequerimiento Items"/></td>
+                                <td><h:link outcome="/catalogues/tipoSolucion/List" value="Show All TipoSolucion Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/security/roles/List" value="Show All Roles Items"/></td>
+                                <td><h:link outcome="/security/usuarios/List" value="Show All Usuarios Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/inventory/categoriaEquipo/List" value="Show All CategoriaEquipo Items"/></td>
+                                <td><h:link outcome="/inventory/equipo/List" value="Show All Equipo Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/inventory/inventarioDefectuoso/List" value="Show All InventarioDefectuoso Items"/></td>
+                                <td><h:link outcome="/admin/area/List" value="Show All Area Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/admin/empleado/List" value="Show All Empleado Items"/></td>
+                                <td><h:link outcome="/admin/proveedor/List" value="Show All Proveedor Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/admin/tipoEmpleado/List" value="Show All TipoEmpleado Items"/></td>
+                                <td><h:link outcome="/loanrequest/detallePrestamo/List" value="Show All DetallePrestamo Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/loanrequest/prestamo/List" value="Show All Prestamo Items"/></td>
+                                <td><h:link outcome="/request/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/request/insumoUtilizado/List" value="Show All InsumoUtilizado Items"/></td>
+                                <td><h:link outcome="/request/solicitudRequerimiento/List" value="Show All SolicitudRequerimiento Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/inventory/insumo/List" value="Show All Insumo Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/coordinator/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
+                                <td><h:link outcome="/technician/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
+                            </tr>
+                            <tr>
+                                <td><h:link outcome="/jasperviews/generate" value="Generar reportes"/></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
 </html>
