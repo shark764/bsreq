@@ -25,7 +25,6 @@
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form styleClass="form-horizontal form-label-left">
-                                <h:panelGrid columns="2">
                                     <div class="form-group has-feedback form-group-collapsed-fields">
                                         <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.EditSolicitudRequerimientoLabel_idArea}" for="idArea" />
                                         <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
@@ -42,39 +41,40 @@
                                             </h:selectOneMenu>
                                         </div>
                                     </div>
-                                </h:panelGrid>
 
                                 <div class="ln_solid"></div>
 
                                 <h:panelGroup rendered="#{not empty solicitudRequerimientoController.requestDetailList}">
-                                    <h:dataTable value="#{solicitudRequerimientoController.requestDetailList}" var="ds">
-                                        <h:column>
-                                            <f:facet name="header">ID</f:facet>
-                                            <h:outputText value="#{ds.id}"/>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header">Equipo</f:facet>
-                                            <h:selectOneMenu value="#{ds.idEquipo}" required="true">
-                                                <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
-                                            </h:selectOneMenu>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header">Falla</f:facet>
-                                            <h:selectOneMenu value="#{ds.idTipoFalla}" required="true">
-                                                <f:selectItems value="#{tipoFallaController.itemsAvailableSelectOne}"/>
-                                            </h:selectOneMenu>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header">Descripción</f:facet>
-                                            <h:inputText value="#{ds.descripcion}"/>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header"><h:outputText value="&nbsp;"/></f:facet>
-                                            <h:commandButton styleClass="btn btn-sm btn-default" value="#{not empty ds.idEquipo ? 'Actualizar' : 'Agregar'}" action="#{solicitudRequerimientoController.updateRequestDetail(ds)}"/>
-                                            <h:outputText value=" "/>
-                                            <h:commandButton styleClass="btn btn-sm btn-default" value="Borrar" action="#{solicitudRequerimientoController.removeRequestDetail(ds)}"/>
-                                        </h:column>
-                                    </h:dataTable>
+                                    <div class="table-responsive">
+                                        <h:dataTable value="#{solicitudRequerimientoController.requestDetailList}" var="ds" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                            <h:column>
+                                                <f:facet name="header">ID</f:facet>
+                                                <h:outputText value="#{ds.id}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">Equipo</f:facet>
+                                                <h:selectOneMenu value="#{ds.idEquipo}" required="true">
+                                                    <f:selectItems value="#{equipoController.itemsAvailableSelectOne}"/>
+                                                </h:selectOneMenu>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">Falla</f:facet>
+                                                <h:selectOneMenu value="#{ds.idTipoFalla}" required="true">
+                                                    <f:selectItems value="#{tipoFallaController.itemsAvailableSelectOne}"/>
+                                                </h:selectOneMenu>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">Descripción</f:facet>
+                                                <h:inputText value="#{ds.descripcion}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header"><h:outputText value="&nbsp;"/></f:facet>
+                                                <h:commandButton styleClass="btn btn-sm btn-default" value="#{not empty ds.idEquipo ? 'Actualizar' : 'Agregar'}" action="#{solicitudRequerimientoController.updateRequestDetail(ds)}"/>
+                                                <h:outputText value=" "/>
+                                                <h:commandButton styleClass="btn btn-sm btn-default" value="Borrar" action="#{solicitudRequerimientoController.removeRequestDetail(ds)}"/>
+                                            </h:column>
+                                        </h:dataTable>
+                                    </div>
                                 </h:panelGroup>
 
                                 <div class="ln_solid"></div>

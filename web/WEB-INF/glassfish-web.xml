@@ -2,6 +2,30 @@
 <!DOCTYPE glassfish-web-app PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Servlet 3.0//EN" "http://glassfish.org/dtds/glassfish-web-app_3_0-1.dtd">
 <glassfish-web-app error-url="">
   <context-root>/bs-req</context-root>
+  <security-role-mapping>
+    <role-name>administrador</role-name>
+    <group-name>administrador</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>coordinador</role-name>
+    <group-name>coordinador</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>gerente</role-name>
+    <group-name>gerente</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>inventario</role-name>
+    <group-name>inventario</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>solicitante</role-name>
+    <group-name>solicitante</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>tecnico</role-name>
+    <group-name>tecnico</group-name>
+  </security-role-mapping>
   <class-loader delegate="true"/>
   <jsp-config>
     <property name="keepgenerated" value="true">

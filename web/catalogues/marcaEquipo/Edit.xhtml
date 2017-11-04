@@ -25,7 +25,6 @@
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form styleClass="form-horizontal form-label-left">
-                                <h:panelGrid columns="2">
                                     <div class="form-group has-feedback form-group-collapsed-fields">
                                         <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{cataloguesBundle.EditMarcaEquipoLabel_nombre}" for="nombre" />
                                         <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
@@ -40,35 +39,36 @@
                                             <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
                                         </div>
                                     </div>
-                                </h:panelGrid>
 
                                 <div class="ln_solid"></div>
 
                                 <h:panelGroup rendered="#{not empty marcaEquipoController.equipmentModelList}">
-                                    <h:dataTable value="#{marcaEquipoController.equipmentModelList}" var="mq">
-                                        <h:column>
-                                            <f:facet name="header">ID</f:facet>
-                                            <h:outputText value="#{mq.id}"/>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header">Código</f:facet>
-                                            <h:inputText value="#{mq.codigo}"/>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header">Nombre</f:facet>
-                                            <h:inputText value="#{mq.nombre}"/>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header">Existencia</f:facet>
-                                            <h:inputText value="#{mq.existencia}"/>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header"><h:outputText value="&nbsp;"/></f:facet>
-                                            <h:commandButton styleClass="btn btn-sm btn-default" value="#{not empty mq.codigo ? 'Actualizar' : 'Agregar'}" action="#{marcaEquipoController.updateEquipmentModel(mq)}"/>
-                                            <h:outputText value=" "/>
-                                            <h:commandButton styleClass="btn btn-sm btn-default" value="Borrar" action="#{marcaEquipoController.removeEquipmentModel(mq)}"/>
-                                        </h:column>
-                                    </h:dataTable>
+                                    <div class="table-responsive">
+                                        <h:dataTable value="#{marcaEquipoController.equipmentModelList}" var="mq" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                            <h:column>
+                                                <f:facet name="header">ID</f:facet>
+                                                <h:outputText value="#{mq.id}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">Código</f:facet>
+                                                <h:inputText value="#{mq.codigo}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">Nombre</f:facet>
+                                                <h:inputText value="#{mq.nombre}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">Existencia</f:facet>
+                                                <h:inputText value="#{mq.existencia}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header"><h:outputText value="&nbsp;"/></f:facet>
+                                                <h:commandButton styleClass="btn btn-sm btn-default" value="#{not empty mq.codigo ? 'Actualizar' : 'Agregar'}" action="#{marcaEquipoController.updateEquipmentModel(mq)}"/>
+                                                <h:outputText value=" "/>
+                                                <h:commandButton styleClass="btn btn-sm btn-default" value="Borrar" action="#{marcaEquipoController.removeEquipmentModel(mq)}"/>
+                                            </h:column>
+                                        </h:dataTable>
+                                    </div>
                                 </h:panelGroup>
 
                                 <div class="ln_solid"></div>

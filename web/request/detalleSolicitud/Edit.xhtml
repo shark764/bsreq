@@ -25,7 +25,6 @@
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
                             <h:form styleClass="form-horizontal form-label-left">
-                                <h:panelGrid columns="2">
                                     <div class="form-group has-feedback form-group-collapsed-fields">
                                         <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="#{requestBundle.EditDetalleSolicitudLabel_descripcion}" for="descripcion" />
                                         <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
@@ -96,31 +95,32 @@
                                             </h:selectOneMenu>
                                         </div>
                                     </div>
-                                </h:panelGrid>
 
                                 <div class="ln_solid"></div>
 
                                 <h:panelGroup rendered="#{not empty detalleSolicitudController.resourcesUsedList}">
-                                    <h:dataTable value="#{detalleSolicitudController.resourcesUsedList}" var="iu">
-                                        <h:column>
-                                            <f:facet name="header">ID</f:facet>
-                                            <h:outputText value="#{iu.id}"/>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header">Utilizado</f:facet>
-                                            <h:inputText value="#{iu.utlilizado}"/>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header">Desperdicio</f:facet>
-                                            <h:inputText value="#{iu.desperdicio}"/>
-                                        </h:column>
-                                        <h:column>
-                                            <f:facet name="header"><h:outputText value="&nbsp;"/></f:facet>
-                                            <h:commandButton styleClass="btn btn-sm btn-default" value="#{not empty iu.utlilizado ? 'Actualizar' : 'Agregar'}" action="#{detalleSolicitudController.updateResourcesUsed(iu)}"/>
-                                            <h:outputText value=" "/>
-                                            <h:commandButton styleClass="btn btn-sm btn-default" value="Borrar" action="#{detalleSolicitudController.removeResourcesUsed(iu)}"/>
-                                        </h:column>
-                                    </h:dataTable>
+                                    <div class="table-responsive">
+                                        <h:dataTable value="#{detalleSolicitudController.resourcesUsedList}" var="iu" styleClass="table table-striped jambo_table bulk_action" headerClass="column-title" rowClasses="odd pointer,even pointer">
+                                            <h:column>
+                                                <f:facet name="header">ID</f:facet>
+                                                <h:outputText value="#{iu.id}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">Utilizado</f:facet>
+                                                <h:inputText value="#{iu.utlilizado}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">Desperdicio</f:facet>
+                                                <h:inputText value="#{iu.desperdicio}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header"><h:outputText value="&nbsp;"/></f:facet>
+                                                <h:commandButton styleClass="btn btn-sm btn-default" value="#{not empty iu.utlilizado ? 'Actualizar' : 'Agregar'}" action="#{detalleSolicitudController.updateResourcesUsed(iu)}"/>
+                                                <h:outputText value=" "/>
+                                                <h:commandButton styleClass="btn btn-sm btn-default" value="Borrar" action="#{detalleSolicitudController.removeResourcesUsed(iu)}"/>
+                                            </h:column>
+                                        </h:dataTable>
+                                    </div>
                                 </h:panelGroup>
 
                                 <div class="ln_solid"></div>
