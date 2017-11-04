@@ -74,7 +74,7 @@ public class RolesController implements Serializable {
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
-    
+
     public String createAndView() {
         if (current == null) {
             recreatePagination();

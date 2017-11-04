@@ -39,13 +39,13 @@ public class Usuarios implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 20)
+    @Size(min = 1, max = 255)
     @Column(name = "Iduser")
     private String iduser;
-    @Size(max = 100)
+    @Size(max = 255)
     @Column(name = "NombUser")
     private String nombUser;
-    @Size(max = 45)
+    @Size(max = 255)
     @Column(name = "Clave")
     private String clave;
     @Column(name = "Estado")
