@@ -150,7 +150,10 @@ public class UsuariosController implements Serializable {
             current.setClave((new SecurityUtil()).cifrar(current.getClave()));
             getFacade().edit(current);
             for (String rol : this.userRoles) {
-                this.ejbRolesFacade.create(new Roles(current.getIduser(), rol, 1));
+                System.out.println(this.ejbRolesFacade.findByRolAndUser(rol, current.getIduser()));
+                if (this.ejbRolesFacade.findByRolAndUser(rol, current.getIduser()) == null) {
+                    this.ejbRolesFacade.create(new Roles(current.getIduser(), rol, 1));
+                }
             }
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/org/itca/requerimientos/bundles/SecurityBundle").getString("UsuariosUpdated"));
             return "View";

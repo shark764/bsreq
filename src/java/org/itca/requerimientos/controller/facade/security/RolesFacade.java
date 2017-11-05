@@ -5,9 +5,11 @@
  */
 package org.itca.requerimientos.controller.facade.security;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import org.itca.requerimientos.controller.facade.AbstractFacade;
 import org.itca.requerimientos.model.entities.Roles;
 
@@ -27,6 +29,14 @@ public class RolesFacade extends AbstractFacade<Roles> {
 
     public RolesFacade() {
         super(Roles.class);
+    }
+
+    public Roles findByRolAndUser(String rol, String iduser)
+    {
+        Query q = em.createNamedQuery("Roles.findByRolAndUser")
+                .setParameter("rol", rol)
+                .setParameter("iduser", iduser);
+        return (Roles) q.getSingleResult();
     }
     
 }

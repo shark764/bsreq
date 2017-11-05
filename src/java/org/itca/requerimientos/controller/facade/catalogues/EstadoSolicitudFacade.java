@@ -33,8 +33,8 @@ public class EstadoSolicitudFacade extends AbstractFacade<EstadoSolicitud> {
 
     public EstadoSolicitud findByCodigo(String codigo)
     {
-        Query q = em.createNamedQuery("EstadoSolicitud.findByCodigo");
-        q.setParameter("codigo", codigo);
+        Query q = em.createNamedQuery("EstadoSolicitud.findByCodigo")
+                .setParameter("codigo", codigo);
         return (EstadoSolicitud) q.getSingleResult();
     }
     

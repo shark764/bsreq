@@ -13,11 +13,10 @@
     </h:head>
 
     <h:body>
-        <h:panelGroup rendered="#{not empty user}"></h:panelGroup>
-        <h:panelGroup>
-            <p>Welcome, #{user}</p>
+        <h:panelGroup rendered="#{not empty facesContext.externalContext.userPrincipal}">
+            <p>Bienvenido, #{facesContext.externalContext.userPrincipal}</p>
             <h:form>
-                <h:commandButton styleClass="btn btn-sm btn-primary" value="Salir" action="#{userSessionBean.logout}" />
+                <h:commandButton styleClass="btn btn-sm btn-primary" value="Cerrar sesión" action="#{userSessionBean.logout}" />
             </h:form>
         </h:panelGroup>
 

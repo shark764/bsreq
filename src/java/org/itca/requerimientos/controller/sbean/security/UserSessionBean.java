@@ -21,6 +21,8 @@ public class UserSessionBean implements Serializable {
     
     public void logout() {
         FacesContext context = FacesContext.getCurrentInstance();
+        System.out.println("user: " + context.getExternalContext().getUserPrincipal());
+        System.out.println("session: " + context.getExternalContext().getSession(false));
         context.getExternalContext().invalidateSession();
         try {
             context.getExternalContext().redirect(context.getExternalContext().getRequestContextPath() + "/views/login.xhtml");

@@ -17,68 +17,110 @@
                         <div class="clearfix"></div>
                     </div>
 
-                    <div class="x_content">
+                    <h:panelGroup rendered="#{empty facesContext.externalContext.userPrincipal}">
+                        <div class="x_content">
 
-                        <p>Página principal</p>
+                            <p>Identifiquese para acceder a su cuenta</p>
 
-                        <table>
-                            <tr>
-                                <td><h:link outcome="/catalogues/estadoEquipo/List" value="Show All EstadoEquipo Items"/></td>
-                                <td><h:link outcome="/catalogues/estadoPrestamo/List" value="Show All EstadoPrestamo Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/catalogues/estadoSolicitud/List" value="Show All EstadoSolicitud Items"/></td>
-                                <td><h:link outcome="/catalogues/marcaEquipo/List" value="Show All MarcaEquipo Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/catalogues/modeloEquipo/List" value="Show All ModeloEquipo Items"/></td>
-                                <td><h:link outcome="/catalogues/tipoFalla/List" value="Show All TipoFalla Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/catalogues/tipoRequerimiento/List" value="Show All TipoRequerimiento Items"/></td>
-                                <td><h:link outcome="/catalogues/tipoSolucion/List" value="Show All TipoSolucion Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/security/roles/List" value="Show All Roles Items"/></td>
-                                <td><h:link outcome="/security/usuarios/List" value="Show All Usuarios Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/inventory/categoriaEquipo/List" value="Show All CategoriaEquipo Items"/></td>
-                                <td><h:link outcome="/inventory/equipo/List" value="Show All Equipo Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/inventory/inventarioDefectuoso/List" value="Show All InventarioDefectuoso Items"/></td>
-                                <td><h:link outcome="/admin/area/List" value="Show All Area Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/admin/empleado/List" value="Show All Empleado Items"/></td>
-                                <td><h:link outcome="/admin/proveedor/List" value="Show All Proveedor Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/admin/tipoEmpleado/List" value="Show All TipoEmpleado Items"/></td>
-                                <td><h:link outcome="/loanrequest/detallePrestamo/List" value="Show All DetallePrestamo Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/loanrequest/prestamo/List" value="Show All Prestamo Items"/></td>
-                                <td><h:link outcome="/request/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/request/insumoUtilizado/List" value="Show All InsumoUtilizado Items"/></td>
-                                <td><h:link outcome="/request/solicitudRequerimiento/List" value="Show All SolicitudRequerimiento Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/inventory/insumo/List" value="Show All Insumo Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/coordinator/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
-                                <td><h:link outcome="/technician/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
-                            </tr>
-                            <tr>
-                                <td><h:link outcome="/jasperviews/generate" value="Generar reportes"/></td>
-                            </tr>
-                        </table>
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:form
+                                    styleClass="form-horizontal form-label-left"
+                                    id="login"
+                                    onsubmit="document.getElementById('login').action='j_security_check';"
+                                    prependId="false">
+                                <div class="form-group has-feedback form-group-collapsed-fields">
+                                    <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="Usuario" for="j_username" />
+                                    <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                        <h:inputText styleClass="form-control has-feedback-left input-sm" id="j_username" title="Usuario" required="true" requiredMessage="Debe digitar su usuario" />
+                                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group has-feedback form-group-collapsed-fields">
+                                    <h:outputLabel styleClass="control-label col-md-3 col-sm-3 col-lg-3 col-xs-12 input-sm" value="Clave" for="j_password" />
+                                    <div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+                                        <h:inputSecret styleClass="form-control has-feedback-left input-sm" id="j_password" title="Clave" required="true" requiredMessage="Debe digitar su clave" />
+                                        <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
+                                    </div>
+                                </div>
 
-                    </div>
+                                <div class="ln_solid"></div>
+
+                                <div class="form-group">
+                                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                        <h:commandButton styleClass="btn btn-sm btn-primary" value="Entrar" />
+                                    </div>
+                                </div>
+                            </h:form>
+
+                        </div>
+                    </h:panelGroup>
+
+                    <h:panelGroup rendered="#{not empty facesContext.externalContext.userPrincipal}">
+                        <div class="x_content">
+
+                            <p>Página principal</p>
+
+                            <table>
+                                <tr>
+                                    <td><h:link outcome="/catalogues/estadoEquipo/List" value="Show All EstadoEquipo Items"/></td>
+                                    <td><h:link outcome="/catalogues/estadoPrestamo/List" value="Show All EstadoPrestamo Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/catalogues/estadoSolicitud/List" value="Show All EstadoSolicitud Items"/></td>
+                                    <td><h:link outcome="/catalogues/marcaEquipo/List" value="Show All MarcaEquipo Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/catalogues/modeloEquipo/List" value="Show All ModeloEquipo Items"/></td>
+                                    <td><h:link outcome="/catalogues/tipoFalla/List" value="Show All TipoFalla Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/catalogues/tipoRequerimiento/List" value="Show All TipoRequerimiento Items"/></td>
+                                    <td><h:link outcome="/catalogues/tipoSolucion/List" value="Show All TipoSolucion Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/security/roles/List" value="Show All Roles Items"/></td>
+                                    <td><h:link outcome="/security/usuarios/List" value="Show All Usuarios Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/inventory/categoriaEquipo/List" value="Show All CategoriaEquipo Items"/></td>
+                                    <td><h:link outcome="/inventory/equipo/List" value="Show All Equipo Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/inventory/inventarioDefectuoso/List" value="Show All InventarioDefectuoso Items"/></td>
+                                    <td><h:link outcome="/admin/area/List" value="Show All Area Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/admin/empleado/List" value="Show All Empleado Items"/></td>
+                                    <td><h:link outcome="/admin/proveedor/List" value="Show All Proveedor Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/admin/tipoEmpleado/List" value="Show All TipoEmpleado Items"/></td>
+                                    <td><h:link outcome="/loanrequest/detallePrestamo/List" value="Show All DetallePrestamo Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/loanrequest/prestamo/List" value="Show All Prestamo Items"/></td>
+                                    <td><h:link outcome="/request/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/request/insumoUtilizado/List" value="Show All InsumoUtilizado Items"/></td>
+                                    <td><h:link outcome="/request/solicitudRequerimiento/List" value="Show All SolicitudRequerimiento Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/inventory/insumo/List" value="Show All Insumo Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/coordinator/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
+                                    <td><h:link outcome="/technician/detalleSolicitud/List" value="Show All DetalleSolicitud Items"/></td>
+                                </tr>
+                                <tr>
+                                    <td><h:link outcome="/jasperviews/generate" value="Generar reportes"/></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </h:panelGroup>
                 </div>
             </div>
         </ui:define>
